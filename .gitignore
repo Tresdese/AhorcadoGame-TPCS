@@ -1,0 +1,14 @@
+# Ignorar archivos y carpetas generados por Visual Studio
+.vs/
+
+# Carpetas de compilación (Código binario generado automáticamente)
+[Bb]in/
+[Oo]bj/
+
+# Archivos de usuario específicos de VS
+*.user
+*.userosscache
+*.suo
+
+# Archivos de caché de obj que se cuelan
+*.cache

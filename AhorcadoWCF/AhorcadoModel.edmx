@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AhorcadoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="idCategoria" />
+          </Key>
+          <Property Name="idCategoria" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="idioma" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="palabra">
+          <Key>
+            <PropertyRef Name="idPalabra" />
+          </Key>
+          <Property Name="idPalabra" Type="int" Nullable="false" />
+          <Property Name="palabra" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="text" Nullable="false" />
+          <Property Name="idCategoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="partida">
+          <Key>
+            <PropertyRef Name="idPartida" />
+          </Key>
+          <Property Name="idPartida" Type="int" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="idJugadorUno" Type="int" Nullable="false" />
+          <Property Name="idJugadorDos" Type="int" />
+          <Property Name="idPalabra" Type="int" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="nombreCompleto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="contrasena" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="correoElectronico" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_palabra_categoria">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="palabra" Type="Self.palabra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="palabra">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_partida_jugador_dos">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="partida" Type="Self.partida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="partida">
+              <PropertyRef Name="idJugadorDos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_partida_jugador_uno">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="partida" Type="Self.partida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="partida">
+              <PropertyRef Name="idJugadorUno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_partida_palabra">
+          <End Role="palabra" Type="Self.palabra" Multiplicity="0..1" />
+          <End Role="partida" Type="Self.partida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="palabra">
+              <PropertyRef Name="idPalabra" />
+            </Principal>
+            <Dependent Role="partida">
+              <PropertyRef Name="idPalabra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AhorcadoDBModelStoreContainer">
+          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="palabra" EntityType="Self.palabra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="partida" EntityType="Self.partida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_palabra_categoria" Association="Self.FK_palabra_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="palabra" EntitySet="palabra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_partida_jugador_dos" Association="Self.FK_partida_jugador_dos">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="partida" EntitySet="partida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_partida_jugador_uno" Association="Self.FK_partida_jugador_uno">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="partida" EntitySet="partida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_partida_palabra" Association="Self.FK_partida_palabra">
+            <End Role="palabra" EntitySet="palabra" />
+            <End Role="partida" EntitySet="partida" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AhorcadoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="idCategoria" />
+          </Key>
+          <Property Name="idCategoria" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idioma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="palabra" Relationship="Self.FK_palabra_categoria" FromRole="categoria" ToRole="palabra" />
+        </EntityType>
+        <EntityType Name="palabra">
+          <Key>
+            <PropertyRef Name="idPalabra" />
+          </Key>
+          <Property Name="idPalabra" Type="Int32" Nullable="false" />
+          <Property Name="palabra1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idCategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="categoria" Relationship="Self.FK_palabra_categoria" FromRole="palabra" ToRole="categoria" />
+          <NavigationProperty Name="partida" Relationship="Self.FK_partida_palabra" FromRole="palabra" ToRole="partida" />
+        </EntityType>
+        <EntityType Name="partida">
+          <Key>
+            <PropertyRef Name="idPartida" />
+          </Key>
+          <Property Name="idPartida" Type="Int32" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idJugadorUno" Type="Int32" Nullable="false" />
+          <Property Name="idJugadorDos" Type="Int32" />
+          <Property Name="idPalabra" Type="Int32" />
+          <NavigationProperty Name="palabra" Relationship="Self.FK_partida_palabra" FromRole="partida" ToRole="palabra" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK_partida_jugador_dos" FromRole="partida" ToRole="usuario" />
+          <NavigationProperty Name="usuario1" Relationship="Self.FK_partida_jugador_uno" FromRole="partida" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="nombreCompleto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contrasena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="correoElectronico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="partida" Relationship="Self.FK_partida_jugador_dos" FromRole="usuario" ToRole="partida" />
+          <NavigationProperty Name="partida1" Relationship="Self.FK_partida_jugador_uno" FromRole="usuario" ToRole="partida" />
+        </EntityType>
+        <Association Name="FK_palabra_categoria">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+          <End Role="palabra" Type="Self.palabra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="palabra">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_partida_palabra">
+          <End Role="palabra" Type="Self.palabra" Multiplicity="0..1" />
+          <End Role="partida" Type="Self.partida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="palabra">
+              <PropertyRef Name="idPalabra" />
+            </Principal>
+            <Dependent Role="partida">
+              <PropertyRef Name="idPalabra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_partida_jugador_dos">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="partida" Type="Self.partida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="partida">
+              <PropertyRef Name="idJugadorDos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_partida_jugador_uno">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="partida" Type="Self.partida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="partida">
+              <PropertyRef Name="idJugadorUno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AhorcadoDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categoria" EntityType="Self.categoria" />
+          <EntitySet Name="palabra" EntityType="Self.palabra" />
+          <EntitySet Name="partida" EntityType="Self.partida" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="FK_palabra_categoria" Association="Self.FK_palabra_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="palabra" EntitySet="palabra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_partida_palabra" Association="Self.FK_partida_palabra">
+            <End Role="palabra" EntitySet="palabra" />
+            <End Role="partida" EntitySet="partida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_partida_jugador_dos" Association="Self.FK_partida_jugador_dos">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="partida" EntitySet="partida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_partida_jugador_uno" Association="Self.FK_partida_jugador_uno">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="partida" EntitySet="partida" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AhorcadoDBModelStoreContainer" CdmEntityContainer="AhorcadoDBEntities">
+          <EntitySetMapping Name="categoria">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idioma" ColumnName="idioma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="palabra">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.palabra">
+              <MappingFragment StoreEntitySet="palabra">
+                <ScalarProperty Name="idPalabra" ColumnName="idPalabra" />
+                <ScalarProperty Name="palabra1" ColumnName="palabra" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partida">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.partida">
+              <MappingFragment StoreEntitySet="partida">
+                <ScalarProperty Name="idPartida" ColumnName="idPartida" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="idJugadorUno" ColumnName="idJugadorUno" />
+                <ScalarProperty Name="idJugadorDos" ColumnName="idJugadorDos" />
+                <ScalarProperty Name="idPalabra" ColumnName="idPalabra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AhorcadoWCF.PalabraService" CodeBehind="PalabraService.svc.cs" %>
