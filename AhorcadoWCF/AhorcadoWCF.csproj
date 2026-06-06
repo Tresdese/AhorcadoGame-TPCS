@@ -82,6 +82,7 @@
       <DependentUpon>AhorcadoModel.edmx</DependentUpon>
       <LastGenOutput>AhorcadoModel.cs</LastGenOutput>
     </Content>
+    <Content Include="AutenticacionService.svc" />
     <Content Include="MovimientoService.svc" />
     <Content Include="PalabraService.svc" />
     <Content Include="PartidaService.svc" />
@@ -110,6 +111,10 @@
     </Compile>
     <Compile Include="historial_puntaje.cs">
       <DependentUpon>AhorcadoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAutenticacionService.cs" />
+    <Compile Include="AutenticacionService.svc.cs">
+      <DependentUpon>AutenticacionService.svc</DependentUpon>
     </Compile>
     <Compile Include="DAOs\MovimientoDAO.cs" />
     <Compile Include="DAOs\PalabraDAO.cs" />

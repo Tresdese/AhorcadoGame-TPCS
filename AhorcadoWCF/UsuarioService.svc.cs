@@ -14,21 +14,6 @@ namespace AhorcadoWCF
     {
         private readonly UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-        public bool IniciarSesion(string correo, string contrasena)
-        {
-            return usuarioDAO.ValidarCredenciales(correo, contrasena);
-        }
-
-        public bool RegistrarCuenta(UsuarioDTO usuario)
-        {
-            if (usuario == null)
-            {
-                return false;
-            }
-
-            return usuarioDAO.RegistrarCuenta(usuario);
-        }
-
         public UsuarioDTO ObtenerPerfil(int idUsuario)
         {
             return usuarioDAO.ObtenerPorId(idUsuario);
@@ -47,16 +32,6 @@ namespace AhorcadoWCF
         public bool CambiarContrasena(int idUsuario, string nuevaContrasena)
         {
             return usuarioDAO.CambiarContrasena(idUsuario, nuevaContrasena);
-        }
-
-        public bool VerificarCorreoExistente(string correo)
-        {
-            return usuarioDAO.ExisteCorreo(correo);
-        }
-
-        public bool ValidarSesionActiva(int idUsuario)
-        {
-            throw new NotImplementedException();
         }
     }
 }
