@@ -14,6 +14,13 @@ namespace AhorcadoWCF
     
     public partial class partida
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public partida()
+        {
+            this.historial_puntaje = new HashSet<historial_puntaje>();
+            this.movimiento = new HashSet<movimiento>();
+        }
+    
         public int idPartida { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public string estado { get; set; }
@@ -24,5 +31,9 @@ namespace AhorcadoWCF
         public virtual palabra palabra { get; set; }
         public virtual usuario usuario { get; set; }
         public virtual usuario usuario1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<historial_puntaje> historial_puntaje { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<movimiento> movimiento { get; set; }
     }
 }

@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="AhorcadoWCF.JuegoService" CodeBehind="JuegoService.svc.cs" %>
