@@ -55,6 +55,87 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DialogoAbandonarPartida.xaml.cs">
+      <DependentUpon>DialogoAbandonarPartida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoGanadorAdivinador.xaml.cs">
+      <DependentUpon>DialogoGanadorAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoGanadorCreador.xaml.cs">
+      <DependentUpon>DialogoGanadorCreador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoPenalizacion.xaml.cs">
+      <DependentUpon>DialogoPenalizacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoPerdedorAdivinador.xaml.cs">
+      <DependentUpon>DialogoPerdedorAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoRivalAbandono.xaml.cs">
+      <DependentUpon>DialogoRivalAbandono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaBienvenida.xaml.cs">
+      <DependentUpon>VentanaBienvenida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEditarPerfil.xaml.cs">
+      <DependentUpon>VentanaEditarPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaElegirCategoria.xaml.cs">
+      <DependentUpon>VentanaElegirCategoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaElegirPalabra.xaml.cs">
+      <DependentUpon>VentanaElegirPalabra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEsperandoPalabra.xaml.cs">
+      <DependentUpon>VentanaEsperandoPalabra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEsperandoRival.xaml.cs">
+      <DependentUpon>VentanaEsperandoRival.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorial.xaml.cs">
+      <DependentUpon>VentanaHistorial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaIniciarSesion.xaml.cs">
+      <DependentUpon>VentanaIniciarSesion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaJuegoAdivinador.xaml.cs">
+      <DependentUpon>VentanaJuegoAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaJuegoCreador.xaml.cs">
+      <DependentUpon>VentanaJuegoCreador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPartidas.xaml.cs">
+      <DependentUpon>VentanaPartidas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPerfil.xaml.cs">
+      <DependentUpon>VentanaPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaRegistrarCuenta.xaml.cs">
+      <DependentUpon>VentanaRegistrarCuenta.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DialogoAbandonarPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoGanadorAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoGanadorCreador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoPenalizacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoPerdedorAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoRivalAbandono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +148,58 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VentanaBienvenida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEditarPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaElegirCategoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaElegirPalabra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEsperandoPalabra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEsperandoRival.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaHistorial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaIniciarSesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaJuegoAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaJuegoCreador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaPartidas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaRegistrarCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +226,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ahorcado_0.png" />
+    <Resource Include="Recursos\ahorcado_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ahorcado_completo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ahorcado_3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
