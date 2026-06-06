@@ -1,0 +1,42 @@
+﻿<Window x:Class="ClienteAhorcado.DialogoRivalAbandono"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteAhorcado"
+        mc:Ignorable="d"
+        Title="" Height="380" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True">
+    <Border Background="White" CornerRadius="10" Padding="30">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="5"/>
+        </Border.Effect>
+        <StackPanel>
+            <Border Background="#F5F5F5" CornerRadius="8" Width="55" Height="55" HorizontalAlignment="Center" Margin="0,0,0,15">
+                <TextBlock Text="ℹ" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#555555"/>
+            </Border>
+            <TextBlock Text="Tu rival abandonó" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <TextBlock FontSize="13" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,8">
+                <Run Text="Carlos Mendoza" FontWeight="Bold"/>
+                <Run Text=" abandonó la partida. Se le aplicará una penalización por su cuenta."/>
+            </TextBlock>
+            <TextBlock Text="¿Qué te gustaría hacer ahora?" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <Button Content="Esperar a otro oponente" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Margin="0,0,0,10" Click="btnEsperar_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Ir al lobby" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnLobby_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Border>
+</Window>
