@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AhorcadoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AhorcadoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="categoria">
           <Key>
             <PropertyRef Name="idCategoria" />
@@ -12,6 +12,27 @@
           <Property Name="idCategoria" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="idioma" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="historial_puntaje">
+          <Key>
+            <PropertyRef Name="idPuntaje" />
+          </Key>
+          <Property Name="idPuntaje" Type="int" Nullable="false" />
+          <Property Name="tipoPuntaje" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="puntos" Type="int" Nullable="false" />
+          <Property Name="idJugador" Type="int" Nullable="false" />
+          <Property Name="idJugadorRival" Type="int" Nullable="false" />
+          <Property Name="idPartida" Type="int" Nullable="false" />
+          <Property Name="idPalabra" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="movimiento">
+          <Key>
+            <PropertyRef Name="idMovimiento" />
+          </Key>
+          <Property Name="idMovimiento" Type="int" Nullable="false" />
+          <Property Name="letraIngresada" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="idPartida" Type="int" Nullable="false" />
+          <Property Name="esCorrecta" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="palabra">
           <Key>
@@ -45,6 +66,66 @@
           <Property Name="correoElectronico" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
         </EntityType>
+        <Association Name="FK_historial_puntaje_jugador">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="historial_puntaje" Type="Self.historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_historial_puntaje_jugador_rival">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="historial_puntaje" Type="Self.historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idJugadorRival" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_historial_puntaje_palabra">
+          <End Role="palabra" Type="Self.palabra" Multiplicity="1" />
+          <End Role="historial_puntaje" Type="Self.historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="palabra">
+              <PropertyRef Name="idPalabra" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idPalabra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_historial_puntaje_partida">
+          <End Role="partida" Type="Self.partida" Multiplicity="1" />
+          <End Role="historial_puntaje" Type="Self.historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="partida">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_movimiento_partida">
+          <End Role="partida" Type="Self.partida" Multiplicity="1" />
+          <End Role="movimiento" Type="Self.movimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="partida">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="movimiento">
+              <PropertyRef Name="idPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_palabra_categoria">
           <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
           <End Role="palabra" Type="Self.palabra" Multiplicity="*" />
@@ -95,9 +176,31 @@
         </Association>
         <EntityContainer Name="AhorcadoDBModelStoreContainer">
           <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="historial_puntaje" EntityType="Self.historial_puntaje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="movimiento" EntityType="Self.movimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="palabra" EntityType="Self.palabra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="partida" EntityType="Self.partida" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_historial_puntaje_jugador" Association="Self.FK_historial_puntaje_jugador">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_historial_puntaje_jugador_rival" Association="Self.FK_historial_puntaje_jugador_rival">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_historial_puntaje_palabra" Association="Self.FK_historial_puntaje_palabra">
+            <End Role="palabra" EntitySet="palabra" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_historial_puntaje_partida" Association="Self.FK_historial_puntaje_partida">
+            <End Role="partida" EntitySet="partida" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_movimiento_partida" Association="Self.FK_movimiento_partida">
+            <End Role="partida" EntitySet="partida" />
+            <End Role="movimiento" EntitySet="movimiento" />
+          </AssociationSet>
           <AssociationSet Name="FK_palabra_categoria" Association="Self.FK_palabra_categoria">
             <End Role="categoria" EntitySet="categoria" />
             <End Role="palabra" EntitySet="palabra" />
@@ -115,8 +218,7 @@
             <End Role="partida" EntitySet="partida" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AhorcadoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -139,6 +241,7 @@
           <Property Name="idCategoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="categoria" Relationship="Self.FK_palabra_categoria" FromRole="palabra" ToRole="categoria" />
           <NavigationProperty Name="partida" Relationship="Self.FK_partida_palabra" FromRole="palabra" ToRole="partida" />
+          <NavigationProperty Name="historial_puntaje" Relationship="AhorcadoDBModel.FK_historial_puntaje_palabra" FromRole="palabra" ToRole="historial_puntaje" />
         </EntityType>
         <EntityType Name="partida">
           <Key>
@@ -153,6 +256,8 @@
           <NavigationProperty Name="palabra" Relationship="Self.FK_partida_palabra" FromRole="partida" ToRole="palabra" />
           <NavigationProperty Name="usuario" Relationship="Self.FK_partida_jugador_dos" FromRole="partida" ToRole="usuario" />
           <NavigationProperty Name="usuario1" Relationship="Self.FK_partida_jugador_uno" FromRole="partida" ToRole="usuario" />
+          <NavigationProperty Name="historial_puntaje" Relationship="AhorcadoDBModel.FK_historial_puntaje_partida" FromRole="partida" ToRole="historial_puntaje" />
+          <NavigationProperty Name="movimiento" Relationship="AhorcadoDBModel.FK_movimiento_partida" FromRole="partida" ToRole="movimiento" />
         </EntityType>
         <EntityType Name="usuario">
           <Key>
@@ -167,6 +272,8 @@
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="partida" Relationship="Self.FK_partida_jugador_dos" FromRole="usuario" ToRole="partida" />
           <NavigationProperty Name="partida1" Relationship="Self.FK_partida_jugador_uno" FromRole="usuario" ToRole="partida" />
+          <NavigationProperty Name="historial_puntaje" Relationship="AhorcadoDBModel.FK_historial_puntaje_jugador" FromRole="usuario" ToRole="historial_puntaje" />
+          <NavigationProperty Name="historial_puntaje1" Relationship="AhorcadoDBModel.FK_historial_puntaje_jugador_rival" FromRole="usuario" ToRole="historial_puntaje" />
         </EntityType>
         <Association Name="FK_palabra_categoria">
           <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
@@ -237,7 +344,115 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="partida" EntitySet="partida" />
           </AssociationSet>
+          <EntitySet Name="historial_puntaje" EntityType="AhorcadoDBModel.historial_puntaje" />
+          <EntitySet Name="movimiento" EntityType="AhorcadoDBModel.movimiento" />
+          <AssociationSet Name="FK_historial_puntaje_jugador" Association="AhorcadoDBModel.FK_historial_puntaje_jugador">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_historial_puntaje_jugador_rival" Association="AhorcadoDBModel.FK_historial_puntaje_jugador_rival">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_historial_puntaje_palabra" Association="AhorcadoDBModel.FK_historial_puntaje_palabra">
+            <End Role="palabra" EntitySet="palabra" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_historial_puntaje_partida" Association="AhorcadoDBModel.FK_historial_puntaje_partida">
+            <End Role="partida" EntitySet="partida" />
+            <End Role="historial_puntaje" EntitySet="historial_puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_movimiento_partida" Association="AhorcadoDBModel.FK_movimiento_partida">
+            <End Role="partida" EntitySet="partida" />
+            <End Role="movimiento" EntitySet="movimiento" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="historial_puntaje">
+          <Key>
+            <PropertyRef Name="idPuntaje" />
+          </Key>
+          <Property Name="idPuntaje" Type="Int32" Nullable="false" />
+          <Property Name="tipoPuntaje" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="puntos" Type="Int32" Nullable="false" />
+          <Property Name="idJugador" Type="Int32" Nullable="false" />
+          <Property Name="idJugadorRival" Type="Int32" Nullable="false" />
+          <Property Name="idPartida" Type="Int32" Nullable="false" />
+          <Property Name="idPalabra" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="AhorcadoDBModel.FK_historial_puntaje_jugador" FromRole="historial_puntaje" ToRole="usuario" />
+          <NavigationProperty Name="usuario1" Relationship="AhorcadoDBModel.FK_historial_puntaje_jugador_rival" FromRole="historial_puntaje" ToRole="usuario" />
+          <NavigationProperty Name="palabra" Relationship="AhorcadoDBModel.FK_historial_puntaje_palabra" FromRole="historial_puntaje" ToRole="palabra" />
+          <NavigationProperty Name="partida" Relationship="AhorcadoDBModel.FK_historial_puntaje_partida" FromRole="historial_puntaje" ToRole="partida" />
+        </EntityType>
+        <EntityType Name="movimiento">
+          <Key>
+            <PropertyRef Name="idMovimiento" />
+          </Key>
+          <Property Name="idMovimiento" Type="Int32" Nullable="false" />
+          <Property Name="letraIngresada" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="idPartida" Type="Int32" Nullable="false" />
+          <Property Name="esCorrecta" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="partida" Relationship="AhorcadoDBModel.FK_movimiento_partida" FromRole="movimiento" ToRole="partida" />
+        </EntityType>
+        <Association Name="FK_historial_puntaje_jugador">
+          <End Type="AhorcadoDBModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="AhorcadoDBModel.historial_puntaje" Role="historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_historial_puntaje_jugador_rival">
+          <End Type="AhorcadoDBModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="AhorcadoDBModel.historial_puntaje" Role="historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idJugadorRival" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_historial_puntaje_palabra">
+          <End Type="AhorcadoDBModel.palabra" Role="palabra" Multiplicity="1" />
+          <End Type="AhorcadoDBModel.historial_puntaje" Role="historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="palabra">
+              <PropertyRef Name="idPalabra" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idPalabra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_historial_puntaje_partida">
+          <End Type="AhorcadoDBModel.partida" Role="partida" Multiplicity="1" />
+          <End Type="AhorcadoDBModel.historial_puntaje" Role="historial_puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="partida">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="historial_puntaje">
+              <PropertyRef Name="idPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_movimiento_partida">
+          <End Type="AhorcadoDBModel.partida" Role="partida" Multiplicity="1" />
+          <End Type="AhorcadoDBModel.movimiento" Role="movimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="partida">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="movimiento">
+              <PropertyRef Name="idPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -285,6 +500,29 @@
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
                 <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="historial_puntaje">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.historial_puntaje">
+              <MappingFragment StoreEntitySet="historial_puntaje">
+                <ScalarProperty Name="idPalabra" ColumnName="idPalabra" />
+                <ScalarProperty Name="idPartida" ColumnName="idPartida" />
+                <ScalarProperty Name="idJugadorRival" ColumnName="idJugadorRival" />
+                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
+                <ScalarProperty Name="puntos" ColumnName="puntos" />
+                <ScalarProperty Name="tipoPuntaje" ColumnName="tipoPuntaje" />
+                <ScalarProperty Name="idPuntaje" ColumnName="idPuntaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movimiento">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.movimiento">
+              <MappingFragment StoreEntitySet="movimiento">
+                <ScalarProperty Name="esCorrecta" ColumnName="esCorrecta" />
+                <ScalarProperty Name="idPartida" ColumnName="idPartida" />
+                <ScalarProperty Name="letraIngresada" ColumnName="letraIngresada" />
+                <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

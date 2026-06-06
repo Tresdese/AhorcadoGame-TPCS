@@ -3,16 +3,6 @@ using System.ServiceModel;
 
 namespace AhorcadoWCF
 {
-    [ServiceContract]
-    public interface IJuegoService
-    {
-        [OperationContract]
-        MovimientoDTO RegistrarMovimiento(int idPartida, char letra);
-
-        [OperationContract]
-        List<MovimientoDTO> ObtenerMovimientosDePartida(int idPartida);
-    }
-
     public interface IJuegoCallback
     {
         [OperationContract(IsOneWay = true)]
