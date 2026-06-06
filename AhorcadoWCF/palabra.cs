@@ -18,6 +18,7 @@ namespace AhorcadoWCF
         public palabra()
         {
             this.partida = new HashSet<partida>();
+            this.historial_puntaje = new HashSet<historial_puntaje>();
         }
     
         public int idPalabra { get; set; }
@@ -28,5 +29,7 @@ namespace AhorcadoWCF
         public virtual categoria categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<partida> partida { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<historial_puntaje> historial_puntaje { get; set; }
     }
 }

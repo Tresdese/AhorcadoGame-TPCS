@@ -29,5 +29,7 @@ namespace AhorcadoWCF
         public virtual DbSet<palabra> palabra { get; set; }
         public virtual DbSet<partida> partida { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
+        public virtual DbSet<historial_puntaje> historial_puntaje { get; set; }
+        public virtual DbSet<movimiento> movimiento { get; set; }
     }
 }
