@@ -5,14 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="43f1b1055b7a490d88b73af13a4cc6ee" Name="Diagram1">
-        <EntityTypeShape EntityType="AhorcadoDBModel.categoria" Width="1.5" PointX="1.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AhorcadoDBModel.categoria" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AhorcadoDBModel.palabra" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AhorcadoDBModel.partida" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AhorcadoDBModel.partida" Width="1.5" PointX="5.75" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="AhorcadoDBModel.usuario" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="AhorcadoDBModel.FK_palabra_categoria" ManuallyRouted="false" />
         <AssociationConnector Association="AhorcadoDBModel.FK_partida_palabra" ManuallyRouted="false" />
         <AssociationConnector Association="AhorcadoDBModel.FK_partida_jugador_dos" ManuallyRouted="false" />
         <AssociationConnector Association="AhorcadoDBModel.FK_partida_jugador_uno" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AhorcadoDBModel.historial_puntaje" Width="1.5" PointX="11.125" PointY="5.75" />
+        <EntityTypeShape EntityType="AhorcadoDBModel.movimiento" Width="1.5" PointX="9.375" PointY="1.375" />
+        <AssociationConnector Association="AhorcadoDBModel.FK_historial_puntaje_jugador" />
+        <AssociationConnector Association="AhorcadoDBModel.FK_historial_puntaje_jugador_rival" />
+        <AssociationConnector Association="AhorcadoDBModel.FK_historial_puntaje_palabra" />
+        <AssociationConnector Association="AhorcadoDBModel.FK_historial_puntaje_partida" />
+        <AssociationConnector Association="AhorcadoDBModel.FK_movimiento_partida" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

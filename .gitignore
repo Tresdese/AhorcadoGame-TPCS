@@ -12,3 +12,10 @@
 
 # Archivos de caché de obj que se cuelan
 *.cache
+
+# Paquetes NuGet (se restauran con nuget restore)
+packages/
+
+# Base de datos local
+App_Data/*.mdf
+App_Data/*.ldf
