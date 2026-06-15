@@ -88,6 +88,7 @@
     <Content Include="PartidaService.svc" />
     <Content Include="PuntajeService.svc" />
     <Content Include="UsuarioService.svc" />
+    <Content Include="JuegoCallbackService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +123,9 @@
     <Compile Include="DAOs\PuntajeDAO.cs" />
     <Compile Include="DAOs\UsuarioDAO.cs" />
     <Compile Include="IJuegoService.cs" />
+    <Compile Include="JuegoCallbackService.svc.cs">
+      <DependentUpon>JuegoCallbackService.svc</DependentUpon>
+    </Compile>
     <Compile Include="IMovimientoService.cs" />
     <Compile Include="MovimientoService.svc.cs">
       <DependentUpon>MovimientoService.svc</DependentUpon>

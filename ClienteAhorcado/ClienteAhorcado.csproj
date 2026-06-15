@@ -43,6 +43,8 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -144,6 +146,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SesionActual.cs" />
+    <Compile Include="ManejadorErrores.cs" />
+    <Compile Include="Conexiones.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -226,6 +231,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Contratos (interfaces de servicio + DTOs) compartidos con el servidor.
+         Permite usar ChannelFactory sin duplicar tipos. -->
+    <ProjectReference Include="..\AhorcadoWCF\AhorcadoWCF.csproj">
+      <Project>{19e2db44-df8d-4639-9497-7f3317706665}</Project>
+      <Name>AhorcadoWCF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\ahorcado_0.png" />
