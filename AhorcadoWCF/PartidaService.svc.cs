@@ -12,69 +12,29 @@ namespace AhorcadoWCF
     {
         private readonly PartidaDAO partidaDAO = new PartidaDAO();
 
-       
         public PartidaDTO CrearPartida(int idJugadorCreador)
         {
-            try
-            {
-                return partidaDAO.Crear(idJugadorCreador);
-            }
-            catch (Exception)
-            {
-                return null; 
-            }
+            return partidaDAO.Crear(idJugadorCreador);
         }
 
-        
         public List<PartidaDTO> ObtenerPartidasDisponibles()
         {
-            try
-            {
-                return partidaDAO.ObtenerDisponibles();
-            }
-            catch (Exception)
-            {
-                return null; 
-            }
+            return partidaDAO.ObtenerDisponibles();
         }
 
-      
         public bool VerificarDisponibilidadPartida(int idPartida)
         {
-            try
-            {
-                return partidaDAO.VerificarDisponibilidad(idPartida);
-            }
-            catch (Exception)
-            {
-                return false; 
-            }
+            return partidaDAO.VerificarDisponibilidad(idPartida);
         }
 
-       
         public PartidaDTO ObtenerEstadoPartida(int idPartida)
         {
-            try
-            {
-                return partidaDAO.ObtenerEstado(idPartida);
-            }
-            catch (Exception)
-            {
-                return null; 
-            }
+            return partidaDAO.ObtenerEstado(idPartida);
         }
 
-        
         public bool UnirseAPartida(int idPartida, int idJugadorAdivinador)
         {
-            try
-            {
-                return partidaDAO.Unirse(idPartida, idJugadorAdivinador);
-            }
-            catch (Exception)
-            {
-                return false; 
-            }
+            return partidaDAO.Unirse(idPartida, idJugadorAdivinador);
         }
 
         public bool CancelarPartida(int idPartida)
