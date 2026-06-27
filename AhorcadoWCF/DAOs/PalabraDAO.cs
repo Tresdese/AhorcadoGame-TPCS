@@ -42,6 +42,24 @@ namespace AhorcadoWCF.DAOs
             }
         }
 
+        public PalabraDTO ObtenerPorId(int idPalabra)
+        {
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                return contexto.palabra
+                    .Where(p => p.idPalabra == idPalabra)
+                    .Select(p => new PalabraDTO
+                    {
+                        IdPalabra = p.idPalabra,
+                        Texto = p.palabra1,
+                        Descripcion = p.descripcion,
+                        IdCategoria = p.idCategoria,
+                        Categoria = p.categoria.nombre
+                    })
+                    .FirstOrDefault();
+            }
+        }
+
         public bool AsignarAPartida(int idPartida, int idPalabra)
         {
             using (var transaccion = new TransactionScope())

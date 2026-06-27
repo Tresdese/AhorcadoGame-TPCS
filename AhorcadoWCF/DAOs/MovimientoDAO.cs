@@ -35,7 +35,7 @@ namespace AhorcadoWCF.DAOs
                         IdPartida = movimiento.idPartida,
                         Letra = letra,
                         Acerto = movimiento.esCorrecta,
-                        Posiciones = new List<int>()
+                        Posiciones = CalcularPosiciones(palabra, letra)
                     };
                 }
             }

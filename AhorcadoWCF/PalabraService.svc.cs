@@ -13,6 +13,7 @@ namespace AhorcadoWCF
     public class PalabraService : IPalabraService
     {
         private readonly PalabraDAO palabraDAO = new PalabraDAO();
+        private readonly PartidaDAO partidaDAO = new PartidaDAO();
 
         public List<CategoriaDTO> ObtenerCategorias(string idioma)
         {
@@ -26,7 +27,19 @@ namespace AhorcadoWCF
 
         public bool AsignarPalabraAPartida(int idPartida, int idPalabra)
         {
-            return palabraDAO.AsignarAPartida(idPartida, idPalabra);
+            bool asignada = palabraDAO.AsignarAPartida(idPartida, idPalabra);
+            if (asignada)
+            {
+                var palabra = palabraDAO.ObtenerPorId(idPalabra);
+                if (palabra != null)
+                {
+                    var partida = partidaDAO.ObtenerEstado(idPartida);
+                    RegistroSesiones.IniciarRonda(idPartida, palabra.Texto, partida.IdJugadorAdivinador);
+                    RegistroSesiones.NotificarSala(idPartida,
+                        cb => cb.PalabraSeleccionada(palabra.Texto.Length, palabra.Descripcion, palabra.Categoria));
+                }
+            }
+            return asignada;
         }
     }
 }
