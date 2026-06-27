@@ -43,7 +43,7 @@ namespace ClienteAhorcado
         {
             try
             {
-                var cliente = new PartidaServiceClient();
+                var cliente = Conexiones.Partida();
                 var partida = cliente.CrearPartida(SesionActual.IdUsuario);
  
                 
@@ -55,7 +55,13 @@ namespace ClienteAhorcado
  
                 
                 idPartidaActual = partida.IdPartida;
- 
+                SesionActual.IdPartida = partida.IdPartida;
+
+                JuegoCallbackHandler.VentanaEspera = this;
+                JuegoCallbackHandler.ClienteJuego = Conexiones.Juego(
+                    new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
+                JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(idPartidaActual, SesionActual.IdUsuario);
+
                 IniciarCronometro();
             }
             catch (Exception)
@@ -102,7 +108,7 @@ namespace ClienteAhorcado
  
                 try
                 {
-                    var cliente = new PartidaServiceClient();
+                    var cliente = Conexiones.Partida();
                     cliente.CancelarPartida(idPartidaActual);
                 }
                 catch (Exception)
@@ -132,7 +138,8 @@ namespace ClienteAhorcado
             Dispatcher.Invoke(() =>
             {
                 DetenerCronometro();
-               
+                JuegoCallbackHandler.VentanaEspera = null;
+                new VentanaElegirCategoria().Show();
                 Close();
             });
         }

@@ -17,11 +17,28 @@ namespace ClienteAhorcado {
     /// Lógica de interacción para VentanaEsperandoPalabra.xaml
     /// </summary>
     public partial class VentanaEsperandoPalabra : Window {
-        public VentanaEsperandoPalabra() {
+        private readonly int _idPartida;
+        private readonly string _nombreCreador;
+
+        public VentanaEsperandoPalabra(int idPartida, string nombreCreador) {
             InitializeComponent();
+            _idPartida = idPartida;
+            _nombreCreador = nombreCreador;
+            Loaded += (s, e) => JuegoCallbackHandler.VentanaEsperaPalabra = this;
+        }
+
+        public void IrAlTablero(int longitud, string descripcion, string categoria) {
+            Dispatcher.Invoke(() => {
+                JuegoCallbackHandler.VentanaEsperaPalabra = null;
+                var tablero = new VentanaJuegoAdivinador(_idPartida, _nombreCreador);
+                tablero.Show();
+                tablero.IniciarJuego(longitud, descripcion, categoria);
+                Close();
+            });
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e) {
+            JuegoCallbackHandler.VentanaEsperaPalabra = null;
             VentanaPartidas ventana = new VentanaPartidas();
             ventana.Show();
             this.Close();

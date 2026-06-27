@@ -28,7 +28,7 @@ namespace ClienteAhorcado {
         }
 
         private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e) {
-            VentanaEsperandoPalabra ventana = new VentanaEsperandoPalabra();
+            VentanaPartidas ventana = new VentanaPartidas();
             ventana.Show();
             this.Close();
         }

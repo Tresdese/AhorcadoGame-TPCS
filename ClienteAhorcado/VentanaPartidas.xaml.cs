@@ -36,7 +36,7 @@ namespace ClienteAhorcado
         {
             try
             {
-                var cliente = new PartidaServiceClient();
+                var cliente = Conexiones.Partida();
                 var partidas = cliente.ObtenerPartidasDisponibles();
 
                
@@ -128,7 +128,7 @@ namespace ClienteAhorcado
             try
             {
                 
-                var clientePartida = new PartidaServiceClient();
+                var clientePartida = Conexiones.Partida();
                 bool sigueDisponible = clientePartida.VerificarDisponibilidadPartida(item.IdPartida);
 
                 
@@ -159,14 +159,15 @@ namespace ClienteAhorcado
                 }
 
                
-                var clienteJuego = new JuegoCallbackServiceClient(
+                SesionActual.IdPartida = item.IdPartida;
+                JuegoCallbackHandler.ClienteJuego = Conexiones.Juego(
                     new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
 
-                clienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario);
+                JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario);
 
-               
-                var ventanaJuego = new VentanaJuegoAdivinador(item.IdPartida, item.Creador);
-                ventanaJuego.Show();
+
+                var ventanaEspera = new VentanaEsperandoPalabra(item.IdPartida, item.Creador);
+                ventanaEspera.Show();
                 Close();
             }
             catch (Exception)
