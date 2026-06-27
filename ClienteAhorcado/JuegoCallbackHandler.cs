@@ -15,8 +15,9 @@ namespace ClienteAhorcado
     public class JuegoCallbackHandler : IJuegoCallback
     {
        
-        public static VentanaJuegoAdivinador VentanaAdivinador { get; set; }
         public static VentanaEsperandoRival VentanaEspera { get; set; }
+        public static VentanaEsperandoPalabra VentanaEsperaPalabra { get; set; }
+        public static IJuegoCallbackService ClienteJuego { get; set; }
 
        
         public void PartidaCreada(PartidaDTO partida)
@@ -39,31 +40,16 @@ namespace ClienteAhorcado
         
         public void PalabraSeleccionada(int longitud, string descripcion, string categoria)
         {
-            VentanaAdivinador?.IniciarJuego(longitud, descripcion, categoria);
+            VentanaEsperaPalabra?.IrAlTablero(longitud, descripcion, categoria);
         }
 
        
-        public void LetraIngresada(char letra, bool acerto, List<int> posiciones, int intentosRestantes)
-        {
-            VentanaAdivinador?.ActualizarJuego(letra, acerto, posiciones, intentosRestantes);
-        }
+        public void LetraIngresada(char letra, bool acerto, List<int> posiciones, int intentosRestantes) { }
 
-       
-        public void MensajeChatRecibido(string remitente, string mensaje)
-        {
-            VentanaAdivinador?.AgregarMensajeChat(remitente, mensaje);
-        }
+        public void MensajeChatRecibido(string remitente, string mensaje) { }
 
-       
-        public void RivalAbandono(string nombreRival)
-        {
-            VentanaAdivinador?.NotificarRivalAbandono(nombreRival);
-        }
+        public void RivalAbandono(string nombreRival) { }
 
-        
-        public void PartidaFinalizada(string resultado, string palabra, int puntosObtenidos, int puntajeGlobal)
-        {
-            VentanaAdivinador?.MostrarResultadoFinal(resultado, palabra, puntosObtenidos, puntajeGlobal);
-        }
+        public void PartidaFinalizada(string resultado, string palabra, int puntosObtenidos, int puntajeGlobal) { }
     }
 }

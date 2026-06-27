@@ -1,67 +1,58 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using AhorcadoWCF;
 
 namespace ClienteAhorcado
 {
-    
-    public partial class VentanaJuegoAdivinador : Window
+    [CallbackBehavior(UseSynchronizationContext = false)]
+    public partial class VentanaJuegoAdivinador : Window, IJuegoCallback
     {
         private readonly int _idPartida;
         private readonly string _nombreCreador;
+        private IJuegoCallbackService _canal;
 
-     
         private int _intentosRestantes = 6;
-        private string[] _letrasOcultas;         
+        private string[] _letrasOcultas;
         private readonly List<TextBlock> casillas = new List<TextBlock>();
 
-       
-        private JuegoCallbackServiceClient clienteJuego;
-
-        
         public VentanaJuegoAdivinador(int idPartida, string nombreCreador)
         {
             InitializeComponent();
-            idPartida = idPartida;
-            nombreCreador = nombreCreador;
-
+            _idPartida = idPartida;
+            _nombreCreador = nombreCreador;
             Loaded += VentanaJuegoAdivinador_Loaded;
-            Closing += VentanaJuegoAdivinador_Closing;
+            Closing += (s, e) => CerrarCanal();
         }
 
-       
+        private void CerrarCanal()
+        {
+            var com = _canal as ICommunicationObject;
+            if (com == null) return;
+            try { com.Abort(); } catch { }
+        }
+
         private void VentanaJuegoAdivinador_Loaded(object sender, RoutedEventArgs e)
         {
-           
-            JuegoCallbackHandler.VentanaAdivinador = this;
-
-           
             casillas.Clear();
             foreach (var name in new[] { "l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8" })
             {
                 var tb = FindName(name) as TextBlock;
                 if (tb != null) casillas.Add(tb);
             }
-
-           
             foreach (var c in casillas)
                 c.Text = "";
 
-           
             lblIntentos.Text = "Esperando que el creador elija la palabra...";
+
+            _canal = Conexiones.Juego(new InstanceContext(this));
+            _canal.UnirseASalaDePartida(_idPartida, SesionActual.IdUsuario);
         }
 
-       
         public void IniciarJuego(int longitud, string descripcion, string categoria)
         {
             Dispatcher.Invoke(() =>
@@ -71,31 +62,25 @@ namespace ClienteAhorcado
                 for (int i = 0; i < longitud; i++)
                     _letrasOcultas[i] = "_";
 
+                lblCategoria.Text = categoria;
+                lblDescripcion.Text = descripcion;
+
                 ActualizarCasillas();
                 lblIntentos.Text = $"{_intentosRestantes}  intentos restantes";
-
-                
             });
         }
 
-       
         private void btnLetra_Click(object sender, RoutedEventArgs e)
         {
             var boton = sender as Button;
             if (boton == null) return;
 
             char letra = boton.Content.ToString()[0];
-
-           
             boton.IsEnabled = false;
 
             try
             {
-                clienteJuego = new JuegoCallbackServiceClient(
-                    new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
-
-                clienteJuego.EnviarLetra(_idPartida, SesionActual.IdUsuario, letra);
-               
+                _canal.EnviarLetra(_idPartida, SesionActual.IdUsuario, letra);
             }
             catch
             {
@@ -107,20 +92,24 @@ namespace ClienteAhorcado
             }
         }
 
-        
-        public void ActualizarJuego(char letra, bool acerto, List<int> posiciones, int intentosRestantes)
+        public void LetraIngresada(char letra, bool acerto, List<int> posiciones, int intentosRestantes)
         {
             Dispatcher.Invoke(() =>
             {
                 _intentosRestantes = intentosRestantes;
                 lblIntentos.Text = $"{intentosRestantes}  intentos restantes";
 
-               
                 ColorearBotonLetra(letra, acerto);
+
+                if (intentosRestantes == 0)
+                {
+                    foreach (var b in GetAllButtons())
+                        if (b.Content != null && b.Content.ToString().Length == 1 && char.IsLetter(b.Content.ToString()[0]))
+                            b.IsEnabled = false;
+                }
 
                 if (acerto)
                 {
-                   
                     foreach (var pos in posiciones)
                     {
                         if (pos >= 0 && pos < _letrasOcultas.Length)
@@ -130,15 +119,49 @@ namespace ClienteAhorcado
                 }
                 else
                 {
-                   
                     int fallos = 6 - intentosRestantes;
-                    imgAhorcado.Source = new System.Windows.Media.Imaging.BitmapImage(
-                        new System.Uri($"/Recursos/ahorcado_{fallos}.png", System.UriKind.Relative));
+                    imgAhorcado.Source = new BitmapImage(
+                        new Uri($"/Recursos/ahorcado_{fallos}.png", UriKind.Relative));
                 }
             });
         }
 
-       
+        public void MensajeChatRecibido(string remitente, string mensaje) =>
+            AgregarMensajeChat(remitente, mensaje);
+
+        public void RivalAbandono(string nombreRival)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    $"{nombreRival} abandonó la partida. Regresarás al lobby.",
+                    "Rival abandonó",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+                new VentanaPartidas().Show();
+                Close();
+            });
+        }
+
+        public void PartidaFinalizada(string resultado, string palabra, int puntosObtenidos, int puntajeGlobal)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    $"Resultado: {resultado}\nPalabra: {palabra}\nPuntos obtenidos: {puntosObtenidos}\nPuntaje global: {puntajeGlobal}",
+                    "Partida finalizada",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+                new VentanaPartidas().Show();
+                Close();
+            });
+        }
+
+        public void PartidaCreada(PartidaDTO partida) { }
+        public void PartidaRemovidaDelLobby(int idPartida) { }
+        public void AdivinadorSeUnio(UsuarioDTO adivinador) { }
+        public void PalabraSeleccionada(int longitud, string descripcion, string categoria) { }
+
         private void ActualizarCasillas()
         {
             for (int i = 0; i < casillas.Count && i < _letrasOcultas.Length; i++)
@@ -150,7 +173,6 @@ namespace ClienteAhorcado
             }
         }
 
-       
         private void ColorearBotonLetra(char letra, bool acerto)
         {
             foreach (var elemento in GetAllButtons())
@@ -158,7 +180,7 @@ namespace ClienteAhorcado
                 if (elemento.Content?.ToString() == letra.ToString())
                 {
                     elemento.Background = acerto
-                        ? new SolidColorBrush(Color.FromRgb(46, 125, 50))  
+                        ? new SolidColorBrush(Color.FromRgb(46, 125, 50))
                         : new SolidColorBrush(Color.FromRgb(211, 47, 47));
                     elemento.Foreground = Brushes.White;
                     elemento.BorderThickness = new Thickness(0);
@@ -184,7 +206,6 @@ namespace ClienteAhorcado
             }
         }
 
-        
         private void btnEnviarMensaje_Click(object sender, RoutedEventArgs e)
         {
             string mensaje = txtMensaje.Text.Trim();
@@ -192,11 +213,7 @@ namespace ClienteAhorcado
 
             try
             {
-                clienteJuego = new JuegoCallbackServiceClient(
-                    new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
-                clienteJuego.EnviarMensajeChat(_idPartida, SesionActual.IdUsuario, mensaje);
-
-                
+                _canal.EnviarMensajeChat(_idPartida, SesionActual.IdUsuario, mensaje);
                 AgregarMensajePropioChat(mensaje);
                 txtMensaje.Clear();
             }
@@ -253,59 +270,14 @@ namespace ClienteAhorcado
             {
                 try
                 {
-                    clienteJuego = new JuegoCallbackServiceClient(
-                        new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
-                    clienteJuego.NotificarAbandono(_idPartida, SesionActual.IdUsuario);
+                    _canal.NotificarAbandono(_idPartida, SesionActual.IdUsuario);
                 }
-                catch {  }
-
-                JuegoCallbackHandler.VentanaAdivinador = null;
+                catch { }
 
                 var ventanaPartidas = new VentanaPartidas();
                 ventanaPartidas.Show();
                 Close();
             }
-        }
-
-       
-        public void NotificarRivalAbandono(string nombreRival)
-        {
-            Dispatcher.Invoke(() =>
-            {
-                MessageBox.Show(
-                    $"{nombreRival} abandonó la partida. Regresarás al lobby.",
-                    "Rival abandonó",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-
-                JuegoCallbackHandler.VentanaAdivinador = null;
-                new VentanaPartidas().Show();
-                Close();
-            });
-        }
-
-       
-        public void MostrarResultadoFinal(string resultado, string palabra, int puntosObtenidos, int puntajeGlobal)
-        {
-            Dispatcher.Invoke(() =>
-            {
-                
-                MessageBox.Show(
-                    $"Resultado: {resultado}\nPalabra: {palabra}\nPuntos obtenidos: {puntosObtenidos}\nPuntaje global: {puntajeGlobal}",
-                    "Partida finalizada",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-
-                JuegoCallbackHandler.VentanaAdivinador = null;
-                new VentanaPartidas().Show();
-                Close();
-            });
-        }
-
-       
-        private void VentanaJuegoAdivinador_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            JuegoCallbackHandler.VentanaAdivinador = null;
         }
     }
 }
