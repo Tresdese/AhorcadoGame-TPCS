@@ -7,17 +7,10 @@ using AhorcadoWCF;
 
 namespace AhorcadoHost
 {
-    /// <summary>
-    /// Host de consola que publica todos los servicios WCF por TCP/IP (netTcpBinding)
-    /// en la red local. Se ejecuta en la maquina servidor; cualquier cliente de la
-    /// red se conecta usando la IP/host y el puerto configurados.
-    /// </summary>
     internal class Program
     {
         private static void Main()
         {
-            // Host de escucha: si no se configura, se usa el nombre de la maquina
-            // (resuelve a la IP de la LAN para que clientes remotos puedan conectar).
             string host = ConfigurationManager.AppSettings["ServidorHost"];
             if (string.IsNullOrWhiteSpace(host))
             {
@@ -27,8 +20,6 @@ namespace AhorcadoHost
             string puerto = ConfigurationManager.AppSettings["ServidorPuerto"] ?? "8000";
             string baseUri = $"net.tcp://{host}:{puerto}";
 
-            // SecurityMode.None: simplifica la conexion entre maquinas de la LAN
-            // (sin autenticacion de Windows). El cliente debe usar el mismo modo.
             var binding = new NetTcpBinding(SecurityMode.None);
 
             var hosts = new List<ServiceHost>

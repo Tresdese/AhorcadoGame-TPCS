@@ -26,10 +26,6 @@ namespace ClienteAhorcado
 
         public static IMovimientoService Movimiento() => Crear<IMovimientoService>("MovimientoEndpoint");
 
-        /// <summary>
-        /// Canal duplex del juego en tiempo real. El "contexto" envuelve a la clase
-        /// del cliente que implementa IJuegoCallback (la que recibe los callbacks).
-        /// </summary>
         public static IJuegoCallbackService Juego(InstanceContext contexto)
         {
             var fabrica = new DuplexChannelFactory<IJuegoCallbackService>(contexto, "JuegoEndpoint");
