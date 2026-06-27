@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 
 namespace AhorcadoWCF.DAOs
@@ -10,25 +11,30 @@ namespace AhorcadoWCF.DAOs
        
         public PartidaDTO Crear(int idJugadorCreador)
         {
-            using (var contexto = new AhorcadoDBEntities())
+            using (var transaccion = new TransactionScope())
             {
-                var nuevaPartida = new partida
+                using (var contexto = new AhorcadoDBEntities())
                 {
-                    idJugadorUno = idJugadorCreador,
-                    idJugadorDos = null,
-                    estado = "Disponible"
-                };
+                    var nuevaPartida = new partida
+                    {
+                        idJugadorUno = idJugadorCreador,
+                        idJugadorDos = null,
+                        estado = "Disponible"
+                    };
 
-                contexto.partida.Add(nuevaPartida);
-                contexto.SaveChanges();
+                    contexto.partida.Add(nuevaPartida);
+                    contexto.SaveChanges();
 
-                return new PartidaDTO
-                {
-                    IdPartida = nuevaPartida.idPartida,
-                    IdJugadorCreador = nuevaPartida.idJugadorUno,
-                    IdJugadorAdivinador = 0,
-                    Estado = nuevaPartida.estado
-                };
+                    transaccion.Complete();
+
+                    return new PartidaDTO
+                    {
+                        IdPartida = nuevaPartida.idPartida,
+                        IdJugadorCreador = nuevaPartida.idJugadorUno,
+                        IdJugadorAdivinador = 0,
+                        Estado = nuevaPartida.estado
+                    };
+                }
             }
         }
 
@@ -70,18 +76,22 @@ namespace AhorcadoWCF.DAOs
    
         public bool Unirse(int idPartida, int idJugadorAdivinador)
         {
-            using (var contexto = new AhorcadoDBEntities())
+            using (var transaccion = new TransactionScope())
             {
-                var partida = contexto.partida
-                    .FirstOrDefault(p => p.idPartida == idPartida && p.estado == "Disponible");
+                using (var contexto = new AhorcadoDBEntities())
+                {
+                    var partida = contexto.partida
+                        .FirstOrDefault(p => p.idPartida == idPartida && p.estado == "Disponible");
 
-                if (partida == null)
-                    return false;
+                    if (partida == null)
+                        return false;
 
-                partida.idJugadorDos = idJugadorAdivinador;
-                partida.estado = "EnCurso";
-                contexto.SaveChanges();
-                return true;
+                    partida.idJugadorDos = idJugadorAdivinador;
+                    partida.estado = "EnCurso";
+                    contexto.SaveChanges();
+                    transaccion.Complete();
+                    return true;
+                }
             }
         }
 
