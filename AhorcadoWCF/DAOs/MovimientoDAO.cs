@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 
 namespace AhorcadoWCF.DAOs
@@ -9,24 +10,34 @@ namespace AhorcadoWCF.DAOs
     {
         public MovimientoDTO Registrar(int idPartida, char letra)
         {
-            using (var contexto = new AhorcadoDBEntities())
+            using (var transaccion = new TransactionScope())
             {
-                var movimiento = new movimiento
+                using (var contexto = new AhorcadoDBEntities())
                 {
-                    idPartida = idPartida,
-                    letraIngresada = letra.ToString(),
-                    esCorrecta = false
-                };
-                contexto.movimiento.Add(movimiento);
-                contexto.SaveChanges();
-                return new MovimientoDTO
-                {
-                    IdMovimiento = movimiento.idMovimiento,
-                    IdPartida = movimiento.idPartida,
-                    Letra = letra,
-                    Acerto = movimiento.esCorrecta,
-                    Posiciones = new List<int>()
-                };
+                    var partida = contexto.partida.FirstOrDefault(p => p.idPartida == idPartida);
+                    string palabra = partida?.palabra?.palabra1 ?? "";
+                    bool acerto = palabra.ToUpper().IndexOf(char.ToUpper(letra)) >= 0;
+
+                    var movimiento = new movimiento
+                    {
+                        idPartida = idPartida,
+                        letraIngresada = letra.ToString(),
+                        esCorrecta = acerto
+                    };
+                    contexto.movimiento.Add(movimiento);
+                    contexto.SaveChanges();
+
+                    transaccion.Complete();
+
+                    return new MovimientoDTO
+                    {
+                        IdMovimiento = movimiento.idMovimiento,
+                        IdPartida = movimiento.idPartida,
+                        Letra = letra,
+                        Acerto = movimiento.esCorrecta,
+                        Posiciones = new List<int>()
+                    };
+                }
             }
         }
 
