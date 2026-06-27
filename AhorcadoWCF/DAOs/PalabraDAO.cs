@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 
 namespace AhorcadoWCF.DAOs
@@ -43,7 +44,22 @@ namespace AhorcadoWCF.DAOs
 
         public bool AsignarAPartida(int idPartida, int idPalabra)
         {
-            throw new NotImplementedException();
+            using (var transaccion = new TransactionScope())
+            {
+                using (var contexto = new AhorcadoDBEntities())
+                {
+                    var partida = contexto.partida.FirstOrDefault(p => p.idPartida == idPartida);
+                    if (partida == null)
+                    {
+                        return false;
+                    }
+
+                    partida.idPalabra = idPalabra;
+                    contexto.SaveChanges();
+                    transaccion.Complete();
+                    return true;
+                }
+            }
         }
     }
 }
