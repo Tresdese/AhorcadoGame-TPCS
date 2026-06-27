@@ -10,7 +10,7 @@ namespace ClienteAhorcado
         public static int IdUsuario { get; set; }
         public static string Nombre { get; set; }
         public static string Correo { get; set; }
-        public static string Idioma { get; set; } = "es"; // CU-05 Cambiar idioma
+        public static string Idioma { get; set; } = "es"; 
 
         public static bool HaySesion => IdUsuario > 0;
 
