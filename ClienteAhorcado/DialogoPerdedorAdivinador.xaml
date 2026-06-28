@@ -23,25 +23,25 @@
                 <StackPanel>
                     <Grid Margin="0,0,0,8">
                         <TextBlock Text="Palabra" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                        <TextBlock Text="ELEFANTE" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                        <TextBlock x:Name="txtPalabra" Text="ELEFANTE" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                     </Grid>
                     <Grid Margin="0,0,0,8">
                         <TextBlock Text="Rival" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                        <TextBlock Text="Carlos Mendoza" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                        <TextBlock x:Name="txtRival" Text="Carlos Mendoza" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                     </Grid>
                     <Grid Margin="0,0,0,15">
                         <TextBlock Text="Categoría" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                        <TextBlock Text="Animales" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                        <TextBlock x:Name="txtCategoria" Text="Animales" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                     </Grid>
                     <Border BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="0,10,0,0">
                         <StackPanel>
                             <Grid Margin="0,0,0,5">
                                 <TextBlock Text="Puntos obtenidos" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                                <TextBlock Text="0 pts" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="txtPuntosObtenidos" Text="0 pts" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                             </Grid>
                             <Grid>
                                 <TextBlock Text="Puntaje global" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                                <TextBlock Text="75 pts" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="txtPuntajeGlobal" Text="75 pts" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                             </Grid>
                         </StackPanel>
                     </Border>
@@ -49,7 +49,7 @@
             </Border>
             <TextBlock FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,15">
                 <Run Text="¿Quieres jugar otra partida con "/>
-                <Run Text="Carlos Mendoza" FontWeight="Bold"/>
+                <Run x:Name="txtPreguntaRival" Text="Carlos Mendoza" FontWeight="Bold"/>
                 <Run Text="?"/>
             </TextBlock>
             <Grid>

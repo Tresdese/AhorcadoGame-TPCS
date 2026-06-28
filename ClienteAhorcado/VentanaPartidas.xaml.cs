@@ -194,14 +194,15 @@ namespace ClienteAhorcado
             MessageBox.Show("Ver perfil — pendiente de implementar.");
         }
 
-        
+
         private void mnuHistorial_Click(object sender, RoutedEventArgs e)
         {
-     
-            MessageBox.Show("Historial de puntajes — se implementará en CU-13.");
+            var ventanaHistorial = new VentanaHistorial();
+            ventanaHistorial.Show();
+            Close();
         }
 
-       
+
         private void mnuCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
             var respuesta = MessageBox.Show(

@@ -53,5 +53,41 @@ namespace AhorcadoWCF.DAOs
                     .Count(h => h.idJugador == idUsuario && h.tipoPuntaje == TipoPenalizacion);
             }
         }
+
+
+        public List<PuntajeHistorialDTO> ObtenerHistorialPorTipo(int idUsuario, string tipoPuntaje)
+        {
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                return contexto.historial_puntaje
+                    .Where(h => h.idJugador == idUsuario && h.tipoPuntaje == tipoPuntaje)
+                    .Join(
+                        contexto.partida,
+                        h => h.idPartida,
+                        pa => pa.idPartida,
+                        (h, pa) => new { h, pa })
+                    .Join(
+                        contexto.palabra,
+                        x => x.pa.idPalabra,
+                        w => w.idPalabra,
+                        (x, w) => new { x.h, x.pa, w })
+                    .Join(
+                        contexto.usuario,
+                        x => x.h.idJugadorRival,
+                        u => u.idUsuario,
+                        (x, u) => new PuntajeHistorialDTO
+                        {
+                            Fecha = x.h.fecha != null
+                                             ? ((DateTime)x.h.fecha).ToString("dd MMM yyyy")
+                                             : "—",
+                            Palabra = x.w.palabra1.ToUpper(),
+                            NombreRival = u.nombre + " " + u.apellidos,
+                            Puntos = x.h.puntos ?? 0,
+                            TipoPuntaje = x.h.tipoPuntaje
+                        })
+                    .OrderByDescending(r => r.Fecha)
+                    .ToList();
+            }
+        }
     }
 }

@@ -110,6 +110,7 @@
     <Compile Include="categoria.cs">
       <DependentUpon>AhorcadoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\PuntajeHistorialDTO.cs" />
     <Compile Include="historial_puntaje.cs">
       <DependentUpon>AhorcadoModel.tt</DependentUpon>
     </Compile>

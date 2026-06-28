@@ -243,66 +243,91 @@ namespace ClienteAhorcado
 
         private void btnAbandonar_Click(object sender, RoutedEventArgs e)
         {
-            var respuesta = MessageBox.Show(
-                "¿Seguro que deseas abandonar la partida? Perderás puntos.",
-                "Abandonar partida",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Warning);
+            var dialogo = new DialogoAbandonarPartida(_idPartida);
+            dialogo.Owner = this;
+            dialogo.ShowDialog();
 
-            if (respuesta == MessageBoxResult.Yes)
+            if (dialogo.Confirmo)
             {
+                // Obtener puntaje actual para mostrar en la penalización
+                int puntajeActual = 0;
                 try
                 {
-                    clienteJuego = new JuegoCallbackServiceClient(
-                        new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
-                    clienteJuego.NotificarAbandono(_idPartida, SesionActual.IdUsuario);
+                    var clientePuntaje = new PuntajeServiceClient();
+                    puntajeActual = clientePuntaje.ObtenerPuntajeGlobal(SesionActual.IdUsuario);
                 }
-                catch {  }
+                catch { /* si falla, se muestra 0 */ }
 
                 JuegoCallbackHandler.VentanaAdivinador = null;
 
-                var ventanaPartidas = new VentanaPartidas();
-                ventanaPartidas.Show();
+               
+                var penalizacion = new DialogoPenalizacion(puntajeActual, 3);
+                penalizacion.Show();
                 Close();
             }
         }
 
-       
+
         public void NotificarRivalAbandono(string nombreRival)
         {
             Dispatcher.Invoke(() =>
             {
-                MessageBox.Show(
-                    $"{nombreRival} abandonó la partida. Regresarás al lobby.",
-                    "Rival abandonó",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-
                 JuegoCallbackHandler.VentanaAdivinador = null;
-                new VentanaPartidas().Show();
+
+                var dialogo = new DialogoRivalAbandono(_idPartida, nombreRival);
+                dialogo.Owner = this;
+                dialogo.ShowDialog();
                 Close();
             });
         }
 
-       
+
         public void MostrarResultadoFinal(string resultado, string palabra, int puntosObtenidos, int puntajeGlobal)
         {
             Dispatcher.Invoke(() =>
             {
-                
-                MessageBox.Show(
-                    $"Resultado: {resultado}\nPalabra: {palabra}\nPuntos obtenidos: {puntosObtenidos}\nPuntaje global: {puntajeGlobal}",
-                    "Partida finalizada",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-
                 JuegoCallbackHandler.VentanaAdivinador = null;
-                new VentanaPartidas().Show();
+
+                
+                string categoria = "—";
+                if (resultado.Contains("|"))
+                {
+                    var partes = resultado.Split('|');
+                    resultado = partes[0]; 
+                    categoria = partes[1];
+                }
+
+                if (resultado == "Ganaste")
+                {
+                    var dialogo = new DialogoGanadorAdivinador(
+                        _idPartida,
+                        _nombreCreador,
+                        palabra,
+                        categoria,
+                        puntosObtenidos,
+                        puntajeGlobal);
+
+                    dialogo.Owner = this;
+                    dialogo.ShowDialog();
+                }
+                else
+                {
+                    var dialogo = new DialogoPerdedorAdivinador(
+                        _idPartida,
+                        _nombreCreador,
+                        palabra,
+                        categoria,
+                        puntajeGlobal);
+
+                    dialogo.Owner = this;
+                    dialogo.ShowDialog();
+                }
+
                 Close();
             });
         }
 
-       
+
         private void VentanaJuegoAdivinador_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             JuegoCallbackHandler.VentanaAdivinador = null;

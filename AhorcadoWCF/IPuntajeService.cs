@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 
@@ -20,5 +21,8 @@ namespace AhorcadoWCF
 
         [OperationContract]
         bool RegistrarPuntaje(int idUsuario, int idPartida, int idPalabra, string tipoPuntaje, int puntos, int idJugadorRival);
+
+        [OperationContract]
+        List<PuntajeHistorialDTO> ObtenerHistorialPorTipo(int idUsuario, string tipoPuntaje);
     }
 }

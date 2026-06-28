@@ -38,5 +38,17 @@ namespace AhorcadoWCF
         {
             return puntajeDAO.Registrar(idUsuario, idPartida, idPalabra, tipoPuntaje, puntos, idJugadorRival);
         }
+
+        public List<PuntajeHistorialDTO> ObtenerHistorialPorTipo(int idUsuario, string tipoPuntaje)
+        {
+            try
+            {
+                return puntajeDAO.ObtenerHistorialPorTipo(idUsuario, tipoPuntaje);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
