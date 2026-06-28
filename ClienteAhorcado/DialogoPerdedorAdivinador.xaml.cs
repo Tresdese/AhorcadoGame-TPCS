@@ -12,25 +12,82 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para DialogoPerdedorAdivinador.xaml
-    /// </summary>
-    public partial class DialogoPerdedorAdivinador : Window {
-        public DialogoPerdedorAdivinador() {
+namespace ClienteAhorcado
+{
+   
+    public partial class DialogoPerdedorAdivinador : Window
+    {
+        private readonly int _idPartida;
+        private readonly string _nombreRival;
+        private readonly string _palabra;
+        private readonly string _categoria;
+        private readonly int _puntajeGlobal;
+
+        public DialogoPerdedorAdivinador(
+            int idPartida,
+            string nombreRival,
+            string palabra,
+            string categoria,
+            int puntajeGlobal)
+        {
             InitializeComponent();
+
+            _idPartida = idPartida;
+            _nombreRival = nombreRival;
+            _palabra = palabra;
+            _categoria = categoria;
+            _puntajeGlobal = puntajeGlobal;
+
+            Loaded += DialogoPerdedorAdivinador_Loaded;
         }
 
-        private void btnLobby_Click(object sender, RoutedEventArgs e) {
-            VentanaPartidas ventana = new VentanaPartidas();
-            ventana.Show();
-            this.Close();
+        private void DialogoPerdedorAdivinador_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtPalabra.Text = _palabra;
+            txtRival.Text = _nombreRival;
+            txtCategoria.Text = _categoria;
+            txtPuntosObtenidos.Text = "0 pts";
+            txtPuntajeGlobal.Text = $"{_puntajeGlobal} pts";
+            txtPreguntaRival.Text = _nombreRival;
         }
 
-        private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e) {
-            VentanaPartidas ventana = new VentanaPartidas();
-            ventana.Show();
-            this.Close();
+        private void btnLobby_Click(object sender, RoutedEventArgs e)
+        {
+            new VentanaPartidas().Show();
+            Close();
+        }
+
+        private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var cliente = Conexiones.Partida();
+                bool reabierta = cliente.ReabrirPartida(_idPartida);
+
+                if (!reabierta)
+                {
+                    MessageBox.Show(
+                        "No se pudo reabrir la partida. Regresando al lobby.",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                    new VentanaPartidas().Show();
+                    Close();
+                    return;
+                }
+
+                new VentanaEsperandoRival().Show();
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show(
+                    "Error de conexión con base de datos, inténtelo más tarde.",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
     }
 }

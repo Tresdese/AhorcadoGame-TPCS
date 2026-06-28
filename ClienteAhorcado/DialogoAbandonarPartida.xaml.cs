@@ -12,25 +12,54 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para DialogoAbandonarPartida.xaml
-    /// </summary>
-    public partial class DialogoAbandonarPartida : Window {
-        public DialogoAbandonarPartida() {
+namespace ClienteAhorcado
+{
+    
+    public partial class DialogoAbandonarPartida : Window
+    {
+        private readonly int _idPartida;
+
+        
+        public bool Confirmo { get; private set; } = false;
+
+        public DialogoAbandonarPartida(int idPartida)
+        {
             InitializeComponent();
+            _idPartida = idPartida;
         }
 
-        public bool Abandono { get; private set; } = false;
-
-        private void btnVolver_Click(object sender, RoutedEventArgs e) {
-            Abandono = false;
-            this.Close();
+      
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            Confirmo = false;
+            Close();
         }
 
-        private void btnAbandonar_Click(object sender, RoutedEventArgs e) {
-            Abandono = true;
-            this.Close();
+        
+        private void btnAbandonar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Paso 1: notificar al servidor y al rival vía callback
+                var clienteJuego = Conexiones.Juego(
+                    new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
+                clienteJuego.NotificarAbandono(_idPartida, SesionActual.IdUsuario);
+
+                // Paso 2: registrar abandono en BD
+                var clientePartida = Conexiones.Partida();
+                clientePartida.AbandonarPartida(_idPartida, SesionActual.IdUsuario);
+
+                Confirmo = true;
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show(
+                    "Error de conexión con base de datos, inténtelo más tarde.",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
     }
 }

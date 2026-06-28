@@ -113,26 +113,72 @@ namespace AhorcadoWCF.DAOs
             }
         }
 
-       
+
         public bool Cancelar(int idPartida)
         {
-            throw new NotImplementedException("Se implementará en CU-12");
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var partida = contexto.partida
+                    .FirstOrDefault(p => p.idPartida == idPartida);
+
+                if (partida == null)
+                    return false;
+
+                partida.estado = "Cancelada";
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
         public bool Abandonar(int idPartida, int idJugadorQueAbandona)
         {
-            throw new NotImplementedException("Se implementará en CU-12");
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var partida = contexto.partida
+                    .FirstOrDefault(p => p.idPartida == idPartida);
+
+                if (partida == null)
+                    return false;
+
+                partida.estado = "Abandonada";
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
-     
+
         public bool Finalizar(int idPartida, int idGanador, string tipoPuntaje)
         {
-            throw new NotImplementedException("Se implementará en CU-11");
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var partida = contexto.partida
+                    .FirstOrDefault(p => p.idPartida == idPartida);
+
+                if (partida == null)
+                    return false;
+
+                partida.estado = "Finalizada";
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
         public bool Reabrir(int idPartida)
         {
-            throw new NotImplementedException("Se implementará en CU-11");
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var partida = contexto.partida
+                    .FirstOrDefault(p => p.idPartida == idPartida);
+
+                if (partida == null)
+                    return false;
+
+                partida.estado = "Disponible";
+                partida.idJugadorDos = null;
+                contexto.SaveChanges();
+                return true;
+            }
         }
+
     }
 }

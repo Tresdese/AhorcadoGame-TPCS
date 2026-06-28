@@ -1,40 +1,41 @@
+using System;
+using System.Configuration;
 using System.ServiceModel;
 using AhorcadoWCF;
 
 namespace ClienteAhorcado
 {
-    /// <summary>
-    /// Fabrica unica de canales WCF. Crea los proxies a partir de los endpoints
-    /// nombrados en App.config, usando los contratos compartidos de AhorcadoWCF.
-    /// Cada persona obtiene aqui el proxy de su servicio:
-    ///   A -> Autenticacion(), Usuario()
-    ///   B -> Partida(), Puntaje()
-    ///   C -> Palabra(), Movimiento(), Juego(contexto)
-    /// Recuerde cerrar el canal (Close/Abort) cuando termine de usarlo.
-    /// </summary>
     public static class Conexiones
     {
-        public static IAutenticacionService Autenticacion() => Crear<IAutenticacionService>("AutenticacionEndpoint");
+        private static readonly string Ip = ConfigurationManager.AppSettings["ServidorIp"] ?? "localhost";
+        private static readonly string Puerto = ConfigurationManager.AppSettings["ServidorPuerto"] ?? "8000";
+        private static readonly NetTcpBinding Binding = new NetTcpBinding(SecurityMode.None);
 
-        public static IUsuarioService Usuario() => Crear<IUsuarioService>("UsuarioEndpoint");
+        private static EndpointAddress Direccion(string servicio) =>
+            new EndpointAddress($"net.tcp://{Ip}:{Puerto}/{servicio}");
 
-        public static IPartidaService Partida() => Crear<IPartidaService>("PartidaEndpoint");
+        public static IAutenticacionService Autenticacion() => Crear<IAutenticacionService>("AutenticacionService");
 
-        public static IPuntajeService Puntaje() => Crear<IPuntajeService>("PuntajeEndpoint");
+        public static IUsuarioService Usuario() => Crear<IUsuarioService>("UsuarioService");
 
-        public static IPalabraService Palabra() => Crear<IPalabraService>("PalabraEndpoint");
+        public static IPartidaService Partida() => Crear<IPartidaService>("PartidaService");
 
-        public static IMovimientoService Movimiento() => Crear<IMovimientoService>("MovimientoEndpoint");
+        public static IPuntajeService Puntaje() => Crear<IPuntajeService>("PuntajeService");
+
+        public static IPalabraService Palabra() => Crear<IPalabraService>("PalabraService");
+
+        public static IMovimientoService Movimiento() => Crear<IMovimientoService>("MovimientoService");
 
         public static IJuegoCallbackService Juego(InstanceContext contexto)
         {
-            var fabrica = new DuplexChannelFactory<IJuegoCallbackService>(contexto, "JuegoEndpoint");
+            var fabrica = new DuplexChannelFactory<IJuegoCallbackService>(
+                contexto, Binding, Direccion("JuegoCallbackService"));
             return fabrica.CreateChannel();
         }
 
-        private static T Crear<T>(string nombreEndpoint)
+        private static T Crear<T>(string servicio)
         {
-            var fabrica = new ChannelFactory<T>(nombreEndpoint);
+            var fabrica = new ChannelFactory<T>(Binding, Direccion(servicio));
             return fabrica.CreateChannel();
         }
     }

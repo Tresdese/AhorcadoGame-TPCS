@@ -44,6 +44,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -75,6 +76,7 @@
     <Compile Include="DialogoRivalAbandono.xaml.cs">
       <DependentUpon>DialogoRivalAbandono.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HistorialItemViewModel.cs" />
     <Compile Include="JuegoCallbackHandler.cs" />
     <Compile Include="PartidaItemViewModel.cs" />
     <Compile Include="VentanaBienvenida.xaml.cs">

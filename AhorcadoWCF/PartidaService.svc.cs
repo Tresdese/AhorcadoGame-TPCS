@@ -39,22 +39,50 @@ namespace AhorcadoWCF
 
         public bool CancelarPartida(int idPartida)
         {
-            throw new NotImplementedException("error");
+            try
+            {
+                return partidaDAO.Cancelar(idPartida);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool AbandonarPartida(int idPartida, int idJugadorQueAbandona)
         {
-            throw new NotImplementedException("error");
+            try
+            {
+                return partidaDAO.Abandonar(idPartida, idJugadorQueAbandona);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool FinalizarPartida(int idPartida, int idGanador, string tipoPuntaje)
         {
-            throw new NotImplementedException("error");
+            try
+            {
+                return partidaDAO.Finalizar(idPartida, idGanador, tipoPuntaje);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool ReabrirPartida(int idPartida)
         {
-            throw new NotImplementedException("error");
+            try
+            {
+                return partidaDAO.Reabrir(idPartida);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
