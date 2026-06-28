@@ -25,7 +25,22 @@ namespace AhorcadoWCF.DAOs
 
         public bool RegistrarCuenta(UsuarioDTO usuario)
         {
-            throw new NotImplementedException();
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var nuevoUsuario = new usuario
+                {
+                    nombreCompleto = usuario.Nombre,
+                    correoElectronico = usuario.Correo,
+                    contrasena = usuario.Contrasena,
+                    fechaNacimiento = usuario.FechaNacimiento,
+                    telefono = usuario.Telefono,
+                    fechaRegistro = DateTime.Now
+                };
+
+                contexto.usuario.Add(nuevoUsuario);
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
         public UsuarioDTO ObtenerPorId(int idUsuario)
