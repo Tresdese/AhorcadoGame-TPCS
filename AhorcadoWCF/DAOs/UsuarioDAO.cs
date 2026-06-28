@@ -61,12 +61,36 @@ namespace AhorcadoWCF.DAOs
 
         public bool Actualizar(UsuarioDTO usuario)
         {
-            throw new NotImplementedException();
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var usuarioExistente = contexto.usuario
+                    .FirstOrDefault(u => u.idUsuario == usuario.IdUsuario);
+
+                if(usuarioExistente == null) return false;
+
+                usuarioExistente.nombreCompleto = usuario.Nombre;
+                usuarioExistente.fechaNacimiento = usuario.FechaNacimiento;
+                usuarioExistente.telefono = usuario.Telefono;
+
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
         public bool CambiarContrasena(int idUsuario, string nuevaContrasena)
         {
-            throw new NotImplementedException();
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var usuarioExistente = contexto.usuario
+                    .FirstOrDefault(u => u.idUsuario == idUsuario);
+
+                if(usuarioExistente == null) return false;
+
+                usuarioExistente.contrasena = nuevaContrasena;
+
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
         public bool ExisteCorreo(string correo)
