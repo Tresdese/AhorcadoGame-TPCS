@@ -103,8 +103,8 @@
 
                     <StackPanel Grid.Column="0">
                         <TextBlock x:Name="lblContrasena" Text="Contraseña" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
-                        
-                        <PasswordBox x:Name="txtContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
+
+                        <PasswordBox x:Name="txtContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1" PasswordChanged="txtContrasena_PasswordChanged">
                             <PasswordBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
