@@ -59,8 +59,8 @@
                                 <TextBlock Text="AS" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <StackPanel VerticalAlignment="Center">
-                                <TextBlock Text="Andrés Sánchez" FontSize="18" FontWeight="Bold"/>
-                                <TextBlock Text="andressv@ejemplo.com" FontSize="13" Foreground="#666666"/>
+                                <TextBlock x:Name="lblNombreEncabezado" Text="Andrés Sánchez" FontSize="18" FontWeight="Bold"/>
+                                <TextBlock x:Name="lblCorreoEncabezado" Text="andressv@ejemplo.com" FontSize="13" Foreground="#666666"/>
                             </StackPanel>
                         </StackPanel>
                         <Button Content="Editar perfil" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Click="btnEditarPerfil_Click">
@@ -87,7 +87,7 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
                             <TextBlock Text="Correo electrónico" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                            <TextBox Text="andressv@ejemplo.com" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
+                            <TextBox x:Name="txtCorreo" Text="andressv@ejemplo.com" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                                 <TextBox.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius" Value="5"/>
@@ -97,7 +97,7 @@
                         </StackPanel>
                         <StackPanel Grid.Column="2">
                             <TextBlock Text="Fecha de nacimiento" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                            <TextBox Text="14/09/2002" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
+                            <TextBox x:Name="txtFechaNacimiento" Text="14/09/2002" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                                 <TextBox.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius" Value="5"/>
@@ -107,7 +107,7 @@
                         </StackPanel>
                     </Grid>
                     <TextBlock Text="Número de celular" FontSize="13" Foreground="#555555" Margin="0,15,0,5"/>
-                    <TextBox Text="+52 55 8765 4321" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9" Width="390" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtCelular" Text="+52 55 8765 4321" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9" Width="390" HorizontalAlignment="Left">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="5"/>

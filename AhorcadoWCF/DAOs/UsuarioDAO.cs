@@ -53,7 +53,9 @@ namespace AhorcadoWCF.DAOs
                     {
                         IdUsuario = u.idUsuario,
                         Nombre = u.nombreCompleto,
-                        Correo = u.correoElectronico
+                        Correo = u.correoElectronico,
+                        FechaNacimiento = u.fechaNacimiento,
+                        Telefono = u.telefono
                     })
                     .FirstOrDefault() ?? new UsuarioDTO();
             }

@@ -62,7 +62,8 @@ namespace ClienteAhorcado {
                 hayError = true;
             }
 
-            if (string.IsNullOrWhiteSpace(celular)) {
+            if (string.IsNullOrWhiteSpace(celular) || !CelularEsValido(celular)) {
+                lblErrorCelular.Text = "Ingresa un número de celular válido (10 a 15 dígitos).";
                 lblErrorCelular.Visibility = Visibility.Visible;
                 hayError = true;
             }
@@ -125,6 +126,11 @@ namespace ClienteAhorcado {
 
         private bool CorreoTieneFormatoValido(string correo) {
             return Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
+        private bool CelularEsValido(string celular) {
+            string soloDigitos = celular.Replace("+", "").Replace(" ", "").Replace("-", "");
+            return soloDigitos.All(c => char.IsDigit(c)) && soloDigitos.Length >= 10 && soloDigitos.Length <= 15;
         }
 
         private bool TieneAlMenos10Anios(DateTime fechaNacimiento) {

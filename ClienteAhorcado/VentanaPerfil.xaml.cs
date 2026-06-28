@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AhorcadoWCF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,26 @@ namespace ClienteAhorcado {
     public partial class VentanaPerfil : Window {
         public VentanaPerfil() {
             InitializeComponent();
+            CargarPerfil();
+        }
+
+        private void CargarPerfil() {
+            UsuarioDTO usuario = null;
+            if (!ManejadorErrores.Ejecutar(() => { usuario = Conexiones.Usuario().ObtenerPerfil(SesionActual.IdUsuario); })) {
+                return;
+            }
+
+            if (usuario == null) {
+                return;
+            }
+
+            txtNombre.Text = usuario.Nombre;
+            txtCorreo.Text = usuario.Correo;
+            txtCelular.Text = usuario.Telefono;
+            txtFechaNacimiento.Text = usuario.FechaNacimiento.ToString("dd/MM/yyyy");
+
+            lblNombreEncabezado.Text = usuario.Nombre;
+            lblCorreoEncabezado.Text = usuario.Correo;
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
