@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para VentanaEditarPerfil.xaml
-    /// </summary>
     public partial class VentanaEditarPerfil : Window {
         public VentanaEditarPerfil() {
             InitializeComponent();

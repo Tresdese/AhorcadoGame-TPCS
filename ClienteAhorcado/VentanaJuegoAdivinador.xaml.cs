@@ -137,7 +137,6 @@ namespace ClienteAhorcado
         {
             Dispatcher.Invoke(() =>
             {
-                // El servidor puede enviar la categoría adjunta como "resultado|categoria".
                 string categoria = "—";
                 if (resultado.Contains("|"))
                 {
@@ -268,15 +267,13 @@ namespace ClienteAhorcado
 
             if (dialogo.Confirmo)
             {
-                // DialogoAbandonarPartida ya notificó al servidor y registró el abandono en BD.
-                // Obtener puntaje actual para mostrar en la penalización
                 int puntajeActual = 0;
                 try
                 {
                     var clientePuntaje = Conexiones.Puntaje();
                     puntajeActual = clientePuntaje.ObtenerPuntajeGlobal(SesionActual.IdUsuario);
                 }
-                catch { /* si falla, se muestra 0 */ }
+                catch { }
 
                 var penalizacion = new DialogoPenalizacion(puntajeActual, 3);
                 penalizacion.Show();

@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para VentanaEsperandoPalabra.xaml
-    /// </summary>
     public partial class VentanaEsperandoPalabra : Window {
         private readonly int _idPartida;
         private readonly string _nombreCreador;

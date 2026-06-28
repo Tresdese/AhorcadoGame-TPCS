@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para VentanaBienvenida.xaml
-    /// </summary>
     public partial class VentanaBienvenida : Window {
         public VentanaBienvenida() {
             InitializeComponent();

@@ -15,11 +15,15 @@ namespace AhorcadoWCF.DAOs
             {
                 using (var contexto = new AhorcadoDBEntities())
                 {
+                    int nuevoId = (contexto.partida.Max(p => (int?)p.idPartida) ?? 0) + 1;
+
                     var nuevaPartida = new partida
                     {
+                        idPartida = nuevoId,
                         idJugadorUno = idJugadorCreador,
                         idJugadorDos = null,
-                        estado = "Disponible"
+                        estado = "Disponible",
+                        fechaCreacion = DateTime.Now
                     };
 
                     contexto.partida.Add(nuevaPartida);
@@ -49,16 +53,18 @@ namespace AhorcadoWCF.DAOs
                         contexto.usuario,
                         p => p.idJugadorUno,
                         u => u.idUsuario,
-                        (p, u) => new PartidaDTO
-                        {
-                            IdPartida = p.idPartida,
-                            IdJugadorCreador = p.idJugadorUno,
-                            IdJugadorAdivinador = p.idJugadorDos ?? 0,
-                            Estado = p.estado,
-                            FechaCreacion = p.fechaCreacion != null
-                                                    ? ((DateTime)p.fechaCreacion).ToString("dd/MM/yyyy HH:mm")
-                                                    : "—"
-                        })
+                        (p, u) => p)
+                    .AsEnumerable()
+                    .Select(p => new PartidaDTO
+                    {
+                        IdPartida = p.idPartida,
+                        IdJugadorCreador = p.idJugadorUno,
+                        IdJugadorAdivinador = p.idJugadorDos ?? 0,
+                        Estado = p.estado,
+                        FechaCreacion = p.fechaCreacion != null
+                                                ? ((DateTime)p.fechaCreacion).ToString("dd/MM/yyyy HH:mm")
+                                                : "—"
+                    })
                     .ToList();
             }
         }

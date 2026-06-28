@@ -18,8 +18,11 @@ namespace AhorcadoWCF.DAOs
                     string palabra = partida?.palabra?.palabra1 ?? "";
                     bool acerto = palabra.ToUpper().IndexOf(char.ToUpper(letra)) >= 0;
 
+                    int nuevoId = (contexto.movimiento.Max(m => (int?)m.idMovimiento) ?? 0) + 1;
+
                     var movimiento = new movimiento
                     {
+                        idMovimiento = nuevoId,
                         idPartida = idPartida,
                         letraIngresada = letra.ToString(),
                         esCorrecta = acerto

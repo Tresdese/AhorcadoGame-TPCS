@@ -7,11 +7,19 @@ namespace AhorcadoWCF.DAOs
 {
     public class UsuarioDAO
     {
-        public bool ValidarCredenciales(string correo, string contrasena)
+        public UsuarioDTO ObtenerPorCredenciales(string correo, string contrasena)
         {
             using (var contexto = new AhorcadoDBEntities())
             {
-                return contexto.usuario.Any(u => u.correoElectronico == correo && u.contrasena == contrasena);
+                return contexto.usuario
+                    .Where(u => u.correoElectronico == correo && u.contrasena == contrasena)
+                    .Select(u => new UsuarioDTO
+                    {
+                        IdUsuario = u.idUsuario,
+                        Nombre = u.nombreCompleto,
+                        Correo = u.correoElectronico
+                    })
+                    .FirstOrDefault();
             }
         }
 

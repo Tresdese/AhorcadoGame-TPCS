@@ -4,17 +4,8 @@ using System.Windows;
 
 namespace ClienteAhorcado
 {
-    /// <summary>
-    /// Manejo centralizado de la excepcion EX01 "Sin conexion a la base de datos",
-    /// presente en casi todos los casos de uso. Uselo para envolver cualquier
-    /// llamada a un servicio WCF.
-    /// </summary>
     public static class ManejadorErrores
     {
-        /// <summary>
-        /// Ejecuta una accion sin valor de retorno. Devuelve true si se ejecuto;
-        /// false si hubo fallo de conexion (ya mostro el aviso EX01).
-        /// </summary>
         public static bool Ejecutar(Action accion)
         {
             try
@@ -27,10 +18,6 @@ namespace ClienteAhorcado
             catch (TimeoutException) { MostrarEX01(); return false; }
         }
 
-        /// <summary>
-        /// Ejecuta una funcion con valor de retorno. Si hay fallo de conexion
-        /// muestra EX01 y devuelve el valor por defecto indicado.
-        /// </summary>
         public static T Ejecutar<T>(Func<T> funcion, T valorPorDefecto = default)
         {
             try

@@ -113,9 +113,11 @@ namespace ClienteAhorcado
                 }
                 catch (Exception)
                 {
-                    
+
                 }
- 
+
+                JuegoCallbackHandler.VentanaEspera = null;
+                new VentanaPartidas().Show();
                 Close();
             }
         }
@@ -128,7 +130,9 @@ namespace ClienteAhorcado
                 "Error",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
- 
+
+            JuegoCallbackHandler.VentanaEspera = null;
+            new VentanaPartidas().Show();
             Close();
         }
  

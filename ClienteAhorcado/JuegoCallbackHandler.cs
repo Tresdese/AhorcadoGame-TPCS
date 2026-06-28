@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 
 namespace ClienteAhorcado
 {
-    /// <summary>
-    /// Implementación del contrato de callback IJuegoCallback.
-    /// El servidor WCF llama a estos métodos para notificar eventos al cliente.
-    /// Cada método delega en la ventana activa correspondiente.
-    /// </summary>
     public class JuegoCallbackHandler : IJuegoCallback
     {
        

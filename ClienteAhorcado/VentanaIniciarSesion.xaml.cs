@@ -11,11 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AhorcadoWCF;
 
 namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para VentanaIniciarSesion.xaml
-    /// </summary>
     public partial class VentanaIniciarSesion : Window {
         public VentanaIniciarSesion() {
             InitializeComponent();
@@ -28,6 +26,26 @@ namespace ClienteAhorcado {
         }
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e) {
+            lblErrorCorreo.Visibility = Visibility.Collapsed;
+            lblErrorContrasena.Visibility = Visibility.Collapsed;
+
+            string correo = txtCorreo.Text.Trim();
+            string contrasena = txtContrasena.Password;
+
+            UsuarioDTO usuario = null;
+            if (!ManejadorErrores.Ejecutar(() => { usuario = Conexiones.Autenticacion().IniciarSesion(correo, contrasena); })) {
+                return;
+            }
+
+            if (usuario == null) {
+                lblErrorContrasena.Visibility = Visibility.Visible;
+                return;
+            }
+
+            SesionActual.IdUsuario = usuario.IdUsuario;
+            SesionActual.Nombre = usuario.Nombre;
+            SesionActual.Correo = usuario.Correo;
+
             VentanaPartidas ventanaPartidas = new VentanaPartidas();
             ventanaPartidas.Show();
             this.Close();

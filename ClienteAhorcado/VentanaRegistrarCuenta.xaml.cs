@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para VentanaRegistrarCuenta.xaml
-    /// </summary>
     public partial class VentanaRegistrarCuenta : Window {
         public VentanaRegistrarCuenta() {
             InitializeComponent();

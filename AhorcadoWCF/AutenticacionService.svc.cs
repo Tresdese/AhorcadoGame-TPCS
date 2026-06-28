@@ -8,15 +8,18 @@ using AhorcadoWCF.DAOs;
 
 namespace AhorcadoWCF
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "AutenticacionService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select AutenticacionService.svc or AutenticacionService.svc.cs at the Solution Explorer and start debugging.
     public class AutenticacionService : IAutenticacionService
     {
         private readonly UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-        public bool IniciarSesion(string correo, string contrasena)
+        public UsuarioDTO IniciarSesion(string correo, string contrasena)
         {
-            return usuarioDAO.ValidarCredenciales(correo, contrasena);
+            UsuarioDTO usuario = usuarioDAO.ObtenerPorCredenciales(correo, contrasena);
+            if (usuario != null)
+            {
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Jugador conectado: {correo}");
+            }
+            return usuario;
         }
 
         public bool RegistrarCuenta(UsuarioDTO usuario)

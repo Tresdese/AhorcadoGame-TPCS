@@ -158,8 +158,19 @@ namespace AhorcadoWCF
             return true;
         }
 
-        public void EnviarMensajeChat(int idPartida, int idUsuario, string mensaje) => throw new NotImplementedException();
+        public void EnviarMensajeChat(int idPartida, int idUsuario, string mensaje)
+        {
+            var remitente = usuarioDAO.ObtenerPorId(idUsuario);
+            RegistroSesiones.NotificarSala(idPartida,
+                cb => cb.MensajeChatRecibido(remitente.Nombre, mensaje), excepto: idUsuario);
+        }
 
-        public void NotificarAbandono(int idPartida, int idUsuario) => throw new NotImplementedException();
+        public void NotificarAbandono(int idPartida, int idUsuario)
+        {
+            var quienAbandona = usuarioDAO.ObtenerPorId(idUsuario);
+            RegistroSesiones.NotificarSala(idPartida,
+                cb => cb.RivalAbandono(quienAbandona.Nombre), excepto: idUsuario);
+            RegistroSesiones.Rondas.TryRemove(idPartida, out _);
+        }
     }
 }

@@ -40,12 +40,10 @@ namespace ClienteAhorcado
         {
             try
             {
-                // Paso 1: notificar al servidor y al rival vía callback
                 var clienteJuego = Conexiones.Juego(
                     new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
                 clienteJuego.NotificarAbandono(_idPartida, SesionActual.IdUsuario);
 
-                // Paso 2: registrar abandono en BD
                 var clientePartida = Conexiones.Partida();
                 clientePartida.AbandonarPartida(_idPartida, SesionActual.IdUsuario);
 
