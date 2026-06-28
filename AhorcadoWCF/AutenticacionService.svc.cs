@@ -39,7 +39,8 @@ namespace AhorcadoWCF
 
         public bool ValidarSesionActiva(int idUsuario)
         {
-            throw new NotImplementedException();
+            UsuarioDTO usuario = usuarioDAO.ObtenerPorId(idUsuario);
+            return usuario != null && usuario.IdUsuario != 0;
         }
     }
 }
