@@ -45,7 +45,18 @@ namespace AhorcadoWCF
                 if (sala.IsEmpty)
                 {
                     Salas.TryRemove(idPartida, out _);
+                    Rondas.TryRemove(idPartida, out _);
                 }
+            }
+        }
+
+        public static void SalirDeSalaSi(int idPartida, int idUsuario, IJuegoCallback callback)
+        {
+            if (Salas.TryGetValue(idPartida, out var sala) &&
+                sala.TryGetValue(idUsuario, out var actual) &&
+                ReferenceEquals(actual, callback))
+            {
+                SalirDeSala(idPartida, idUsuario);
             }
         }
 
@@ -81,7 +92,20 @@ namespace AhorcadoWCF
 
         public void UnirseASalaDePartida(int idPartida, int idUsuario)
         {
-            RegistroSesiones.UnirASala(idPartida, idUsuario, CanalActual());
+            var callback = CanalActual();
+            RegistroSesiones.UnirASala(idPartida, idUsuario, callback);
+
+            var canal = OperationContext.Current.Channel;
+            EventHandler limpiar = null;
+            limpiar = (s, e) =>
+            {
+                RegistroSesiones.SalirDeSalaSi(idPartida, idUsuario, callback);
+                canal.Closed -= limpiar;
+                canal.Faulted -= limpiar;
+            };
+            canal.Closed += limpiar;
+            canal.Faulted += limpiar;
+
             var adivinador = usuarioDAO.ObtenerPorId(idUsuario);
             RegistroSesiones.NotificarSala(idPartida, cb => cb.AdivinadorSeUnio(adivinador), excepto: idUsuario);
         }
