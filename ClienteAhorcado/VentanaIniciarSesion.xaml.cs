@@ -29,6 +29,10 @@ namespace ClienteAhorcado {
             lblErrorCorreo.Visibility = Visibility.Collapsed;
             lblErrorContrasena.Visibility = Visibility.Collapsed;
 
+            var bordeNormal = new SolidColorBrush(Color.FromRgb(0xCC, 0xCC, 0xCC));
+            txtCorreo.BorderBrush = bordeNormal;
+            txtContrasena.BorderBrush = bordeNormal;
+
             string correo = txtCorreo.Text.Trim();
             string contrasena = txtContrasena.Password;
 
@@ -37,18 +41,29 @@ namespace ClienteAhorcado {
                 return;
             }
 
-            if (usuario == null) {
-                lblErrorContrasena.Visibility = Visibility.Visible;
+            if (usuario != null) {
+                SesionActual.IdUsuario = usuario.IdUsuario;
+                SesionActual.Nombre = usuario.Nombre;
+                SesionActual.Correo = usuario.Correo;
+
+                VentanaPartidas ventanaPartidas = new VentanaPartidas();
+                ventanaPartidas.Show();
+                this.Close();
                 return;
             }
 
-            SesionActual.IdUsuario = usuario.IdUsuario;
-            SesionActual.Nombre = usuario.Nombre;
-            SesionActual.Correo = usuario.Correo;
+            bool correoExiste = false;
+            if (!ManejadorErrores.Ejecutar(() => { correoExiste = Conexiones.Autenticacion().VerificarCorreoExistente(correo); })) {
+                return;
+            }
 
-            VentanaPartidas ventanaPartidas = new VentanaPartidas();
-            ventanaPartidas.Show();
-            this.Close();
+            if (correoExiste) {
+                lblErrorContrasena.Visibility = Visibility.Visible;
+                txtContrasena.BorderBrush = Brushes.Red;
+            } else {
+                lblErrorCorreo.Visibility = Visibility.Visible;
+                txtCorreo.BorderBrush = Brushes.Red;
+            }
         }
     }
 }
