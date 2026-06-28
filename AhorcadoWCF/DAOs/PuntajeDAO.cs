@@ -76,12 +76,11 @@ namespace AhorcadoWCF.DAOs
                         x => x.h.idJugadorRival,
                         u => u.idUsuario,
                         (x, u) => new { x.h, x.w, u })
-                    .OrderByDescending(x => x.h.idPuntaje)
+                    .OrderByDescending(x => x.h.fechaPartida)
                     .AsEnumerable()
                     .Select(x => new PuntajeHistorialDTO
                     {
-                        // ponytail: el modelo EF no tiene columna de fecha en historial_puntaje
-                        Fecha = "—",
+                        Fecha = x.h.fechaPartida.ToString("dd MMM yyyy"),
                         Palabra = x.w.palabra1.ToUpper(),
                         NombreRival = x.u.nombreCompleto,
                         Puntos = x.h.puntos,

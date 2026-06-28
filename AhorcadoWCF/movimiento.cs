@@ -11,14 +11,14 @@ namespace AhorcadoWCF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class movimiento
     {
         public int idMovimiento { get; set; }
         public string letraIngresada { get; set; }
         public int idPartida { get; set; }
         public bool esCorrecta { get; set; }
-
+    
         public virtual partida partida { get; set; }
     }
 }

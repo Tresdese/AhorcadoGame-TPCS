@@ -24,6 +24,7 @@
           <Property Name="idJugadorRival" Type="int" Nullable="false" />
           <Property Name="idPartida" Type="int" Nullable="false" />
           <Property Name="idPalabra" Type="int" Nullable="false" />
+          <Property Name="fechaPartida" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="movimiento">
           <Key>
@@ -382,6 +383,7 @@
           <NavigationProperty Name="usuario1" Relationship="AhorcadoDBModel.FK_historial_puntaje_jugador_rival" FromRole="historial_puntaje" ToRole="usuario" />
           <NavigationProperty Name="palabra" Relationship="AhorcadoDBModel.FK_historial_puntaje_palabra" FromRole="historial_puntaje" ToRole="palabra" />
           <NavigationProperty Name="partida" Relationship="AhorcadoDBModel.FK_historial_puntaje_partida" FromRole="historial_puntaje" ToRole="partida" />
+          <Property Name="fechaPartida" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
         <EntityType Name="movimiento">
           <Key>
@@ -506,6 +508,7 @@
           <EntitySetMapping Name="historial_puntaje">
             <EntityTypeMapping TypeName="AhorcadoDBModel.historial_puntaje">
               <MappingFragment StoreEntitySet="historial_puntaje">
+                <ScalarProperty Name="fechaPartida" ColumnName="fechaPartida" />
                 <ScalarProperty Name="idPalabra" ColumnName="idPalabra" />
                 <ScalarProperty Name="idPartida" ColumnName="idPartida" />
                 <ScalarProperty Name="idJugadorRival" ColumnName="idJugadorRival" />

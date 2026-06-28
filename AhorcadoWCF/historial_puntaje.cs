@@ -11,7 +11,7 @@ namespace AhorcadoWCF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class historial_puntaje
     {
         public int idPuntaje { get; set; }
@@ -21,10 +21,11 @@ namespace AhorcadoWCF
         public int idJugadorRival { get; set; }
         public int idPartida { get; set; }
         public int idPalabra { get; set; }
-
+        public System.DateTime fechaPartida { get; set; }
+    
         public virtual usuario usuario { get; set; }
         public virtual usuario usuario1 { get; set; }
-        public virtual partida partida { get; set; }
         public virtual palabra palabra { get; set; }
+        public virtual partida partida { get; set; }
     }
 }
