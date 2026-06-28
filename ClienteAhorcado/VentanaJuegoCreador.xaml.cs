@@ -34,7 +34,11 @@ namespace ClienteAhorcado
             lblIntentos.Text = "6  intentos restantes";
 
             _canal = Conexiones.Juego(new InstanceContext(this));
-            _canal.UnirseASalaDePartida(SesionActual.IdPartida, SesionActual.IdUsuario);
+            if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(SesionActual.IdPartida, SesionActual.IdUsuario)))
+            {
+                new VentanaPartidas().Show();
+                Close();
+            }
         }
 
         private void ConstruirCasillas()
@@ -150,16 +154,10 @@ namespace ClienteAhorcado
             string mensaje = txtMensaje.Text.Trim();
             if (string.IsNullOrEmpty(mensaje)) return;
 
-            try
+            if (ManejadorErrores.Ejecutar(() => _canal.EnviarMensajeChat(SesionActual.IdPartida, SesionActual.IdUsuario, mensaje)))
             {
-                _canal.EnviarMensajeChat(SesionActual.IdPartida, SesionActual.IdUsuario, mensaje);
                 AgregarMensajePropioChat(mensaje);
                 txtMensaje.Clear();
-            }
-            catch
-            {
-                MessageBox.Show("No se pudo enviar el mensaje.", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -207,11 +205,7 @@ namespace ClienteAhorcado
 
             if (respuesta == MessageBoxResult.Yes)
             {
-                try
-                {
-                    _canal.NotificarAbandono(SesionActual.IdPartida, SesionActual.IdUsuario);
-                }
-                catch { }
+                ManejadorErrores.Ejecutar(() => _canal.NotificarAbandono(SesionActual.IdPartida, SesionActual.IdUsuario));
 
                 new VentanaPartidas().Show();
                 Close();

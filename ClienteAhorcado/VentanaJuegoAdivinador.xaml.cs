@@ -50,7 +50,11 @@ namespace ClienteAhorcado
             lblIntentos.Text = "Esperando que el creador elija la palabra...";
 
             _canal = Conexiones.Juego(new InstanceContext(this));
-            _canal.UnirseASalaDePartida(_idPartida, SesionActual.IdUsuario);
+            if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(_idPartida, SesionActual.IdUsuario)))
+            {
+                new VentanaPartidas().Show();
+                Close();
+            }
         }
 
         public void IniciarJuego(int longitud, string descripcion, string categoria)
@@ -78,18 +82,7 @@ namespace ClienteAhorcado
             char letra = boton.Content.ToString()[0];
             boton.IsEnabled = false;
 
-            try
-            {
-                _canal.EnviarLetra(_idPartida, SesionActual.IdUsuario, letra);
-            }
-            catch
-            {
-                MessageBox.Show(
-                    "Error de conexión con base de datos, inténtelo más tarde.",
-                    "Error",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
+            ManejadorErrores.Ejecutar(() => _canal.EnviarLetra(_idPartida, SesionActual.IdUsuario, letra));
         }
 
         public void LetraIngresada(char letra, bool acerto, List<int> posiciones, int intentosRestantes)
@@ -211,16 +204,10 @@ namespace ClienteAhorcado
             string mensaje = txtMensaje.Text.Trim();
             if (string.IsNullOrEmpty(mensaje)) return;
 
-            try
+            if (ManejadorErrores.Ejecutar(() => _canal.EnviarMensajeChat(_idPartida, SesionActual.IdUsuario, mensaje)))
             {
-                _canal.EnviarMensajeChat(_idPartida, SesionActual.IdUsuario, mensaje);
                 AgregarMensajePropioChat(mensaje);
                 txtMensaje.Clear();
-            }
-            catch
-            {
-                MessageBox.Show("No se pudo enviar el mensaje.", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -268,11 +255,7 @@ namespace ClienteAhorcado
 
             if (respuesta == MessageBoxResult.Yes)
             {
-                try
-                {
-                    _canal.NotificarAbandono(_idPartida, SesionActual.IdUsuario);
-                }
-                catch { }
+                ManejadorErrores.Ejecutar(() => _canal.NotificarAbandono(_idPartida, SesionActual.IdUsuario));
 
                 var ventanaPartidas = new VentanaPartidas();
                 ventanaPartidas.Show();
