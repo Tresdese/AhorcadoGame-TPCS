@@ -9,6 +9,7 @@ namespace AhorcadoWCF
     public class EstadoRonda
     {
         public string Palabra { get; set; }
+        public string Categoria { get; set; }
         public int IdAdivinador { get; set; }
         public int IdCreador { get; set; }
         public int IdPalabra { get; set; }
@@ -27,10 +28,11 @@ namespace AhorcadoWCF
         public static readonly ConcurrentDictionary<int, EstadoRonda> Rondas =
             new ConcurrentDictionary<int, EstadoRonda>();
 
-        public static void IniciarRonda(int idPartida, string palabra, int idAdivinador, int idCreador, int idPalabra) =>
+        public static void IniciarRonda(int idPartida, string palabra, string categoria, int idAdivinador, int idCreador, int idPalabra) =>
             Rondas[idPartida] = new EstadoRonda
             {
                 Palabra = palabra,
+                Categoria = categoria,
                 IdAdivinador = idAdivinador,
                 IdCreador = idCreador,
                 IdPalabra = idPalabra
@@ -174,11 +176,12 @@ namespace AhorcadoWCF
             int globalAdiv = puntajeDAO.ObtenerPuntajeGlobal(ronda.IdAdivinador);
             int globalCreador = puntajeDAO.ObtenerPuntajeGlobal(ronda.IdCreador);
 
+            string cat = ronda.Categoria ?? string.Empty;
             RegistroSesiones.NotificarJugador(idPartida, ronda.IdAdivinador,
-                cb => cb.PartidaFinalizada(ganoAdivinador ? "Ganaste" : "Perdiste", ronda.Palabra,
+                cb => cb.PartidaFinalizada($"{(ganoAdivinador ? "Ganaste" : "Perdiste")}|{cat}", ronda.Palabra,
                     ganoAdivinador ? PuntosVictoria : 0, globalAdiv));
             RegistroSesiones.NotificarJugador(idPartida, ronda.IdCreador,
-                cb => cb.PartidaFinalizada(ganoAdivinador ? "Perdiste" : "Ganaste", ronda.Palabra,
+                cb => cb.PartidaFinalizada($"{(ganoAdivinador ? "Perdiste" : "Ganaste")}|{cat}", ronda.Palabra,
                     ganoAdivinador ? 0 : PuntosVictoria, globalCreador));
         }
 

@@ -32,7 +32,7 @@ namespace AhorcadoWCF
                 if (palabra != null)
                 {
                     var partida = partidaDAO.ObtenerEstado(idPartida);
-                    RegistroSesiones.IniciarRonda(idPartida, palabra.Texto,
+                    RegistroSesiones.IniciarRonda(idPartida, palabra.Texto, palabra.Categoria,
                         partida.IdJugadorAdivinador, partida.IdJugadorCreador, idPalabra);
                     RegistroSesiones.NotificarSala(idPartida,
                         cb => cb.PalabraSeleccionada(palabra.Texto.Length, palabra.Descripcion, palabra.Categoria));
