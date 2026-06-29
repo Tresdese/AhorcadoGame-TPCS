@@ -17,7 +17,13 @@ namespace ClienteAhorcado {
     public partial class VentanaEditarPerfil : Window {
         public VentanaEditarPerfil() {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
             CargarDatosActuales();
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
         }
 
         private void CargarDatosActuales() {
@@ -36,6 +42,7 @@ namespace ClienteAhorcado {
 
             lblNombreEncabezado.Text = usuario.Nombre;
             lblCorreoEncabezado.Text = usuario.Correo;
+            btnUsuario.Content = usuario.Nombre + " ▼";
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
@@ -69,23 +76,23 @@ namespace ClienteAhorcado {
             }
 
             if (fechaNacimiento == null) {
-                lblErrorFecha.Text = "Selecciona tu fecha de nacimiento.";
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorFechaVacia;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             } else if (!TieneAlMenos10Anios(fechaNacimiento.Value)) {
-                lblErrorFecha.Text = "Debes tener al menos 10 años cumplidos.";
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMinima;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
             if (string.IsNullOrWhiteSpace(celular) || !CelularEsValido(celular)) {
-                lblErrorCelular.Text = "Ingresa un número de celular válido (10 a 15 dígitos).";
+                lblErrorCelular.Text = Properties.Resources.RegistrarCuenta_ErrorCelularInvalido;
                 lblErrorCelular.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
             if (!string.IsNullOrWhiteSpace(nuevaContrasena) && !ContrasenaCumpleRequisitos(nuevaContrasena)) {
-                lblErrorContrasena.Text = "La contraseña debe tener 8+ caracteres, mayúscula, minúscula y número.";
+                lblErrorContrasena.Text = Properties.Resources.EditarPerfil_ErrorContrasenaRequisitos;
                 lblErrorContrasena.Visibility = Visibility.Visible;
                 hayError = true;
             }
@@ -115,7 +122,10 @@ namespace ClienteAhorcado {
 
             if (actualizado) {
                 SesionActual.Nombre = nombre;
-                MessageBox.Show("Tus cambios se guardaron correctamente.", "Perfil actualizado", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(
+                    Properties.Resources.EditarPerfil_ExitoMensaje,
+                    Properties.Resources.EditarPerfil_ExitoTitulo,
+                    MessageBoxButton.OK, MessageBoxImage.Information);
                 VentanaPerfil ventanaPerfil = new VentanaPerfil();
                 ventanaPerfil.Show();
                 this.Close();
