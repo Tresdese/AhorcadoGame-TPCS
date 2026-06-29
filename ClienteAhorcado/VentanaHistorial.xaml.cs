@@ -63,9 +63,9 @@ namespace ClienteAhorcado
                 txtPenalizaciones.Text = penalizaciones.ToString();
 
                 
-                btnGanadas.Content = $"Partidas ganadas ({partidasGanadas})";
-                btnRival.Content = $"Rival no adivinó ({rivalNoPudo})";
-                btnPenalizaciones.Content = $"Penalizaciones ({penalizaciones})";
+                btnGanadas.Content = string.Format(Properties.Resources.Historial_BtnGanadas, partidasGanadas);
+                btnRival.Content = string.Format(Properties.Resources.Historial_BtnRival, rivalNoPudo);
+                btnPenalizaciones.Content = string.Format(Properties.Resources.Historial_BtnPenalizaciones, penalizaciones);
             }
             catch (Exception)
             {
@@ -134,8 +134,8 @@ namespace ClienteAhorcado
                 Palabra = r.Palabra,
                 Rival = r.NombreRival,
                 Puntos = filtro == "Penalizaciones"
-                            ? $"–{r.Puntos} pts"
-                            : $"+{r.Puntos} pts",
+                            ? string.Format(Properties.Resources.Historial_PuntosPerdidos, r.Puntos)
+                            : string.Format(Properties.Resources.Historial_PuntosGanados, r.Puntos),
                 Color = filtro == "Penalizaciones" ? "Red" : "Green"
             }).ToList();
 
@@ -149,7 +149,7 @@ namespace ClienteAhorcado
             lvHistorial.Items.Clear();
             lvHistorial.Items.Add(new ListViewItem
             {
-                Content = "No hay registros en esta categoría.",
+                Content = Properties.Resources.Historial_SinRegistros,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 14,
                 Foreground = Brushes.Gray,
@@ -195,16 +195,16 @@ namespace ClienteAhorcado
             switch (filtro)
             {
                 case "Ganadas":
-                    colPalabra.Text = "PALABRA ADIVINADA";
-                    colRival.Text = "RIVAL VENCIDO";
+                    colPalabra.Text = Properties.Resources.Historial_ColPalabraGanadas;
+                    colRival.Text = Properties.Resources.Historial_ColRivalGanadas;
                     break;
                 case "Rival":
-                    colPalabra.Text = "PALABRA ELEGIDA";
-                    colRival.Text = "RIVAL QUE FALLÓ";
+                    colPalabra.Text = Properties.Resources.Historial_ColPalabraRival;
+                    colRival.Text = Properties.Resources.Historial_ColRivalRival;
                     break;
                 case "Penalizaciones":
-                    colPalabra.Text = "PALABRA EN JUEGO";
-                    colRival.Text = "PARTIDA ABANDONADA";
+                    colPalabra.Text = Properties.Resources.Historial_ColPalabraPenal;
+                    colRival.Text = Properties.Resources.Historial_ColRivalPenal;
                     break;
             }
         }
@@ -230,8 +230,8 @@ namespace ClienteAhorcado
         private void MostrarErrorConexion()
         {
             MessageBox.Show(
-                "Error de conexión con base de datos, inténtelo más tarde.",
-                "Error",
+                Properties.Resources.Partidas_ErrorConexion,
+                Properties.Resources.Comun_Error,
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
 

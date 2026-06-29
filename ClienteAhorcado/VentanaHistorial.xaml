@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
-        Title="Ahorcado · Historial" Height="600" Width="1000"
+        Title="{x:Static p:Resources.Historial_TituloVentana}" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen" Background="#F0F0F0">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,7 +18,7 @@
             <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
                 <Grid Margin="20,12,20,12">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Content="⇐ Volver" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
+                        <Button Content="{x:Static p:Resources.Comun_Volver}" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -25,8 +26,8 @@
                             </Button.Resources>
                         </Button>
                         <StackPanel>
-                            <TextBlock Text="Historial de puntajes" FontSize="16" FontWeight="Bold"/>
-                            <TextBlock Text="Tu progreso, partida por partida" FontSize="12" Foreground="#666666"/>
+                            <TextBlock Text="{x:Static p:Resources.Historial_Titulo}" FontSize="16" FontWeight="Bold"/>
+                            <TextBlock Text="{x:Static p:Resources.Historial_Subtitulo}" FontSize="12" Foreground="#666666"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -67,44 +68,44 @@
                         <TextBlock Text="🏆" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                        <TextBlock Text="PUNTAJE GLOBAL" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock Text="{x:Static p:Resources.Historial_PuntajeGlobalEtiqueta}" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="txtPuntajeGlobal" Text="75" FontSize="36" FontWeight="Bold"/>
-                            <TextBlock Text=" pts" FontSize="18" Foreground="#888888" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="txtPuntajeGlobal" Text="0" FontSize="36" FontWeight="Bold"/>
+                            <TextBlock Text="{x:Static p:Resources.Historial_PtsSufijo}" FontSize="18" Foreground="#888888" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Column="2" HorizontalAlignment="Center" Margin="30,0">
-                        <TextBlock x:Name="txtGanadas" Text="5" FontSize="28" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center"/>
-                        <TextBlock Text="GANADAS" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock x:Name="txtGanadas" Text="0" FontSize="28" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Static p:Resources.Historial_Ganadas}" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Grid.Column="3" HorizontalAlignment="Center" Margin="30,0">
-                        <TextBlock x:Name="txtRivalNoPudo" Text="3" FontSize="28" FontWeight="Bold" Foreground="#555555" HorizontalAlignment="Center"/>
-                        <TextBlock Text="RIVAL NO ADIVINÓ" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock x:Name="txtRivalNoPudo" Text="0" FontSize="28" FontWeight="Bold" Foreground="#555555" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Static p:Resources.Historial_RivalNoAdivino}" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Grid.Column="4" HorizontalAlignment="Center" Margin="30,0,0,0">
-                        <TextBlock x:Name="txtPenalizaciones" Text="2" FontSize="28" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center"/>
-                        <TextBlock Text="PENALIZACIONES" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock x:Name="txtPenalizaciones" Text="0" FontSize="28" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Static p:Resources.Historial_Penalizaciones}" FontSize="11" Foreground="#888888" FontWeight="Bold"/>
                     </StackPanel>
                 </Grid>
             </Border>
 
            
             <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                <Button x:Name="btnGanadas" Content="Partidas ganadas (5)" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Margin="0,0,5,0" Click="btnGanadas_Click">
+                <Button x:Name="btnGanadas" Content="" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Margin="0,0,5,0" Click="btnGanadas_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnRival" Content="Rival no adivinó (3)" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,5,0" Click="btnRival_Click">
+                <Button x:Name="btnRival" Content="" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,5,0" Click="btnRival_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnPenalizaciones" Content="Penalizaciones (2)" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnPenalizaciones_Click">
+                <Button x:Name="btnPenalizaciones" Content="" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnPenalizaciones_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
@@ -131,10 +132,10 @@
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="FECHA" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="15,10,0,10"/>
+                        <TextBlock Grid.Column="0" Text="{x:Static p:Resources.Historial_ColFecha}" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="15,10,0,10"/>
                         <TextBlock x:Name="colPalabra" Grid.Column="1" Text="PALABRA ADIVINADA" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
                         <TextBlock x:Name="colRival" Grid.Column="2" Text="RIVAL VENCIDO" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
-                        <TextBlock Grid.Column="3" Text="PUNTOS" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,15,10" HorizontalAlignment="Right"/>
+                        <TextBlock Grid.Column="3" Text="{x:Static p:Resources.Historial_ColPuntos}" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,15,10" HorizontalAlignment="Right"/>
                     </Grid>
                 
                     <ListView x:Name="lvHistorial" Grid.Row="1" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">

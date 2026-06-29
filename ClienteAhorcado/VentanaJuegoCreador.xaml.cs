@@ -31,7 +31,7 @@ namespace ClienteAhorcado
         private void Iniciar()
         {
             ConstruirCasillas();
-            lblIntentos.Text = "6  intentos restantes";
+            lblIntentos.Text = string.Format(Properties.Resources.Juego_IntentosRestantes, 6);
 
             _canal = Conexiones.Juego(new InstanceContext(this));
             if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(SesionActual.IdPartida, SesionActual.IdUsuario)))
@@ -73,7 +73,7 @@ namespace ClienteAhorcado
         {
             Dispatcher.Invoke(() =>
             {
-                lblIntentos.Text = $"{intentosRestantes}  intentos restantes";
+                lblIntentos.Text = string.Format(Properties.Resources.Juego_IntentosRestantes, intentosRestantes);
 
                 if (acerto)
                 {
@@ -115,8 +115,8 @@ namespace ClienteAhorcado
             Dispatcher.Invoke(() =>
             {
                 MessageBox.Show(
-                    $"{nombreRival} abandonó la partida. Regresarás al lobby.",
-                    "Rival abandonó",
+                    string.Format(Properties.Resources.Juego_RivalAbandonoMensaje, nombreRival),
+                    Properties.Resources.Juego_RivalAbandonoTitulo,
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
                 new VentanaPartidas().Show();
@@ -131,14 +131,14 @@ namespace ClienteAhorcado
                 if (resultado == "Ganaste")
                 {
                     var dialogo = new DialogoGanadorCreador(
-                        SesionActual.IdPartida, "Tu rival", palabra, lblCategoria.Text, puntosObtenidos, puntajeGlobal);
+                        SesionActual.IdPartida, Properties.Resources.Juego_TuRival, palabra, lblCategoria.Text, puntosObtenidos, puntajeGlobal);
                     dialogo.Owner = this;
                     dialogo.ShowDialog();
                 }
                 else
                 {
                     var dialogo = new DialogoPerdedorCreador(
-                        SesionActual.IdPartida, "Tu rival", palabra, lblCategoria.Text, puntajeGlobal);
+                        SesionActual.IdPartida, Properties.Resources.Juego_TuRival, palabra, lblCategoria.Text, puntajeGlobal);
                     dialogo.Owner = this;
                     dialogo.ShowDialog();
                 }
@@ -219,8 +219,8 @@ namespace ClienteAhorcado
         private void btnAbandonar_Click(object sender, RoutedEventArgs e)
         {
             var respuesta = MessageBox.Show(
-                "¿Seguro que deseas abandonar la partida? Perderás puntos.",
-                "Abandonar partida",
+                Properties.Resources.Juego_ConfirmarAbandono,
+                Properties.Resources.Juego_AbandonarPartida,
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Warning);
 

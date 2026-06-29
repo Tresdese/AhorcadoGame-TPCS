@@ -399,4 +399,268 @@
   <data name="RegistrarCuenta_YaTienesCuenta" xml:space="preserve">
     <value>Already have an account?</value>
   </data>
+  <data name="Comun_Palabra" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="Comun_Rival" xml:space="preserve">
+    <value>Opponent</value>
+  </data>
+  <data name="Comun_Categoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Comun_PuntosObtenidos" xml:space="preserve">
+    <value>Points earned</value>
+  </data>
+  <data name="Comun_PuntajeGlobal" xml:space="preserve">
+    <value>Total score</value>
+  </data>
+  <data name="Comun_IrAlLobby" xml:space="preserve">
+    <value>Go to lobby</value>
+  </data>
+  <data name="Comun_JugarDeNuevo" xml:space="preserve">
+    <value>Play again</value>
+  </data>
+  <data name="Comun_Aceptar" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Comun_Salir" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Comun_Chat" xml:space="preserve">
+    <value>💬  Chat</value>
+  </data>
+  <data name="Comun_FormatoPuntosPositivos" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Comun_FormatoPuntos" xml:space="preserve">
+    <value>{0} pts</value>
+  </data>
+  <data name="Juego_TituloVentana" xml:space="preserve">
+    <value>Hangman · Game in progress</value>
+  </data>
+  <data name="Juego_TuAdivinando" xml:space="preserve">
+    <value>You (guessing)</value>
+  </data>
+  <data name="Juego_TuCreador" xml:space="preserve">
+    <value>You (creator)</value>
+  </data>
+  <data name="Juego_RivalAdivinando" xml:space="preserve">
+    <value>Your opponent is guessing</value>
+  </data>
+  <data name="Juego_AbandonarPartida" xml:space="preserve">
+    <value>Leave game</value>
+  </data>
+  <data name="Juego_CategoriaEtiqueta" xml:space="preserve">
+    <value>CATEGORY</value>
+  </data>
+  <data name="Juego_DescripcionEtiqueta" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="Juego_TuPalabra" xml:space="preserve">
+    <value>YOUR WORD:  </value>
+  </data>
+  <data name="Juego_LetrasIncorrectas" xml:space="preserve">
+    <value>WRONG LETTERS:  </value>
+  </data>
+  <data name="Juego_IntentosRestantes" xml:space="preserve">
+    <value>{0}  attempts left</value>
+  </data>
+  <data name="Juego_EsperandoPalabra" xml:space="preserve">
+    <value>Waiting for the creator to choose the word...</value>
+  </data>
+  <data name="Juego_VsRival" xml:space="preserve">
+    <value>vs {0}</value>
+  </data>
+  <data name="Juego_ConfirmarAbandono" xml:space="preserve">
+    <value>Are you sure you want to leave the game? You will lose points.</value>
+  </data>
+  <data name="Juego_RivalAbandonoMensaje" xml:space="preserve">
+    <value>{0} left the game. You will return to the lobby.</value>
+  </data>
+  <data name="Juego_RivalAbandonoTitulo" xml:space="preserve">
+    <value>Opponent left</value>
+  </data>
+  <data name="Juego_TuRival" xml:space="preserve">
+    <value>Your opponent</value>
+  </data>
+  <data name="ElegirCategoria_TituloVentana" xml:space="preserve">
+    <value>Hangman · Choose category</value>
+  </data>
+  <data name="ElegirCategoria_Paso" xml:space="preserve">
+    <value>Step 1 of 2 · Choose a category</value>
+  </data>
+  <data name="ElegirCategoria_Continuar" xml:space="preserve">
+    <value>Continue ⇒</value>
+  </data>
+  <data name="ElegirCategoria_ErrorMensaje" xml:space="preserve">
+    <value>Choose a category to continue.</value>
+  </data>
+  <data name="ElegirPalabra_TituloVentana" xml:space="preserve">
+    <value>Hangman · Choose word</value>
+  </data>
+  <data name="ElegirPalabra_Paso" xml:space="preserve">
+    <value>Step 2 of 2 · Choose a word</value>
+  </data>
+  <data name="ElegirPalabra_CategoriaConNombre" xml:space="preserve">
+    <value>Category: {0}</value>
+  </data>
+  <data name="ElegirPalabra_LetrasSufijo" xml:space="preserve">
+    <value> letters</value>
+  </data>
+  <data name="ElegirPalabra_Confirmar" xml:space="preserve">
+    <value>Confirm word</value>
+  </data>
+  <data name="ElegirPalabra_ErrorMensaje" xml:space="preserve">
+    <value>Choose a word to continue.</value>
+  </data>
+  <data name="EsperandoPalabra_TituloVentana" xml:space="preserve">
+    <value>Hangman · Waiting for word</value>
+  </data>
+  <data name="EsperandoPalabra_TeUniste" xml:space="preserve">
+    <value>You joined the game!</value>
+  </data>
+  <data name="EsperandoPalabra_Subtitulo" xml:space="preserve">
+    <value>Your opponent is choosing the word you'll have to guess</value>
+  </data>
+  <data name="EsperandoPalabra_Instruccion" xml:space="preserve">
+    <value>When they finish, you'll start guessing. We'll let you know as soon as the word is ready.</value>
+  </data>
+  <data name="EsperandoPalabra_Vs" xml:space="preserve">
+    <value>vs</value>
+  </data>
+  <data name="EsperandoPalabra_TuBoton" xml:space="preserve">
+    <value>👤  You</value>
+  </data>
+  <data name="EsperandoPalabra_Eligiendo" xml:space="preserve">
+    <value>{0} is choosing the word...</value>
+  </data>
+  <data name="EsperandoPalabra_CreadorBoton" xml:space="preserve">
+    <value>👤  {0}</value>
+  </data>
+  <data name="Historial_TituloVentana" xml:space="preserve">
+    <value>Hangman · History</value>
+  </data>
+  <data name="Historial_Titulo" xml:space="preserve">
+    <value>Score history</value>
+  </data>
+  <data name="Historial_Subtitulo" xml:space="preserve">
+    <value>Your progress, game by game</value>
+  </data>
+  <data name="Historial_PuntajeGlobalEtiqueta" xml:space="preserve">
+    <value>TOTAL SCORE</value>
+  </data>
+  <data name="Historial_PtsSufijo" xml:space="preserve">
+    <value> pts</value>
+  </data>
+  <data name="Historial_Ganadas" xml:space="preserve">
+    <value>WON</value>
+  </data>
+  <data name="Historial_RivalNoAdivino" xml:space="preserve">
+    <value>OPPONENT DIDN'T GUESS</value>
+  </data>
+  <data name="Historial_Penalizaciones" xml:space="preserve">
+    <value>PENALTIES</value>
+  </data>
+  <data name="Historial_BtnGanadas" xml:space="preserve">
+    <value>Games won ({0})</value>
+  </data>
+  <data name="Historial_BtnRival" xml:space="preserve">
+    <value>Opponent didn't guess ({0})</value>
+  </data>
+  <data name="Historial_BtnPenalizaciones" xml:space="preserve">
+    <value>Penalties ({0})</value>
+  </data>
+  <data name="Historial_ColFecha" xml:space="preserve">
+    <value>DATE</value>
+  </data>
+  <data name="Historial_ColPuntos" xml:space="preserve">
+    <value>POINTS</value>
+  </data>
+  <data name="Historial_ColPalabraGanadas" xml:space="preserve">
+    <value>GUESSED WORD</value>
+  </data>
+  <data name="Historial_ColRivalGanadas" xml:space="preserve">
+    <value>OPPONENT BEATEN</value>
+  </data>
+  <data name="Historial_ColPalabraRival" xml:space="preserve">
+    <value>CHOSEN WORD</value>
+  </data>
+  <data name="Historial_ColRivalRival" xml:space="preserve">
+    <value>OPPONENT WHO FAILED</value>
+  </data>
+  <data name="Historial_ColPalabraPenal" xml:space="preserve">
+    <value>WORD IN PLAY</value>
+  </data>
+  <data name="Historial_ColRivalPenal" xml:space="preserve">
+    <value>ABANDONED GAME</value>
+  </data>
+  <data name="Historial_SinRegistros" xml:space="preserve">
+    <value>No records in this category.</value>
+  </data>
+  <data name="Historial_PuntosGanados" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Historial_PuntosPerdidos" xml:space="preserve">
+    <value>–{0} pts</value>
+  </data>
+  <data name="GanadorAdivinador_Titulo" xml:space="preserve">
+    <value>You guessed the word!</value>
+  </data>
+  <data name="GanadorAdivinador_Subtitulo" xml:space="preserve">
+    <value>You earned +10 points for this game</value>
+  </data>
+  <data name="PerdedorAdivinador_Titulo" xml:space="preserve">
+    <value>Out of attempts</value>
+  </data>
+  <data name="PerdedorAdivinador_Subtitulo" xml:space="preserve">
+    <value>You didn't earn points this time</value>
+  </data>
+  <data name="GanadorCreador_Titulo" xml:space="preserve">
+    <value>Your opponent couldn't guess</value>
+  </data>
+  <data name="GanadorCreador_Subtitulo" xml:space="preserve">
+    <value>You earned +5 points for creating the game</value>
+  </data>
+  <data name="PerdedorCreador_Titulo" xml:space="preserve">
+    <value>Your opponent guessed the word</value>
+  </data>
+  <data name="PerdedorCreador_Subtitulo" xml:space="preserve">
+    <value>You didn't earn points this time</value>
+  </data>
+  <data name="DialogoResultado_PreguntaPrefijo" xml:space="preserve">
+    <value>Do you want to play another game with </value>
+  </data>
+  <data name="DialogoResultado_PreguntaSufijo" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Penalizacion_Titulo" xml:space="preserve">
+    <value>Penalty applied</value>
+  </data>
+  <data name="Penalizacion_Mensaje" xml:space="preserve">
+    <value>You left a game in progress. The following was deducted from your total score:</value>
+  </data>
+  <data name="Penalizacion_PuntajeAnterior" xml:space="preserve">
+    <value>Previous score</value>
+  </data>
+  <data name="Penalizacion_PuntajeFormato" xml:space="preserve">
+    <value>{0} pts → {1} pts</value>
+  </data>
+  <data name="Penalizacion_RestaFormato" xml:space="preserve">
+    <value>–{0} pts</value>
+  </data>
+  <data name="RivalAbandono_Titulo" xml:space="preserve">
+    <value>Your opponent left</value>
+  </data>
+  <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
+    <value> left the game. A penalty will be applied to their account.</value>
+  </data>
+  <data name="RivalAbandono_Pregunta" xml:space="preserve">
+    <value>What would you like to do now?</value>
+  </data>
+  <data name="RivalAbandono_Esperar" xml:space="preserve">
+    <value>Wait for another opponent</value>
+  </data>
+  <data name="RivalAbandono_ErrorReabrir" xml:space="preserve">
+    <value>The game could not be reopened. Returning to the lobby.</value>
+  </data>
 </root>

@@ -33,7 +33,7 @@ namespace ClienteAhorcado
             txtPalabra.Text = _palabra;
             txtRival.Text = _nombreRival;
             txtCategoria.Text = _categoria;
-            txtPuntajeGlobal.Text = $"{_puntajeGlobal} pts";
+            txtPuntajeGlobal.Text = string.Format(Properties.Resources.Comun_FormatoPuntos, _puntajeGlobal);
         }
 
         private void btnLobby_Click(object sender, RoutedEventArgs e)

@@ -905,5 +905,533 @@ namespace ClienteAhorcado.Properties {
                 return ResourceManager.GetString("RegistrarCuenta_YaTienesCuenta", resourceCulture);
             }
         }
+        
+        public static string Comun_Palabra {
+            get {
+                return ResourceManager.GetString("Comun_Palabra", resourceCulture);
+            }
+        }
+        
+        public static string Comun_Rival {
+            get {
+                return ResourceManager.GetString("Comun_Rival", resourceCulture);
+            }
+        }
+        
+        public static string Comun_Categoria {
+            get {
+                return ResourceManager.GetString("Comun_Categoria", resourceCulture);
+            }
+        }
+        
+        public static string Comun_PuntosObtenidos {
+            get {
+                return ResourceManager.GetString("Comun_PuntosObtenidos", resourceCulture);
+            }
+        }
+        
+        public static string Comun_PuntajeGlobal {
+            get {
+                return ResourceManager.GetString("Comun_PuntajeGlobal", resourceCulture);
+            }
+        }
+        
+        public static string Comun_IrAlLobby {
+            get {
+                return ResourceManager.GetString("Comun_IrAlLobby", resourceCulture);
+            }
+        }
+        
+        public static string Comun_JugarDeNuevo {
+            get {
+                return ResourceManager.GetString("Comun_JugarDeNuevo", resourceCulture);
+            }
+        }
+        
+        public static string Comun_Aceptar {
+            get {
+                return ResourceManager.GetString("Comun_Aceptar", resourceCulture);
+            }
+        }
+        
+        public static string Comun_Salir {
+            get {
+                return ResourceManager.GetString("Comun_Salir", resourceCulture);
+            }
+        }
+        
+        public static string Comun_Chat {
+            get {
+                return ResourceManager.GetString("Comun_Chat", resourceCulture);
+            }
+        }
+        
+        public static string Comun_FormatoPuntosPositivos {
+            get {
+                return ResourceManager.GetString("Comun_FormatoPuntosPositivos", resourceCulture);
+            }
+        }
+        
+        public static string Comun_FormatoPuntos {
+            get {
+                return ResourceManager.GetString("Comun_FormatoPuntos", resourceCulture);
+            }
+        }
+        
+        public static string Juego_TituloVentana {
+            get {
+                return ResourceManager.GetString("Juego_TituloVentana", resourceCulture);
+            }
+        }
+        
+        public static string Juego_TuAdivinando {
+            get {
+                return ResourceManager.GetString("Juego_TuAdivinando", resourceCulture);
+            }
+        }
+        
+        public static string Juego_TuCreador {
+            get {
+                return ResourceManager.GetString("Juego_TuCreador", resourceCulture);
+            }
+        }
+        
+        public static string Juego_RivalAdivinando {
+            get {
+                return ResourceManager.GetString("Juego_RivalAdivinando", resourceCulture);
+            }
+        }
+        
+        public static string Juego_AbandonarPartida {
+            get {
+                return ResourceManager.GetString("Juego_AbandonarPartida", resourceCulture);
+            }
+        }
+        
+        public static string Juego_CategoriaEtiqueta {
+            get {
+                return ResourceManager.GetString("Juego_CategoriaEtiqueta", resourceCulture);
+            }
+        }
+        
+        public static string Juego_DescripcionEtiqueta {
+            get {
+                return ResourceManager.GetString("Juego_DescripcionEtiqueta", resourceCulture);
+            }
+        }
+        
+        public static string Juego_TuPalabra {
+            get {
+                return ResourceManager.GetString("Juego_TuPalabra", resourceCulture);
+            }
+        }
+        
+        public static string Juego_LetrasIncorrectas {
+            get {
+                return ResourceManager.GetString("Juego_LetrasIncorrectas", resourceCulture);
+            }
+        }
+        
+        public static string Juego_IntentosRestantes {
+            get {
+                return ResourceManager.GetString("Juego_IntentosRestantes", resourceCulture);
+            }
+        }
+        
+        public static string Juego_EsperandoPalabra {
+            get {
+                return ResourceManager.GetString("Juego_EsperandoPalabra", resourceCulture);
+            }
+        }
+        
+        public static string Juego_VsRival {
+            get {
+                return ResourceManager.GetString("Juego_VsRival", resourceCulture);
+            }
+        }
+        
+        public static string Juego_ConfirmarAbandono {
+            get {
+                return ResourceManager.GetString("Juego_ConfirmarAbandono", resourceCulture);
+            }
+        }
+        
+        public static string Juego_RivalAbandonoMensaje {
+            get {
+                return ResourceManager.GetString("Juego_RivalAbandonoMensaje", resourceCulture);
+            }
+        }
+        
+        public static string Juego_RivalAbandonoTitulo {
+            get {
+                return ResourceManager.GetString("Juego_RivalAbandonoTitulo", resourceCulture);
+            }
+        }
+        
+        public static string Juego_TuRival {
+            get {
+                return ResourceManager.GetString("Juego_TuRival", resourceCulture);
+            }
+        }
+        
+        public static string ElegirCategoria_TituloVentana {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_TituloVentana", resourceCulture);
+            }
+        }
+        
+        public static string ElegirCategoria_Paso {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_Paso", resourceCulture);
+            }
+        }
+        
+        public static string ElegirCategoria_Continuar {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_Continuar", resourceCulture);
+            }
+        }
+        
+        public static string ElegirCategoria_ErrorMensaje {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_ErrorMensaje", resourceCulture);
+            }
+        }
+        
+        public static string ElegirPalabra_TituloVentana {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_TituloVentana", resourceCulture);
+            }
+        }
+        
+        public static string ElegirPalabra_Paso {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_Paso", resourceCulture);
+            }
+        }
+        
+        public static string ElegirPalabra_CategoriaConNombre {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_CategoriaConNombre", resourceCulture);
+            }
+        }
+        
+        public static string ElegirPalabra_LetrasSufijo {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_LetrasSufijo", resourceCulture);
+            }
+        }
+        
+        public static string ElegirPalabra_Confirmar {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_Confirmar", resourceCulture);
+            }
+        }
+        
+        public static string ElegirPalabra_ErrorMensaje {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_ErrorMensaje", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_TituloVentana {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_TituloVentana", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_TeUniste {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_TeUniste", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_Subtitulo {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Subtitulo", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_Instruccion {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Instruccion", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_Vs {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Vs", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_TuBoton {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_TuBoton", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_Eligiendo {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Eligiendo", resourceCulture);
+            }
+        }
+        
+        public static string EsperandoPalabra_CreadorBoton {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_CreadorBoton", resourceCulture);
+            }
+        }
+        
+        public static string Historial_TituloVentana {
+            get {
+                return ResourceManager.GetString("Historial_TituloVentana", resourceCulture);
+            }
+        }
+        
+        public static string Historial_Titulo {
+            get {
+                return ResourceManager.GetString("Historial_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string Historial_Subtitulo {
+            get {
+                return ResourceManager.GetString("Historial_Subtitulo", resourceCulture);
+            }
+        }
+        
+        public static string Historial_PuntajeGlobalEtiqueta {
+            get {
+                return ResourceManager.GetString("Historial_PuntajeGlobalEtiqueta", resourceCulture);
+            }
+        }
+        
+        public static string Historial_PtsSufijo {
+            get {
+                return ResourceManager.GetString("Historial_PtsSufijo", resourceCulture);
+            }
+        }
+        
+        public static string Historial_Ganadas {
+            get {
+                return ResourceManager.GetString("Historial_Ganadas", resourceCulture);
+            }
+        }
+        
+        public static string Historial_RivalNoAdivino {
+            get {
+                return ResourceManager.GetString("Historial_RivalNoAdivino", resourceCulture);
+            }
+        }
+        
+        public static string Historial_Penalizaciones {
+            get {
+                return ResourceManager.GetString("Historial_Penalizaciones", resourceCulture);
+            }
+        }
+        
+        public static string Historial_BtnGanadas {
+            get {
+                return ResourceManager.GetString("Historial_BtnGanadas", resourceCulture);
+            }
+        }
+        
+        public static string Historial_BtnRival {
+            get {
+                return ResourceManager.GetString("Historial_BtnRival", resourceCulture);
+            }
+        }
+        
+        public static string Historial_BtnPenalizaciones {
+            get {
+                return ResourceManager.GetString("Historial_BtnPenalizaciones", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColFecha {
+            get {
+                return ResourceManager.GetString("Historial_ColFecha", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColPuntos {
+            get {
+                return ResourceManager.GetString("Historial_ColPuntos", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColPalabraGanadas {
+            get {
+                return ResourceManager.GetString("Historial_ColPalabraGanadas", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColRivalGanadas {
+            get {
+                return ResourceManager.GetString("Historial_ColRivalGanadas", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColPalabraRival {
+            get {
+                return ResourceManager.GetString("Historial_ColPalabraRival", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColRivalRival {
+            get {
+                return ResourceManager.GetString("Historial_ColRivalRival", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColPalabraPenal {
+            get {
+                return ResourceManager.GetString("Historial_ColPalabraPenal", resourceCulture);
+            }
+        }
+        
+        public static string Historial_ColRivalPenal {
+            get {
+                return ResourceManager.GetString("Historial_ColRivalPenal", resourceCulture);
+            }
+        }
+        
+        public static string Historial_SinRegistros {
+            get {
+                return ResourceManager.GetString("Historial_SinRegistros", resourceCulture);
+            }
+        }
+        
+        public static string Historial_PuntosGanados {
+            get {
+                return ResourceManager.GetString("Historial_PuntosGanados", resourceCulture);
+            }
+        }
+        
+        public static string Historial_PuntosPerdidos {
+            get {
+                return ResourceManager.GetString("Historial_PuntosPerdidos", resourceCulture);
+            }
+        }
+        
+        public static string GanadorAdivinador_Titulo {
+            get {
+                return ResourceManager.GetString("GanadorAdivinador_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string GanadorAdivinador_Subtitulo {
+            get {
+                return ResourceManager.GetString("GanadorAdivinador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        public static string PerdedorAdivinador_Titulo {
+            get {
+                return ResourceManager.GetString("PerdedorAdivinador_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string PerdedorAdivinador_Subtitulo {
+            get {
+                return ResourceManager.GetString("PerdedorAdivinador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        public static string GanadorCreador_Titulo {
+            get {
+                return ResourceManager.GetString("GanadorCreador_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string GanadorCreador_Subtitulo {
+            get {
+                return ResourceManager.GetString("GanadorCreador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        public static string PerdedorCreador_Titulo {
+            get {
+                return ResourceManager.GetString("PerdedorCreador_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string PerdedorCreador_Subtitulo {
+            get {
+                return ResourceManager.GetString("PerdedorCreador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        public static string DialogoResultado_PreguntaPrefijo {
+            get {
+                return ResourceManager.GetString("DialogoResultado_PreguntaPrefijo", resourceCulture);
+            }
+        }
+        
+        public static string DialogoResultado_PreguntaSufijo {
+            get {
+                return ResourceManager.GetString("DialogoResultado_PreguntaSufijo", resourceCulture);
+            }
+        }
+        
+        public static string Penalizacion_Titulo {
+            get {
+                return ResourceManager.GetString("Penalizacion_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string Penalizacion_Mensaje {
+            get {
+                return ResourceManager.GetString("Penalizacion_Mensaje", resourceCulture);
+            }
+        }
+        
+        public static string Penalizacion_PuntajeAnterior {
+            get {
+                return ResourceManager.GetString("Penalizacion_PuntajeAnterior", resourceCulture);
+            }
+        }
+        
+        public static string Penalizacion_PuntajeFormato {
+            get {
+                return ResourceManager.GetString("Penalizacion_PuntajeFormato", resourceCulture);
+            }
+        }
+        
+        public static string Penalizacion_RestaFormato {
+            get {
+                return ResourceManager.GetString("Penalizacion_RestaFormato", resourceCulture);
+            }
+        }
+        
+        public static string RivalAbandono_Titulo {
+            get {
+                return ResourceManager.GetString("RivalAbandono_Titulo", resourceCulture);
+            }
+        }
+        
+        public static string RivalAbandono_MensajeSufijo {
+            get {
+                return ResourceManager.GetString("RivalAbandono_MensajeSufijo", resourceCulture);
+            }
+        }
+        
+        public static string RivalAbandono_Pregunta {
+            get {
+                return ResourceManager.GetString("RivalAbandono_Pregunta", resourceCulture);
+            }
+        }
+        
+        public static string RivalAbandono_Esperar {
+            get {
+                return ResourceManager.GetString("RivalAbandono_Esperar", resourceCulture);
+            }
+        }
+        
+        public static string RivalAbandono_ErrorReabrir {
+            get {
+                return ResourceManager.GetString("RivalAbandono_ErrorReabrir", resourceCulture);
+            }
+        }
     }
 }

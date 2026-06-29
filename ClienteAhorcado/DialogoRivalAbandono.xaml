@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
         Title="" Height="380" Width="500"
         WindowStartupLocation="CenterOwner"
@@ -17,20 +18,20 @@
             <Border Background="#F5F5F5" CornerRadius="8" Width="55" Height="55" HorizontalAlignment="Center" Margin="0,0,0,15">
                 <TextBlock Text="ℹ" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#555555"/>
             </Border>
-            <TextBlock Text="Tu rival abandonó" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <TextBlock Text="{x:Static p:Resources.RivalAbandono_Titulo}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock FontSize="13" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,8">
-                <Run x:Name="txtNombreRival" Text="Carlos Mendoza" FontWeight="Bold"/>
-                <Run Text=" abandonó la partida. Se le aplicará una penalización por su cuenta."/>
+                <Run x:Name="txtNombreRival" Text="" FontWeight="Bold"/>
+                <Run Text="{x:Static p:Resources.RivalAbandono_MensajeSufijo}"/>
             </TextBlock>
-            <TextBlock Text="¿Qué te gustaría hacer ahora?" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <Button Content="Esperar a otro oponente" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Margin="0,0,0,10" Click="btnEsperar_Click">
+            <TextBlock Text="{x:Static p:Resources.RivalAbandono_Pregunta}" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <Button Content="{x:Static p:Resources.RivalAbandono_Esperar}" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Margin="0,0,0,10" Click="btnEsperar_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Content="Ir al lobby" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnLobby_Click">
+            <Button Content="{x:Static p:Resources.Comun_IrAlLobby}" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnLobby_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

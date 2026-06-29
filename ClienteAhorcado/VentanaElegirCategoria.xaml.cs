@@ -19,7 +19,7 @@ namespace ClienteAhorcado {
         private void btnContinuar_Click(object sender, RoutedEventArgs e) {
             var categoria = lstCategorias.SelectedItem as CategoriaDTO;
             if (categoria == null) {
-                MessageBox.Show("Elige una categoría para continuar.", "Categoría",
+                MessageBox.Show(Properties.Resources.ElegirCategoria_ErrorMensaje, Properties.Resources.Comun_Categoria,
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }

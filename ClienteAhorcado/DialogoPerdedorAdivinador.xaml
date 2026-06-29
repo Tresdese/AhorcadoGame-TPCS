@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
         Title="" Height="480" Width="500"
         WindowStartupLocation="CenterOwner"
@@ -17,42 +18,42 @@
             <Border Background="#FFF8E1" CornerRadius="8" Width="55" Height="55" HorizontalAlignment="Center" Margin="0,0,0,15">
                 <TextBlock Text="☹" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#888888"/>
             </Border>
-            <TextBlock Text="Se acabaron los intentos" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
-            <TextBlock Text="No sumaste puntos esta vez" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+            <TextBlock Text="{x:Static p:Resources.PerdedorAdivinador_Titulo}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+            <TextBlock Text="{x:Static p:Resources.PerdedorAdivinador_Subtitulo}" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,15"/>
             <Border Background="#F9F9F9" BorderBrush="#EEEEEE" BorderThickness="1" CornerRadius="5" Padding="15,10" Margin="0,0,0,20">
                 <StackPanel>
                     <Grid Margin="0,0,0,8">
-                        <TextBlock Text="Palabra" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="txtPalabra" Text="ELEFANTE" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                        <TextBlock Text="{x:Static p:Resources.Comun_Palabra}" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="txtPalabra" Text="" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                     </Grid>
                     <Grid Margin="0,0,0,8">
-                        <TextBlock Text="Rival" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="txtRival" Text="Carlos Mendoza" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                        <TextBlock Text="{x:Static p:Resources.Comun_Rival}" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="txtRival" Text="" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                     </Grid>
                     <Grid Margin="0,0,0,15">
-                        <TextBlock Text="Categoría" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="txtCategoria" Text="Animales" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                        <TextBlock Text="{x:Static p:Resources.Comun_Categoria}" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="txtCategoria" Text="" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                     </Grid>
                     <Border BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="0,10,0,0">
                         <StackPanel>
                             <Grid Margin="0,0,0,5">
-                                <TextBlock Text="Puntos obtenidos" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                                <TextBlock x:Name="txtPuntosObtenidos" Text="0 pts" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                <TextBlock Text="{x:Static p:Resources.Comun_PuntosObtenidos}" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
+                                <TextBlock x:Name="txtPuntosObtenidos" Text="" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                             </Grid>
                             <Grid>
-                                <TextBlock Text="Puntaje global" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
-                                <TextBlock x:Name="txtPuntajeGlobal" Text="75 pts" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                <TextBlock Text="{x:Static p:Resources.Comun_PuntajeGlobal}" FontSize="13" Foreground="#888888" HorizontalAlignment="Left"/>
+                                <TextBlock x:Name="txtPuntajeGlobal" Text="" FontSize="13" FontWeight="Bold" HorizontalAlignment="Right"/>
                             </Grid>
                         </StackPanel>
                     </Border>
                 </StackPanel>
             </Border>
             <TextBlock FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,15">
-                <Run Text="¿Quieres jugar otra partida con "/>
-                <Run x:Name="txtPreguntaRival" Text="Carlos Mendoza" FontWeight="Bold"/>
-                <Run Text="?"/>
+                <Run Text="{x:Static p:Resources.DialogoResultado_PreguntaPrefijo}"/>
+                <Run x:Name="txtPreguntaRival" Text="" FontWeight="Bold"/>
+                <Run Text="{x:Static p:Resources.DialogoResultado_PreguntaSufijo}"/>
             </TextBlock>
-            <Button Content="Ir al lobby" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnLobby_Click">
+            <Button Content="{x:Static p:Resources.Comun_IrAlLobby}" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnLobby_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

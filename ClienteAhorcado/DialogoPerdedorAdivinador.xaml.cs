@@ -46,8 +46,8 @@ namespace ClienteAhorcado
             txtPalabra.Text = _palabra;
             txtRival.Text = _nombreRival;
             txtCategoria.Text = _categoria;
-            txtPuntosObtenidos.Text = "0 pts";
-            txtPuntajeGlobal.Text = $"{_puntajeGlobal} pts";
+            txtPuntosObtenidos.Text = string.Format(Properties.Resources.Comun_FormatoPuntos, 0);
+            txtPuntajeGlobal.Text = string.Format(Properties.Resources.Comun_FormatoPuntos, _puntajeGlobal);
             txtPreguntaRival.Text = _nombreRival;
         }
 

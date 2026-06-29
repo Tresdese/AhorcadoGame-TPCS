@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
-        Title="Ahorcado · Esperando palabra" Height="600" Width="1000"
+        Title="{x:Static p:Resources.EsperandoPalabra_TituloVentana}" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen" Background="#F0F0F0">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,8 +17,8 @@
             <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
                 <Grid Margin="20,12,20,12">
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <TextBlock Text="¡Te uniste a la partida!" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="Tu rival está eligiendo la palabra que tendrás que adivinar" FontSize="12" Foreground="#666666"/>
+                        <TextBlock Text="{x:Static p:Resources.EsperandoPalabra_TeUniste}" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{x:Static p:Resources.EsperandoPalabra_Subtitulo}" FontSize="12" Foreground="#666666"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <Button x:Name="btnIdioma" Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0" Click="btnIdioma_Click">
@@ -49,7 +50,7 @@
                     <Ellipse Width="12" Height="12" Fill="#0078D4" Margin="4,0"/>
                 </StackPanel>
                 <TextBlock x:Name="lblEligiendo" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,15"/>
-                <TextBlock Text="Cuando termine, comenzarás a adivinar. Te avisaremos en cuanto la palabra esté lista." FontSize="14" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,25"/>
+                <TextBlock Text="{x:Static p:Resources.EsperandoPalabra_Instruccion}" FontSize="14" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,25"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
                     <Button x:Name="btnCreador" Content="👤  Creador" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Margin="0,0,10,0">
                         <Button.Resources>
@@ -58,8 +59,8 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <TextBlock Text="vs" FontSize="14" Foreground="#888888" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                    <Button Content="👤  Tú" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13">
+                    <TextBlock Text="{x:Static p:Resources.EsperandoPalabra_Vs}" FontSize="14" Foreground="#888888" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <Button Content="{x:Static p:Resources.EsperandoPalabra_TuBoton}" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -67,7 +68,7 @@
                         </Button.Resources>
                     </Button>
                 </StackPanel>
-                <Button Content="Salir" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="14" Click="btnSalir_Click">
+                <Button Content="{x:Static p:Resources.Comun_Salir}" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="14" Click="btnSalir_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>

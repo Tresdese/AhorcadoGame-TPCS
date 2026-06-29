@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
-        Title="Ahorcado · Elegir categoría" Height="600" Width="1000"
+        Title="{x:Static p:Resources.ElegirCategoria_TituloVentana}" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen" Background="#F0F0F0">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,14 +17,14 @@
             <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
                 <Grid Margin="20,12,20,12">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Content="⇐ Volver" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
+                        <Button Content="{x:Static p:Resources.Comun_Volver}" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
                                 </Style>
                             </Button.Resources>
                         </Button>
-                        <TextBlock Text="Paso 1 de 2 · Elige una categoría" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock Text="{x:Static p:Resources.ElegirCategoria_Paso}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -51,7 +52,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button Grid.Row="1" Content="Continuar ⇒" HorizontalAlignment="Right" Padding="20,10" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Margin="0,15,0,0" Click="btnContinuar_Click">
+            <Button Grid.Row="1" Content="{x:Static p:Resources.ElegirCategoria_Continuar}" HorizontalAlignment="Right" Padding="20,10" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Margin="0,15,0,0" Click="btnContinuar_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

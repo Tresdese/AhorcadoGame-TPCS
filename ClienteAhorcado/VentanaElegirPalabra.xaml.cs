@@ -9,7 +9,7 @@ namespace ClienteAhorcado {
         public VentanaElegirPalabra(int idCategoria, string nombreCategoria) {
             InitializeComponent();
             _idCategoria = idCategoria;
-            lblCategoria.Text = $"Categoría: {nombreCategoria}";
+            lblCategoria.Text = string.Format(Properties.Resources.ElegirPalabra_CategoriaConNombre, nombreCategoria);
             Loaded += (s, e) => CargarPalabras();
         }
 
@@ -23,7 +23,7 @@ namespace ClienteAhorcado {
         private void btnConfirmar_Click(object sender, RoutedEventArgs e) {
             var palabra = lstPalabras.SelectedItem as PalabraDTO;
             if (palabra == null) {
-                MessageBox.Show("Elige una palabra para continuar.", "Palabra",
+                MessageBox.Show(Properties.Resources.ElegirPalabra_ErrorMensaje, Properties.Resources.Comun_Palabra,
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }

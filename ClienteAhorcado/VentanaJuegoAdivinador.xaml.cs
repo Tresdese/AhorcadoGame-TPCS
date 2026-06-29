@@ -38,7 +38,7 @@ namespace ClienteAhorcado
 
         private void VentanaJuegoAdivinador_Loaded(object sender, RoutedEventArgs e)
         {
-            lblRival.Text = $"vs {_nombreCreador}";
+            lblRival.Text = string.Format(Properties.Resources.Juego_VsRival, _nombreCreador);
 
             casillas.Clear();
             foreach (var name in new[] { "l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8" })
@@ -49,7 +49,7 @@ namespace ClienteAhorcado
             foreach (var c in casillas)
                 c.Text = "";
 
-            lblIntentos.Text = "Esperando que el creador elija la palabra...";
+            lblIntentos.Text = Properties.Resources.Juego_EsperandoPalabra;
 
             _canal = Conexiones.Juego(new InstanceContext(this));
             if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(_idPartida, SesionActual.IdUsuario)))
@@ -77,7 +77,7 @@ namespace ClienteAhorcado
 
                 MostrarAhorcado(0);
                 ActualizarCasillas();
-                lblIntentos.Text = $"{_intentosRestantes}  intentos restantes";
+                lblIntentos.Text = string.Format(Properties.Resources.Juego_IntentosRestantes, _intentosRestantes);
             });
         }
 
@@ -97,7 +97,7 @@ namespace ClienteAhorcado
             Dispatcher.Invoke(() =>
             {
                 _intentosRestantes = intentosRestantes;
-                lblIntentos.Text = $"{intentosRestantes}  intentos restantes";
+                lblIntentos.Text = string.Format(Properties.Resources.Juego_IntentosRestantes, intentosRestantes);
 
                 ColorearBotonLetra(letra, acerto);
 

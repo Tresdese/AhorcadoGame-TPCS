@@ -45,8 +45,8 @@ namespace ClienteAhorcado
                 if (!reabierta)
                 {
                     MessageBox.Show(
-                        "No se pudo reabrir la partida. Regresando al lobby.",
-                        "Error",
+                        Properties.Resources.RivalAbandono_ErrorReabrir,
+                        Properties.Resources.Comun_Error,
                         MessageBoxButton.OK,
                         MessageBoxImage.Warning);
 
@@ -61,8 +61,8 @@ namespace ClienteAhorcado
             catch
             {
                 MessageBox.Show(
-                    "Error de conexión con base de datos, inténtelo más tarde.",
-                    "Error",
+                    Properties.Resources.Partidas_ErrorConexion,
+                    Properties.Resources.Comun_Error,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }

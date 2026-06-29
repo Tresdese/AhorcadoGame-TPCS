@@ -28,8 +28,8 @@ namespace ClienteAhorcado {
             JuegoCallbackHandler.VentanaEsperaPalabra = this;
             btnUsuario.Content = $"{SesionActual.Nombre} ▼";
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
-            lblEligiendo.Text = $"{_nombreCreador} está eligiendo la palabra...";
-            btnCreador.Content = $"👤  {_nombreCreador}";
+            lblEligiendo.Text = string.Format(Properties.Resources.EsperandoPalabra_Eligiendo, _nombreCreador);
+            btnCreador.Content = string.Format(Properties.Resources.EsperandoPalabra_CreadorBoton, _nombreCreador);
         }
 
         private void btnIdioma_Click(object sender, RoutedEventArgs e) {

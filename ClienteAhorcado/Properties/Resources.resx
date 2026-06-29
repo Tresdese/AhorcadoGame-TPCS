@@ -399,4 +399,268 @@
   <data name="RegistrarCuenta_YaTienesCuenta" xml:space="preserve">
     <value>¿Ya tienes cuenta?</value>
   </data>
+  <data name="Comun_Palabra" xml:space="preserve">
+    <value>Palabra</value>
+  </data>
+  <data name="Comun_Rival" xml:space="preserve">
+    <value>Rival</value>
+  </data>
+  <data name="Comun_Categoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="Comun_PuntosObtenidos" xml:space="preserve">
+    <value>Puntos obtenidos</value>
+  </data>
+  <data name="Comun_PuntajeGlobal" xml:space="preserve">
+    <value>Puntaje global</value>
+  </data>
+  <data name="Comun_IrAlLobby" xml:space="preserve">
+    <value>Ir al lobby</value>
+  </data>
+  <data name="Comun_JugarDeNuevo" xml:space="preserve">
+    <value>Jugar de nuevo</value>
+  </data>
+  <data name="Comun_Aceptar" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="Comun_Salir" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Comun_Chat" xml:space="preserve">
+    <value>💬  Chat</value>
+  </data>
+  <data name="Comun_FormatoPuntosPositivos" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Comun_FormatoPuntos" xml:space="preserve">
+    <value>{0} pts</value>
+  </data>
+  <data name="Juego_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Partida en curso</value>
+  </data>
+  <data name="Juego_TuAdivinando" xml:space="preserve">
+    <value>Tú (adivinando)</value>
+  </data>
+  <data name="Juego_TuCreador" xml:space="preserve">
+    <value>Tú (creador)</value>
+  </data>
+  <data name="Juego_RivalAdivinando" xml:space="preserve">
+    <value>El rival está adivinando</value>
+  </data>
+  <data name="Juego_AbandonarPartida" xml:space="preserve">
+    <value>Abandonar partida</value>
+  </data>
+  <data name="Juego_CategoriaEtiqueta" xml:space="preserve">
+    <value>CATEGORÍA</value>
+  </data>
+  <data name="Juego_DescripcionEtiqueta" xml:space="preserve">
+    <value>DESCRIPCIÓN</value>
+  </data>
+  <data name="Juego_TuPalabra" xml:space="preserve">
+    <value>TU PALABRA:  </value>
+  </data>
+  <data name="Juego_LetrasIncorrectas" xml:space="preserve">
+    <value>LETRAS INCORRECTAS:  </value>
+  </data>
+  <data name="Juego_IntentosRestantes" xml:space="preserve">
+    <value>{0}  intentos restantes</value>
+  </data>
+  <data name="Juego_EsperandoPalabra" xml:space="preserve">
+    <value>Esperando que el creador elija la palabra...</value>
+  </data>
+  <data name="Juego_VsRival" xml:space="preserve">
+    <value>vs {0}</value>
+  </data>
+  <data name="Juego_ConfirmarAbandono" xml:space="preserve">
+    <value>¿Seguro que deseas abandonar la partida? Perderás puntos.</value>
+  </data>
+  <data name="Juego_RivalAbandonoMensaje" xml:space="preserve">
+    <value>{0} abandonó la partida. Regresarás al lobby.</value>
+  </data>
+  <data name="Juego_RivalAbandonoTitulo" xml:space="preserve">
+    <value>Rival abandonó</value>
+  </data>
+  <data name="Juego_TuRival" xml:space="preserve">
+    <value>Tu rival</value>
+  </data>
+  <data name="ElegirCategoria_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Elegir categoría</value>
+  </data>
+  <data name="ElegirCategoria_Paso" xml:space="preserve">
+    <value>Paso 1 de 2 · Elige una categoría</value>
+  </data>
+  <data name="ElegirCategoria_Continuar" xml:space="preserve">
+    <value>Continuar ⇒</value>
+  </data>
+  <data name="ElegirCategoria_ErrorMensaje" xml:space="preserve">
+    <value>Elige una categoría para continuar.</value>
+  </data>
+  <data name="ElegirPalabra_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Elegir palabra</value>
+  </data>
+  <data name="ElegirPalabra_Paso" xml:space="preserve">
+    <value>Paso 2 de 2 · Elige una palabra</value>
+  </data>
+  <data name="ElegirPalabra_CategoriaConNombre" xml:space="preserve">
+    <value>Categoría: {0}</value>
+  </data>
+  <data name="ElegirPalabra_LetrasSufijo" xml:space="preserve">
+    <value> letras</value>
+  </data>
+  <data name="ElegirPalabra_Confirmar" xml:space="preserve">
+    <value>Confirmar palabra</value>
+  </data>
+  <data name="ElegirPalabra_ErrorMensaje" xml:space="preserve">
+    <value>Elige una palabra para continuar.</value>
+  </data>
+  <data name="EsperandoPalabra_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Esperando palabra</value>
+  </data>
+  <data name="EsperandoPalabra_TeUniste" xml:space="preserve">
+    <value>¡Te uniste a la partida!</value>
+  </data>
+  <data name="EsperandoPalabra_Subtitulo" xml:space="preserve">
+    <value>Tu rival está eligiendo la palabra que tendrás que adivinar</value>
+  </data>
+  <data name="EsperandoPalabra_Instruccion" xml:space="preserve">
+    <value>Cuando termine, comenzarás a adivinar. Te avisaremos en cuanto la palabra esté lista.</value>
+  </data>
+  <data name="EsperandoPalabra_Vs" xml:space="preserve">
+    <value>vs</value>
+  </data>
+  <data name="EsperandoPalabra_TuBoton" xml:space="preserve">
+    <value>👤  Tú</value>
+  </data>
+  <data name="EsperandoPalabra_Eligiendo" xml:space="preserve">
+    <value>{0} está eligiendo la palabra...</value>
+  </data>
+  <data name="EsperandoPalabra_CreadorBoton" xml:space="preserve">
+    <value>👤  {0}</value>
+  </data>
+  <data name="Historial_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Historial</value>
+  </data>
+  <data name="Historial_Titulo" xml:space="preserve">
+    <value>Historial de puntajes</value>
+  </data>
+  <data name="Historial_Subtitulo" xml:space="preserve">
+    <value>Tu progreso, partida por partida</value>
+  </data>
+  <data name="Historial_PuntajeGlobalEtiqueta" xml:space="preserve">
+    <value>PUNTAJE GLOBAL</value>
+  </data>
+  <data name="Historial_PtsSufijo" xml:space="preserve">
+    <value> pts</value>
+  </data>
+  <data name="Historial_Ganadas" xml:space="preserve">
+    <value>GANADAS</value>
+  </data>
+  <data name="Historial_RivalNoAdivino" xml:space="preserve">
+    <value>RIVAL NO ADIVINÓ</value>
+  </data>
+  <data name="Historial_Penalizaciones" xml:space="preserve">
+    <value>PENALIZACIONES</value>
+  </data>
+  <data name="Historial_BtnGanadas" xml:space="preserve">
+    <value>Partidas ganadas ({0})</value>
+  </data>
+  <data name="Historial_BtnRival" xml:space="preserve">
+    <value>Rival no adivinó ({0})</value>
+  </data>
+  <data name="Historial_BtnPenalizaciones" xml:space="preserve">
+    <value>Penalizaciones ({0})</value>
+  </data>
+  <data name="Historial_ColFecha" xml:space="preserve">
+    <value>FECHA</value>
+  </data>
+  <data name="Historial_ColPuntos" xml:space="preserve">
+    <value>PUNTOS</value>
+  </data>
+  <data name="Historial_ColPalabraGanadas" xml:space="preserve">
+    <value>PALABRA ADIVINADA</value>
+  </data>
+  <data name="Historial_ColRivalGanadas" xml:space="preserve">
+    <value>RIVAL VENCIDO</value>
+  </data>
+  <data name="Historial_ColPalabraRival" xml:space="preserve">
+    <value>PALABRA ELEGIDA</value>
+  </data>
+  <data name="Historial_ColRivalRival" xml:space="preserve">
+    <value>RIVAL QUE FALLÓ</value>
+  </data>
+  <data name="Historial_ColPalabraPenal" xml:space="preserve">
+    <value>PALABRA EN JUEGO</value>
+  </data>
+  <data name="Historial_ColRivalPenal" xml:space="preserve">
+    <value>PARTIDA ABANDONADA</value>
+  </data>
+  <data name="Historial_SinRegistros" xml:space="preserve">
+    <value>No hay registros en esta categoría.</value>
+  </data>
+  <data name="Historial_PuntosGanados" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Historial_PuntosPerdidos" xml:space="preserve">
+    <value>–{0} pts</value>
+  </data>
+  <data name="GanadorAdivinador_Titulo" xml:space="preserve">
+    <value>¡Adivinaste la palabra!</value>
+  </data>
+  <data name="GanadorAdivinador_Subtitulo" xml:space="preserve">
+    <value>Ganaste +10 puntos por esta partida</value>
+  </data>
+  <data name="PerdedorAdivinador_Titulo" xml:space="preserve">
+    <value>Se acabaron los intentos</value>
+  </data>
+  <data name="PerdedorAdivinador_Subtitulo" xml:space="preserve">
+    <value>No sumaste puntos esta vez</value>
+  </data>
+  <data name="GanadorCreador_Titulo" xml:space="preserve">
+    <value>Tu rival no pudo adivinar</value>
+  </data>
+  <data name="GanadorCreador_Subtitulo" xml:space="preserve">
+    <value>Ganaste +5 puntos por crear la partida</value>
+  </data>
+  <data name="PerdedorCreador_Titulo" xml:space="preserve">
+    <value>Tu rival adivinó la palabra</value>
+  </data>
+  <data name="PerdedorCreador_Subtitulo" xml:space="preserve">
+    <value>No obtuviste puntos esta vez</value>
+  </data>
+  <data name="DialogoResultado_PreguntaPrefijo" xml:space="preserve">
+    <value>¿Quieres jugar otra partida con </value>
+  </data>
+  <data name="DialogoResultado_PreguntaSufijo" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Penalizacion_Titulo" xml:space="preserve">
+    <value>Penalización aplicada</value>
+  </data>
+  <data name="Penalizacion_Mensaje" xml:space="preserve">
+    <value>Abandonaste una partida en curso. Se restaron de tu puntaje global:</value>
+  </data>
+  <data name="Penalizacion_PuntajeAnterior" xml:space="preserve">
+    <value>Puntaje anterior</value>
+  </data>
+  <data name="Penalizacion_PuntajeFormato" xml:space="preserve">
+    <value>{0} pts → {1} pts</value>
+  </data>
+  <data name="Penalizacion_RestaFormato" xml:space="preserve">
+    <value>–{0} pts</value>
+  </data>
+  <data name="RivalAbandono_Titulo" xml:space="preserve">
+    <value>Tu rival abandonó</value>
+  </data>
+  <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
+    <value> abandonó la partida. Se le aplicará una penalización por su cuenta.</value>
+  </data>
+  <data name="RivalAbandono_Pregunta" xml:space="preserve">
+    <value>¿Qué te gustaría hacer ahora?</value>
+  </data>
+  <data name="RivalAbandono_Esperar" xml:space="preserve">
+    <value>Esperar a otro oponente</value>
+  </data>
+  <data name="RivalAbandono_ErrorReabrir" xml:space="preserve">
+    <value>No se pudo reabrir la partida. Regresando al lobby.</value>
+  </data>
 </root>

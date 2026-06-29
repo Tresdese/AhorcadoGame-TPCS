@@ -33,7 +33,8 @@ namespace ClienteAhorcado
 
         private void DialogoPenalizacion_Loaded(object sender, RoutedEventArgs e)
         {
-            txtPuntaje.Text = $"{_puntajeAnterior} pts → {_puntajeNuevo} pts";
+            txtResta.Text = string.Format(Properties.Resources.Penalizacion_RestaFormato, _puntosPenalizacion);
+            txtPuntaje.Text = string.Format(Properties.Resources.Penalizacion_PuntajeFormato, _puntajeAnterior, _puntajeNuevo);
         }
 
         
