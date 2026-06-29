@@ -29,10 +29,14 @@ namespace ClienteAhorcado {
         private void CargarDatosActuales() {
             UsuarioDTO usuario = null;
             if (!ManejadorErrores.Ejecutar(() => { usuario = Conexiones.Usuario().ObtenerPerfil(SesionActual.IdUsuario); })) {
+                new VentanaPerfil().Show();
+                Close();
                 return;
             }
 
             if (usuario == null) {
+                new VentanaPerfil().Show();
+                Close();
                 return;
             }
 

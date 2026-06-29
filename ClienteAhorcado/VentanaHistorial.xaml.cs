@@ -235,6 +235,7 @@ namespace ClienteAhorcado
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
 
+            new VentanaPartidas().Show();
             Close();
         }
     }
