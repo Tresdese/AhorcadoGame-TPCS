@@ -17,7 +17,13 @@ namespace ClienteAhorcado {
     public partial class VentanaPerfil : Window {
         public VentanaPerfil() {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
             CargarPerfil();
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
         }
 
         private void CargarPerfil() {
@@ -33,10 +39,12 @@ namespace ClienteAhorcado {
             txtNombre.Text = usuario.Nombre;
             txtCorreo.Text = usuario.Correo;
             txtCelular.Text = usuario.Telefono;
-            txtFechaNacimiento.Text = usuario.FechaNacimiento.ToString("dd/MM/yyyy");
+            txtFechaNacimiento.Text = usuario.FechaNacimiento.ToString("dd/MM/yyyy",
+                System.Globalization.CultureInfo.InvariantCulture);
 
             lblNombreEncabezado.Text = usuario.Nombre;
             lblCorreoEncabezado.Text = usuario.Correo;
+            btnUsuario.Content = usuario.Nombre + " ▼";
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {

@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
-        Title="Ahorcado · Mi perfil" Height="600" Width="1000"
+        Title="{x:Static p:Resources.Perfil_TituloVentana}" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen" Background="#F0F0F0">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,7 +17,7 @@
             <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
                 <Grid Margin="20,12,20,12">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Button Content="⇐ Volver" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
+                        <Button Content="{x:Static p:Resources.Comun_Volver}" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -24,19 +25,19 @@
                             </Button.Resources>
                         </Button>
                         <StackPanel>
-                            <TextBlock Text="Mi perfil" FontSize="16" FontWeight="Bold"/>
-                            <TextBlock Text="Tu información personal" FontSize="12" Foreground="#666666"/>
+                            <TextBlock Text="{x:Static p:Resources.Perfil_Titulo}" FontSize="16" FontWeight="Bold"/>
+                            <TextBlock Text="{x:Static p:Resources.Perfil_Subtitulo}" FontSize="12" Foreground="#666666"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0">
+                        <Button x:Name="btnIdioma" Click="btnIdioma_Click" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
                                 </Style>
                             </Button.Resources>
                         </Button>
-                        <Button Content="Andrés ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
+                        <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="20"/>
@@ -55,15 +56,12 @@
                 <StackPanel>
                     <Grid Margin="0,0,0,25">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <Border Width="55" Height="55" CornerRadius="27.5" Background="#555555" Margin="0,0,15,0">
-                                <TextBlock Text="AS" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
                             <StackPanel VerticalAlignment="Center">
-                                <TextBlock x:Name="lblNombreEncabezado" Text="Andrés Sánchez" FontSize="18" FontWeight="Bold"/>
-                                <TextBlock x:Name="lblCorreoEncabezado" Text="andressv@ejemplo.com" FontSize="13" Foreground="#666666"/>
+                                <TextBlock x:Name="lblNombreEncabezado" Text="" FontSize="18" FontWeight="Bold"/>
+                                <TextBlock x:Name="lblCorreoEncabezado" Text="" FontSize="13" Foreground="#666666"/>
                             </StackPanel>
                         </StackPanel>
-                        <Button Content="Editar perfil" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Click="btnEditarPerfil_Click">
+                        <Button Content="{x:Static p:Resources.Perfil_EditarPerfil}" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Click="btnEditarPerfil_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -71,7 +69,7 @@
                             </Button.Resources>
                         </Button>
                     </Grid>
-                    <TextBlock Text="Nombre completo" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
+                    <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_NombreCompleto}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
                     <TextBox x:Name="txtNombre" Text="Andrés Sánchez" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                         <TextBox.Resources>
                             <Style TargetType="Border">
@@ -86,7 +84,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="Correo electrónico" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
+                            <TextBlock Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
                             <TextBox x:Name="txtCorreo" Text="andressv@ejemplo.com" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                                 <TextBox.Resources>
                                     <Style TargetType="Border">
@@ -96,7 +94,7 @@
                             </TextBox>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Text="Fecha de nacimiento" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
+                            <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_FechaNacimiento}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
                             <TextBox x:Name="txtFechaNacimiento" Text="14/09/2002" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                                 <TextBox.Resources>
                                     <Style TargetType="Border">
@@ -106,7 +104,7 @@
                             </TextBox>
                         </StackPanel>
                     </Grid>
-                    <TextBlock Text="Número de celular" FontSize="13" Foreground="#555555" Margin="0,15,0,5"/>
+                    <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_NumeroCelular}" FontSize="13" Foreground="#555555" Margin="0,15,0,5"/>
                     <TextBox x:Name="txtCelular" Text="+52 55 8765 4321" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9" Width="390" HorizontalAlignment="Left">
                         <TextBox.Resources>
                             <Style TargetType="Border">
@@ -124,25 +122,25 @@
                         <Border Grid.Column="0" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,10,0">
                             <StackPanel>
                                 <TextBlock Text="75 pts" FontSize="22" FontWeight="Bold" Foreground="#0078D4"/>
-                                <TextBlock Text="PUNTAJE TOTAL" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
+                                <TextBlock Text="{x:Static p:Resources.Perfil_PuntajeTotal}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="1" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,10,0">
                             <StackPanel>
                                 <TextBlock Text="5" FontSize="22" FontWeight="Bold" Foreground="Green"/>
-                                <TextBlock Text="PARTIDAS GANADAS" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
+                                <TextBlock Text="{x:Static p:Resources.Perfil_PartidasGanadas}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="2" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,10,0">
                             <StackPanel>
                                 <TextBlock Text="3" FontSize="22" FontWeight="Bold" Foreground="#333333"/>
-                                <TextBlock Text="RIVAL VENCIDO" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
+                                <TextBlock Text="{x:Static p:Resources.Perfil_RivalVencido}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="3" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15">
                             <StackPanel>
                                 <TextBlock Text="2" FontSize="22" FontWeight="Bold" Foreground="Red"/>
-                                <TextBlock Text="PENALIZACIONES" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
+                                <TextBlock Text="{x:Static p:Resources.Perfil_Penalizaciones}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                     </Grid>
