@@ -18,12 +18,18 @@ namespace ClienteAhorcado {
     public partial class VentanaRegistrarCuenta : Window {
         public VentanaRegistrarCuenta() {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
             ventanaBienvenida.Show();
             this.Close();
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
         }
 
         private void txtContrasena_PasswordChanged(object sender, RoutedEventArgs e) {
@@ -57,33 +63,33 @@ namespace ClienteAhorcado {
             }
 
             if (string.IsNullOrWhiteSpace(correo) || !CorreoTieneFormatoValido(correo)) {
-                lblErrorCorreo.Text = "Ingresa un correo electrónico válido.";
+                lblErrorCorreo.Text = Properties.Resources.RegistrarCuenta_ErrorCorreoInvalido;
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
             if (string.IsNullOrWhiteSpace(celular) || !CelularEsValido(celular)) {
-                lblErrorCelular.Text = "Ingresa un número de celular válido (10 a 15 dígitos).";
+                lblErrorCelular.Text = Properties.Resources.RegistrarCuenta_ErrorCelularInvalido;
                 lblErrorCelular.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
             if (fechaNacimiento == null) {
-                lblErrorFecha.Text = "Selecciona tu fecha de nacimiento.";
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorFechaVacia;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             } else if (!TieneAlMenos10Anios(fechaNacimiento.Value)) {
-                lblErrorFecha.Text = "Debes tener al menos 10 años cumplidos para registrarte.";
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMinima;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
             if (!ContrasenaCumpleRequisitos(contrasena)) {
-                lblErrorContrasena.Text = "La contraseña no cumple los requisitos.";
+                lblErrorContrasena.Text = Properties.Resources.RegistrarCuenta_ErrorContrasenaRequisitos;
                 lblErrorContrasena.Visibility = Visibility.Visible;
                 hayError = true;
             } else if (contrasena != confirmar) {
-                lblErrorContrasena.Text = "Las contraseñas no coinciden.";
+                lblErrorContrasena.Text = Properties.Resources.RegistrarCuenta_ErrorContrasenasNoCoinciden;
                 lblErrorContrasena.Visibility = Visibility.Visible;
                 hayError = true;
             }
@@ -98,7 +104,7 @@ namespace ClienteAhorcado {
             }
 
             if (correoExiste) {
-                lblErrorCorreo.Text = "Este correo ya tiene una cuenta asociada.";
+                lblErrorCorreo.Text = Properties.Resources.RegistrarCuenta_ErrorCorreoExiste;
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 return;
             }
@@ -117,7 +123,10 @@ namespace ClienteAhorcado {
             }
 
             if (registrado) {
-                MessageBox.Show("¡Cuenta creada con éxito! Ahora puedes iniciar sesión.", "Registro exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(
+                    Properties.Resources.RegistrarCuenta_ExitoMensaje,
+                    Properties.Resources.RegistrarCuenta_ExitoTitulo,
+                    MessageBoxButton.OK, MessageBoxImage.Information);
                 VentanaIniciarSesion ventanaIniciarSesion = new VentanaIniciarSesion();
                 ventanaIniciarSesion.Show();
                 this.Close();
@@ -147,6 +156,12 @@ namespace ClienteAhorcado {
                 && contrasena.Any(c => char.IsUpper(c))
                 && contrasena.Any(c => char.IsLower(c))
                 && contrasena.Any(c => char.IsDigit(c));
+        }
+
+        private void lnkIniciaSesion_Click(object sender, MouseButtonEventArgs e) {
+            VentanaIniciarSesion ventanaIniciarSesion = new VentanaIniciarSesion();
+            ventanaIniciarSesion.Show();
+            this.Close();
         }
     }
 }
