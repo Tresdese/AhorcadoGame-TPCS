@@ -135,6 +135,9 @@
   <data name="Comun_CampoObligatorio" xml:space="preserve">
     <value>This field is required.</value>
   </data>
+  <data name="Comun_Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Comun_Contrasena" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -155,6 +158,33 @@
   </data>
   <data name="Comun_Volver" xml:space="preserve">
     <value>⇐ Back</value>
+  </data>
+  <data name="EditarPerfil_Editando" xml:space="preserve">
+    <value>EDITING</value>
+  </data>
+  <data name="EditarPerfil_ErrorContrasenaRequisitos" xml:space="preserve">
+    <value>The password must have 8+ characters, uppercase, lowercase and a number.</value>
+  </data>
+  <data name="EditarPerfil_ExitoMensaje" xml:space="preserve">
+    <value>Your changes were saved successfully.</value>
+  </data>
+  <data name="EditarPerfil_ExitoTitulo" xml:space="preserve">
+    <value>Profile updated</value>
+  </data>
+  <data name="EditarPerfil_GuardarCambios" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="EditarPerfil_NuevaContrasena" xml:space="preserve">
+    <value>New password (optional)</value>
+  </data>
+  <data name="EditarPerfil_Subtitulo" xml:space="preserve">
+    <value>Update your details (email can't be changed)</value>
+  </data>
+  <data name="EditarPerfil_Titulo" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="EditarPerfil_TituloVentana" xml:space="preserve">
+    <value>Hangman · Edit profile</value>
   </data>
   <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
     <value>The password you entered is incorrect.</value>

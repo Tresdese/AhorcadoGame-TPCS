@@ -135,6 +135,9 @@
   <data name="Comun_CampoObligatorio" xml:space="preserve">
     <value>Este campo es obligatorio.</value>
   </data>
+  <data name="Comun_Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="Comun_Contrasena" xml:space="preserve">
     <value>Contraseña</value>
   </data>
@@ -155,6 +158,33 @@
   </data>
   <data name="Comun_Volver" xml:space="preserve">
     <value>⇐ Volver</value>
+  </data>
+  <data name="EditarPerfil_Editando" xml:space="preserve">
+    <value>EDITANDO</value>
+  </data>
+  <data name="EditarPerfil_ErrorContrasenaRequisitos" xml:space="preserve">
+    <value>La contraseña debe tener 8+ caracteres, mayúscula, minúscula y número.</value>
+  </data>
+  <data name="EditarPerfil_ExitoMensaje" xml:space="preserve">
+    <value>Tus cambios se guardaron correctamente.</value>
+  </data>
+  <data name="EditarPerfil_ExitoTitulo" xml:space="preserve">
+    <value>Perfil actualizado</value>
+  </data>
+  <data name="EditarPerfil_GuardarCambios" xml:space="preserve">
+    <value>Guardar cambios</value>
+  </data>
+  <data name="EditarPerfil_NuevaContrasena" xml:space="preserve">
+    <value>Nueva contraseña (opcional)</value>
+  </data>
+  <data name="EditarPerfil_Subtitulo" xml:space="preserve">
+    <value>Actualiza tus datos (el correo no puede cambiarse)</value>
+  </data>
+  <data name="EditarPerfil_Titulo" xml:space="preserve">
+    <value>Editar perfil</value>
+  </data>
+  <data name="EditarPerfil_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Editar perfil</value>
   </data>
   <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
     <value>La contraseña que ingresaste es incorrecta.</value>

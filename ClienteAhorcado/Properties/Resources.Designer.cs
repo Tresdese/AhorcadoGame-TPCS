@@ -115,6 +115,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        public static string Comun_Cancelar {
+            get {
+                return ResourceManager.GetString("Comun_Cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         public static string Comun_Contrasena {
@@ -174,6 +183,87 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_Volver {
             get {
                 return ResourceManager.GetString("Comun_Volver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a EDITANDO.
+        /// </summary>
+        public static string EditarPerfil_Editando {
+            get {
+                return ResourceManager.GetString("EditarPerfil_Editando", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña debe tener 8+ caracteres, mayúscula, minúscula y número..
+        /// </summary>
+        public static string EditarPerfil_ErrorContrasenaRequisitos {
+            get {
+                return ResourceManager.GetString("EditarPerfil_ErrorContrasenaRequisitos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tus cambios se guardaron correctamente..
+        /// </summary>
+        public static string EditarPerfil_ExitoMensaje {
+            get {
+                return ResourceManager.GetString("EditarPerfil_ExitoMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Perfil actualizado.
+        /// </summary>
+        public static string EditarPerfil_ExitoTitulo {
+            get {
+                return ResourceManager.GetString("EditarPerfil_ExitoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardar cambios.
+        /// </summary>
+        public static string EditarPerfil_GuardarCambios {
+            get {
+                return ResourceManager.GetString("EditarPerfil_GuardarCambios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nueva contraseña (opcional).
+        /// </summary>
+        public static string EditarPerfil_NuevaContrasena {
+            get {
+                return ResourceManager.GetString("EditarPerfil_NuevaContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actualiza tus datos (el correo no puede cambiarse).
+        /// </summary>
+        public static string EditarPerfil_Subtitulo {
+            get {
+                return ResourceManager.GetString("EditarPerfil_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Editar perfil.
+        /// </summary>
+        public static string EditarPerfil_Titulo {
+            get {
+                return ResourceManager.GetString("EditarPerfil_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Editar perfil.
+        /// </summary>
+        public static string EditarPerfil_TituloVentana {
+            get {
+                return ResourceManager.GetString("EditarPerfil_TituloVentana", resourceCulture);
             }
         }
         

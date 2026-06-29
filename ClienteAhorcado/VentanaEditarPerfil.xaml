@@ -55,9 +55,6 @@
                 <StackPanel>
                     <Grid Margin="0,0,0,25">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <Border Width="55" Height="55" CornerRadius="27.5" Background="#555555" Margin="0,0,15,0">
-                                <TextBlock Text="AS" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
                             <StackPanel VerticalAlignment="Center">
                                 <TextBlock x:Name="lblNombreEncabezado" Text="Andrés Sánchez" FontSize="18" FontWeight="Bold"/>
                                 <TextBlock x:Name="lblCorreoEncabezado" Text="andressv@ejemplo.com" FontSize="13" Foreground="#666666"/>
