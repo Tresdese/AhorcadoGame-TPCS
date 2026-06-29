@@ -64,7 +64,7 @@
                 <TextBlock Text="{x:Static p:Resources.Partidas_DosJugadores}" FontSize="13" Foreground="#888888" VerticalAlignment="Center"/>
             </StackPanel>
             <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.Partidas_CrearPartida}" HorizontalAlignment="Right"
-                    Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0 FontSize="14" FontWeight="Bold" Click="btnCrearPartida_Click">
+                    Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Click="btnCrearPartida_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

@@ -25,11 +25,18 @@ namespace ClienteAhorcado
         public VentanaEsperandoRival()
         {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
             Loaded += VentanaEsperandoRival_Loaded;
         }
-        
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
+        }
+
         private void VentanaEsperandoRival_Loaded(object sender, RoutedEventArgs e)
         {
+            btnUsuario.Content = $"{SesionActual.Nombre} ▼";
             CrearPartida();
         }
        
@@ -86,11 +93,11 @@ namespace ClienteAhorcado
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             var respuesta = MessageBox.Show(
-                "¿Seguro que deseas cancelar la partida?",
-                "Cancelar partida",
+                Properties.Resources.EsperandoRival_ConfirmarCancelar,
+                Properties.Resources.EsperandoRival_CancelarPartida,
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
- 
+
             if (respuesta == MessageBoxResult.Yes)
             {
                 DetenerCronometro();
@@ -114,8 +121,8 @@ namespace ClienteAhorcado
         private void MostrarErrorConexion()
         {
             MessageBox.Show(
-                "Error de conexión con base de datos, inténtelo más tarde.",
-                "Error",
+                Properties.Resources.Partidas_ErrorConexion,
+                Properties.Resources.Comun_Error,
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
 
