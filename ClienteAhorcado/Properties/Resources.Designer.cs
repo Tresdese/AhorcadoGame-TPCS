@@ -232,6 +232,78 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Editar perfil.
+        /// </summary>
+        public static string Perfil_EditarPerfil {
+            get {
+                return ResourceManager.GetString("Perfil_EditarPerfil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PARTIDAS GANADAS.
+        /// </summary>
+        public static string Perfil_PartidasGanadas {
+            get {
+                return ResourceManager.GetString("Perfil_PartidasGanadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PENALIZACIONES.
+        /// </summary>
+        public static string Perfil_Penalizaciones {
+            get {
+                return ResourceManager.GetString("Perfil_Penalizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PUNTAJE TOTAL.
+        /// </summary>
+        public static string Perfil_PuntajeTotal {
+            get {
+                return ResourceManager.GetString("Perfil_PuntajeTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a RIVAL VENCIDO.
+        /// </summary>
+        public static string Perfil_RivalVencido {
+            get {
+                return ResourceManager.GetString("Perfil_RivalVencido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu información personal.
+        /// </summary>
+        public static string Perfil_Subtitulo {
+            get {
+                return ResourceManager.GetString("Perfil_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mi perfil.
+        /// </summary>
+        public static string Perfil_Titulo {
+            get {
+                return ResourceManager.GetString("Perfil_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Mi perfil.
+        /// </summary>
+        public static string Perfil_TituloVentana {
+            get {
+                return ResourceManager.GetString("Perfil_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirmar contraseña.
         /// </summary>
         public static string RegistrarCuenta_ConfirmarContrasena {

@@ -33,7 +33,7 @@
                 <DropShadowEffect BlurRadius="15" Opacity="0.1" ShadowDepth="3"/>
             </Border.Effect>
             <StackPanel>
-                <Image Source="/Recursos/ahorcado_completo.png" Width="80" Height="90" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                <Image Source="/Recursos/ahorcado_completo.png" Width="70" Height="75" HorizontalAlignment="Center" Margin="0,0,0,15"/>
 
                 <TextBlock Text="{x:Static p:Resources.Comun_IniciarSesion}" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
 
