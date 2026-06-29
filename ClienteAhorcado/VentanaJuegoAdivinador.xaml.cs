@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.Windows;
@@ -10,7 +10,7 @@ using AhorcadoWCF;
 namespace ClienteAhorcado
 {
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class VentanaJuegoAdivinador : Window, IJuegoCallback
+    public partial class VentanaJuegoAdivinador : Page, IJuegoCallback
     {
         private readonly int _idPartida;
         private readonly string _nombreCreador;
@@ -26,7 +26,7 @@ namespace ClienteAhorcado
             _idPartida = idPartida;
             _nombreCreador = nombreCreador;
             Loaded += VentanaJuegoAdivinador_Loaded;
-            Closing += (s, e) => CerrarCanal();
+            Unloaded += (s, e) => CerrarCanal();
         }
 
         private void CerrarCanal()
@@ -54,8 +54,7 @@ namespace ClienteAhorcado
             _canal = Conexiones.Juego(new InstanceContext(this));
             if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(_idPartida, SesionActual.IdUsuario)))
             {
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             }
         }
 
@@ -147,9 +146,9 @@ namespace ClienteAhorcado
             Dispatcher.Invoke(() =>
             {
                 var dialogo = new DialogoRivalAbandono(_idPartida, nombreRival);
-                dialogo.Owner = this;
+                dialogo.Owner = Window.GetWindow(this);
                 dialogo.ShowDialog();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             });
         }
 
@@ -169,18 +168,18 @@ namespace ClienteAhorcado
                 {
                     var dialogo = new DialogoGanadorAdivinador(
                         _idPartida, _nombreCreador, palabra, categoria, puntosObtenidos, puntajeGlobal);
-                    dialogo.Owner = this;
+                    dialogo.Owner = Window.GetWindow(this);
                     dialogo.ShowDialog();
                 }
                 else
                 {
                     var dialogo = new DialogoPerdedorAdivinador(
                         _idPartida, _nombreCreador, palabra, categoria, puntajeGlobal);
-                    dialogo.Owner = this;
+                    dialogo.Owner = Window.GetWindow(this);
                     dialogo.ShowDialog();
                 }
 
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             });
         }
 
@@ -282,7 +281,7 @@ namespace ClienteAhorcado
         private void btnAbandonar_Click(object sender, RoutedEventArgs e)
         {
             var dialogo = new DialogoAbandonarPartida(_idPartida);
-            dialogo.Owner = this;
+            dialogo.Owner = Window.GetWindow(this);
             dialogo.ShowDialog();
 
             if (dialogo.Confirmo)
@@ -297,7 +296,7 @@ namespace ClienteAhorcado
 
                 var penalizacion = new DialogoPenalizacion(puntajeActual, 3);
                 penalizacion.Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             }
         }
     }

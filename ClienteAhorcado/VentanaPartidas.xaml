@@ -1,13 +1,11 @@
-﻿<Window x:Class="ClienteAhorcado.VentanaPartidas"
+﻿<Page x:Class="ClienteAhorcado.VentanaPartidas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
         xmlns:p="clr-namespace:ClienteAhorcado.Properties"
-        mc:Ignorable="d"
-        Title="{x:Static p:Resources.Partidas_TituloVentana}" Height="600" Width="1000"
-        WindowStartupLocation="CenterScreen" Background="White">
+        mc:Ignorable="d" Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -143,4 +141,4 @@
             </Grid>
         </Border>
     </Grid>
-</Window>
+</Page>

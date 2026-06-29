@@ -21,16 +21,17 @@ namespace ClienteAhorcado {
         public static void Cambiar(string idioma) {
             Aplicar(idioma);
 
-            var actual = Application.Current.Windows
-                .OfType<Window>()
-                .FirstOrDefault(w => w.IsActive) ?? Application.Current.MainWindow;
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            var frame = mainWindow?.MainFrame;
+            var paginaActual = frame?.Content;
+            if (paginaActual == null) return;
 
-            if (actual == null) return;
-
-            var nueva = (Window)Activator.CreateInstance(actual.GetType());
-            Application.Current.MainWindow = nueva;
-            nueva.Show();
-            actual.Close();
+            try
+            {
+                var nueva = (System.Windows.Controls.Page)Activator.CreateInstance(paginaActual.GetType());
+                frame.Navigate(nueva);
+            }
+            catch { }
         }
     }
 }

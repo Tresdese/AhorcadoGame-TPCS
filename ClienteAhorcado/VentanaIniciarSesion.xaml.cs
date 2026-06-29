@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using AhorcadoWCF;
 
 namespace ClienteAhorcado {
-    public partial class VentanaIniciarSesion : Window {
+    public partial class VentanaIniciarSesion : Page {
         public VentanaIniciarSesion() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
@@ -22,8 +22,7 @@ namespace ClienteAhorcado {
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
-            ventanaBienvenida.Show();
-            this.Close();
+            Navegacion.Ir(ventanaBienvenida);
         }
 
         private void btnIdioma_Click(object sender, RoutedEventArgs e) {
@@ -73,8 +72,7 @@ namespace ClienteAhorcado {
                 SesionActual.Correo = usuario.Correo;
 
                 VentanaPartidas ventanaPartidas = new VentanaPartidas();
-                ventanaPartidas.Show();
-                this.Close();
+                Navegacion.Ir(ventanaPartidas);
                 return;
             }
 
@@ -95,8 +93,7 @@ namespace ClienteAhorcado {
 
         private void lnkRegistrate_Click(object sender, MouseButtonEventArgs e) {
             VentanaRegistrarCuenta ventanaRegistrarCuenta = new VentanaRegistrarCuenta();
-            ventanaRegistrarCuenta.Show();
-            this.Close();
+            Navegacion.Ir(ventanaRegistrarCuenta);
         }
     }
 }

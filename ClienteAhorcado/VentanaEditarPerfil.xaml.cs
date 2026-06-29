@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    public partial class VentanaEditarPerfil : Window {
+    public partial class VentanaEditarPerfil : Page {
         public VentanaEditarPerfil() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
@@ -29,14 +29,12 @@ namespace ClienteAhorcado {
         private void CargarDatosActuales() {
             UsuarioDTO usuario = null;
             if (!ManejadorErrores.Ejecutar(() => { usuario = Conexiones.Usuario().ObtenerPerfil(SesionActual.IdUsuario); })) {
-                new VentanaPerfil().Show();
-                Close();
+                Navegacion.Ir(new VentanaPerfil());
                 return;
             }
 
             if (usuario == null) {
-                new VentanaPerfil().Show();
-                Close();
+                Navegacion.Ir(new VentanaPerfil());
                 return;
             }
 
@@ -51,14 +49,12 @@ namespace ClienteAhorcado {
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaPerfil ventanaPerfil = new VentanaPerfil();
-            ventanaPerfil.Show();
-            this.Close();
+            Navegacion.Ir(ventanaPerfil);
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e) {
             VentanaPerfil ventanaPerfil = new VentanaPerfil();
-            ventanaPerfil.Show();
-            this.Close();
+            Navegacion.Ir(ventanaPerfil);
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e) {
@@ -131,8 +127,7 @@ namespace ClienteAhorcado {
                     Properties.Resources.EditarPerfil_ExitoTitulo,
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 VentanaPerfil ventanaPerfil = new VentanaPerfil();
-                ventanaPerfil.Show();
-                this.Close();
+                Navegacion.Ir(ventanaPerfil);
             }
         }
 

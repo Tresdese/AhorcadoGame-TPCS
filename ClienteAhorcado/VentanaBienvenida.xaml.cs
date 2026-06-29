@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    public partial class VentanaBienvenida : Window {
+    public partial class VentanaBienvenida : Page {
         public VentanaBienvenida() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
@@ -51,14 +51,12 @@ namespace ClienteAhorcado {
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e) {
             VentanaIniciarSesion ventanaIniciarSesion = new VentanaIniciarSesion();
-            ventanaIniciarSesion.Show();
-            this.Close();
+            Navegacion.Ir(ventanaIniciarSesion);
         }
 
         private void btnRegistrarCuenta_Click(object sender, RoutedEventArgs e) {
             VentanaRegistrarCuenta ventanaRegistrarCuenta = new VentanaRegistrarCuenta();
-            ventanaRegistrarCuenta.Show();
-            this.Close();
+            Navegacion.Ir(ventanaRegistrarCuenta);
         }
 
         private void btnIdioma_Click(object sender, RoutedEventArgs e) {

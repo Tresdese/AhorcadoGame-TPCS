@@ -58,8 +58,7 @@ namespace ClienteAhorcado
         
         private void btnLobby_Click(object sender, RoutedEventArgs e)
         {
-            var ventanaPartidas = new VentanaPartidas();
-            ventanaPartidas.Show();
+            Navegacion.Ir(new VentanaPartidas());
             Close();
         }
     }

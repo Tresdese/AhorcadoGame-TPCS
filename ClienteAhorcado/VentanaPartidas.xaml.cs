@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {  
-    public partial class VentanaPartidas : Window {   
+    public partial class VentanaPartidas : Page {   
         public VentanaPartidas() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
@@ -97,8 +97,7 @@ namespace ClienteAhorcado {
 
         private void btnCrearPartida_Click(object sender, RoutedEventArgs e) {
             var ventanaEspera = new VentanaEsperandoRival();
-            ventanaEspera.Show();
-            Close();
+            Navegacion.Ir(ventanaEspera);
         }
        
         private void btnUnirme_Click(object sender, RoutedEventArgs e) {
@@ -140,8 +139,7 @@ namespace ClienteAhorcado {
                 JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario);
 
                 var ventanaEspera = new VentanaEsperandoPalabra(item.IdPartida, item.Creador);
-                ventanaEspera.Show();
-                Close();
+                Navegacion.Ir(ventanaEspera);
             } catch (Exception) {
                 MessageBox.Show(
                     "Error de conexión con base de datos, inténtelo más tarde.",
@@ -158,14 +156,12 @@ namespace ClienteAhorcado {
 
         private void mnuVerPerfil_Click(object sender, RoutedEventArgs e) {
             var ventanaPerfil = new VentanaPerfil();
-            ventanaPerfil.Show();
-            Close();
+            Navegacion.Ir(ventanaPerfil);
         }
 
         private void mnuHistorial_Click(object sender, RoutedEventArgs e) {
             var ventanaHistorial = new VentanaHistorial();
-            ventanaHistorial.Show();
-            Close();
+            Navegacion.Ir(ventanaHistorial);
         }
 
         private void mnuCerrarSesion_Click(object sender, RoutedEventArgs e) {
@@ -178,8 +174,7 @@ namespace ClienteAhorcado {
             if (respuesta == MessageBoxResult.Yes) {
                 SesionActual.Cerrar();
                 var ventanaLogin = new VentanaIniciarSesion();
-                ventanaLogin.Show();
-                Close();
+                Navegacion.Ir(ventanaLogin);
             }
         }
     }
