@@ -126,17 +126,25 @@ namespace ClienteAhorcado
 
         private void MostrarAhorcado(int fallos)
         {
-            try
+            var candidatos = new List<string> { $"ahorcado_{fallos}" };
+            if (fallos >= 6) candidatos.Add("ahorcado_completo");
+            for (int f = fallos - 1; f >= 0; f--) candidatos.Add($"ahorcado_{f}");
+
+            foreach (var nombre in candidatos)
             {
-                var img = new BitmapImage();
-                img.BeginInit();
-                img.UriSource = new Uri($"/Recursos/ahorcado_{fallos}.png", UriKind.Relative);
-                img.CacheOption = BitmapCacheOption.OnLoad;
-                img.EndInit();
-                imgAhorcado.Source = img;
-            }
-            catch
-            {
+                try
+                {
+                    var img = new BitmapImage();
+                    img.BeginInit();
+                    img.UriSource = new Uri($"/Recursos/{nombre}.png", UriKind.Relative);
+                    img.CacheOption = BitmapCacheOption.OnLoad;
+                    img.EndInit();
+                    imgAhorcado.Source = img;
+                    return;
+                }
+                catch
+                {
+                }
             }
         }
 

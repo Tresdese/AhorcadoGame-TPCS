@@ -67,6 +67,9 @@
     <Compile Include="DialogoGanadorCreador.xaml.cs">
       <DependentUpon>DialogoGanadorCreador.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DialogoPerdedorCreador.xaml.cs">
+      <DependentUpon>DialogoPerdedorCreador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogoPenalizacion.xaml.cs">
       <DependentUpon>DialogoPenalizacion.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DialogoGanadorCreador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoPerdedorCreador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

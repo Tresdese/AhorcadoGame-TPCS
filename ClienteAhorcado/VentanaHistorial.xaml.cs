@@ -125,6 +125,7 @@ namespace ClienteAhorcado
         
         private void MostrarRegistros(List<PuntajeHistorialDTO> registros, string filtro)
         {
+            lvHistorial.ItemsSource = null;
             lvHistorial.Items.Clear();
 
             var items = registros.Select(r => new HistorialItemViewModel
@@ -144,8 +145,8 @@ namespace ClienteAhorcado
         
         private void MostrarSinRegistros()
         {
-            lvHistorial.Items.Clear();
             lvHistorial.ItemsSource = null;
+            lvHistorial.Items.Clear();
             lvHistorial.Items.Add(new ListViewItem
             {
                 Content = "No hay registros en esta categoría.",

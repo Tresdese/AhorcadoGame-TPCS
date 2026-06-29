@@ -56,38 +56,5 @@ namespace ClienteAhorcado
             new VentanaPartidas().Show();
             Close();
         }
-
-        private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var cliente = Conexiones.Partida();
-                bool reabierta = cliente.ReabrirPartida(_idPartida);
-
-                if (!reabierta)
-                {
-                    MessageBox.Show(
-                        "No se pudo reabrir la partida. Regresando al lobby.",
-                        "Error",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-
-                    new VentanaPartidas().Show();
-                    Close();
-                    return;
-                }
-
-                new VentanaEsperandoRival().Show();
-                Close();
-            }
-            catch
-            {
-                MessageBox.Show(
-                    "Error de conexión con base de datos, inténtelo más tarde.",
-                    "Error",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-        }
     }
 }

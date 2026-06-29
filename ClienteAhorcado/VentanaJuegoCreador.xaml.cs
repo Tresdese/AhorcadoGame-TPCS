@@ -86,12 +86,34 @@ namespace ClienteAhorcado
                 }
                 else
                 {
-                    int fallos = 6 - intentosRestantes;
-                    imgAhorcado.Source = new BitmapImage(
-                        new Uri($"/Recursos/ahorcado_{fallos}.png", UriKind.Relative));
+                    MostrarAhorcado(6 - intentosRestantes);
                     AgregarLetraIncorrecta(letra);
                 }
             });
+        }
+
+        private void MostrarAhorcado(int fallos)
+        {
+            var candidatos = new List<string> { $"ahorcado_{fallos}" };
+            if (fallos >= 6) candidatos.Add("ahorcado_completo");
+            for (int f = fallos - 1; f >= 0; f--) candidatos.Add($"ahorcado_{f}");
+
+            foreach (var nombre in candidatos)
+            {
+                try
+                {
+                    var img = new BitmapImage();
+                    img.BeginInit();
+                    img.UriSource = new Uri($"/Recursos/{nombre}.png", UriKind.Relative);
+                    img.CacheOption = BitmapCacheOption.OnLoad;
+                    img.EndInit();
+                    imgAhorcado.Source = img;
+                    return;
+                }
+                catch
+                {
+                }
+            }
         }
 
         public void MensajeChatRecibido(string remitente, string mensaje) =>
@@ -115,12 +137,20 @@ namespace ClienteAhorcado
         {
             Dispatcher.Invoke(() =>
             {
-                MessageBox.Show(
-                    $"Resultado: {resultado}\nPalabra: {palabra}\nPuntos obtenidos: {puntosObtenidos}\nPuntaje global: {puntajeGlobal}",
-                    "Partida finalizada",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-                new VentanaPartidas().Show();
+                if (resultado == "Ganaste")
+                {
+                    var dialogo = new DialogoGanadorCreador(
+                        SesionActual.IdPartida, "Tu rival", palabra, lblCategoria.Text, puntosObtenidos, puntajeGlobal);
+                    dialogo.Owner = this;
+                    dialogo.ShowDialog();
+                }
+                else
+                {
+                    var dialogo = new DialogoPerdedorCreador(
+                        SesionActual.IdPartida, "Tu rival", palabra, lblCategoria.Text, puntajeGlobal);
+                    dialogo.Owner = this;
+                    dialogo.ShowDialog();
+                }
                 Close();
             });
         }

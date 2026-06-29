@@ -52,27 +52,13 @@
                 <Run x:Name="txtPreguntaRival" Text="Carlos Mendoza" FontWeight="Bold"/>
                 <Run Text="?"/>
             </TextBlock>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Ir al lobby" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnLobby_Click">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                <Button Grid.Column="2" Content="Jugar de nuevo" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnJugarDeNuevo_Click">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-            </Grid>
+            <Button Content="Ir al lobby" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnLobby_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
     </Border>
 </Window>
