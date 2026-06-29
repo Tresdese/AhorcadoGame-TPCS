@@ -262,5 +262,8 @@
     <Resource Include="Recursos\ahorcado_quintoFallido.png" />
     <Resource Include="Recursos\ahorcado_sextoFallido.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ahorcado_completo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
