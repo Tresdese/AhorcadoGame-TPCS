@@ -106,6 +106,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Este campo es obligatorio..
+        /// </summary>
+        public static string Comun_CampoObligatorio {
+            get {
+                return ResourceManager.GetString("Comun_CampoObligatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         public static string Comun_Contrasena {
@@ -129,6 +138,15 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_IniciarSesion {
             get {
                 return ResourceManager.GetString("Comun_IniciarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inicia sesión.
+        /// </summary>
+        public static string Comun_IniciaSesion {
+            get {
+                return ResourceManager.GetString("Comun_IniciaSesion", resourceCulture);
             }
         }
         
@@ -169,11 +187,29 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa tu contraseña..
+        /// </summary>
+        public static string IniciarSesion_ErrorContrasenaVacia {
+            get {
+                return ResourceManager.GetString("IniciarSesion_ErrorContrasenaVacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El correo electrónico ingresado no está conectado a una cuenta..
         /// </summary>
         public static string IniciarSesion_ErrorCorreo {
             get {
                 return ResourceManager.GetString("IniciarSesion_ErrorCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa tu correo electrónico..
+        /// </summary>
+        public static string IniciarSesion_ErrorCorreoVacio {
+            get {
+                return ResourceManager.GetString("IniciarSesion_ErrorCorreoVacio", resourceCulture);
             }
         }
         
@@ -192,6 +228,195 @@ namespace ClienteAhorcado.Properties {
         public static string IniciarSesion_Subtitulo {
             get {
                 return ResourceManager.GetString("IniciarSesion_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar contraseña.
+        /// </summary>
+        public static string RegistrarCuenta_ConfirmarContrasena {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ConfirmarContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa un número de celular válido (10 a 15 dígitos)..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorCelularInvalido {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorCelularInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña no cumple los requisitos..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorContrasenaRequisitos {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorContrasenaRequisitos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las contraseñas no coinciden..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorContrasenasNoCoinciden {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorContrasenasNoCoinciden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Este correo ya tiene una cuenta asociada..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorCorreoExiste {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorCorreoExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa un correo electrónico válido..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorCorreoInvalido {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorCorreoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debes tener al menos 10 años cumplidos para registrarte..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorEdadMinima {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorEdadMinima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecciona tu fecha de nacimiento..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorFechaVacia {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorFechaVacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Cuenta creada con éxito! Ahora puedes iniciar sesión..
+        /// </summary>
+        public static string RegistrarCuenta_ExitoMensaje {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ExitoMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registro exitoso.
+        /// </summary>
+        public static string RegistrarCuenta_ExitoTitulo {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ExitoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de nacimiento.
+        /// </summary>
+        public static string RegistrarCuenta_FechaNacimiento {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_FechaNacimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre completo.
+        /// </summary>
+        public static string RegistrarCuenta_NombreCompleto {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_NombreCompleto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de celular.
+        /// </summary>
+        public static string RegistrarCuenta_NumeroCelular {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_NumeroCelular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Al menos 8 caracteres.
+        /// </summary>
+        public static string RegistrarCuenta_Req8 {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_Req8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Una letra mayúscula.
+        /// </summary>
+        public static string RegistrarCuenta_ReqMayuscula {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ReqMayuscula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Una letra minúscula.
+        /// </summary>
+        public static string RegistrarCuenta_ReqMinuscula {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ReqMinuscula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Un número.
+        /// </summary>
+        public static string RegistrarCuenta_ReqNumero {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ReqNumero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a TU CONTRASEÑA DEBE TENER:.
+        /// </summary>
+        public static string RegistrarCuenta_RequisitosTitulo {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_RequisitosTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sólo unos datos y ya puedes empezar a jugar..
+        /// </summary>
+        public static string RegistrarCuenta_Subtitulo {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crear una cuenta.
+        /// </summary>
+        public static string RegistrarCuenta_Titulo {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Ya tienes cuenta?.
+        /// </summary>
+        public static string RegistrarCuenta_YaTienesCuenta {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_YaTienesCuenta", resourceCulture);
             }
         }
     }

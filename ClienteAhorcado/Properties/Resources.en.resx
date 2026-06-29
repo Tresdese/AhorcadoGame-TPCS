@@ -159,8 +159,14 @@
   <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
     <value>The password you entered is incorrect.</value>
   </data>
+  <data name="IniciarSesion_ErrorContrasenaVacia" xml:space="preserve">
+    <value>Enter your password.</value>
+  </data>
   <data name="IniciarSesion_ErrorCorreo" xml:space="preserve">
     <value>The email you entered is not linked to an account.</value>
+  </data>
+  <data name="IniciarSesion_ErrorCorreoVacio" xml:space="preserve">
+    <value>Enter your email.</value>
   </data>
   <data name="IniciarSesion_NoTienesCuenta" xml:space="preserve">
     <value>Don't have an account?</value>

@@ -42,6 +42,26 @@ namespace ClienteAhorcado {
             string correo = txtCorreo.Text.Trim();
             string contrasena = txtContrasena.Password;
 
+            bool hayError = false;
+
+            if (string.IsNullOrWhiteSpace(correo)) {
+                lblErrorCorreo.Text = Properties.Resources.IniciarSesion_ErrorCorreoVacio;
+                lblErrorCorreo.Visibility = Visibility.Visible;
+                txtCorreo.BorderBrush = Brushes.Red;
+                hayError = true;
+            }
+
+            if (string.IsNullOrWhiteSpace(contrasena)) {
+                lblErrorContrasena.Text = Properties.Resources.IniciarSesion_ErrorContrasenaVacia;
+                lblErrorContrasena.Visibility = Visibility.Visible;
+                txtContrasena.BorderBrush = Brushes.Red;
+                hayError = true;
+            }
+
+            if (hayError) {
+                return;
+            }
+
             UsuarioDTO usuario = null;
             if (!ManejadorErrores.Ejecutar(() => { usuario = Conexiones.Autenticacion().IniciarSesion(correo, contrasena); })) {
                 return;
@@ -67,6 +87,7 @@ namespace ClienteAhorcado {
                 lblErrorContrasena.Visibility = Visibility.Visible;
                 txtContrasena.BorderBrush = Brushes.Red;
             } else {
+                lblErrorCorreo.Text = Properties.Resources.IniciarSesion_ErrorCorreo;
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 txtCorreo.BorderBrush = Brushes.Red;
             }
