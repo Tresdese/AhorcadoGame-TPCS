@@ -48,7 +48,6 @@ namespace ClienteAhorcado
             txtCategoria.Text = _categoria;
             txtPuntosObtenidos.Text = string.Format(Properties.Resources.Comun_FormatoPuntos, 0);
             txtPuntajeGlobal.Text = string.Format(Properties.Resources.Comun_FormatoPuntos, _puntajeGlobal);
-            txtPreguntaRival.Text = _nombreRival;
         }
 
         private void btnLobby_Click(object sender, RoutedEventArgs e)

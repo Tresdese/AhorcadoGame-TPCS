@@ -52,7 +52,7 @@ namespace ClienteAhorcado
             txtCategoria.Text = _categoria;
             txtPuntosObtenidos.Text = string.Format(Properties.Resources.Comun_FormatoPuntosPositivos, _puntosObtenidos);
             txtPuntajeGlobal.Text = string.Format(Properties.Resources.Comun_FormatoPuntos, _puntajeGlobal);
-            txtPreguntaRival.Text = _nombreRival;
+            
         }
 
         
