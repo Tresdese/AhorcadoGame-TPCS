@@ -4,13 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
         Title="Ahorcado" Height="600" Width="900"
         WindowStartupLocation="CenterScreen"
         Background="#F0F0F0">
 
     <Grid Margin="20">
-        <Button Content="🌐 ES" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="10,5" Background="White"
+        <Button x:Name="btnIdioma" Click="btnIdioma_Click"
+                HorizontalAlignment="Right" VerticalAlignment="Top" Padding="10,5" Background="White"
                 Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -22,9 +24,9 @@
         <TextBlock Text="v1.0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#999999" FontSize="12"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="¡El Ahorcado!" FontSize="48" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="{x:Static p:Resources.Bienvenida_Titulo}" FontSize="48" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <TextBlock Text="Adivina la palabra letra por letra antes de quedarte sin intentos." FontSize="16" Foreground="#666666" HorizontalAlignment="Center" Margin="0,5,0,30" FontWeight="Bold"/>
+            <TextBlock Text="{x:Static p:Resources.Bienvenida_Subtitulo}" FontSize="16" Foreground="#666666" HorizontalAlignment="Center" Margin="0,5,0,30" FontWeight="Bold"/>
 
             <Grid HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -36,38 +38,18 @@
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                     <WrapPanel>
-                        <Border BorderBrush="#0078D4" BorderThickness="1" Width="45" Height="50" Margin="3">
-                            <TextBlock Text="A" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        
-                        <Border BorderBrush="#999999" BorderThickness="1" Width="45" Height="50" Margin="3"/>
-
-                        <Border BorderBrush="#0078D4" BorderThickness="1" Width="45" Height="50" Margin="3">
-                            <TextBlock Text="O" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        
-                        <Border BorderBrush="#999999" BorderThickness="1" Width="45" Height="50" Margin="3"/>
-                        
-                        <Border BorderBrush="#999999" BorderThickness="1" Width="45" Height="50" Margin="3"/>
-
-                        <Border BorderBrush="#0078D4" BorderThickness="1" Width="45" Height="50" Margin="3">
-                            <TextBlock Text="A" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        
-                        <Border BorderBrush="#999999" BorderThickness="1" Width="45" Height="50" Margin="3"/>
-                        
-                        <Border BorderBrush="#999999" BorderThickness="1" Width="45" Height="50" Margin="3"/>
+                        <WrapPanel x:Name="panelPalabra"/>
                     </WrapPanel>
-                    
-                    <TextBlock Text="0 intentos" HorizontalAlignment="Center" Margin="0,8,0,0" Foreground="Red" FontSize="12"/>
+
+                    <TextBlock Text="{x:Static p:Resources.Bienvenida_Intentos}" HorizontalAlignment="Center" Margin="0,8,0,0" Foreground="Red" FontSize="12"/>
                 </StackPanel>
             </Grid>
 
-            <TextBlock Text="Entra a tu cuenta para guardar tu progreso, o crea una cuenta gratis para empezar a jugar." FontSize="14" Foreground="#444444"
+            <TextBlock Text="{x:Static p:Resources.Bienvenida_Descripcion}" FontSize="14" Foreground="#444444"
                        TextAlignment="Center" MaxWidth="500" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,30,0,20" Width="444" FontWeight="Bold"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnIniciarSesion" Content="Iniciar sesión" Width="160" Height="40" Background="#0078D4" Foreground="White"
+                <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.Comun_IniciarSesion}" Width="160" Height="40" Background="#0078D4" Foreground="White"
                         BorderThickness="0" FontSize="14" Margin="0,0,10,0" Click="btnIniciarSesion_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -76,7 +58,7 @@
                     </Button.Resources>
                 </Button>
 
-                <Button x:Name="btnRegistrarCuenta" Content="Registrar cuenta" Width="160" Height="40" Background="White" Foreground="#333333"
+                <Button x:Name="btnRegistrarCuenta" Content="{x:Static p:Resources.Comun_RegistrarCuenta}" Width="160" Height="40" Background="White" Foreground="#333333"
                         BorderBrush="#CCCCCC" BorderThickness="1" FontSize="14" Click="btnRegistrarCuenta_Click">
                     <Button.Resources>
                         <Style TargetType="Border">

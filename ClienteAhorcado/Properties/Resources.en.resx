@@ -123,6 +123,9 @@
   <data name="Bienvenida_Intentos" xml:space="preserve">
     <value>0 tries</value>
   </data>
+  <data name="Bienvenida_PalabraDecorativa" xml:space="preserve">
+    <value>H__G__N</value>
+  </data>
   <data name="Bienvenida_Subtitulo" xml:space="preserve">
     <value>Guess the word letter by letter before you run out of tries.</value>
   </data>

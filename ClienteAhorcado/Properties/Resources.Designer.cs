@@ -79,6 +79,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a A_O__A__.
+        /// </summary>
+        public static string Bienvenida_PalabraDecorativa {
+            get {
+                return ResourceManager.GetString("Bienvenida_PalabraDecorativa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Adivina la palabra letra por letra antes de quedarte sin intentos..
         /// </summary>
         public static string Bienvenida_Subtitulo {

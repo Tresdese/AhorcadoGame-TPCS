@@ -16,6 +16,37 @@ namespace ClienteAhorcado {
     public partial class VentanaBienvenida : Window {
         public VentanaBienvenida() {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
+            ConstruirPalabraDecorativa(Properties.Resources.Bienvenida_PalabraDecorativa);
+        }
+
+        private void ConstruirPalabraDecorativa(string patron) {
+            panelPalabra.Children.Clear();
+
+            foreach (char c in patron) {
+                bool revelada = c != '_';
+
+                var borde = new Border {
+                    BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(
+                        revelada ? "#0078D4" : "#999999")),
+                    BorderThickness = new Thickness(1),
+                    Width = 45,
+                    Height = 50,
+                    Margin = new Thickness(3)
+                };
+
+                if (revelada) {
+                    borde.Child = new TextBlock {
+                        Text = c.ToString(),
+                        FontSize = 22,
+                        FontWeight = FontWeights.Bold,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+                }
+
+                panelPalabra.Children.Add(borde);
+            }
         }
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e) {
@@ -28,6 +59,11 @@ namespace ClienteAhorcado {
             VentanaRegistrarCuenta ventanaRegistrarCuenta = new VentanaRegistrarCuenta();
             ventanaRegistrarCuenta.Show();
             this.Close();
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
         }
     }
 }

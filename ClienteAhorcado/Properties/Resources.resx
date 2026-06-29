@@ -123,6 +123,9 @@
   <data name="Bienvenida_Intentos" xml:space="preserve">
     <value>0 intentos</value>
   </data>
+  <data name="Bienvenida_PalabraDecorativa" xml:space="preserve">
+    <value>A_O__A__</value>
+  </data>
   <data name="Bienvenida_Subtitulo" xml:space="preserve">
     <value>Adivina la palabra letra por letra antes de quedarte sin intentos.</value>
   </data>

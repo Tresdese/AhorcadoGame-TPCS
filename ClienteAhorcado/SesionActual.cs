@@ -16,6 +16,8 @@ namespace ClienteAhorcado
             IdUsuario = 0;
             Nombre = null;
             Correo = null;
+            IdPartida = 0;
+            Idioma = "es";
         }
     }
 }
