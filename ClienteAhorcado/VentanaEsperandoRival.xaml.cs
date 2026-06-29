@@ -25,13 +25,7 @@ namespace ClienteAhorcado
         public VentanaEsperandoRival()
         {
             InitializeComponent();
-            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
             Loaded += VentanaEsperandoRival_Loaded;
-        }
-
-        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
-            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
-            GestorIdioma.Cambiar(nuevo);
         }
 
         private void VentanaEsperandoRival_Loaded(object sender, RoutedEventArgs e)
