@@ -144,6 +144,9 @@
   <data name="Comun_CorreoElectronico" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="Comun_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Comun_IniciarSesion" xml:space="preserve">
     <value>Sign in</value>
   </data>
@@ -203,6 +206,63 @@
   </data>
   <data name="IniciarSesion_Subtitulo" xml:space="preserve">
     <value>Welcome back</value>
+  </data>
+  <data name="Partidas_CerrarSesion" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="Partidas_ColCreada" xml:space="preserve">
+    <value>CREATED</value>
+  </data>
+  <data name="Partidas_ColCreador" xml:space="preserve">
+    <value>CREATOR</value>
+  </data>
+  <data name="Partidas_ColJugadores" xml:space="preserve">
+    <value>PLAYERS</value>
+  </data>
+  <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
+    <value>Are you sure you want to sign out?</value>
+  </data>
+  <data name="Partidas_CrearPartida" xml:space="preserve">
+    <value>+ Create game</value>
+  </data>
+  <data name="Partidas_DisponiblesSufijo" xml:space="preserve">
+    <value>games available</value>
+  </data>
+  <data name="Partidas_DosJugadores" xml:space="preserve">
+    <value>· Each game is for 2 players</value>
+  </data>
+  <data name="Partidas_ErrorConexion" xml:space="preserve">
+    <value>Database connection error, please try again later.</value>
+  </data>
+  <data name="Partidas_HistorialPuntajes" xml:space="preserve">
+    <value>Score history</value>
+  </data>
+  <data name="Partidas_NoDisponibleMensaje" xml:space="preserve">
+    <value>This game is no longer available. Please choose another.</value>
+  </data>
+  <data name="Partidas_NoDisponibleTitulo" xml:space="preserve">
+    <value>Game not available</value>
+  </data>
+  <data name="Partidas_PuntajePrefijo" xml:space="preserve">
+    <value>Your score:</value>
+  </data>
+  <data name="Partidas_SinPartidas" xml:space="preserve">
+    <value>There are no games available right now.</value>
+  </data>
+  <data name="Partidas_Subtitulo" xml:space="preserve">
+    <value>Join a game or create your own.</value>
+  </data>
+  <data name="Partidas_Titulo" xml:space="preserve">
+    <value>Active games</value>
+  </data>
+  <data name="Partidas_TituloVentana" xml:space="preserve">
+    <value>Hangman · Games</value>
+  </data>
+  <data name="Partidas_Unirme" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="Partidas_VerPerfil" xml:space="preserve">
+    <value>View profile</value>
   </data>
   <data name="Perfil_EditarPerfil" xml:space="preserve">
     <value>Edit profile</value>

@@ -142,6 +142,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        public static string Comun_Error {
+            get {
+                return ResourceManager.GetString("Comun_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar sesión.
         /// </summary>
         public static string Comun_IniciarSesion {
@@ -318,6 +327,177 @@ namespace ClienteAhorcado.Properties {
         public static string IniciarSesion_Subtitulo {
             get {
                 return ResourceManager.GetString("IniciarSesion_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cerrar sesión.
+        /// </summary>
+        public static string Partidas_CerrarSesion {
+            get {
+                return ResourceManager.GetString("Partidas_CerrarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CREADA.
+        /// </summary>
+        public static string Partidas_ColCreada {
+            get {
+                return ResourceManager.GetString("Partidas_ColCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CREADOR.
+        /// </summary>
+        public static string Partidas_ColCreador {
+            get {
+                return ResourceManager.GetString("Partidas_ColCreador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a JUGADORES.
+        /// </summary>
+        public static string Partidas_ColJugadores {
+            get {
+                return ResourceManager.GetString("Partidas_ColJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Seguro que deseas cerrar sesión?.
+        /// </summary>
+        public static string Partidas_ConfirmarCerrarMensaje {
+            get {
+                return ResourceManager.GetString("Partidas_ConfirmarCerrarMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a + Crear partida.
+        /// </summary>
+        public static string Partidas_CrearPartida {
+            get {
+                return ResourceManager.GetString("Partidas_CrearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a partidas disponibles.
+        /// </summary>
+        public static string Partidas_DisponiblesSufijo {
+            get {
+                return ResourceManager.GetString("Partidas_DisponiblesSufijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a · Cada partida es de 2 jugadores.
+        /// </summary>
+        public static string Partidas_DosJugadores {
+            get {
+                return ResourceManager.GetString("Partidas_DosJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error de conexión con base de datos, inténtelo más tarde..
+        /// </summary>
+        public static string Partidas_ErrorConexion {
+            get {
+                return ResourceManager.GetString("Partidas_ErrorConexion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial de puntajes.
+        /// </summary>
+        public static string Partidas_HistorialPuntajes {
+            get {
+                return ResourceManager.GetString("Partidas_HistorialPuntajes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esta partida ya no está disponible. Por favor elige otra..
+        /// </summary>
+        public static string Partidas_NoDisponibleMensaje {
+            get {
+                return ResourceManager.GetString("Partidas_NoDisponibleMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partida no disponible.
+        /// </summary>
+        public static string Partidas_NoDisponibleTitulo {
+            get {
+                return ResourceManager.GetString("Partidas_NoDisponibleTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu puntaje:.
+        /// </summary>
+        public static string Partidas_PuntajePrefijo {
+            get {
+                return ResourceManager.GetString("Partidas_PuntajePrefijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No hay partidas disponibles en este momento..
+        /// </summary>
+        public static string Partidas_SinPartidas {
+            get {
+                return ResourceManager.GetString("Partidas_SinPartidas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Únete a una partida o crea la tuya..
+        /// </summary>
+        public static string Partidas_Subtitulo {
+            get {
+                return ResourceManager.GetString("Partidas_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partidas en curso.
+        /// </summary>
+        public static string Partidas_Titulo {
+            get {
+                return ResourceManager.GetString("Partidas_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Partidas.
+        /// </summary>
+        public static string Partidas_TituloVentana {
+            get {
+                return ResourceManager.GetString("Partidas_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unirme.
+        /// </summary>
+        public static string Partidas_Unirme {
+            get {
+                return ResourceManager.GetString("Partidas_Unirme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver perfil.
+        /// </summary>
+        public static string Partidas_VerPerfil {
+            get {
+                return ResourceManager.GetString("Partidas_VerPerfil", resourceCulture);
             }
         }
         

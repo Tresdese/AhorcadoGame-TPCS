@@ -144,6 +144,9 @@
   <data name="Comun_CorreoElectronico" xml:space="preserve">
     <value>Correo electrónico</value>
   </data>
+  <data name="Comun_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Comun_IniciarSesion" xml:space="preserve">
     <value>Iniciar sesión</value>
   </data>
@@ -203,6 +206,63 @@
   </data>
   <data name="IniciarSesion_Subtitulo" xml:space="preserve">
     <value>Bienvenido de vuelta</value>
+  </data>
+  <data name="Partidas_CerrarSesion" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="Partidas_ColCreada" xml:space="preserve">
+    <value>CREADA</value>
+  </data>
+  <data name="Partidas_ColCreador" xml:space="preserve">
+    <value>CREADOR</value>
+  </data>
+  <data name="Partidas_ColJugadores" xml:space="preserve">
+    <value>JUGADORES</value>
+  </data>
+  <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
+    <value>¿Seguro que deseas cerrar sesión?</value>
+  </data>
+  <data name="Partidas_CrearPartida" xml:space="preserve">
+    <value>+ Crear partida</value>
+  </data>
+  <data name="Partidas_DisponiblesSufijo" xml:space="preserve">
+    <value>partidas disponibles</value>
+  </data>
+  <data name="Partidas_DosJugadores" xml:space="preserve">
+    <value>· Cada partida es de 2 jugadores</value>
+  </data>
+  <data name="Partidas_ErrorConexion" xml:space="preserve">
+    <value>Error de conexión con base de datos, inténtelo más tarde.</value>
+  </data>
+  <data name="Partidas_HistorialPuntajes" xml:space="preserve">
+    <value>Historial de puntajes</value>
+  </data>
+  <data name="Partidas_NoDisponibleMensaje" xml:space="preserve">
+    <value>Esta partida ya no está disponible. Por favor elige otra.</value>
+  </data>
+  <data name="Partidas_NoDisponibleTitulo" xml:space="preserve">
+    <value>Partida no disponible</value>
+  </data>
+  <data name="Partidas_PuntajePrefijo" xml:space="preserve">
+    <value>Tu puntaje:</value>
+  </data>
+  <data name="Partidas_SinPartidas" xml:space="preserve">
+    <value>No hay partidas disponibles en este momento.</value>
+  </data>
+  <data name="Partidas_Subtitulo" xml:space="preserve">
+    <value>Únete a una partida o crea la tuya.</value>
+  </data>
+  <data name="Partidas_Titulo" xml:space="preserve">
+    <value>Partidas en curso</value>
+  </data>
+  <data name="Partidas_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Partidas</value>
+  </data>
+  <data name="Partidas_Unirme" xml:space="preserve">
+    <value>Unirme</value>
+  </data>
+  <data name="Partidas_VerPerfil" xml:space="preserve">
+    <value>Ver perfil</value>
   </data>
   <data name="Perfil_EditarPerfil" xml:space="preserve">
     <value>Editar perfil</value>
