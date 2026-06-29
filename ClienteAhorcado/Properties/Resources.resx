@@ -132,6 +132,9 @@
   <data name="Bienvenida_Titulo" xml:space="preserve">
     <value>¡El Ahorcado!</value>
   </data>
+  <data name="Comun_CampoObligatorio" xml:space="preserve">
+    <value>Este campo es obligatorio.</value>
+  </data>
   <data name="Comun_Contrasena" xml:space="preserve">
     <value>Contraseña</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="Comun_IniciarSesion" xml:space="preserve">
     <value>Iniciar sesión</value>
+  </data>
+  <data name="Comun_IniciaSesion" xml:space="preserve">
+    <value>Inicia sesión</value>
   </data>
   <data name="Comun_RegistrarCuenta" xml:space="preserve">
     <value>Registrar cuenta</value>
@@ -161,5 +167,68 @@
   </data>
   <data name="IniciarSesion_Subtitulo" xml:space="preserve">
     <value>Bienvenido de vuelta</value>
+  </data>
+  <data name="RegistrarCuenta_ConfirmarContrasena" xml:space="preserve">
+    <value>Confirmar contraseña</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorCelularInvalido" xml:space="preserve">
+    <value>Ingresa un número de celular válido (10 a 15 dígitos).</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorContrasenaRequisitos" xml:space="preserve">
+    <value>La contraseña no cumple los requisitos.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorContrasenasNoCoinciden" xml:space="preserve">
+    <value>Las contraseñas no coinciden.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorCorreoExiste" xml:space="preserve">
+    <value>Este correo ya tiene una cuenta asociada.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorCorreoInvalido" xml:space="preserve">
+    <value>Ingresa un correo electrónico válido.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorEdadMinima" xml:space="preserve">
+    <value>Debes tener al menos 10 años cumplidos para registrarte.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorFechaVacia" xml:space="preserve">
+    <value>Selecciona tu fecha de nacimiento.</value>
+  </data>
+  <data name="RegistrarCuenta_ExitoMensaje" xml:space="preserve">
+    <value>¡Cuenta creada con éxito! Ahora puedes iniciar sesión.</value>
+  </data>
+  <data name="RegistrarCuenta_ExitoTitulo" xml:space="preserve">
+    <value>Registro exitoso</value>
+  </data>
+  <data name="RegistrarCuenta_FechaNacimiento" xml:space="preserve">
+    <value>Fecha de nacimiento</value>
+  </data>
+  <data name="RegistrarCuenta_NombreCompleto" xml:space="preserve">
+    <value>Nombre completo</value>
+  </data>
+  <data name="RegistrarCuenta_NumeroCelular" xml:space="preserve">
+    <value>Número de celular</value>
+  </data>
+  <data name="RegistrarCuenta_Req8" xml:space="preserve">
+    <value>Al menos 8 caracteres</value>
+  </data>
+  <data name="RegistrarCuenta_ReqMayuscula" xml:space="preserve">
+    <value>Una letra mayúscula</value>
+  </data>
+  <data name="RegistrarCuenta_ReqMinuscula" xml:space="preserve">
+    <value>Una letra minúscula</value>
+  </data>
+  <data name="RegistrarCuenta_ReqNumero" xml:space="preserve">
+    <value>Un número</value>
+  </data>
+  <data name="RegistrarCuenta_RequisitosTitulo" xml:space="preserve">
+    <value>TU CONTRASEÑA DEBE TENER:</value>
+  </data>
+  <data name="RegistrarCuenta_Subtitulo" xml:space="preserve">
+    <value>Sólo unos datos y ya puedes empezar a jugar.</value>
+  </data>
+  <data name="RegistrarCuenta_Titulo" xml:space="preserve">
+    <value>Crear una cuenta</value>
+  </data>
+  <data name="RegistrarCuenta_YaTienesCuenta" xml:space="preserve">
+    <value>¿Ya tienes cuenta?</value>
   </data>
 </root>
