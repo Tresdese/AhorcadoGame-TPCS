@@ -8,7 +8,10 @@ using System.Windows;
 
 namespace ClienteAhorcado
 {
-    public partial class App : Application
-    {
+    public partial class App : Application {
+        protected override void OnStartup(StartupEventArgs e) {
+            base.OnStartup(e);
+            GestorIdioma.Aplicar(SesionActual.Idioma);
+        }
     }
 }

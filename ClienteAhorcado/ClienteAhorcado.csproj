@@ -76,6 +76,7 @@
     <Compile Include="DialogoRivalAbandono.xaml.cs">
       <DependentUpon>DialogoRivalAbandono.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GestorIdioma.cs" />
     <Compile Include="HistorialItemViewModel.cs" />
     <Compile Include="JuegoCallbackHandler.cs" />
     <Compile Include="PartidaItemViewModel.cs" />
