@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ClienteAhorcado"
         mc:Ignorable="d"
         Title="" Height="650" Width="1000"
+        Icon="/Recursos/ahorcado_sextoFallido.png"
         WindowStartupLocation="CenterScreen">
     <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
 </Window>
