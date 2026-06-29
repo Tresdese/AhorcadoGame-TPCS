@@ -1,0 +1,315 @@
+﻿<Page x:Class="ClienteAhorcado.VentanaJuegoAdivinador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
+        mc:Ignorable="d" Background="#F0F0F0">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="White" Margin="0,0,0,1">
+                <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
+                    <Grid Margin="15,10,15,10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Border Width="36" Height="36" CornerRadius="18" Background="#555555" Margin="0,0,10,0">
+                                <TextBlock x:Name="lblIniciales" Text="" FontSize="13" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{x:Static p:Resources.Juego_TuAdivinando}" FontSize="14" FontWeight="Bold"/>
+                                <TextBlock x:Name="lblRival" Text="" FontSize="12" Foreground="#666666"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Border BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="12,6" Margin="0,0,10,0">
+                                <TextBlock x:Name="lblIntentos" Text="" FontSize="13" FontWeight="Bold"/>
+                            </Border>
+                            <Button Content="{x:Static p:Resources.Juego_AbandonarPartida}" Padding="12,6" Background="#D32F2F" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnAbandonar_Click">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="1" Background="White" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Margin="15,10,15,0" Padding="15,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0,0,30,0">
+                        <TextBlock Text="{x:Static p:Resources.Juego_CategoriaEtiqueta}" FontSize="11" FontWeight="Bold" Foreground="#888888"/>
+                        <TextBlock x:Name="lblCategoria" Text="" FontSize="14" FontWeight="Bold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="{x:Static p:Resources.Juego_DescripcionEtiqueta}" FontSize="11" FontWeight="Bold" Foreground="#888888"/>
+                        <TextBlock x:Name="lblDescripcion" Text="" FontSize="14" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Image Grid.Row="2" Source="/Recursos/ahorcado_vacio.png" Width="180" Height="180" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="imgAhorcado"/>
+
+            <WrapPanel x:Name="panelLetras" Grid.Row="3" HorizontalAlignment="Center" Margin="15,5,15,10"/>
+
+            <StackPanel Grid.Row="4" Margin="15,0,15,15">
+                <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,5">
+                    <Button Content="Q" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="W" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="E" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="R" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="T" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="Y" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="U" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="I" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="O" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="P" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,5">
+                    <Button Content="A" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="S" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="D" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="F" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="G" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="H" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="J" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="K" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="L" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="Ñ" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Content="Z" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="X" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="C" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="V" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="B" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="N" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="M" Width="48" Height="48" FontSize="14" FontWeight="Bold" Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="3" Click="btnLetra_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Background="White">
+            <Border BorderBrush="#EEEEEE" BorderThickness="1,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" BorderBrush="#EEEEEE" BorderThickness="0,0,0,1" Padding="15,12">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static p:Resources.Comun_Chat}" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <Ellipse Width="8" Height="8" Fill="Green" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="10">
+                        <StackPanel x:Name="panelChat"/>
+                    </ScrollViewer>
+                    <Border Grid.Row="2" BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="txtMensaje" Grid.Column="0" FontSize="13" Padding="8,6" BorderBrush="#DDDDDD" BorderThickness="1" VerticalContentAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                            <Button Grid.Column="1" Content="►" Width="36" Height="36" Background="#0078D4" Foreground="White" BorderThickness="0" Margin="8,0,0,0" FontSize="14" Click="btnEnviarMensaje_Click">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="18"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

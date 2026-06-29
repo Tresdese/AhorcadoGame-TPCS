@@ -1,0 +1,161 @@
+﻿<Page x:Class="ClienteAhorcado.VentanaRegistrarCuenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
+        mc:Ignorable="d" Background="#F0F0F0">
+
+    <Grid Margin="20">
+        <Button Content="{x:Static p:Resources.Comun_Volver}" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,5" Background="White" Foreground="Black"
+                BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnVolver_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="btnIdioma" Click="btnIdioma_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="10,5" Background="White"
+                Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,50,0,0">
+            <StackPanel HorizontalAlignment="Center" Width="800" Margin="0,20,0,20">
+
+                <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_Titulo}" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_Subtitulo}" FontSize="14" Foreground="#666666" HorizontalAlignment="Center" Margin="0,5,0,25"/>
+
+                <TextBlock x:Name="lblNombre" Text="{x:Static p:Resources.RegistrarCuenta_NombreCompleto}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
+
+                <TextBox x:Name="txtNombre" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+                <TextBlock x:Name="lblErrorNombre" Text="{x:Static p:Resources.Comun_CampoObligatorio}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
+
+                <Grid Margin="0,15,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock x:Name="lblCorreo" Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
+
+                        <TextBox x:Name="txtCorreo" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <TextBlock x:Name="lblErrorCorreo" Text="{x:Static p:Resources.RegistrarCuenta_ErrorCorreoExiste}" Foreground="Red" FontSize="12" Visibility="Collapsed" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock x:Name="lblFecha" Text="{x:Static p:Resources.RegistrarCuenta_FechaNacimiento}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
+
+                        <DatePicker x:Name="dpFechaNacimiento" FontSize="14" Height="40" BorderBrush="#CCCCCC" BorderThickness="1">
+                            <DatePicker.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </DatePicker.Resources>
+                        </DatePicker>
+
+                        <TextBlock x:Name="lblErrorFecha" Text="{x:Static p:Resources.RegistrarCuenta_ErrorEdadMinima}" Foreground="Red" FontSize="12" Visibility="Collapsed" TextWrapping="Wrap" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock x:Name="lblCelular" Text="{x:Static p:Resources.RegistrarCuenta_NumeroCelular}" FontSize="13" Foreground="#333333" Margin="0,15,0,5"/>
+
+                <TextBox x:Name="txtCelular" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1" Width="390" HorizontalAlignment="Left">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+                <TextBlock x:Name="lblErrorCelular" Text="{x:Static p:Resources.RegistrarCuenta_ErrorCelularInvalido}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
+
+                <Grid Margin="0,15,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock x:Name="lblContrasena" Text="{x:Static p:Resources.Comun_Contrasena}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
+
+                        <PasswordBox x:Name="txtContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1" PasswordChanged="txtContrasena_PasswordChanged">
+                            <PasswordBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </PasswordBox.Resources>
+                        </PasswordBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock x:Name="lblConfirmar" Text="{x:Static p:Resources.RegistrarCuenta_ConfirmarContrasena}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
+
+                        <PasswordBox x:Name="txtConfirmarContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
+                            <PasswordBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </PasswordBox.Resources>
+                        </PasswordBox>
+
+                        <TextBlock x:Name="lblErrorContrasena" Text="{x:Static p:Resources.RegistrarCuenta_ErrorContrasenasNoCoinciden}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <Border Background="#F5F5F5" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,15,0,0">
+                    <StackPanel>
+                        <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_RequisitosTitulo}" FontSize="12" FontWeight="Bold" Foreground="#333333" Margin="0,0,0,8"/>
+
+                        <WrapPanel>
+                            <CheckBox x:Name="chk8Caracteres" Content="{x:Static p:Resources.RegistrarCuenta_Req8}" FontSize="12" IsEnabled="False" Margin="0,0,20,0"/>
+                            <CheckBox x:Name="chkMayuscula" Content="{x:Static p:Resources.RegistrarCuenta_ReqMayuscula}" FontSize="12" IsEnabled="False" Margin="0,0,20,0"/>
+                            <CheckBox x:Name="chkMinuscula" Content="{x:Static p:Resources.RegistrarCuenta_ReqMinuscula}" FontSize="12" IsEnabled="False" Margin="0,0,20,0"/>
+                            <CheckBox x:Name="chkNumero" Content="{x:Static p:Resources.RegistrarCuenta_ReqNumero}" FontSize="12" IsEnabled="False"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+
+                <Button x:Name="btnRegistrar" Content="{x:Static p:Resources.Comun_RegistrarCuenta}" Height="45" Background="#0078D4" Foreground="White"
+                        BorderThickness="0" FontSize="15" FontWeight="Bold" Margin="0,20,0,0" Click="btnRegistrar_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+                    <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_YaTienesCuenta}" FontSize="13" Foreground="#444444"/>
+
+                    <TextBlock Text="{x:Static p:Resources.Comun_IniciaSesion}" FontSize="13" Foreground="#0078D4" TextDecorations="Underline" FontWeight="Bold" Cursor="Hand"
+                               MouseLeftButtonDown="lnkIniciaSesion_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

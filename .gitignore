@@ -1,0 +1,25 @@
+# Ignorar archivos y carpetas generados por Visual Studio
+.vs/
+.vscode/
+
+# Carpetas de compilación (Código binario generado automáticamente)
+[Bb]in/
+[Oo]bj/
+
+# Archivos de usuario específicos de VS
+*.user
+*.userosscache
+*.suo
+
+# Archivos de caché de obj que se cuelan
+*.cache
+
+# Paquetes NuGet (se restauran con nuget restore)
+packages/
+
+# Documentacion de trabajo (no se versiona)
+docs/
+
+# Base de datos local
+App_Data/*.mdf
+App_Data/*.ldf

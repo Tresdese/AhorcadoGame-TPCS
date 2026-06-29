@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Abandonar_Confirmar" xml:space="preserve">
+    <value>Sí, abandonar</value>
+  </data>
+  <data name="Abandonar_Puntos" xml:space="preserve">
+    <value>3 puntos</value>
+  </data>
+  <data name="Abandonar_TextoAntes" xml:space="preserve">
+    <value>Si abandonas se te restarán</value>
+  </data>
+  <data name="Abandonar_TextoDespues" xml:space="preserve">
+    <value>de tu puntaje global y se cancelará la partida para ambos jugadores.</value>
+  </data>
+  <data name="Abandonar_Titulo" xml:space="preserve">
+    <value>¿Abandonar la partida?</value>
+  </data>
+  <data name="Abandonar_Volver" xml:space="preserve">
+    <value>Volver a la partida</value>
+  </data>
+  <data name="Bienvenida_Descripcion" xml:space="preserve">
+    <value>Entra a tu cuenta para guardar tu progreso, o crea una cuenta gratis para empezar a jugar.</value>
+  </data>
+  <data name="Bienvenida_Intentos" xml:space="preserve">
+    <value>0 intentos</value>
+  </data>
+  <data name="Bienvenida_PalabraDecorativa" xml:space="preserve">
+    <value>A_O__A__</value>
+  </data>
+  <data name="Bienvenida_Subtitulo" xml:space="preserve">
+    <value>Adivina la palabra letra por letra antes de quedarte sin intentos.</value>
+  </data>
+  <data name="Bienvenida_Titulo" xml:space="preserve">
+    <value>¡El Ahorcado!</value>
+  </data>
+  <data name="Comun_CampoObligatorio" xml:space="preserve">
+    <value>Este campo es obligatorio.</value>
+  </data>
+  <data name="Comun_Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Comun_Contrasena" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Comun_CorreoElectronico" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="Comun_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Comun_IniciarSesion" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="Comun_IniciaSesion" xml:space="preserve">
+    <value>Inicia sesión</value>
+  </data>
+  <data name="Comun_RegistrarCuenta" xml:space="preserve">
+    <value>Registrar cuenta</value>
+  </data>
+  <data name="Comun_Registrate" xml:space="preserve">
+    <value>Regístrate</value>
+  </data>
+  <data name="Comun_Volver" xml:space="preserve">
+    <value>⇐ Volver</value>
+  </data>
+  <data name="EditarPerfil_Editando" xml:space="preserve">
+    <value>EDITANDO</value>
+  </data>
+  <data name="EditarPerfil_ErrorContrasenaRequisitos" xml:space="preserve">
+    <value>La contraseña debe tener 8+ caracteres, mayúscula, minúscula y número.</value>
+  </data>
+  <data name="EditarPerfil_ExitoMensaje" xml:space="preserve">
+    <value>Tus cambios se guardaron correctamente.</value>
+  </data>
+  <data name="EditarPerfil_ExitoTitulo" xml:space="preserve">
+    <value>Perfil actualizado</value>
+  </data>
+  <data name="EditarPerfil_GuardarCambios" xml:space="preserve">
+    <value>Guardar cambios</value>
+  </data>
+  <data name="EditarPerfil_NuevaContrasena" xml:space="preserve">
+    <value>Nueva contraseña (opcional)</value>
+  </data>
+  <data name="EditarPerfil_Subtitulo" xml:space="preserve">
+    <value>Actualiza tus datos (el correo no puede cambiarse)</value>
+  </data>
+  <data name="EditarPerfil_Titulo" xml:space="preserve">
+    <value>Editar perfil</value>
+  </data>
+  <data name="EditarPerfil_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Editar perfil</value>
+  </data>
+  <data name="EsperandoRival_CancelarPartida" xml:space="preserve">
+    <value>Cancelar partida</value>
+  </data>
+  <data name="EsperandoRival_ConfirmarCancelar" xml:space="preserve">
+    <value>¿Seguro que deseas cancelar la partida?</value>
+  </data>
+  <data name="EsperandoRival_Descripcion" xml:space="preserve">
+    <value>Tu partida aparece en la lista del lobby. En cuanto alguien se una, podrás elegir la palabra que tendrá que adivinar.</value>
+  </data>
+  <data name="EsperandoRival_Encabezado" xml:space="preserve">
+    <value>Tu partida está lista</value>
+  </data>
+  <data name="EsperandoRival_Esperando" xml:space="preserve">
+    <value>···  Esperando...</value>
+  </data>
+  <data name="EsperandoRival_Subtitulo" xml:space="preserve">
+    <value>Compartiendo en el lobby para que alguien se una</value>
+  </data>
+  <data name="EsperandoRival_TiempoEnEspera" xml:space="preserve">
+    <value>TIEMPO EN ESPERA</value>
+  </data>
+  <data name="EsperandoRival_Titulo" xml:space="preserve">
+    <value>Esperando a un rival...</value>
+  </data>
+  <data name="EsperandoRival_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Esperando oponente</value>
+  </data>
+  <data name="EsperandoRival_Tu" xml:space="preserve">
+    <value>Tú</value>
+  </data>
+  <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
+    <value>La contraseña que ingresaste es incorrecta.</value>
+  </data>
+  <data name="IniciarSesion_ErrorContrasenaVacia" xml:space="preserve">
+    <value>Ingresa tu contraseña.</value>
+  </data>
+  <data name="IniciarSesion_ErrorCorreo" xml:space="preserve">
+    <value>Este correo electrónico no existe.</value>
+  </data>
+  <data name="IniciarSesion_ErrorCorreoVacio" xml:space="preserve">
+    <value>Ingresa tu correo electrónico.</value>
+  </data>
+  <data name="IniciarSesion_NoTienesCuenta" xml:space="preserve">
+    <value>¿No tienes cuenta?</value>
+  </data>
+  <data name="IniciarSesion_Subtitulo" xml:space="preserve">
+    <value>Bienvenido de vuelta</value>
+  </data>
+  <data name="Partidas_CerrarSesion" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="Partidas_ColCreada" xml:space="preserve">
+    <value>CREADA</value>
+  </data>
+  <data name="Partidas_ColCreador" xml:space="preserve">
+    <value>CREADOR</value>
+  </data>
+  <data name="Partidas_ColJugadores" xml:space="preserve">
+    <value>JUGADORES</value>
+  </data>
+  <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
+    <value>¿Seguro que deseas cerrar sesión?</value>
+  </data>
+  <data name="Partidas_CrearPartida" xml:space="preserve">
+    <value>+ Crear partida</value>
+  </data>
+  <data name="Partidas_DisponiblesSufijo" xml:space="preserve">
+    <value>partidas disponibles</value>
+  </data>
+  <data name="Partidas_DosJugadores" xml:space="preserve">
+    <value>· Cada partida es de 2 jugadores</value>
+  </data>
+  <data name="Partidas_ErrorConexion" xml:space="preserve">
+    <value>Error de conexión con base de datos, inténtelo más tarde.</value>
+  </data>
+  <data name="Partidas_HistorialPuntajes" xml:space="preserve">
+    <value>Historial de puntajes</value>
+  </data>
+  <data name="Partidas_NoDisponibleMensaje" xml:space="preserve">
+    <value>Esta partida ya no está disponible. Por favor elige otra.</value>
+  </data>
+  <data name="Partidas_NoDisponibleTitulo" xml:space="preserve">
+    <value>Partida no disponible</value>
+  </data>
+  <data name="Partidas_PuntajePrefijo" xml:space="preserve">
+    <value>Tu puntaje:</value>
+  </data>
+  <data name="Partidas_SinPartidas" xml:space="preserve">
+    <value>No hay partidas disponibles en este momento.</value>
+  </data>
+  <data name="Partidas_Subtitulo" xml:space="preserve">
+    <value>Únete a una partida o crea la tuya.</value>
+  </data>
+  <data name="Partidas_Titulo" xml:space="preserve">
+    <value>Partidas en curso</value>
+  </data>
+  <data name="Partidas_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Partidas</value>
+  </data>
+  <data name="Partidas_Unirme" xml:space="preserve">
+    <value>Unirme</value>
+  </data>
+  <data name="Partidas_VerPerfil" xml:space="preserve">
+    <value>Ver perfil</value>
+  </data>
+  <data name="Perfil_EditarPerfil" xml:space="preserve">
+    <value>Editar perfil</value>
+  </data>
+  <data name="Perfil_PartidasGanadas" xml:space="preserve">
+    <value>PARTIDAS GANADAS</value>
+  </data>
+  <data name="Perfil_Penalizaciones" xml:space="preserve">
+    <value>PENALIZACIONES</value>
+  </data>
+  <data name="Perfil_PuntajeTotal" xml:space="preserve">
+    <value>PUNTAJE TOTAL</value>
+  </data>
+  <data name="Perfil_RivalVencido" xml:space="preserve">
+    <value>RIVAL VENCIDO</value>
+  </data>
+  <data name="Perfil_Subtitulo" xml:space="preserve">
+    <value>Tu información personal</value>
+  </data>
+  <data name="Perfil_Titulo" xml:space="preserve">
+    <value>Mi perfil</value>
+  </data>
+  <data name="Perfil_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Mi perfil</value>
+  </data>
+  <data name="RegistrarCuenta_ConfirmarContrasena" xml:space="preserve">
+    <value>Confirmar contraseña</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorCelularInvalido" xml:space="preserve">
+    <value>Ingresa un número de celular válido (10 a 15 dígitos).</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorContrasenaRequisitos" xml:space="preserve">
+    <value>La contraseña no cumple los requisitos.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorContrasenasNoCoinciden" xml:space="preserve">
+    <value>Las contraseñas no coinciden.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorCorreoExiste" xml:space="preserve">
+    <value>Este correo ya tiene una cuenta asociada.</value>
+  </data>
+  <data name="comun_ErrorCorreoInvalido" xml:space="preserve">
+    <value>Ingresa un correo electrónico válido.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorEdadMinima" xml:space="preserve">
+    <value>Debes tener al menos 10 años cumplidos para registrarte.</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorFechaVacia" xml:space="preserve">
+    <value>Selecciona tu fecha de nacimiento.</value>
+  </data>
+  <data name="RegistrarCuenta_ExitoMensaje" xml:space="preserve">
+    <value>¡Cuenta creada con éxito! Ahora puedes iniciar sesión.</value>
+  </data>
+  <data name="RegistrarCuenta_ExitoTitulo" xml:space="preserve">
+    <value>Registro exitoso</value>
+  </data>
+  <data name="RegistrarCuenta_FechaNacimiento" xml:space="preserve">
+    <value>Fecha de nacimiento</value>
+  </data>
+  <data name="RegistrarCuenta_NombreCompleto" xml:space="preserve">
+    <value>Nombre completo</value>
+  </data>
+  <data name="RegistrarCuenta_NumeroCelular" xml:space="preserve">
+    <value>Número de celular</value>
+  </data>
+  <data name="RegistrarCuenta_Req8" xml:space="preserve">
+    <value>Al menos 8 caracteres</value>
+  </data>
+  <data name="RegistrarCuenta_ReqMayuscula" xml:space="preserve">
+    <value>Una letra mayúscula</value>
+  </data>
+  <data name="RegistrarCuenta_ReqMinuscula" xml:space="preserve">
+    <value>Una letra minúscula</value>
+  </data>
+  <data name="RegistrarCuenta_ReqNumero" xml:space="preserve">
+    <value>Un número</value>
+  </data>
+  <data name="RegistrarCuenta_RequisitosTitulo" xml:space="preserve">
+    <value>TU CONTRASEÑA DEBE TENER:</value>
+  </data>
+  <data name="RegistrarCuenta_Subtitulo" xml:space="preserve">
+    <value>Sólo unos datos y ya puedes empezar a jugar.</value>
+  </data>
+  <data name="RegistrarCuenta_Titulo" xml:space="preserve">
+    <value>Crear una cuenta</value>
+  </data>
+  <data name="RegistrarCuenta_YaTienesCuenta" xml:space="preserve">
+    <value>¿Ya tienes cuenta?</value>
+  </data>
+  <data name="Comun_Palabra" xml:space="preserve">
+    <value>Palabra</value>
+  </data>
+  <data name="Comun_Rival" xml:space="preserve">
+    <value>Rival</value>
+  </data>
+  <data name="Comun_Categoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="Comun_PuntosObtenidos" xml:space="preserve">
+    <value>Puntos obtenidos</value>
+  </data>
+  <data name="Comun_PuntajeGlobal" xml:space="preserve">
+    <value>Puntaje global</value>
+  </data>
+  <data name="Comun_IrAlLobby" xml:space="preserve">
+    <value>Ir al lobby</value>
+  </data>
+  <data name="Comun_JugarDeNuevo" xml:space="preserve">
+    <value>Jugar de nuevo</value>
+  </data>
+  <data name="Comun_Aceptar" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="Comun_Salir" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Comun_Chat" xml:space="preserve">
+    <value>💬  Chat</value>
+  </data>
+  <data name="Comun_FormatoPuntosPositivos" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Comun_FormatoPuntos" xml:space="preserve">
+    <value>{0} pts</value>
+  </data>
+  <data name="Juego_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Partida en curso</value>
+  </data>
+  <data name="Juego_TuAdivinando" xml:space="preserve">
+    <value>Tú (adivinando)</value>
+  </data>
+  <data name="Juego_TuCreador" xml:space="preserve">
+    <value>Tú (creador)</value>
+  </data>
+  <data name="Juego_RivalAdivinando" xml:space="preserve">
+    <value>El rival está adivinando</value>
+  </data>
+  <data name="Juego_AbandonarPartida" xml:space="preserve">
+    <value>Abandonar partida</value>
+  </data>
+  <data name="Juego_CategoriaEtiqueta" xml:space="preserve">
+    <value>CATEGORÍA</value>
+  </data>
+  <data name="Juego_DescripcionEtiqueta" xml:space="preserve">
+    <value>DESCRIPCIÓN</value>
+  </data>
+  <data name="Juego_TuPalabra" xml:space="preserve">
+    <value>TU PALABRA:  </value>
+  </data>
+  <data name="Juego_LetrasIncorrectas" xml:space="preserve">
+    <value>LETRAS INCORRECTAS:  </value>
+  </data>
+  <data name="Juego_IntentosRestantes" xml:space="preserve">
+    <value>{0}  intentos restantes</value>
+  </data>
+  <data name="Juego_EsperandoPalabra" xml:space="preserve">
+    <value>Esperando que el creador elija la palabra...</value>
+  </data>
+  <data name="Juego_VsRival" xml:space="preserve">
+    <value>vs {0}</value>
+  </data>
+  <data name="Juego_ConfirmarAbandono" xml:space="preserve">
+    <value>¿Seguro que deseas abandonar la partida? Perderás puntos.</value>
+  </data>
+  <data name="Juego_RivalAbandonoMensaje" xml:space="preserve">
+    <value>{0} abandonó la partida. Regresarás al lobby.</value>
+  </data>
+  <data name="Juego_RivalAbandonoTitulo" xml:space="preserve">
+    <value>Rival abandonó</value>
+  </data>
+  <data name="Juego_TuRival" xml:space="preserve">
+    <value>Tu rival</value>
+  </data>
+  <data name="ElegirCategoria_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Elegir categoría</value>
+  </data>
+  <data name="ElegirCategoria_Paso" xml:space="preserve">
+    <value>Paso 1 de 2 · Elige una categoría</value>
+  </data>
+  <data name="ElegirCategoria_Continuar" xml:space="preserve">
+    <value>Continuar ⇒</value>
+  </data>
+  <data name="ElegirCategoria_ErrorMensaje" xml:space="preserve">
+    <value>Elige una categoría para continuar.</value>
+  </data>
+  <data name="ElegirPalabra_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Elegir palabra</value>
+  </data>
+  <data name="ElegirPalabra_Paso" xml:space="preserve">
+    <value>Paso 2 de 2 · Elige una palabra</value>
+  </data>
+  <data name="ElegirPalabra_CategoriaConNombre" xml:space="preserve">
+    <value>Categoría: {0}</value>
+  </data>
+  <data name="ElegirPalabra_LetrasSufijo" xml:space="preserve">
+    <value> letras</value>
+  </data>
+  <data name="ElegirPalabra_Confirmar" xml:space="preserve">
+    <value>Confirmar palabra</value>
+  </data>
+  <data name="ElegirPalabra_ErrorMensaje" xml:space="preserve">
+    <value>Elige una palabra para continuar.</value>
+  </data>
+  <data name="EsperandoPalabra_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Esperando palabra</value>
+  </data>
+  <data name="EsperandoPalabra_TeUniste" xml:space="preserve">
+    <value>¡Te uniste a la partida!</value>
+  </data>
+  <data name="EsperandoPalabra_Subtitulo" xml:space="preserve">
+    <value>Tu rival está eligiendo la palabra que tendrás que adivinar</value>
+  </data>
+  <data name="EsperandoPalabra_Instruccion" xml:space="preserve">
+    <value>Cuando termine, comenzarás a adivinar. Te avisaremos en cuanto la palabra esté lista.</value>
+  </data>
+  <data name="EsperandoPalabra_Vs" xml:space="preserve">
+    <value>vs</value>
+  </data>
+  <data name="EsperandoPalabra_TuBoton" xml:space="preserve">
+    <value>Tú</value>
+  </data>
+  <data name="EsperandoPalabra_Eligiendo" xml:space="preserve">
+    <value>{0} está eligiendo la palabra...</value>
+  </data>
+  <data name="EsperandoPalabra_CreadorBoton" xml:space="preserve">
+    <value> {0}</value>
+  </data>
+  <data name="Historial_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Historial</value>
+  </data>
+  <data name="Historial_Titulo" xml:space="preserve">
+    <value>Historial de puntajes</value>
+  </data>
+  <data name="Historial_Subtitulo" xml:space="preserve">
+    <value>Tu progreso, partida por partida</value>
+  </data>
+  <data name="Historial_PuntajeGlobalEtiqueta" xml:space="preserve">
+    <value>PUNTAJE GLOBAL</value>
+  </data>
+  <data name="Historial_PtsSufijo" xml:space="preserve">
+    <value> pts</value>
+  </data>
+  <data name="Historial_Ganadas" xml:space="preserve">
+    <value>GANADAS</value>
+  </data>
+  <data name="Historial_RivalNoAdivino" xml:space="preserve">
+    <value>RIVAL NO ADIVINÓ</value>
+  </data>
+  <data name="Historial_Penalizaciones" xml:space="preserve">
+    <value>PENALIZACIONES</value>
+  </data>
+  <data name="Historial_BtnGanadas" xml:space="preserve">
+    <value>Partidas ganadas ({0})</value>
+  </data>
+  <data name="Historial_BtnRival" xml:space="preserve">
+    <value>Rival no adivinó ({0})</value>
+  </data>
+  <data name="Historial_BtnPenalizaciones" xml:space="preserve">
+    <value>Penalizaciones ({0})</value>
+  </data>
+  <data name="Historial_ColFecha" xml:space="preserve">
+    <value>FECHA</value>
+  </data>
+  <data name="Historial_ColPuntos" xml:space="preserve">
+    <value>PUNTOS</value>
+  </data>
+  <data name="Historial_ColPalabraGanadas" xml:space="preserve">
+    <value>PALABRA ADIVINADA</value>
+  </data>
+  <data name="Historial_ColRivalGanadas" xml:space="preserve">
+    <value>RIVAL VENCIDO</value>
+  </data>
+  <data name="Historial_ColPalabraRival" xml:space="preserve">
+    <value>PALABRA ELEGIDA</value>
+  </data>
+  <data name="Historial_ColRivalRival" xml:space="preserve">
+    <value>RIVAL QUE FALLÓ</value>
+  </data>
+  <data name="Historial_ColPalabraPenal" xml:space="preserve">
+    <value>PALABRA EN JUEGO</value>
+  </data>
+  <data name="Historial_ColRivalPenal" xml:space="preserve">
+    <value>PARTIDA ABANDONADA</value>
+  </data>
+  <data name="Historial_SinRegistros" xml:space="preserve">
+    <value>No hay registros en esta categoría.</value>
+  </data>
+  <data name="Historial_PuntosGanados" xml:space="preserve">
+    <value>+{0} pts</value>
+  </data>
+  <data name="Historial_PuntosPerdidos" xml:space="preserve">
+    <value>–{0} pts</value>
+  </data>
+  <data name="GanadorAdivinador_Titulo" xml:space="preserve">
+    <value>¡Adivinaste la palabra!</value>
+  </data>
+  <data name="GanadorAdivinador_Subtitulo" xml:space="preserve">
+    <value>Ganaste +10 puntos por esta partida</value>
+  </data>
+  <data name="PerdedorAdivinador_Titulo" xml:space="preserve">
+    <value>Se acabaron los intentos</value>
+  </data>
+  <data name="PerdedorAdivinador_Subtitulo" xml:space="preserve">
+    <value>No sumaste puntos esta vez</value>
+  </data>
+  <data name="GanadorCreador_Titulo" xml:space="preserve">
+    <value>Tu rival no pudo adivinar</value>
+  </data>
+  <data name="GanadorCreador_Subtitulo" xml:space="preserve">
+    <value>Ganaste +5 puntos por crear la partida</value>
+  </data>
+  <data name="PerdedorCreador_Titulo" xml:space="preserve">
+    <value>Tu rival adivinó la palabra</value>
+  </data>
+  <data name="PerdedorCreador_Subtitulo" xml:space="preserve">
+    <value>No obtuviste puntos esta vez</value>
+  </data>
+  <data name="DialogoResultado_PreguntaPrefijo" xml:space="preserve">
+    <value>¿Quieres jugar otra partida con </value>
+  </data>
+  <data name="DialogoResultado_PreguntaSufijo" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="Penalizacion_Titulo" xml:space="preserve">
+    <value>Penalización aplicada</value>
+  </data>
+  <data name="Penalizacion_Mensaje" xml:space="preserve">
+    <value>Abandonaste una partida en curso. Se restaron de tu puntaje global:</value>
+  </data>
+  <data name="Penalizacion_PuntajeAnterior" xml:space="preserve">
+    <value>Puntaje anterior</value>
+  </data>
+  <data name="Penalizacion_PuntajeFormato" xml:space="preserve">
+    <value>{0} pts → {1} pts</value>
+  </data>
+  <data name="Penalizacion_RestaFormato" xml:space="preserve">
+    <value>–{0} pts</value>
+  </data>
+  <data name="RivalAbandono_Titulo" xml:space="preserve">
+    <value>Tu rival abandonó</value>
+  </data>
+  <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
+    <value> abandonó la partida. Se le aplicará una penalización por su cuenta.</value>
+  </data>
+  <data name="RivalAbandono_Pregunta" xml:space="preserve">
+    <value>¿Qué te gustaría hacer ahora?</value>
+  </data>
+  <data name="RivalAbandono_Esperar" xml:space="preserve">
+    <value>Esperar a otro oponente</value>
+  </data>
+  <data name="RivalAbandono_ErrorReabrir" xml:space="preserve">
+    <value>No se pudo reabrir la partida. Regresando al lobby.</value>
+  </data>
+</root>

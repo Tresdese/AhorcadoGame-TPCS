@@ -1,0 +1,62 @@
+﻿<Page x:Class="ClienteAhorcado.VentanaElegirCategoria"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
+        mc:Ignorable="d" Background="#F0F0F0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="White">
+            <Border BorderBrush="#EEEEEE" BorderThickness="0,0,0,1">
+                <Grid Margin="20,12,20,12">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Button Content="{x:Static p:Resources.Comun_Volver}" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,15,0" Click="btnVolver_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <TextBlock Text="{x:Static p:Resources.ElegirCategoria_Paso}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="lstCategorias" Grid.Row="0" BorderThickness="0" Background="Transparent"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="White" CornerRadius="8" Margin="5" Padding="20" Width="280">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="8" Opacity="0.08" ShadowDepth="2"/>
+                            </Border.Effect>
+                            <TextBlock Text="{Binding Nombre}" FontSize="20" FontWeight="Bold"/>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Grid.Row="1" Content="{x:Static p:Resources.ElegirCategoria_Continuar}" HorizontalAlignment="Right" Padding="20,10" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Margin="0,15,0,0" Click="btnContinuar_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5686F791-42BE-47B9-8670-EA84C03ADC02}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClienteAhorcado</RootNamespace>
+    <AssemblyName>ClienteAhorcado</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DialogoAbandonarPartida.xaml.cs">
+      <DependentUpon>DialogoAbandonarPartida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoGanadorAdivinador.xaml.cs">
+      <DependentUpon>DialogoGanadorAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoGanadorCreador.xaml.cs">
+      <DependentUpon>DialogoGanadorCreador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoPerdedorCreador.xaml.cs">
+      <DependentUpon>DialogoPerdedorCreador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoPenalizacion.xaml.cs">
+      <DependentUpon>DialogoPenalizacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoPerdedorAdivinador.xaml.cs">
+      <DependentUpon>DialogoPerdedorAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogoRivalAbandono.xaml.cs">
+      <DependentUpon>DialogoRivalAbandono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestorIdioma.cs" />
+    <Compile Include="HistorialItemViewModel.cs" />
+    <Compile Include="JuegoCallbackHandler.cs" />
+    <Compile Include="PartidaItemViewModel.cs" />
+    <Compile Include="VentanaBienvenida.xaml.cs">
+      <DependentUpon>VentanaBienvenida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEditarPerfil.xaml.cs">
+      <DependentUpon>VentanaEditarPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaElegirCategoria.xaml.cs">
+      <DependentUpon>VentanaElegirCategoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaElegirPalabra.xaml.cs">
+      <DependentUpon>VentanaElegirPalabra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEsperandoPalabra.xaml.cs">
+      <DependentUpon>VentanaEsperandoPalabra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEsperandoRival.xaml.cs">
+      <DependentUpon>VentanaEsperandoRival.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorial.xaml.cs">
+      <DependentUpon>VentanaHistorial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaIniciarSesion.xaml.cs">
+      <DependentUpon>VentanaIniciarSesion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaJuegoAdivinador.xaml.cs">
+      <DependentUpon>VentanaJuegoAdivinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaJuegoCreador.xaml.cs">
+      <DependentUpon>VentanaJuegoCreador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPartidas.xaml.cs">
+      <DependentUpon>VentanaPartidas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPerfil.xaml.cs">
+      <DependentUpon>VentanaPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaRegistrarCuenta.xaml.cs">
+      <DependentUpon>VentanaRegistrarCuenta.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DialogoAbandonarPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoGanadorAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoGanadorCreador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoPerdedorCreador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoPenalizacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoPerdedorAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoRivalAbandono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SesionActual.cs" />
+    <Compile Include="ManejadorErrores.cs" />
+    <Compile Include="Conexiones.cs" />
+    <Compile Include="Navegacion.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="VentanaBienvenida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEditarPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaElegirCategoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaElegirPalabra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEsperandoPalabra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaEsperandoRival.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaHistorial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaIniciarSesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaJuegoAdivinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaJuegoCreador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaPartidas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaRegistrarCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Contratos (interfaces de servicio + DTOs) compartidos con el servidor.
+         Permite usar ChannelFactory sin duplicar tipos. -->
+    <ProjectReference Include="..\AhorcadoWCF\AhorcadoWCF.csproj">
+      <Project>{19e2db44-df8d-4639-9497-7f3317706665}</Project>
+      <Name>AhorcadoWCF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ahorcado_vacio.png" />
+    <Resource Include="Recursos\ahorcado_primerFallido.png" />
+    <Resource Include="Recursos\ahorcado_segundoFallido.png" />
+    <Resource Include="Recursos\ahorcado_tercerFallido.png" />
+    <Resource Include="Recursos\ahorcado_cuartoFallido.png" />
+    <Resource Include="Recursos\ahorcado_quintoFallido.png" />
+    <Resource Include="Recursos\ahorcado_sextoFallido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ahorcado_completo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
