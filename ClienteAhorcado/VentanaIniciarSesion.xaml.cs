@@ -17,12 +17,18 @@ namespace ClienteAhorcado {
     public partial class VentanaIniciarSesion : Window {
         public VentanaIniciarSesion() {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
             ventanaBienvenida.Show();
             this.Close();
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
         }
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e) {
@@ -64,6 +70,12 @@ namespace ClienteAhorcado {
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 txtCorreo.BorderBrush = Brushes.Red;
             }
+        }
+
+        private void lnkRegistrate_Click(object sender, MouseButtonEventArgs e) {
+            VentanaRegistrarCuenta ventanaRegistrarCuenta = new VentanaRegistrarCuenta();
+            ventanaRegistrarCuenta.Show();
+            this.Close();
         }
     }
 }
