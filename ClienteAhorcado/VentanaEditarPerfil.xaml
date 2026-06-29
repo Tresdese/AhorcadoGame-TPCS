@@ -59,8 +59,8 @@
                                 <TextBlock Text="AS" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <StackPanel VerticalAlignment="Center">
-                                <TextBlock Text="Andrés Sánchez" FontSize="18" FontWeight="Bold"/>
-                                <TextBlock Text="andressv@ejemplo.com" FontSize="13" Foreground="#666666"/>
+                                <TextBlock x:Name="lblNombreEncabezado" Text="Andrés Sánchez" FontSize="18" FontWeight="Bold"/>
+                                <TextBlock x:Name="lblCorreoEncabezado" Text="andressv@ejemplo.com" FontSize="13" Foreground="#666666"/>
                             </StackPanel>
                         </StackPanel>
                         <Border HorizontalAlignment="Right" VerticalAlignment="Center" Background="#333333" CornerRadius="5" Padding="12,6">
@@ -130,6 +130,7 @@
                                     </Style>
                                 </PasswordBox.Resources>
                             </PasswordBox>
+                            <TextBlock x:Name="lblErrorContrasena" Text="La contraseña no cumple los requisitos." Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,25,0,0">
