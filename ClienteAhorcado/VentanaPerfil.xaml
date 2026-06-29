@@ -70,7 +70,7 @@
                         </Button>
                     </Grid>
                     <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_NombreCompleto}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                    <TextBox x:Name="txtNombre" Text="Andrés Sánchez" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
+                    <TextBox x:Name="txtNombre" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -85,7 +85,7 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
                             <TextBlock Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                            <TextBox x:Name="txtCorreo" Text="andressv@ejemplo.com" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
+                            <TextBox x:Name="txtCorreo" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                                 <TextBox.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius" Value="5"/>
@@ -95,7 +95,7 @@
                         </StackPanel>
                         <StackPanel Grid.Column="2">
                             <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_FechaNacimiento}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                            <TextBox x:Name="txtFechaNacimiento" Text="14/09/2002" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
+                            <TextBox x:Name="txtFechaNacimiento" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9">
                                 <TextBox.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius" Value="5"/>
@@ -105,7 +105,7 @@
                         </StackPanel>
                     </Grid>
                     <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_NumeroCelular}" FontSize="13" Foreground="#555555" Margin="0,15,0,5"/>
-                    <TextBox x:Name="txtCelular" Text="+52 55 8765 4321" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9" Width="390" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtCelular" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F9F9F9" Width="390" HorizontalAlignment="Left">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -121,25 +121,25 @@
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,10,0">
                             <StackPanel>
-                                <TextBlock Text="75 pts" FontSize="22" FontWeight="Bold" Foreground="#0078D4"/>
+                                <TextBlock x:Name="lblPuntajeTotal" Text="0 pts" FontSize="22" FontWeight="Bold" Foreground="#0078D4"/>
                                 <TextBlock Text="{x:Static p:Resources.Perfil_PuntajeTotal}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="1" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,10,0">
                             <StackPanel>
-                                <TextBlock Text="5" FontSize="22" FontWeight="Bold" Foreground="Green"/>
+                                <TextBlock x:Name="lblPartidasGanadas" Text="0" FontSize="22" FontWeight="Bold" Foreground="Green"/>
                                 <TextBlock Text="{x:Static p:Resources.Perfil_PartidasGanadas}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="2" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,10,0">
                             <StackPanel>
-                                <TextBlock Text="3" FontSize="22" FontWeight="Bold" Foreground="#333333"/>
+                                <TextBlock x:Name="lblRivalVencido" Text="0" FontSize="22" FontWeight="Bold" Foreground="#333333"/>
                                 <TextBlock Text="{x:Static p:Resources.Perfil_RivalVencido}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="3" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Padding="15">
                             <StackPanel>
-                                <TextBlock Text="2" FontSize="22" FontWeight="Bold" Foreground="Red"/>
+                                <TextBlock x:Name="lblPenalizaciones" Text="0" FontSize="22" FontWeight="Bold" Foreground="Red"/>
                                 <TextBlock Text="{x:Static p:Resources.Perfil_Penalizaciones}" FontSize="11" Foreground="#888888" Margin="0,4,0,0"/>
                             </StackPanel>
                         </Border>

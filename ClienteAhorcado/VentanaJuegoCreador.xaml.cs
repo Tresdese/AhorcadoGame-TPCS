@@ -92,28 +92,19 @@ namespace ClienteAhorcado
             });
         }
 
+        private static readonly string[] FramesAhorcado =
+        {
+            "ahorcado_vacio", "ahorcado_primerFallido", "ahorcado_segundoFallido",
+            "ahorcado_tercerFallido", "ahorcado_cuartoFallido", "ahorcado_quintoFallido",
+            "ahorcado_sextoFallido"
+        };
+
         private void MostrarAhorcado(int fallos)
         {
-            var candidatos = new List<string> { $"ahorcado_{fallos}" };
-            if (fallos >= 6) candidatos.Add("ahorcado_completo");
-            for (int f = fallos - 1; f >= 0; f--) candidatos.Add($"ahorcado_{f}");
-
-            foreach (var nombre in candidatos)
-            {
-                try
-                {
-                    var img = new BitmapImage();
-                    img.BeginInit();
-                    img.UriSource = new Uri($"/Recursos/{nombre}.png", UriKind.Relative);
-                    img.CacheOption = BitmapCacheOption.OnLoad;
-                    img.EndInit();
-                    imgAhorcado.Source = img;
-                    return;
-                }
-                catch
-                {
-                }
-            }
+            if (fallos < 0) fallos = 0;
+            if (fallos >= FramesAhorcado.Length) fallos = FramesAhorcado.Length - 1;
+            imgAhorcado.Source = new BitmapImage(
+                new Uri($"/Recursos/{FramesAhorcado[fallos]}.png", UriKind.Relative));
         }
 
         public void MensajeChatRecibido(string remitente, string mensaje) =>

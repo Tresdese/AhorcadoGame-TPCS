@@ -45,6 +45,18 @@ namespace ClienteAhorcado {
             lblNombreEncabezado.Text = usuario.Nombre;
             lblCorreoEncabezado.Text = usuario.Correo;
             btnUsuario.Content = usuario.Nombre + " ▼";
+
+            CargarEstadisticas();
+        }
+
+        private void CargarEstadisticas() {
+            ManejadorErrores.Ejecutar(() => {
+                var puntaje = Conexiones.Puntaje();
+                lblPuntajeTotal.Text = puntaje.ObtenerPuntajeGlobal(SesionActual.IdUsuario) + " pts";
+                lblPartidasGanadas.Text = puntaje.ObtenerPartidasGanadas(SesionActual.IdUsuario).ToString();
+                lblRivalVencido.Text = puntaje.ObtenerPartidasRivalNoPudo(SesionActual.IdUsuario).ToString();
+                lblPenalizaciones.Text = puntaje.ObtenerPenalizaciones(SesionActual.IdUsuario).ToString();
+            });
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {

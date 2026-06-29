@@ -254,14 +254,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\ahorcado_0.png" />
-    <Resource Include="Recursos\ahorcado_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\ahorcado_completo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\ahorcado_3.png" />
+    <Resource Include="Recursos\ahorcado_vacio.png" />
+    <Resource Include="Recursos\ahorcado_primerFallido.png" />
+    <Resource Include="Recursos\ahorcado_segundoFallido.png" />
+    <Resource Include="Recursos\ahorcado_tercerFallido.png" />
+    <Resource Include="Recursos\ahorcado_cuartoFallido.png" />
+    <Resource Include="Recursos\ahorcado_quintoFallido.png" />
+    <Resource Include="Recursos\ahorcado_sextoFallido.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

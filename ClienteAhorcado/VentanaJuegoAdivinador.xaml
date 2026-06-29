@@ -67,7 +67,7 @@
                 </Grid>
             </Border>
 
-            <Image Grid.Row="2" Source="/Recursos/ahorcado_0.png" Width="180" Height="180" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="imgAhorcado"/>
+            <Image Grid.Row="2" Source="/Recursos/ahorcado_vacio.png" Width="180" Height="180" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="imgAhorcado"/>
 
             <WrapPanel Grid.Row="3" HorizontalAlignment="Center" Margin="15,5,15,10">
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
