@@ -277,6 +277,96 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar partida.
+        /// </summary>
+        public static string EsperandoRival_CancelarPartida {
+            get {
+                return ResourceManager.GetString("EsperandoRival_CancelarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Seguro que deseas cancelar la partida?.
+        /// </summary>
+        public static string EsperandoRival_ConfirmarCancelar {
+            get {
+                return ResourceManager.GetString("EsperandoRival_ConfirmarCancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu partida aparece en la lista del lobby. En cuanto alguien se una, podrás elegir la palabra que tendrá que adivinar..
+        /// </summary>
+        public static string EsperandoRival_Descripcion {
+            get {
+                return ResourceManager.GetString("EsperandoRival_Descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu partida está lista.
+        /// </summary>
+        public static string EsperandoRival_Encabezado {
+            get {
+                return ResourceManager.GetString("EsperandoRival_Encabezado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ···  Esperando....
+        /// </summary>
+        public static string EsperandoRival_Esperando {
+            get {
+                return ResourceManager.GetString("EsperandoRival_Esperando", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Compartiendo en el lobby para que alguien se una.
+        /// </summary>
+        public static string EsperandoRival_Subtitulo {
+            get {
+                return ResourceManager.GetString("EsperandoRival_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a TIEMPO EN ESPERA.
+        /// </summary>
+        public static string EsperandoRival_TiempoEnEspera {
+            get {
+                return ResourceManager.GetString("EsperandoRival_TiempoEnEspera", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esperando a un rival....
+        /// </summary>
+        public static string EsperandoRival_Titulo {
+            get {
+                return ResourceManager.GetString("EsperandoRival_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Esperando oponente.
+        /// </summary>
+        public static string EsperandoRival_TituloVentana {
+            get {
+                return ResourceManager.GetString("EsperandoRival_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tú.
+        /// </summary>
+        public static string EsperandoRival_Tu {
+            get {
+                return ResourceManager.GetString("EsperandoRival_Tu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a La contraseña que ingresaste es incorrecta..
         /// </summary>
         public static string IniciarSesion_ErrorContrasena {

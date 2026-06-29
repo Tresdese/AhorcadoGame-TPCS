@@ -14,30 +14,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado
-{
-   
+{  
     public partial class VentanaEsperandoRival : Window
     {
-       
         private int idPartidaActual;
- 
         
         private DispatcherTimer _timer;
         private int segundosEspera = 0;
- 
         
         public VentanaEsperandoRival()
         {
             InitializeComponent();
             Loaded += VentanaEsperandoRival_Loaded;
         }
- 
         
         private void VentanaEsperandoRival_Loaded(object sender, RoutedEventArgs e)
         {
             CrearPartida();
         }
- 
        
         private void CrearPartida()
         {
@@ -45,14 +39,12 @@ namespace ClienteAhorcado
             {
                 var cliente = Conexiones.Partida();
                 var partida = cliente.CrearPartida(SesionActual.IdUsuario);
- 
                 
                 if (partida == null)
                 {
                     MostrarErrorConexion();
                     return;
                 }
- 
                 
                 idPartidaActual = partida.IdPartida;
                 SesionActual.IdPartida = partida.IdPartida;
@@ -70,7 +62,6 @@ namespace ClienteAhorcado
                 MostrarErrorConexion();
             }
         }
- 
         
         private void IniciarCronometro()
         {
@@ -91,8 +82,6 @@ namespace ClienteAhorcado
         }
  
         private void DetenerCronometro() => _timer?.Stop();
- 
-        
       
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
@@ -121,7 +110,6 @@ namespace ClienteAhorcado
                 Close();
             }
         }
- 
         
         private void MostrarErrorConexion()
         {
@@ -135,7 +123,6 @@ namespace ClienteAhorcado
             new VentanaPartidas().Show();
             Close();
         }
- 
         
         public void NotificarAdivinadorUnido()
         {

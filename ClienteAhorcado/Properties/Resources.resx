@@ -189,6 +189,36 @@
   <data name="EditarPerfil_TituloVentana" xml:space="preserve">
     <value>Ahorcado · Editar perfil</value>
   </data>
+  <data name="EsperandoRival_CancelarPartida" xml:space="preserve">
+    <value>Cancelar partida</value>
+  </data>
+  <data name="EsperandoRival_ConfirmarCancelar" xml:space="preserve">
+    <value>¿Seguro que deseas cancelar la partida?</value>
+  </data>
+  <data name="EsperandoRival_Descripcion" xml:space="preserve">
+    <value>Tu partida aparece en la lista del lobby. En cuanto alguien se una, podrás elegir la palabra que tendrá que adivinar.</value>
+  </data>
+  <data name="EsperandoRival_Encabezado" xml:space="preserve">
+    <value>Tu partida está lista</value>
+  </data>
+  <data name="EsperandoRival_Esperando" xml:space="preserve">
+    <value>···  Esperando...</value>
+  </data>
+  <data name="EsperandoRival_Subtitulo" xml:space="preserve">
+    <value>Compartiendo en el lobby para que alguien se una</value>
+  </data>
+  <data name="EsperandoRival_TiempoEnEspera" xml:space="preserve">
+    <value>TIEMPO EN ESPERA</value>
+  </data>
+  <data name="EsperandoRival_Titulo" xml:space="preserve">
+    <value>Esperando a un rival...</value>
+  </data>
+  <data name="EsperandoRival_TituloVentana" xml:space="preserve">
+    <value>Ahorcado · Esperando oponente</value>
+  </data>
+  <data name="EsperandoRival_Tu" xml:space="preserve">
+    <value>Tú</value>
+  </data>
   <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
     <value>La contraseña que ingresaste es incorrecta.</value>
   </data>

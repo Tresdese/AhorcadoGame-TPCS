@@ -189,6 +189,36 @@
   <data name="EditarPerfil_TituloVentana" xml:space="preserve">
     <value>Hangman · Edit profile</value>
   </data>
+  <data name="EsperandoRival_CancelarPartida" xml:space="preserve">
+    <value>Cancel game</value>
+  </data>
+  <data name="EsperandoRival_ConfirmarCancelar" xml:space="preserve">
+    <value>Are you sure you want to cancel the game?</value>
+  </data>
+  <data name="EsperandoRival_Descripcion" xml:space="preserve">
+    <value>Your game is listed in the lobby. As soon as someone joins, you'll choose the word they have to guess.</value>
+  </data>
+  <data name="EsperandoRival_Encabezado" xml:space="preserve">
+    <value>Your game is ready</value>
+  </data>
+  <data name="EsperandoRival_Esperando" xml:space="preserve">
+    <value>···  Waiting...</value>
+  </data>
+  <data name="EsperandoRival_Subtitulo" xml:space="preserve">
+    <value>Sharing in the lobby so someone can join</value>
+  </data>
+  <data name="EsperandoRival_TiempoEnEspera" xml:space="preserve">
+    <value>TIME WAITING</value>
+  </data>
+  <data name="EsperandoRival_Titulo" xml:space="preserve">
+    <value>Waiting for an opponent...</value>
+  </data>
+  <data name="EsperandoRival_TituloVentana" xml:space="preserve">
+    <value>Hangman · Waiting for opponent</value>
+  </data>
+  <data name="EsperandoRival_Tu" xml:space="preserve">
+    <value>You</value>
+  </data>
   <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
     <value>The password you entered is incorrect.</value>
   </data>
