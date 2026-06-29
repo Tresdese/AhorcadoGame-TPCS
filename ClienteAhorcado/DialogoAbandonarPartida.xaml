@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
         Title="" Height="320" Width="500"
         WindowStartupLocation="CenterOwner"
@@ -17,11 +18,11 @@
             <Border Background="#FFEBEE" CornerRadius="8" Width="55" Height="55" HorizontalAlignment="Center" Margin="0,0,0,15">
                 <TextBlock Text="⚠" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#D32F2F"/>
             </Border>
-            <TextBlock Text="¿Abandonar la partida?" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <TextBlock Text="{x:Static p:Resources.Abandonar_Titulo}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock FontSize="13" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,25">
-                <Run Text="Si abandonas se te restarán "/>
-                <Run Text="3 puntos" FontWeight="Bold" Foreground="#D32F2F"/>
-                <Run Text=" de tu puntaje global y se cancelará la partida para ambos jugadores."/>
+                <Run Text="{x:Static p:Resources.Abandonar_TextoAntes}"/>
+                <Run Text="{x:Static p:Resources.Abandonar_Puntos}" FontWeight="Bold" Foreground="#D32F2F"/>
+                <Run Text="{x:Static p:Resources.Abandonar_TextoDespues}"/>
             </TextBlock>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -29,14 +30,14 @@
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Volver a la partida" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnVolver_Click">
+                <Button Grid.Column="0" Content="{x:Static p:Resources.Abandonar_Volver}" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnVolver_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Grid.Column="2" Content="Sí, abandonar" Height="40" Background="#D32F2F" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnAbandonar_Click">
+                <Button Grid.Column="2" Content="{x:Static p:Resources.Abandonar_Confirmar}" Height="40" Background="#D32F2F" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnAbandonar_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>

@@ -13,12 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado
-{
-    
+{  
     public partial class DialogoAbandonarPartida : Window
     {
         private readonly int _idPartida;
-
         
         public bool Confirmo { get; private set; } = false;
 
@@ -27,14 +25,12 @@ namespace ClienteAhorcado
             InitializeComponent();
             _idPartida = idPartida;
         }
-
       
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             Confirmo = false;
             Close();
         }
-
         
         private void btnAbandonar_Click(object sender, RoutedEventArgs e)
         {
@@ -53,8 +49,8 @@ namespace ClienteAhorcado
             catch
             {
                 MessageBox.Show(
-                    "Error de conexión con base de datos, inténtelo más tarde.",
-                    "Error",
+                    Properties.Resources.Partidas_ErrorConexion,
+                    Properties.Resources.Comun_Error,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
