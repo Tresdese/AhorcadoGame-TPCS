@@ -62,7 +62,11 @@ namespace ClienteAhorcado {
                 hayError = true;
             }
 
-            if (string.IsNullOrWhiteSpace(correo) || !CorreoTieneFormatoValido(correo)) {
+            if (string.IsNullOrWhiteSpace(correo)) {
+                lblErrorCorreo.Text = Properties.Resources.Comun_CampoObligatorio;
+                lblErrorCorreo.Visibility = Visibility.Visible;
+                hayError = true;
+            } else if (!CorreoTieneFormatoValido(correo)) {
                 lblErrorCorreo.Text = Properties.Resources.RegistrarCuenta_ErrorCorreoInvalido;
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 hayError = true;
