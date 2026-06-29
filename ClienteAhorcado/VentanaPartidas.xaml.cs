@@ -89,7 +89,6 @@ namespace ClienteAhorcado {
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
             
-            Close();
         }
 
         private void btnActualizar_Click(object sender, RoutedEventArgs e) {
