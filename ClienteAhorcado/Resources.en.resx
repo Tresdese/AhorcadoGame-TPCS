@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Bienvenida_Descripcion" xml:space="preserve">
-    <value>Entra a tu cuenta para guardar tu progreso, o crea una cuenta gratis para empezar a jugar.</value>
+    <value>Sign in to save your progress, or create a free account to start playing.</value>
   </data>
   <data name="Bienvenida_Intentos" xml:space="preserve">
-    <value>0 intentos</value>
+    <value>0 tries</value>
   </data>
   <data name="Bienvenida_Subtitulo" xml:space="preserve">
-    <value>Adivina la palabra letra por letra antes de quedarte sin intentos.</value>
+    <value>Guess the word letter by letter before you run out of tries.</value>
   </data>
   <data name="Bienvenida_Titulo" xml:space="preserve">
-    <value>¡El Ahorcado!</value>
+    <value>Hangman!</value>
   </data>
   <data name="Comun_IniciarSesion" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Sign in</value>
   </data>
   <data name="Comun_RegistrarCuenta" xml:space="preserve">
-    <value>Registrar cuenta</value>
+    <value>Create account</value>
   </data>
 </root>
