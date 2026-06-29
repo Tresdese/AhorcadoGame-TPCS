@@ -61,6 +61,60 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sí, abandonar.
+        /// </summary>
+        public static string Abandonar_Confirmar {
+            get {
+                return ResourceManager.GetString("Abandonar_Confirmar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 3 puntos.
+        /// </summary>
+        public static string Abandonar_Puntos {
+            get {
+                return ResourceManager.GetString("Abandonar_Puntos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Si abandonas se te restarán.
+        /// </summary>
+        public static string Abandonar_TextoAntes {
+            get {
+                return ResourceManager.GetString("Abandonar_TextoAntes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a de tu puntaje global y se cancelará la partida para ambos jugadores..
+        /// </summary>
+        public static string Abandonar_TextoDespues {
+            get {
+                return ResourceManager.GetString("Abandonar_TextoDespues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Abandonar la partida?.
+        /// </summary>
+        public static string Abandonar_Titulo {
+            get {
+                return ResourceManager.GetString("Abandonar_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Volver a la partida.
+        /// </summary>
+        public static string Abandonar_Volver {
+            get {
+                return ResourceManager.GetString("Abandonar_Volver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Entra a tu cuenta para guardar tu progreso, o crea una cuenta gratis para empezar a jugar..
         /// </summary>
         public static string Bienvenida_Descripcion {
