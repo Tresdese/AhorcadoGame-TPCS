@@ -48,11 +48,7 @@
                     </Border>
                 </StackPanel>
             </Border>
-            <TextBlock FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,15">
-                <Run Text="{x:Static p:Resources.DialogoResultado_PreguntaPrefijo}"/>
-                <Run x:Name="txtPreguntaRival" Text="" FontWeight="Bold"/>
-                <Run Text="{x:Static p:Resources.DialogoResultado_PreguntaSufijo}"/>
-            </TextBlock>
+            
             <Button Content="{x:Static p:Resources.Comun_IrAlLobby}" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnLobby_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
