@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    public partial class VentanaRegistrarCuenta : Window {
+    public partial class VentanaRegistrarCuenta : Page {
         public VentanaRegistrarCuenta() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
@@ -23,8 +23,7 @@ namespace ClienteAhorcado {
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
-            ventanaBienvenida.Show();
-            this.Close();
+            Navegacion.Ir(ventanaBienvenida);
         }
 
         private void btnIdioma_Click(object sender, RoutedEventArgs e) {
@@ -132,8 +131,7 @@ namespace ClienteAhorcado {
                     Properties.Resources.RegistrarCuenta_ExitoTitulo,
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 VentanaIniciarSesion ventanaIniciarSesion = new VentanaIniciarSesion();
-                ventanaIniciarSesion.Show();
-                this.Close();
+                Navegacion.Ir(ventanaIniciarSesion);
             }
         }
 
@@ -164,8 +162,7 @@ namespace ClienteAhorcado {
 
         private void lnkIniciaSesion_Click(object sender, MouseButtonEventArgs e) {
             VentanaIniciarSesion ventanaIniciarSesion = new VentanaIniciarSesion();
-            ventanaIniciarSesion.Show();
-            this.Close();
+            Navegacion.Ir(ventanaIniciarSesion);
         }
     }
 }

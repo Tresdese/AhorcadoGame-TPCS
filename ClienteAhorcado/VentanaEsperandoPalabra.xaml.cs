@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    public partial class VentanaEsperandoPalabra : Window {
+    public partial class VentanaEsperandoPalabra : Page {
         private readonly int _idPartida;
         private readonly string _nombreCreador;
 
@@ -40,17 +40,15 @@ namespace ClienteAhorcado {
             Dispatcher.Invoke(() => {
                 JuegoCallbackHandler.VentanaEsperaPalabra = null;
                 var tablero = new VentanaJuegoAdivinador(_idPartida, _nombreCreador);
-                tablero.Show();
+                Navegacion.Ir(tablero);
                 tablero.IniciarJuego(longitud, descripcion, categoria);
-                Close();
             });
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e) {
             JuegoCallbackHandler.VentanaEsperaPalabra = null;
             VentanaPartidas ventana = new VentanaPartidas();
-            ventana.Show();
-            this.Close();
+            Navegacion.Ir(ventana);
         }
     }
 }

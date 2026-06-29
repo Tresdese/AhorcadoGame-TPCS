@@ -50,12 +50,12 @@ namespace ClienteAhorcado
                         MessageBoxButton.OK,
                         MessageBoxImage.Warning);
 
-                    new VentanaPartidas().Show();
+                    Navegacion.Ir(new VentanaPartidas());
                     Close();
                     return;
                 }
 
-                new VentanaEsperandoRival().Show();
+                Navegacion.Ir(new VentanaEsperandoRival());
                 Close();
             }
             catch
@@ -71,7 +71,7 @@ namespace ClienteAhorcado
         
         private void btnLobby_Click(object sender, RoutedEventArgs e)
         {
-            new VentanaPartidas().Show();
+            Navegacion.Ir(new VentanaPartidas());
             Close();
         }
     }

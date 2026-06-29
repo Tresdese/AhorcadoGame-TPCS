@@ -1,9 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using AhorcadoWCF;
 
 namespace ClienteAhorcado {
-    public partial class VentanaElegirCategoria : Window {
+    public partial class VentanaElegirCategoria : Page {
         public VentanaElegirCategoria() {
             InitializeComponent();
             Loaded += (s, e) => CargarCategorias();
@@ -23,14 +24,12 @@ namespace ClienteAhorcado {
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            new VentanaElegirPalabra(categoria.IdCategoria, categoria.Nombre).Show();
-            this.Close();
+            Navegacion.Ir(new VentanaElegirPalabra(categoria.IdCategoria, categoria.Nombre));
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaPartidas ventana = new VentanaPartidas();
-            ventana.Show();
-            this.Close();
+            Navegacion.Ir(ventana);
         }
     }
 }

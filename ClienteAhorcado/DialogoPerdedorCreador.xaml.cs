@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 
 namespace ClienteAhorcado
 {
@@ -38,13 +38,13 @@ namespace ClienteAhorcado
 
         private void btnLobby_Click(object sender, RoutedEventArgs e)
         {
-            new VentanaPartidas().Show();
+            Navegacion.Ir(new VentanaPartidas());
             Close();
         }
 
         private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e)
         {
-            new VentanaEsperandoRival().Show();
+            Navegacion.Ir(new VentanaEsperandoRival());
             Close();
         }
     }

@@ -17,7 +17,7 @@ namespace ClienteAhorcado
 {
   
   
-    public partial class VentanaHistorial : Window
+    public partial class VentanaHistorial : Page
     {
        
         private string _filtroActivo = "Ganadas";
@@ -222,8 +222,7 @@ namespace ClienteAhorcado
         
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            new VentanaPartidas().Show();
-            Close();
+            Navegacion.Ir(new VentanaPartidas());
         }
 
         
@@ -235,8 +234,7 @@ namespace ClienteAhorcado
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
 
-            new VentanaPartidas().Show();
-            Close();
+            Navegacion.Ir(new VentanaPartidas());
         }
     }
 }

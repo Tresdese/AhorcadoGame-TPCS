@@ -20,6 +20,8 @@ namespace ClienteAhorcado
         public MainWindow()
         {
             InitializeComponent();
+            Navegacion.Inicializar(MainFrame);
+            MainFrame.Navigate(new VentanaBienvenida());
         }
     }
 }

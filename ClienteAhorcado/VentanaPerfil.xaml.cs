@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
-    public partial class VentanaPerfil : Window {
+    public partial class VentanaPerfil : Page {
         public VentanaPerfil() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
@@ -29,14 +29,12 @@ namespace ClienteAhorcado {
         private void CargarPerfil() {
             UsuarioDTO usuario = null;
             if (!ManejadorErrores.Ejecutar(() => { usuario = Conexiones.Usuario().ObtenerPerfil(SesionActual.IdUsuario); })) {
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
                 return;
             }
 
             if (usuario == null) {
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
                 return;
             }
 
@@ -65,14 +63,12 @@ namespace ClienteAhorcado {
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaPartidas ventanaPartidas = new VentanaPartidas();
-            ventanaPartidas.Show();
-            this.Close();
+            Navegacion.Ir(ventanaPartidas);
         }
 
         private void btnEditarPerfil_Click(object sender, RoutedEventArgs e) {
             VentanaEditarPerfil ventanaEditarPerfil = new VentanaEditarPerfil();
-            ventanaEditarPerfil.Show();
-            this.Close();
+            Navegacion.Ir(ventanaEditarPerfil);
         }
     }
 }

@@ -1,13 +1,11 @@
-﻿<Window x:Class="ClienteAhorcado.VentanaIniciarSesion"
+﻿<Page x:Class="ClienteAhorcado.VentanaIniciarSesion"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
         xmlns:p="clr-namespace:ClienteAhorcado.Properties"
-        mc:Ignorable="d"
-        Title="Ahorcado" Height="600" Width="900"
-        WindowStartupLocation="CenterScreen" Background="#F0F0F0">
+        mc:Ignorable="d" Background="#F0F0F0">
 
     <Grid Margin="20">
         <Button Content="{x:Static p:Resources.Comun_Volver}" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,5" Background="White" Foreground="Black"
@@ -83,4 +81,4 @@
             </StackPanel>
         </Border>
     </Grid>
-</Window>
+</Page>

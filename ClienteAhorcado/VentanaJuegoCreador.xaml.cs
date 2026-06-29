@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.Windows;
@@ -10,7 +10,7 @@ using AhorcadoWCF;
 namespace ClienteAhorcado
 {
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class VentanaJuegoCreador : Window, IJuegoCallback
+    public partial class VentanaJuegoCreador : Page, IJuegoCallback
     {
         private readonly string _palabra;
         private IJuegoCallbackService _canal;
@@ -25,7 +25,7 @@ namespace ClienteAhorcado
             lblDescripcion.Text = descripcion;
 
             Loaded += (s, e) => Iniciar();
-            Closing += (s, e) => CerrarCanal();
+            Unloaded += (s, e) => CerrarCanal();
         }
 
         private void Iniciar()
@@ -36,8 +36,7 @@ namespace ClienteAhorcado
             _canal = Conexiones.Juego(new InstanceContext(this));
             if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(SesionActual.IdPartida, SesionActual.IdUsuario)))
             {
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             }
         }
 
@@ -119,8 +118,7 @@ namespace ClienteAhorcado
                     Properties.Resources.Juego_RivalAbandonoTitulo,
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             });
         }
 
@@ -132,17 +130,17 @@ namespace ClienteAhorcado
                 {
                     var dialogo = new DialogoGanadorCreador(
                         SesionActual.IdPartida, Properties.Resources.Juego_TuRival, palabra, lblCategoria.Text, puntosObtenidos, puntajeGlobal);
-                    dialogo.Owner = this;
+                    dialogo.Owner = Window.GetWindow(this);
                     dialogo.ShowDialog();
                 }
                 else
                 {
                     var dialogo = new DialogoPerdedorCreador(
                         SesionActual.IdPartida, Properties.Resources.Juego_TuRival, palabra, lblCategoria.Text, puntajeGlobal);
-                    dialogo.Owner = this;
+                    dialogo.Owner = Window.GetWindow(this);
                     dialogo.ShowDialog();
                 }
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             });
         }
 
@@ -228,8 +226,7 @@ namespace ClienteAhorcado
             {
                 ManejadorErrores.Ejecutar(() => _canal.NotificarAbandono(SesionActual.IdPartida, SesionActual.IdUsuario));
 
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             }
         }
 

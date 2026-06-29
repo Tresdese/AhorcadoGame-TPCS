@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace ClienteAhorcado
 {  
-    public partial class VentanaEsperandoRival : Window
+    public partial class VentanaEsperandoRival : Page
     {
         private int idPartidaActual;
         
@@ -107,8 +107,7 @@ namespace ClienteAhorcado
                 }
 
                 JuegoCallbackHandler.VentanaEspera = null;
-                new VentanaPartidas().Show();
-                Close();
+                Navegacion.Ir(new VentanaPartidas());
             }
         }
         
@@ -121,8 +120,7 @@ namespace ClienteAhorcado
                 MessageBoxImage.Error);
 
             JuegoCallbackHandler.VentanaEspera = null;
-            new VentanaPartidas().Show();
-            Close();
+            Navegacion.Ir(new VentanaPartidas());
         }
         
         public void NotificarAdivinadorUnido()
@@ -131,8 +129,7 @@ namespace ClienteAhorcado
             {
                 DetenerCronometro();
                 JuegoCallbackHandler.VentanaEspera = null;
-                new VentanaElegirCategoria().Show();
-                Close();
+                Navegacion.Ir(new VentanaElegirCategoria());
             });
         }
     }
