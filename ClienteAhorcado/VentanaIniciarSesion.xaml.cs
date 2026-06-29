@@ -1,7 +1,9 @@
-﻿using System;
+﻿using AhorcadoWCF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using AhorcadoWCF;
 
 namespace ClienteAhorcado {
     public partial class VentanaIniciarSesion : Page {
@@ -45,6 +46,11 @@ namespace ClienteAhorcado {
 
             if (string.IsNullOrWhiteSpace(correo)) {
                 lblErrorCorreo.Text = Properties.Resources.IniciarSesion_ErrorCorreoVacio;
+                lblErrorCorreo.Visibility = Visibility.Visible;
+                txtCorreo.BorderBrush = Brushes.Red;
+                hayError = true;
+            } else if (!Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) {
+                lblErrorCorreo.Text = Properties.Resources.comun_ErrorCorreoInvalido;
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 txtCorreo.BorderBrush = Brushes.Red;
                 hayError = true;
@@ -82,6 +88,7 @@ namespace ClienteAhorcado {
             }
 
             if (correoExiste) {
+                lblErrorContrasena.Text = Properties.Resources.IniciarSesion_ErrorContrasena;
                 lblErrorContrasena.Visibility = Visibility.Visible;
                 txtContrasena.BorderBrush = Brushes.Red;
             } else {

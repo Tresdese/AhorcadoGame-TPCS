@@ -244,7 +244,7 @@
     <value>Enter your password.</value>
   </data>
   <data name="IniciarSesion_ErrorCorreo" xml:space="preserve">
-    <value>The email you entered is not linked to an account.</value>
+    <value>This email doesn't exists.</value>
   </data>
   <data name="IniciarSesion_ErrorCorreoVacio" xml:space="preserve">
     <value>Enter your email.</value>
@@ -351,7 +351,7 @@
   <data name="RegistrarCuenta_ErrorCorreoExiste" xml:space="preserve">
     <value>This email already has an account.</value>
   </data>
-  <data name="RegistrarCuenta_ErrorCorreoInvalido" xml:space="preserve">
+  <data name="comun_ErrorCorreoInvalido" xml:space="preserve">
     <value>Enter a valid email address.</value>
   </data>
   <data name="RegistrarCuenta_ErrorEdadMinima" xml:space="preserve">
@@ -529,13 +529,13 @@
     <value>vs</value>
   </data>
   <data name="EsperandoPalabra_TuBoton" xml:space="preserve">
-    <value>👤  You</value>
+    <value>You</value>
   </data>
   <data name="EsperandoPalabra_Eligiendo" xml:space="preserve">
     <value>{0} is choosing the word...</value>
   </data>
   <data name="EsperandoPalabra_CreadorBoton" xml:space="preserve">
-    <value>👤  {0}</value>
+    <value>{0}</value>
   </data>
   <data name="Historial_TituloVentana" xml:space="preserve">
     <value>Hangman · History</value>

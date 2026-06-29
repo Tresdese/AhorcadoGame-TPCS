@@ -66,7 +66,7 @@ namespace ClienteAhorcado {
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 hayError = true;
             } else if (!CorreoTieneFormatoValido(correo)) {
-                lblErrorCorreo.Text = Properties.Resources.RegistrarCuenta_ErrorCorreoInvalido;
+                lblErrorCorreo.Text = Properties.Resources.comun_ErrorCorreoInvalido;
                 lblErrorCorreo.Visibility = Visibility.Visible;
                 hayError = true;
             }

@@ -244,7 +244,7 @@
     <value>Ingresa tu contraseña.</value>
   </data>
   <data name="IniciarSesion_ErrorCorreo" xml:space="preserve">
-    <value>El correo electrónico ingresado no está conectado a una cuenta.</value>
+    <value>Este correo electrónico no existe.</value>
   </data>
   <data name="IniciarSesion_ErrorCorreoVacio" xml:space="preserve">
     <value>Ingresa tu correo electrónico.</value>
@@ -351,7 +351,7 @@
   <data name="RegistrarCuenta_ErrorCorreoExiste" xml:space="preserve">
     <value>Este correo ya tiene una cuenta asociada.</value>
   </data>
-  <data name="RegistrarCuenta_ErrorCorreoInvalido" xml:space="preserve">
+  <data name="comun_ErrorCorreoInvalido" xml:space="preserve">
     <value>Ingresa un correo electrónico válido.</value>
   </data>
   <data name="RegistrarCuenta_ErrorEdadMinima" xml:space="preserve">
@@ -529,13 +529,13 @@
     <value>vs</value>
   </data>
   <data name="EsperandoPalabra_TuBoton" xml:space="preserve">
-    <value>👤  Tú</value>
+    <value>Tú</value>
   </data>
   <data name="EsperandoPalabra_Eligiendo" xml:space="preserve">
     <value>{0} está eligiendo la palabra...</value>
   </data>
   <data name="EsperandoPalabra_CreadorBoton" xml:space="preserve">
-    <value>👤  {0}</value>
+    <value> {0}</value>
   </data>
   <data name="Historial_TituloVentana" xml:space="preserve">
     <value>Ahorcado · Historial</value>

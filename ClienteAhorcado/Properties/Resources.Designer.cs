@@ -160,6 +160,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aceptar.
+        /// </summary>
+        public static string Comun_Aceptar {
+            get {
+                return ResourceManager.GetString("Comun_Aceptar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Este campo es obligatorio..
         /// </summary>
         public static string Comun_CampoObligatorio {
@@ -174,6 +183,24 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_Cancelar {
             get {
                 return ResourceManager.GetString("Comun_Cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Categoría.
+        /// </summary>
+        public static string Comun_Categoria {
+            get {
+                return ResourceManager.GetString("Comun_Categoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 💬  Chat.
+        /// </summary>
+        public static string Comun_Chat {
+            get {
+                return ResourceManager.GetString("Comun_Chat", resourceCulture);
             }
         }
         
@@ -205,6 +232,33 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa un correo electrónico válido..
+        /// </summary>
+        public static string comun_ErrorCorreoInvalido {
+            get {
+                return ResourceManager.GetString("comun_ErrorCorreoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} pts.
+        /// </summary>
+        public static string Comun_FormatoPuntos {
+            get {
+                return ResourceManager.GetString("Comun_FormatoPuntos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a +{0} pts.
+        /// </summary>
+        public static string Comun_FormatoPuntosPositivos {
+            get {
+                return ResourceManager.GetString("Comun_FormatoPuntosPositivos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar sesión.
         /// </summary>
         public static string Comun_IniciarSesion {
@@ -219,6 +273,51 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_IniciaSesion {
             get {
                 return ResourceManager.GetString("Comun_IniciaSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ir al lobby.
+        /// </summary>
+        public static string Comun_IrAlLobby {
+            get {
+                return ResourceManager.GetString("Comun_IrAlLobby", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugar de nuevo.
+        /// </summary>
+        public static string Comun_JugarDeNuevo {
+            get {
+                return ResourceManager.GetString("Comun_JugarDeNuevo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Palabra.
+        /// </summary>
+        public static string Comun_Palabra {
+            get {
+                return ResourceManager.GetString("Comun_Palabra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Puntaje global.
+        /// </summary>
+        public static string Comun_PuntajeGlobal {
+            get {
+                return ResourceManager.GetString("Comun_PuntajeGlobal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Puntos obtenidos.
+        /// </summary>
+        public static string Comun_PuntosObtenidos {
+            get {
+                return ResourceManager.GetString("Comun_PuntosObtenidos", resourceCulture);
             }
         }
         
@@ -241,11 +340,47 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Rival.
+        /// </summary>
+        public static string Comun_Rival {
+            get {
+                return ResourceManager.GetString("Comun_Rival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salir.
+        /// </summary>
+        public static string Comun_Salir {
+            get {
+                return ResourceManager.GetString("Comun_Salir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ⇐ Volver.
         /// </summary>
         public static string Comun_Volver {
             get {
                 return ResourceManager.GetString("Comun_Volver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Quieres jugar otra partida con .
+        /// </summary>
+        public static string DialogoResultado_PreguntaPrefijo {
+            get {
+                return ResourceManager.GetString("DialogoResultado_PreguntaPrefijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ?.
+        /// </summary>
+        public static string DialogoResultado_PreguntaSufijo {
+            get {
+                return ResourceManager.GetString("DialogoResultado_PreguntaSufijo", resourceCulture);
             }
         }
         
@@ -327,6 +462,168 @@ namespace ClienteAhorcado.Properties {
         public static string EditarPerfil_TituloVentana {
             get {
                 return ResourceManager.GetString("EditarPerfil_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Continuar ⇒.
+        /// </summary>
+        public static string ElegirCategoria_Continuar {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_Continuar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Elige una categoría para continuar..
+        /// </summary>
+        public static string ElegirCategoria_ErrorMensaje {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_ErrorMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Paso 1 de 2 · Elige una categoría.
+        /// </summary>
+        public static string ElegirCategoria_Paso {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_Paso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Elegir categoría.
+        /// </summary>
+        public static string ElegirCategoria_TituloVentana {
+            get {
+                return ResourceManager.GetString("ElegirCategoria_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Categoría: {0}.
+        /// </summary>
+        public static string ElegirPalabra_CategoriaConNombre {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_CategoriaConNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar palabra.
+        /// </summary>
+        public static string ElegirPalabra_Confirmar {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_Confirmar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Elige una palabra para continuar..
+        /// </summary>
+        public static string ElegirPalabra_ErrorMensaje {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_ErrorMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a  letras.
+        /// </summary>
+        public static string ElegirPalabra_LetrasSufijo {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_LetrasSufijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Paso 2 de 2 · Elige una palabra.
+        /// </summary>
+        public static string ElegirPalabra_Paso {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_Paso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Elegir palabra.
+        /// </summary>
+        public static string ElegirPalabra_TituloVentana {
+            get {
+                return ResourceManager.GetString("ElegirPalabra_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a  {0}.
+        /// </summary>
+        public static string EsperandoPalabra_CreadorBoton {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_CreadorBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} está eligiendo la palabra....
+        /// </summary>
+        public static string EsperandoPalabra_Eligiendo {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Eligiendo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cuando termine, comenzarás a adivinar. Te avisaremos en cuanto la palabra esté lista..
+        /// </summary>
+        public static string EsperandoPalabra_Instruccion {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Instruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu rival está eligiendo la palabra que tendrás que adivinar.
+        /// </summary>
+        public static string EsperandoPalabra_Subtitulo {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Te uniste a la partida!.
+        /// </summary>
+        public static string EsperandoPalabra_TeUniste {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_TeUniste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Esperando palabra.
+        /// </summary>
+        public static string EsperandoPalabra_TituloVentana {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tú.
+        /// </summary>
+        public static string EsperandoPalabra_TuBoton {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_TuBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a vs.
+        /// </summary>
+        public static string EsperandoPalabra_Vs {
+            get {
+                return ResourceManager.GetString("EsperandoPalabra_Vs", resourceCulture);
             }
         }
         
@@ -421,6 +718,240 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ganaste +10 puntos por esta partida.
+        /// </summary>
+        public static string GanadorAdivinador_Subtitulo {
+            get {
+                return ResourceManager.GetString("GanadorAdivinador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Adivinaste la palabra!.
+        /// </summary>
+        public static string GanadorAdivinador_Titulo {
+            get {
+                return ResourceManager.GetString("GanadorAdivinador_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ganaste +5 puntos por crear la partida.
+        /// </summary>
+        public static string GanadorCreador_Subtitulo {
+            get {
+                return ResourceManager.GetString("GanadorCreador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu rival no pudo adivinar.
+        /// </summary>
+        public static string GanadorCreador_Titulo {
+            get {
+                return ResourceManager.GetString("GanadorCreador_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partidas ganadas ({0}).
+        /// </summary>
+        public static string Historial_BtnGanadas {
+            get {
+                return ResourceManager.GetString("Historial_BtnGanadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Penalizaciones ({0}).
+        /// </summary>
+        public static string Historial_BtnPenalizaciones {
+            get {
+                return ResourceManager.GetString("Historial_BtnPenalizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rival no adivinó ({0}).
+        /// </summary>
+        public static string Historial_BtnRival {
+            get {
+                return ResourceManager.GetString("Historial_BtnRival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FECHA.
+        /// </summary>
+        public static string Historial_ColFecha {
+            get {
+                return ResourceManager.GetString("Historial_ColFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PALABRA ADIVINADA.
+        /// </summary>
+        public static string Historial_ColPalabraGanadas {
+            get {
+                return ResourceManager.GetString("Historial_ColPalabraGanadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PALABRA EN JUEGO.
+        /// </summary>
+        public static string Historial_ColPalabraPenal {
+            get {
+                return ResourceManager.GetString("Historial_ColPalabraPenal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PALABRA ELEGIDA.
+        /// </summary>
+        public static string Historial_ColPalabraRival {
+            get {
+                return ResourceManager.GetString("Historial_ColPalabraRival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PUNTOS.
+        /// </summary>
+        public static string Historial_ColPuntos {
+            get {
+                return ResourceManager.GetString("Historial_ColPuntos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a RIVAL VENCIDO.
+        /// </summary>
+        public static string Historial_ColRivalGanadas {
+            get {
+                return ResourceManager.GetString("Historial_ColRivalGanadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PARTIDA ABANDONADA.
+        /// </summary>
+        public static string Historial_ColRivalPenal {
+            get {
+                return ResourceManager.GetString("Historial_ColRivalPenal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a RIVAL QUE FALLÓ.
+        /// </summary>
+        public static string Historial_ColRivalRival {
+            get {
+                return ResourceManager.GetString("Historial_ColRivalRival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a GANADAS.
+        /// </summary>
+        public static string Historial_Ganadas {
+            get {
+                return ResourceManager.GetString("Historial_Ganadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PENALIZACIONES.
+        /// </summary>
+        public static string Historial_Penalizaciones {
+            get {
+                return ResourceManager.GetString("Historial_Penalizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a  pts.
+        /// </summary>
+        public static string Historial_PtsSufijo {
+            get {
+                return ResourceManager.GetString("Historial_PtsSufijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PUNTAJE GLOBAL.
+        /// </summary>
+        public static string Historial_PuntajeGlobalEtiqueta {
+            get {
+                return ResourceManager.GetString("Historial_PuntajeGlobalEtiqueta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a +{0} pts.
+        /// </summary>
+        public static string Historial_PuntosGanados {
+            get {
+                return ResourceManager.GetString("Historial_PuntosGanados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a –{0} pts.
+        /// </summary>
+        public static string Historial_PuntosPerdidos {
+            get {
+                return ResourceManager.GetString("Historial_PuntosPerdidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a RIVAL NO ADIVINÓ.
+        /// </summary>
+        public static string Historial_RivalNoAdivino {
+            get {
+                return ResourceManager.GetString("Historial_RivalNoAdivino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No hay registros en esta categoría..
+        /// </summary>
+        public static string Historial_SinRegistros {
+            get {
+                return ResourceManager.GetString("Historial_SinRegistros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu progreso, partida por partida.
+        /// </summary>
+        public static string Historial_Subtitulo {
+            get {
+                return ResourceManager.GetString("Historial_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial de puntajes.
+        /// </summary>
+        public static string Historial_Titulo {
+            get {
+                return ResourceManager.GetString("Historial_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Historial.
+        /// </summary>
+        public static string Historial_TituloVentana {
+            get {
+                return ResourceManager.GetString("Historial_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a La contraseña que ingresaste es incorrecta..
         /// </summary>
         public static string IniciarSesion_ErrorContrasena {
@@ -439,7 +970,7 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El correo electrónico ingresado no está conectado a una cuenta..
+        ///   Busca una cadena traducida similar a Este correo electrónico no existe..
         /// </summary>
         public static string IniciarSesion_ErrorCorreo {
             get {
@@ -471,6 +1002,150 @@ namespace ClienteAhorcado.Properties {
         public static string IniciarSesion_Subtitulo {
             get {
                 return ResourceManager.GetString("IniciarSesion_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Abandonar partida.
+        /// </summary>
+        public static string Juego_AbandonarPartida {
+            get {
+                return ResourceManager.GetString("Juego_AbandonarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CATEGORÍA.
+        /// </summary>
+        public static string Juego_CategoriaEtiqueta {
+            get {
+                return ResourceManager.GetString("Juego_CategoriaEtiqueta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Seguro que deseas abandonar la partida? Perderás puntos..
+        /// </summary>
+        public static string Juego_ConfirmarAbandono {
+            get {
+                return ResourceManager.GetString("Juego_ConfirmarAbandono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DESCRIPCIÓN.
+        /// </summary>
+        public static string Juego_DescripcionEtiqueta {
+            get {
+                return ResourceManager.GetString("Juego_DescripcionEtiqueta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esperando que el creador elija la palabra....
+        /// </summary>
+        public static string Juego_EsperandoPalabra {
+            get {
+                return ResourceManager.GetString("Juego_EsperandoPalabra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0}  intentos restantes.
+        /// </summary>
+        public static string Juego_IntentosRestantes {
+            get {
+                return ResourceManager.GetString("Juego_IntentosRestantes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a LETRAS INCORRECTAS:  .
+        /// </summary>
+        public static string Juego_LetrasIncorrectas {
+            get {
+                return ResourceManager.GetString("Juego_LetrasIncorrectas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} abandonó la partida. Regresarás al lobby..
+        /// </summary>
+        public static string Juego_RivalAbandonoMensaje {
+            get {
+                return ResourceManager.GetString("Juego_RivalAbandonoMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rival abandonó.
+        /// </summary>
+        public static string Juego_RivalAbandonoTitulo {
+            get {
+                return ResourceManager.GetString("Juego_RivalAbandonoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El rival está adivinando.
+        /// </summary>
+        public static string Juego_RivalAdivinando {
+            get {
+                return ResourceManager.GetString("Juego_RivalAdivinando", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ahorcado · Partida en curso.
+        /// </summary>
+        public static string Juego_TituloVentana {
+            get {
+                return ResourceManager.GetString("Juego_TituloVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tú (adivinando).
+        /// </summary>
+        public static string Juego_TuAdivinando {
+            get {
+                return ResourceManager.GetString("Juego_TuAdivinando", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tú (creador).
+        /// </summary>
+        public static string Juego_TuCreador {
+            get {
+                return ResourceManager.GetString("Juego_TuCreador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a TU PALABRA:  .
+        /// </summary>
+        public static string Juego_TuPalabra {
+            get {
+                return ResourceManager.GetString("Juego_TuPalabra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu rival.
+        /// </summary>
+        public static string Juego_TuRival {
+            get {
+                return ResourceManager.GetString("Juego_TuRival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a vs {0}.
+        /// </summary>
+        public static string Juego_VsRival {
+            get {
+                return ResourceManager.GetString("Juego_VsRival", resourceCulture);
             }
         }
         
@@ -646,6 +1321,87 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Abandonaste una partida en curso. Se restaron de tu puntaje global:.
+        /// </summary>
+        public static string Penalizacion_Mensaje {
+            get {
+                return ResourceManager.GetString("Penalizacion_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Puntaje anterior.
+        /// </summary>
+        public static string Penalizacion_PuntajeAnterior {
+            get {
+                return ResourceManager.GetString("Penalizacion_PuntajeAnterior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} pts → {1} pts.
+        /// </summary>
+        public static string Penalizacion_PuntajeFormato {
+            get {
+                return ResourceManager.GetString("Penalizacion_PuntajeFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a –{0} pts.
+        /// </summary>
+        public static string Penalizacion_RestaFormato {
+            get {
+                return ResourceManager.GetString("Penalizacion_RestaFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Penalización aplicada.
+        /// </summary>
+        public static string Penalizacion_Titulo {
+            get {
+                return ResourceManager.GetString("Penalizacion_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No sumaste puntos esta vez.
+        /// </summary>
+        public static string PerdedorAdivinador_Subtitulo {
+            get {
+                return ResourceManager.GetString("PerdedorAdivinador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se acabaron los intentos.
+        /// </summary>
+        public static string PerdedorAdivinador_Titulo {
+            get {
+                return ResourceManager.GetString("PerdedorAdivinador_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No obtuviste puntos esta vez.
+        /// </summary>
+        public static string PerdedorCreador_Subtitulo {
+            get {
+                return ResourceManager.GetString("PerdedorCreador_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu rival adivinó la palabra.
+        /// </summary>
+        public static string PerdedorCreador_Titulo {
+            get {
+                return ResourceManager.GetString("PerdedorCreador_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Editar perfil.
         /// </summary>
         public static string Perfil_EditarPerfil {
@@ -759,15 +1515,6 @@ namespace ClienteAhorcado.Properties {
         public static string RegistrarCuenta_ErrorCorreoExiste {
             get {
                 return ResourceManager.GetString("RegistrarCuenta_ErrorCorreoExiste", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Ingresa un correo electrónico válido..
-        /// </summary>
-        public static string RegistrarCuenta_ErrorCorreoInvalido {
-            get {
-                return ResourceManager.GetString("RegistrarCuenta_ErrorCorreoInvalido", resourceCulture);
             }
         }
         
@@ -906,531 +1653,48 @@ namespace ClienteAhorcado.Properties {
             }
         }
         
-        public static string Comun_Palabra {
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo reabrir la partida. Regresando al lobby..
+        /// </summary>
+        public static string RivalAbandono_ErrorReabrir {
             get {
-                return ResourceManager.GetString("Comun_Palabra", resourceCulture);
+                return ResourceManager.GetString("RivalAbandono_ErrorReabrir", resourceCulture);
             }
         }
         
-        public static string Comun_Rival {
-            get {
-                return ResourceManager.GetString("Comun_Rival", resourceCulture);
-            }
-        }
-        
-        public static string Comun_Categoria {
-            get {
-                return ResourceManager.GetString("Comun_Categoria", resourceCulture);
-            }
-        }
-        
-        public static string Comun_PuntosObtenidos {
-            get {
-                return ResourceManager.GetString("Comun_PuntosObtenidos", resourceCulture);
-            }
-        }
-        
-        public static string Comun_PuntajeGlobal {
-            get {
-                return ResourceManager.GetString("Comun_PuntajeGlobal", resourceCulture);
-            }
-        }
-        
-        public static string Comun_IrAlLobby {
-            get {
-                return ResourceManager.GetString("Comun_IrAlLobby", resourceCulture);
-            }
-        }
-        
-        public static string Comun_JugarDeNuevo {
-            get {
-                return ResourceManager.GetString("Comun_JugarDeNuevo", resourceCulture);
-            }
-        }
-        
-        public static string Comun_Aceptar {
-            get {
-                return ResourceManager.GetString("Comun_Aceptar", resourceCulture);
-            }
-        }
-        
-        public static string Comun_Salir {
-            get {
-                return ResourceManager.GetString("Comun_Salir", resourceCulture);
-            }
-        }
-        
-        public static string Comun_Chat {
-            get {
-                return ResourceManager.GetString("Comun_Chat", resourceCulture);
-            }
-        }
-        
-        public static string Comun_FormatoPuntosPositivos {
-            get {
-                return ResourceManager.GetString("Comun_FormatoPuntosPositivos", resourceCulture);
-            }
-        }
-        
-        public static string Comun_FormatoPuntos {
-            get {
-                return ResourceManager.GetString("Comun_FormatoPuntos", resourceCulture);
-            }
-        }
-        
-        public static string Juego_TituloVentana {
-            get {
-                return ResourceManager.GetString("Juego_TituloVentana", resourceCulture);
-            }
-        }
-        
-        public static string Juego_TuAdivinando {
-            get {
-                return ResourceManager.GetString("Juego_TuAdivinando", resourceCulture);
-            }
-        }
-        
-        public static string Juego_TuCreador {
-            get {
-                return ResourceManager.GetString("Juego_TuCreador", resourceCulture);
-            }
-        }
-        
-        public static string Juego_RivalAdivinando {
-            get {
-                return ResourceManager.GetString("Juego_RivalAdivinando", resourceCulture);
-            }
-        }
-        
-        public static string Juego_AbandonarPartida {
-            get {
-                return ResourceManager.GetString("Juego_AbandonarPartida", resourceCulture);
-            }
-        }
-        
-        public static string Juego_CategoriaEtiqueta {
-            get {
-                return ResourceManager.GetString("Juego_CategoriaEtiqueta", resourceCulture);
-            }
-        }
-        
-        public static string Juego_DescripcionEtiqueta {
-            get {
-                return ResourceManager.GetString("Juego_DescripcionEtiqueta", resourceCulture);
-            }
-        }
-        
-        public static string Juego_TuPalabra {
-            get {
-                return ResourceManager.GetString("Juego_TuPalabra", resourceCulture);
-            }
-        }
-        
-        public static string Juego_LetrasIncorrectas {
-            get {
-                return ResourceManager.GetString("Juego_LetrasIncorrectas", resourceCulture);
-            }
-        }
-        
-        public static string Juego_IntentosRestantes {
-            get {
-                return ResourceManager.GetString("Juego_IntentosRestantes", resourceCulture);
-            }
-        }
-        
-        public static string Juego_EsperandoPalabra {
-            get {
-                return ResourceManager.GetString("Juego_EsperandoPalabra", resourceCulture);
-            }
-        }
-        
-        public static string Juego_VsRival {
-            get {
-                return ResourceManager.GetString("Juego_VsRival", resourceCulture);
-            }
-        }
-        
-        public static string Juego_ConfirmarAbandono {
-            get {
-                return ResourceManager.GetString("Juego_ConfirmarAbandono", resourceCulture);
-            }
-        }
-        
-        public static string Juego_RivalAbandonoMensaje {
-            get {
-                return ResourceManager.GetString("Juego_RivalAbandonoMensaje", resourceCulture);
-            }
-        }
-        
-        public static string Juego_RivalAbandonoTitulo {
-            get {
-                return ResourceManager.GetString("Juego_RivalAbandonoTitulo", resourceCulture);
-            }
-        }
-        
-        public static string Juego_TuRival {
-            get {
-                return ResourceManager.GetString("Juego_TuRival", resourceCulture);
-            }
-        }
-        
-        public static string ElegirCategoria_TituloVentana {
-            get {
-                return ResourceManager.GetString("ElegirCategoria_TituloVentana", resourceCulture);
-            }
-        }
-        
-        public static string ElegirCategoria_Paso {
-            get {
-                return ResourceManager.GetString("ElegirCategoria_Paso", resourceCulture);
-            }
-        }
-        
-        public static string ElegirCategoria_Continuar {
-            get {
-                return ResourceManager.GetString("ElegirCategoria_Continuar", resourceCulture);
-            }
-        }
-        
-        public static string ElegirCategoria_ErrorMensaje {
-            get {
-                return ResourceManager.GetString("ElegirCategoria_ErrorMensaje", resourceCulture);
-            }
-        }
-        
-        public static string ElegirPalabra_TituloVentana {
-            get {
-                return ResourceManager.GetString("ElegirPalabra_TituloVentana", resourceCulture);
-            }
-        }
-        
-        public static string ElegirPalabra_Paso {
-            get {
-                return ResourceManager.GetString("ElegirPalabra_Paso", resourceCulture);
-            }
-        }
-        
-        public static string ElegirPalabra_CategoriaConNombre {
-            get {
-                return ResourceManager.GetString("ElegirPalabra_CategoriaConNombre", resourceCulture);
-            }
-        }
-        
-        public static string ElegirPalabra_LetrasSufijo {
-            get {
-                return ResourceManager.GetString("ElegirPalabra_LetrasSufijo", resourceCulture);
-            }
-        }
-        
-        public static string ElegirPalabra_Confirmar {
-            get {
-                return ResourceManager.GetString("ElegirPalabra_Confirmar", resourceCulture);
-            }
-        }
-        
-        public static string ElegirPalabra_ErrorMensaje {
-            get {
-                return ResourceManager.GetString("ElegirPalabra_ErrorMensaje", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_TituloVentana {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_TituloVentana", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_TeUniste {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_TeUniste", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_Subtitulo {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_Subtitulo", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_Instruccion {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_Instruccion", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_Vs {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_Vs", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_TuBoton {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_TuBoton", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_Eligiendo {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_Eligiendo", resourceCulture);
-            }
-        }
-        
-        public static string EsperandoPalabra_CreadorBoton {
-            get {
-                return ResourceManager.GetString("EsperandoPalabra_CreadorBoton", resourceCulture);
-            }
-        }
-        
-        public static string Historial_TituloVentana {
-            get {
-                return ResourceManager.GetString("Historial_TituloVentana", resourceCulture);
-            }
-        }
-        
-        public static string Historial_Titulo {
-            get {
-                return ResourceManager.GetString("Historial_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string Historial_Subtitulo {
-            get {
-                return ResourceManager.GetString("Historial_Subtitulo", resourceCulture);
-            }
-        }
-        
-        public static string Historial_PuntajeGlobalEtiqueta {
-            get {
-                return ResourceManager.GetString("Historial_PuntajeGlobalEtiqueta", resourceCulture);
-            }
-        }
-        
-        public static string Historial_PtsSufijo {
-            get {
-                return ResourceManager.GetString("Historial_PtsSufijo", resourceCulture);
-            }
-        }
-        
-        public static string Historial_Ganadas {
-            get {
-                return ResourceManager.GetString("Historial_Ganadas", resourceCulture);
-            }
-        }
-        
-        public static string Historial_RivalNoAdivino {
-            get {
-                return ResourceManager.GetString("Historial_RivalNoAdivino", resourceCulture);
-            }
-        }
-        
-        public static string Historial_Penalizaciones {
-            get {
-                return ResourceManager.GetString("Historial_Penalizaciones", resourceCulture);
-            }
-        }
-        
-        public static string Historial_BtnGanadas {
-            get {
-                return ResourceManager.GetString("Historial_BtnGanadas", resourceCulture);
-            }
-        }
-        
-        public static string Historial_BtnRival {
-            get {
-                return ResourceManager.GetString("Historial_BtnRival", resourceCulture);
-            }
-        }
-        
-        public static string Historial_BtnPenalizaciones {
-            get {
-                return ResourceManager.GetString("Historial_BtnPenalizaciones", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColFecha {
-            get {
-                return ResourceManager.GetString("Historial_ColFecha", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColPuntos {
-            get {
-                return ResourceManager.GetString("Historial_ColPuntos", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColPalabraGanadas {
-            get {
-                return ResourceManager.GetString("Historial_ColPalabraGanadas", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColRivalGanadas {
-            get {
-                return ResourceManager.GetString("Historial_ColRivalGanadas", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColPalabraRival {
-            get {
-                return ResourceManager.GetString("Historial_ColPalabraRival", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColRivalRival {
-            get {
-                return ResourceManager.GetString("Historial_ColRivalRival", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColPalabraPenal {
-            get {
-                return ResourceManager.GetString("Historial_ColPalabraPenal", resourceCulture);
-            }
-        }
-        
-        public static string Historial_ColRivalPenal {
-            get {
-                return ResourceManager.GetString("Historial_ColRivalPenal", resourceCulture);
-            }
-        }
-        
-        public static string Historial_SinRegistros {
-            get {
-                return ResourceManager.GetString("Historial_SinRegistros", resourceCulture);
-            }
-        }
-        
-        public static string Historial_PuntosGanados {
-            get {
-                return ResourceManager.GetString("Historial_PuntosGanados", resourceCulture);
-            }
-        }
-        
-        public static string Historial_PuntosPerdidos {
-            get {
-                return ResourceManager.GetString("Historial_PuntosPerdidos", resourceCulture);
-            }
-        }
-        
-        public static string GanadorAdivinador_Titulo {
-            get {
-                return ResourceManager.GetString("GanadorAdivinador_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string GanadorAdivinador_Subtitulo {
-            get {
-                return ResourceManager.GetString("GanadorAdivinador_Subtitulo", resourceCulture);
-            }
-        }
-        
-        public static string PerdedorAdivinador_Titulo {
-            get {
-                return ResourceManager.GetString("PerdedorAdivinador_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string PerdedorAdivinador_Subtitulo {
-            get {
-                return ResourceManager.GetString("PerdedorAdivinador_Subtitulo", resourceCulture);
-            }
-        }
-        
-        public static string GanadorCreador_Titulo {
-            get {
-                return ResourceManager.GetString("GanadorCreador_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string GanadorCreador_Subtitulo {
-            get {
-                return ResourceManager.GetString("GanadorCreador_Subtitulo", resourceCulture);
-            }
-        }
-        
-        public static string PerdedorCreador_Titulo {
-            get {
-                return ResourceManager.GetString("PerdedorCreador_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string PerdedorCreador_Subtitulo {
-            get {
-                return ResourceManager.GetString("PerdedorCreador_Subtitulo", resourceCulture);
-            }
-        }
-        
-        public static string DialogoResultado_PreguntaPrefijo {
-            get {
-                return ResourceManager.GetString("DialogoResultado_PreguntaPrefijo", resourceCulture);
-            }
-        }
-        
-        public static string DialogoResultado_PreguntaSufijo {
-            get {
-                return ResourceManager.GetString("DialogoResultado_PreguntaSufijo", resourceCulture);
-            }
-        }
-        
-        public static string Penalizacion_Titulo {
-            get {
-                return ResourceManager.GetString("Penalizacion_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string Penalizacion_Mensaje {
-            get {
-                return ResourceManager.GetString("Penalizacion_Mensaje", resourceCulture);
-            }
-        }
-        
-        public static string Penalizacion_PuntajeAnterior {
-            get {
-                return ResourceManager.GetString("Penalizacion_PuntajeAnterior", resourceCulture);
-            }
-        }
-        
-        public static string Penalizacion_PuntajeFormato {
-            get {
-                return ResourceManager.GetString("Penalizacion_PuntajeFormato", resourceCulture);
-            }
-        }
-        
-        public static string Penalizacion_RestaFormato {
-            get {
-                return ResourceManager.GetString("Penalizacion_RestaFormato", resourceCulture);
-            }
-        }
-        
-        public static string RivalAbandono_Titulo {
-            get {
-                return ResourceManager.GetString("RivalAbandono_Titulo", resourceCulture);
-            }
-        }
-        
-        public static string RivalAbandono_MensajeSufijo {
-            get {
-                return ResourceManager.GetString("RivalAbandono_MensajeSufijo", resourceCulture);
-            }
-        }
-        
-        public static string RivalAbandono_Pregunta {
-            get {
-                return ResourceManager.GetString("RivalAbandono_Pregunta", resourceCulture);
-            }
-        }
-        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esperar a otro oponente.
+        /// </summary>
         public static string RivalAbandono_Esperar {
             get {
                 return ResourceManager.GetString("RivalAbandono_Esperar", resourceCulture);
             }
         }
         
-        public static string RivalAbandono_ErrorReabrir {
+        /// <summary>
+        ///   Busca una cadena traducida similar a  abandonó la partida. Se le aplicará una penalización por su cuenta..
+        /// </summary>
+        public static string RivalAbandono_MensajeSufijo {
             get {
-                return ResourceManager.GetString("RivalAbandono_ErrorReabrir", resourceCulture);
+                return ResourceManager.GetString("RivalAbandono_MensajeSufijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Qué te gustaría hacer ahora?.
+        /// </summary>
+        public static string RivalAbandono_Pregunta {
+            get {
+                return ResourceManager.GetString("RivalAbandono_Pregunta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu rival abandonó.
+        /// </summary>
+        public static string RivalAbandono_Titulo {
+            get {
+                return ResourceManager.GetString("RivalAbandono_Titulo", resourceCulture);
             }
         }
     }
