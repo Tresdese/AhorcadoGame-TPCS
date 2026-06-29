@@ -10,6 +10,8 @@ namespace AhorcadoWCF
     {
         public string Palabra { get; set; }
         public int IdAdivinador { get; set; }
+        public int IdCreador { get; set; }
+        public int IdPalabra { get; set; }
         public int IntentosRestantes { get; set; } = 6;
         public HashSet<char> LetrasUsadas { get; } = new HashSet<char>();
     }
@@ -25,8 +27,14 @@ namespace AhorcadoWCF
         public static readonly ConcurrentDictionary<int, EstadoRonda> Rondas =
             new ConcurrentDictionary<int, EstadoRonda>();
 
-        public static void IniciarRonda(int idPartida, string palabra, int idAdivinador) =>
-            Rondas[idPartida] = new EstadoRonda { Palabra = palabra, IdAdivinador = idAdivinador };
+        public static void IniciarRonda(int idPartida, string palabra, int idAdivinador, int idCreador, int idPalabra) =>
+            Rondas[idPartida] = new EstadoRonda
+            {
+                Palabra = palabra,
+                IdAdivinador = idAdivinador,
+                IdCreador = idCreador,
+                IdPalabra = idPalabra
+            };
 
         public static void AgregarAlLobby(int idUsuario, IJuegoCallback callback) =>
             Lobby[idUsuario] = callback;
@@ -70,6 +78,14 @@ namespace AhorcadoWCF
             }
         }
 
+        public static void NotificarJugador(int idPartida, int idUsuario, Action<IJuegoCallback> accion)
+        {
+            if (Salas.TryGetValue(idPartida, out var sala) && sala.TryGetValue(idUsuario, out var cb))
+            {
+                try { accion(cb); } catch { }
+            }
+        }
+
         public static void NotificarFinPartida(int idPartida, string resultado, string palabra, int puntos, int puntajeGlobal) =>
             NotificarSala(idPartida, cb => cb.PartidaFinalizada(resultado, palabra, puntos, puntajeGlobal));
     }
@@ -80,6 +96,11 @@ namespace AhorcadoWCF
     {
         private readonly UsuarioDAO usuarioDAO = new UsuarioDAO();
         private readonly MovimientoService movimientoService = new MovimientoService();
+        private readonly PuntajeDAO puntajeDAO = new PuntajeDAO();
+        private readonly PartidaDAO partidaDAO = new PartidaDAO();
+
+        private const int PuntosVictoria = 10;
+        private const int PuntosPenalizacion = 3;
 
         private static IJuegoCallback CanalActual() =>
             OperationContext.Current.GetCallbackChannel<IJuegoCallback>();
@@ -135,12 +156,30 @@ namespace AhorcadoWCF
                 bool completa = PalabraAdivinada(ronda.Palabra, ronda.LetrasUsadas);
                 if (completa || ronda.IntentosRestantes == 0)
                 {
-                    string resultado = completa ? "Ganaste" : "Perdiste";
-                    RegistroSesiones.NotificarSala(idPartida,
-                        cb => cb.PartidaFinalizada(resultado, ronda.Palabra, 0, 0));
+                    FinalizarPartida(idPartida, ronda, ganoAdivinador: completa);
                     RegistroSesiones.Rondas.TryRemove(idPartida, out _);
                 }
             }
+        }
+
+        private void FinalizarPartida(int idPartida, EstadoRonda ronda, bool ganoAdivinador)
+        {
+            int ganador = ganoAdivinador ? ronda.IdAdivinador : ronda.IdCreador;
+            int perdedor = ganoAdivinador ? ronda.IdCreador : ronda.IdAdivinador;
+            string tipo = ganoAdivinador ? "Ganada" : "RivalNoPudo";
+
+            puntajeDAO.Registrar(ganador, idPartida, ronda.IdPalabra, tipo, PuntosVictoria, perdedor);
+            partidaDAO.Finalizar(idPartida, ganador, tipo);
+
+            int globalAdiv = puntajeDAO.ObtenerPuntajeGlobal(ronda.IdAdivinador);
+            int globalCreador = puntajeDAO.ObtenerPuntajeGlobal(ronda.IdCreador);
+
+            RegistroSesiones.NotificarJugador(idPartida, ronda.IdAdivinador,
+                cb => cb.PartidaFinalizada(ganoAdivinador ? "Ganaste" : "Perdiste", ronda.Palabra,
+                    ganoAdivinador ? PuntosVictoria : 0, globalAdiv));
+            RegistroSesiones.NotificarJugador(idPartida, ronda.IdCreador,
+                cb => cb.PartidaFinalizada(ganoAdivinador ? "Perdiste" : "Ganaste", ronda.Palabra,
+                    ganoAdivinador ? 0 : PuntosVictoria, globalCreador));
         }
 
         private static List<int> PosicionesDe(string palabra, char letraMayus)
@@ -168,6 +207,14 @@ namespace AhorcadoWCF
         public void NotificarAbandono(int idPartida, int idUsuario)
         {
             var quienAbandona = usuarioDAO.ObtenerPorId(idUsuario);
+
+            if (RegistroSesiones.Rondas.TryGetValue(idPartida, out var ronda))
+            {
+                int rival = idUsuario == ronda.IdAdivinador ? ronda.IdCreador : ronda.IdAdivinador;
+                puntajeDAO.Registrar(idUsuario, idPartida, ronda.IdPalabra, "Penalizacion", -PuntosPenalizacion, rival);
+            }
+            partidaDAO.Abandonar(idPartida, idUsuario);
+
             RegistroSesiones.NotificarSala(idPartida,
                 cb => cb.RivalAbandono(quienAbandona.Nombre), excepto: idUsuario);
             RegistroSesiones.Rondas.TryRemove(idPartida, out _);

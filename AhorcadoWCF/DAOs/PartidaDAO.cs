@@ -53,16 +53,18 @@ namespace AhorcadoWCF.DAOs
                         contexto.usuario,
                         p => p.idJugadorUno,
                         u => u.idUsuario,
-                        (p, u) => p)
+                        (p, u) => new { p, u })
                     .AsEnumerable()
-                    .Select(p => new PartidaDTO
+                    .Select(x => new PartidaDTO
                     {
-                        IdPartida = p.idPartida,
-                        IdJugadorCreador = p.idJugadorUno,
-                        IdJugadorAdivinador = p.idJugadorDos ?? 0,
-                        Estado = p.estado,
-                        FechaCreacion = p.fechaCreacion != null
-                                                ? ((DateTime)p.fechaCreacion).ToString("dd/MM/yyyy HH:mm")
+                        IdPartida = x.p.idPartida,
+                        IdJugadorCreador = x.p.idJugadorUno,
+                        IdJugadorAdivinador = x.p.idJugadorDos ?? 0,
+                        Estado = x.p.estado,
+                        NombreCreador = x.u.nombreCompleto,
+                        CorreoCreador = x.u.correoElectronico,
+                        FechaCreacion = x.p.fechaCreacion != null
+                                                ? ((DateTime)x.p.fechaCreacion).ToString("dd/MM/yyyy HH:mm")
                                                 : "—"
                     })
                     .ToList();

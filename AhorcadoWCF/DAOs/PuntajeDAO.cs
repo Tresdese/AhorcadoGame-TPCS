@@ -13,7 +13,23 @@ namespace AhorcadoWCF.DAOs
 
         public bool Registrar(int idUsuario, int idPartida, int idPalabra, string tipoPuntaje, int puntos, int idJugadorRival)
         {
-            throw new NotImplementedException();
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var registro = new historial_puntaje
+                {
+                    idPuntaje = (contexto.historial_puntaje.Max(h => (int?)h.idPuntaje) ?? 0) + 1,
+                    idJugador = idUsuario,
+                    idJugadorRival = idJugadorRival,
+                    idPartida = idPartida,
+                    idPalabra = idPalabra,
+                    tipoPuntaje = tipoPuntaje,
+                    puntos = puntos,
+                    fechaPartida = DateTime.Now
+                };
+                contexto.historial_puntaje.Add(registro);
+                contexto.SaveChanges();
+                return true;
+            }
         }
 
         public int ObtenerPuntajeGlobal(int idUsuario)

@@ -31,7 +31,7 @@
                             </Border>
                             <StackPanel VerticalAlignment="Center">
                                 <TextBlock Text="Tú (adivinando)" FontSize="14" FontWeight="Bold"/>
-                                <TextBlock Text="vs Carlos Mendoza" FontSize="12" Foreground="#666666"/>
+                                <TextBlock x:Name="lblRival" Text="" FontSize="12" Foreground="#666666"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -71,13 +71,13 @@
 
             <WrapPanel Grid.Row="3" HorizontalAlignment="Center" Margin="15,5,15,10">
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
-                    <TextBlock x:Name="l1" Text="E" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="l1" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
                     <TextBlock x:Name="l2" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
-                    <TextBlock x:Name="l3" Text="E" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="l3" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
                     <TextBlock x:Name="l4" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -89,7 +89,7 @@
                     <TextBlock x:Name="l6" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
-                    <TextBlock x:Name="l7" Text="T" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="l7" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
                 <Border BorderBrush="#333333" BorderThickness="0,0,0,2" Width="45" Height="55" Margin="3">
                     <TextBlock x:Name="l8" Text="" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -310,26 +310,7 @@
                         </StackPanel>
                     </Border>
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="10">
-                        <StackPanel x:Name="panelChat">
-                            <Border Background="#F0F0F0" CornerRadius="8" Padding="10" Margin="0,0,50,8" HorizontalAlignment="Left">
-                                <StackPanel>
-                                    <TextBlock Text="Carlos" FontSize="11" FontWeight="Bold" Foreground="#555555" Margin="0,0,0,3"/>
-                                    <TextBlock Text="Hola Andrés 👋" FontSize="13" TextWrapping="Wrap"/>
-                                </StackPanel>
-                            </Border>
-                            <Border Background="#0078D4" CornerRadius="8" Padding="10" Margin="50,0,0,8" HorizontalAlignment="Right">
-                                <TextBlock Text="¡Hola Carlos! Listo para jugar" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
-                            </Border>
-                            <Border Background="#F0F0F0" CornerRadius="8" Padding="10" Margin="0,0,50,8" HorizontalAlignment="Left">
-                                <StackPanel>
-                                    <TextBlock Text="Carlos" FontSize="11" FontWeight="Bold" Foreground="#555555" Margin="0,0,0,3"/>
-                                    <TextBlock Text="Ya elegí la palabra, suerte" FontSize="13" TextWrapping="Wrap"/>
-                                </StackPanel>
-                            </Border>
-                            <Border Background="#0078D4" CornerRadius="8" Padding="10" Margin="50,0,0,8" HorizontalAlignment="Right">
-                                <TextBlock Text="Voy con la E primero" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
-                            </Border>
-                        </StackPanel>
+                        <StackPanel x:Name="panelChat"/>
                     </ScrollViewer>
                     <Border Grid.Row="2" BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="10">
                         <Grid>

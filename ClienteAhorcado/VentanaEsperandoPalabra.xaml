@@ -20,14 +20,14 @@
                         <TextBlock Text="Tu rival está eligiendo la palabra que tendrás que adivinar" FontSize="12" Foreground="#666666"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0">
+                        <Button x:Name="btnIdioma" Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0" Click="btnIdioma_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
                                 </Style>
                             </Button.Resources>
                         </Button>
-                        <Button Content="Andrés ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
+                        <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="20"/>
@@ -48,10 +48,10 @@
                     <Ellipse Width="12" Height="12" Fill="#0078D4" Margin="4,0"/>
                     <Ellipse Width="12" Height="12" Fill="#0078D4" Margin="4,0"/>
                 </StackPanel>
-                <TextBlock Text="Carlos está eligiendo la palabra..." FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                <TextBlock x:Name="lblEligiendo" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,15"/>
                 <TextBlock Text="Cuando termine, comenzarás a adivinar. Te avisaremos en cuanto la palabra esté lista." FontSize="14" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,25"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-                    <Button Content="👤  Carlos Mendoza" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Margin="0,0,10,0">
+                    <Button x:Name="btnCreador" Content="👤  Creador" Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" Margin="0,0,10,0">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="5"/>

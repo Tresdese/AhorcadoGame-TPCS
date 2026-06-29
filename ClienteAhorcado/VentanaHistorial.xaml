@@ -30,14 +30,14 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0">
+                        <Button x:Name="btnIdioma" Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0" Click="btnIdioma_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
                                 </Style>
                             </Button.Resources>
                         </Button>
-                        <Button Content="Andrés ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
+                        <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="20"/>

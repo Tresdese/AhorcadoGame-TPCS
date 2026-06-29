@@ -21,7 +21,19 @@ namespace ClienteAhorcado {
             InitializeComponent();
             _idPartida = idPartida;
             _nombreCreador = nombreCreador;
-            Loaded += (s, e) => JuegoCallbackHandler.VentanaEsperaPalabra = this;
+            Loaded += VentanaEsperandoPalabra_Loaded;
+        }
+
+        private void VentanaEsperandoPalabra_Loaded(object sender, RoutedEventArgs e) {
+            JuegoCallbackHandler.VentanaEsperaPalabra = this;
+            btnUsuario.Content = $"{SesionActual.Nombre} ▼";
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
+            lblEligiendo.Text = $"{_nombreCreador} está eligiendo la palabra...";
+            btnCreador.Content = $"👤  {_nombreCreador}";
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            GestorIdioma.Cambiar(SesionActual.Idioma == "es" ? "en" : "es");
         }
 
         public void IrAlTablero(int longitud, string descripcion, string categoria) {

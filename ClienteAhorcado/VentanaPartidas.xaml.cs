@@ -53,6 +53,7 @@ namespace ClienteAhorcado {
         }
 
         private void MostrarListaPartidas(List<PartidaDTO> partidas) {
+            lvPartidas.ItemsSource = null;
             lvPartidas.Items.Clear();
 
             var items = partidas.Select(p => new PartidaItemViewModel {
@@ -68,6 +69,8 @@ namespace ClienteAhorcado {
 
 
         private void MostrarSinPartidas() {
+            lvPartidas.ItemsSource = null;
+            lvPartidas.Items.Clear();
             lvPartidas.Items.Add(new ListViewItem {
                 Content = Properties.Resources.Partidas_SinPartidas,
                 HorizontalAlignment = HorizontalAlignment.Center,
@@ -87,6 +90,10 @@ namespace ClienteAhorcado {
                 MessageBoxImage.Error);
             
             Close();
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e) {
+            CargarPartidasDisponibles();
         }
 
         private void btnCrearPartida_Click(object sender, RoutedEventArgs e) {

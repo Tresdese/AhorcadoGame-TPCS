@@ -63,14 +63,24 @@
                 </Border>
                 <TextBlock Text="{x:Static p:Resources.Partidas_DosJugadores}" FontSize="13" Foreground="#888888" VerticalAlignment="Center"/>
             </StackPanel>
-            <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.Partidas_CrearPartida}" HorizontalAlignment="Right"
-                    Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Click="btnCrearPartida_Click">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnActualizar" Content="⟳" ToolTip="Actualizar" Padding="12,8" Margin="0,0,10,0"
+                        Background="#F0F0F0" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="16" Click="btnActualizar_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.Partidas_CrearPartida}"
+                        Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Click="btnCrearPartida_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
         </Grid>
 
         <Border Grid.Row="2" Margin="20,0,20,20" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="8">
@@ -129,75 +139,6 @@
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <ListViewItem>
-                        <Grid Margin="0,8,0,8">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="1.5*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Carlos Mendoza" FontSize="14" FontWeight="Bold" Margin="15,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="carlos.m@gmail.com" FontSize="14" Foreground="#555555" Margin="10,0,0,0"/>
-                            <TextBlock Grid.Column="2" Text="hace 2 min" FontSize="14" Foreground="#555555" Margin="10,0,0,0"/>
-                            <TextBlock Grid.Column="3" Text="1 / 2" FontSize="14" Margin="10,0,0,0"/>
-                            <Button Grid.Column="4" Content="Unirme" Background="#0078D4" Foreground="White" BorderThickness="0"
-                                    Padding="12,6" FontSize="13" Margin="5,0,15,0" Click="btnUnirme_Click">
-                                <Button.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </Button.Resources>
-                            </Button>
-                        </Grid>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <Grid Margin="0,8,0,8">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="1.5*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Sofía Ramírez" FontSize="14" FontWeight="Bold" Margin="15,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="sofiarmz@gmail.com" FontSize="14" Foreground="#555555" Margin="10,0,0,0"/>
-                            <TextBlock Grid.Column="2" Text="hace 8 min" FontSize="14" Foreground="#555555" Margin="10,0,0,0"/>
-                            <TextBlock Grid.Column="3" Text="1 / 2" FontSize="14" Margin="10,0,0,0"/>
-                            <Button Grid.Column="4" Content="Unirme" Background="#0078D4" Foreground="White" BorderThickness="0"
-                                    Padding="12,6" FontSize="13" Margin="5,0,15,0" Click="btnUnirme_Click">
-                                <Button.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </Button.Resources>
-                            </Button>
-                        </Grid>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <Grid Margin="0,8,0,8">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="1.5*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Diego Hernández" FontSize="14" FontWeight="Bold" Margin="15,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="diego.h@correo.com" FontSize="14" Foreground="#555555" Margin="10,0,0,0"/>
-                            <TextBlock Grid.Column="2" Text="hace 15 min" FontSize="14" Foreground="#555555" Margin="10,0,0,0"/>
-                            <TextBlock Grid.Column="3" Text="1 / 2" FontSize="14" Margin="10,0,0,0"/>
-                            <Button Grid.Column="4" Content="Unirme" Background="#0078D4" Foreground="White" BorderThickness="0"
-                                    Padding="12,6" FontSize="13" Margin="5,0,15,0" Click="btnUnirme_Click">
-                                <Button.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </Button.Resources>
-                            </Button>
-                        </Grid>
-                    </ListViewItem>
                 </ListView>
             </Grid>
         </Border>

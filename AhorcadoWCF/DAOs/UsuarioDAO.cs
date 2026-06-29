@@ -29,6 +29,7 @@ namespace AhorcadoWCF.DAOs
             {
                 var nuevoUsuario = new usuario
                 {
+                    idUsuario = (contexto.usuario.Max(u => (int?)u.idUsuario) ?? 0) + 1,
                     nombreCompleto = usuario.Nombre,
                     correoElectronico = usuario.Correo,
                     contrasena = usuario.Contrasena,

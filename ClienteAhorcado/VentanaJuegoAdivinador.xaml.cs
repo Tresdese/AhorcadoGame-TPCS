@@ -38,6 +38,8 @@ namespace ClienteAhorcado
 
         private void VentanaJuegoAdivinador_Loaded(object sender, RoutedEventArgs e)
         {
+            lblRival.Text = $"vs {_nombreCreador}";
+
             casillas.Clear();
             foreach (var name in new[] { "l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8" })
             {
@@ -69,6 +71,11 @@ namespace ClienteAhorcado
                 lblCategoria.Text = categoria;
                 lblDescripcion.Text = descripcion;
 
+                for (int i = 0; i < casillas.Count; i++)
+                    if (casillas[i].Parent is UIElement borde)
+                        borde.Visibility = i < longitud ? Visibility.Visible : Visibility.Collapsed;
+
+                MostrarAhorcado(0);
                 ActualizarCasillas();
                 lblIntentos.Text = $"{_intentosRestantes}  intentos restantes";
             });
@@ -112,11 +119,25 @@ namespace ClienteAhorcado
                 }
                 else
                 {
-                    int fallos = 6 - intentosRestantes;
-                    imgAhorcado.Source = new BitmapImage(
-                        new Uri($"/Recursos/ahorcado_{fallos}.png", UriKind.Relative));
+                    MostrarAhorcado(6 - intentosRestantes);
                 }
             });
+        }
+
+        private void MostrarAhorcado(int fallos)
+        {
+            try
+            {
+                var img = new BitmapImage();
+                img.BeginInit();
+                img.UriSource = new Uri($"/Recursos/ahorcado_{fallos}.png", UriKind.Relative);
+                img.CacheOption = BitmapCacheOption.OnLoad;
+                img.EndInit();
+                imgAhorcado.Source = img;
+            }
+            catch
+            {
+            }
         }
 
         public void MensajeChatRecibido(string remitente, string mensaje) =>

@@ -32,8 +32,16 @@ namespace ClienteAhorcado
         
         private void VentanaHistorial_Loaded(object sender, RoutedEventArgs e)
         {
+            btnUsuario.Content = $"{SesionActual.Nombre} ▼";
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
+
             CargarEstadisticas();
             CargarHistorial("Ganadas");
+        }
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e)
+        {
+            GestorIdioma.Cambiar(SesionActual.Idioma == "es" ? "en" : "es");
         }
 
        
