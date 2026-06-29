@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteAhorcado"
+        xmlns:p="clr-namespace:ClienteAhorcado.Properties"
         mc:Ignorable="d"
-        Title="Ahorcado · Partidas" Height="600" Width="1000"
+        Title="{x:Static p:Resources.Partidas_TituloVentana}" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen" Background="White">
 
     <Grid>
@@ -17,19 +18,18 @@
 
         <Grid Grid.Row="0" Margin="20,15,20,10">
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                <TextBlock Text="Partidas en curso" FontSize="20" FontWeight="Bold"/>
-                <TextBlock Text="Únete a una partida o crea la tuya." FontSize="13" Foreground="#666666"/>
+                <TextBlock Text="{x:Static p:Resources.Partidas_Titulo}" FontSize="20" FontWeight="Bold"/>
+                <TextBlock Text="{x:Static p:Resources.Partidas_Subtitulo}" FontSize="13" Foreground="#666666"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button Content="🌐 ES" Padding="10,5" Background="White" Foreground="Black"
-                        BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0">
+                <Button x:Name="btnIdioma" Click="btnIdioma_Click" Padding="10,5" Background="White" Foreground="Black" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Margin="0,0,10,0">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnUsuario" Content="Andrés ▼" Padding="10,5" Background="#333333" Foreground="White"
+                <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White"
                         BorderThickness="0" FontSize="13" Click="btnUsuario_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -38,10 +38,10 @@
                     </Button.Resources>
                     <Button.ContextMenu>
                         <ContextMenu x:Name="menuUsuario">
-                            <MenuItem x:Name="mnuVerPerfil" Header="Ver perfil" Click="mnuVerPerfil_Click"/>
-                            <MenuItem x:Name="mnuHistorial" Header="Historial de puntajes" Click="mnuHistorial_Click"/>
+                            <MenuItem x:Name="mnuVerPerfil" Header="{x:Static p:Resources.Partidas_VerPerfil}" Click="mnuVerPerfil_Click"/>
+                            <MenuItem x:Name="mnuHistorial" Header="{x:Static p:Resources.Partidas_HistorialPuntajes}" Click="mnuHistorial_Click"/>
                             <Separator/>
-                            <MenuItem x:Name="mnuCerrarSesion" Header="Cerrar sesión" Foreground="Red" Click="mnuCerrarSesion_Click"/>
+                            <MenuItem x:Name="mnuCerrarSesion" Header="{x:Static p:Resources.Partidas_CerrarSesion}" Foreground="Red" Click="mnuCerrarSesion_Click"/>
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
@@ -55,17 +55,16 @@
                 <Border Background="#E8F5E9" BorderBrush="#A5D6A7" BorderThickness="1" CornerRadius="15" Padding="10,5" Margin="0,0,10,0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Width="8" Height="8" Fill="Green" Margin="0,0,6,0" VerticalAlignment="Center"/>
-                        <TextBlock Text="6 partidas disponibles" FontSize="13" Foreground="#2E7D32"/>
+                        <TextBlock x:Name="lblContadorPartidas" Text="" FontSize="13" Foreground="#2E7D32"/>
                     </StackPanel>
                 </Border>
                 <Border Background="#F5F5F5" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="15" Padding="10,5" Margin="0,0,15,0">
-                    <TextBlock Text="🏆  Tu puntaje:  75 pts" FontSize="13" Foreground="#333333"/>
+                    <TextBlock x:Name="lblPuntaje" Text="{x:Static p:Resources.Partidas_PuntajePrefijo}" FontSize="13" Foreground="#333333"/>
                 </Border>
-                <TextBlock Text="· Cada partida es de 2 jugadores" FontSize="13" Foreground="#888888" VerticalAlignment="Center"/>
+                <TextBlock Text="{x:Static p:Resources.Partidas_DosJugadores}" FontSize="13" Foreground="#888888" VerticalAlignment="Center"/>
             </StackPanel>
-            <Button x:Name="btnCrearPartida" Content="+ Crear partida" HorizontalAlignment="Right"
-                    Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0"
-                    FontSize="14" FontWeight="Bold" Click="btnCrearPartida_Click">
+            <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.Partidas_CrearPartida}" HorizontalAlignment="Right"
+                    Padding="15,8" Background="#0078D4" Foreground="White" BorderThickness="0 FontSize="14" FontWeight="Bold" Click="btnCrearPartida_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -89,11 +88,11 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="CREADOR" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="15,10,0,10"/>
-                    <TextBlock Grid.Column="1" Text="CORREO" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
-                    <TextBlock Grid.Column="2" Text="CREADA" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
-                    <TextBlock Grid.Column="3" Text="JUGADORES" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
-                    <TextBlock Grid.Column="4" Text="" Margin="10,10,0,10"/>
+                        <TextBlock Grid.Column="0" Text="{x:Static p:Resources.Partidas_ColCreador}" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="15,10,0,10"/>
+                        <TextBlock Grid.Column="1" Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
+                        <TextBlock Grid.Column="2" Text="{x:Static p:Resources.Partidas_ColCreada}" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
+                        <TextBlock Grid.Column="3" Text="{x:Static p:Resources.Partidas_ColJugadores}" FontSize="12" FontWeight="Bold" Foreground="#666666" Margin="10,10,0,10"/>
+                        <TextBlock Grid.Column="4" Text="" Margin="10,10,0,10"/>
                 </Grid>
 
                 <ListView x:Name="lvPartidas" Grid.Row="1" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
@@ -119,10 +118,9 @@
                                 <TextBlock Grid.Column="1" Text="{Binding Correo}" FontSize="14" Foreground="#555555" Margin="10,0,0,0" VerticalAlignment="Center"/>
                                 <TextBlock Grid.Column="2" Text="{Binding Creada}" FontSize="14" Foreground="#555555" Margin="10,0,0,0" VerticalAlignment="Center"/>
                                 <TextBlock Grid.Column="3" Text="1 / 2" FontSize="14" Margin="10,0,0,0" VerticalAlignment="Center"/>
-                                <Button Grid.Column="4" Content="Unirme" Background="#0078D4" Foreground="White" BorderThickness="0"
-                                        Padding="12,6" FontSize="13" Margin="5,0,15,0" VerticalAlignment="Center"
-                                        Click="btnUnirme_Click">
-                                    <Button.Resources>
+                                <Button Grid.Column="4" Content="{x:Static p:Resources.Partidas_Unirme}" Background="#0078D4" Foreground="White" BorderThickness="0"
+                                        Padding="12,6" FontSize="13" Margin="5,0,15,0" VerticalAlignment="Center" Click="btnUnirme_Click">
+                                        <Button.Resources>
                                         <Style TargetType="Border">
                                             <Setter Property="CornerRadius" Value="5"/>
                                         </Style>

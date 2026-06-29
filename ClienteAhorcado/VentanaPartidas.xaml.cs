@@ -17,9 +17,15 @@ namespace ClienteAhorcado {
     public partial class VentanaPartidas : Window {   
         public VentanaPartidas() {
             InitializeComponent();
+            btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
             Loaded += VentanaPartidas_Loaded;
         }
-       
+
+        private void btnIdioma_Click(object sender, RoutedEventArgs e) {
+            string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
+            GestorIdioma.Cambiar(nuevo);
+        }
+
         private void VentanaPartidas_Loaded(object sender, RoutedEventArgs e) {
             btnUsuario.Content = $"{SesionActual.Nombre} ▼";
             CargarPartidasDisponibles();
@@ -45,8 +51,8 @@ namespace ClienteAhorcado {
                 MostrarErrorConexion(); 
             }
         }
-       
-        private void MostrarListaPartidas(List<PartidaDTO> partidas) { 
+
+        private void MostrarListaPartidas(List<PartidaDTO> partidas) {
             lvPartidas.Items.Clear();
 
             var items = partidas.Select(p => new PartidaItemViewModel {
@@ -57,33 +63,32 @@ namespace ClienteAhorcado {
             }).ToList();
 
             lvPartidas.ItemsSource = items;
+            lblContadorPartidas.Text = items.Count + " " + Properties.Resources.Partidas_DisponiblesSufijo;
         }
 
-        
-        private void MostrarSinPartidas() {
-            lvPartidas.Items.Clear();
-            lvPartidas.ItemsSource = null;
 
-            
+        private void MostrarSinPartidas() {
             lvPartidas.Items.Add(new ListViewItem {
-                Content = "No hay partidas disponibles en este momento.",
+                Content = Properties.Resources.Partidas_SinPartidas,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 14,
                 Foreground = System.Windows.Media.Brushes.Gray,
                 IsEnabled = false
             });
+
+            lblContadorPartidas.Text = "0 " + Properties.Resources.Partidas_DisponiblesSufijo;
         }
-        
+
         private void MostrarErrorConexion() {
             MessageBox.Show(
-                "Error de conexión con base de datos, inténtelo más tarde.",
-                "Error",
+                Properties.Resources.Partidas_ErrorConexion,
+                Properties.Resources.Comun_Error,
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
-
+            
             Close();
         }
-       
+
         private void btnCrearPartida_Click(object sender, RoutedEventArgs e) {
             var ventanaEspera = new VentanaEsperandoRival();
             ventanaEspera.Show();
@@ -102,26 +107,26 @@ namespace ClienteAhorcado {
 
                 if (!sigueDisponible) {
                     MessageBox.Show(
-                        "Esta partida ya no está disponible. Por favor elige otra.",
-                        "Partida no disponible",
+                        Properties.Resources.Partidas_NoDisponibleMensaje,
+                        Properties.Resources.Partidas_NoDisponibleTitulo,
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
-
-                    CargarPartidasDisponibles(); 
+                    
+                    CargarPartidasDisponibles();
                     return;
                 }
-                
+
                 bool unido = clientePartida.UnirseAPartida(item.IdPartida, SesionActual.IdUsuario);
-               
+
                 if (!unido) {
                     MessageBox.Show(
-                        "Error de conexión con base de datos, inténtelo más tarde.",
-                        "Error",
+                        Properties.Resources.Partidas_ErrorConexion,
+                        Properties.Resources.Comun_Error,
                         MessageBoxButton.OK,
                         MessageBoxImage.Error);
                     return;
                 }
-               
+
                 SesionActual.IdPartida = item.IdPartida;
                 JuegoCallbackHandler.ClienteJuego = Conexiones.Juego(
                     new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
@@ -144,10 +149,11 @@ namespace ClienteAhorcado {
             menuUsuario.PlacementTarget = btnUsuario;
             menuUsuario.IsOpen = true;
         }
-        
+
         private void mnuVerPerfil_Click(object sender, RoutedEventArgs e) {
-            
-            MessageBox.Show("Ver perfil — pendiente de implementar.");
+            var ventanaPerfil = new VentanaPerfil();
+            ventanaPerfil.Show();
+            Close();
         }
 
         private void mnuHistorial_Click(object sender, RoutedEventArgs e) {
@@ -158,8 +164,8 @@ namespace ClienteAhorcado {
 
         private void mnuCerrarSesion_Click(object sender, RoutedEventArgs e) {
             var respuesta = MessageBox.Show(
-                "¿Seguro que deseas cerrar sesión?",
-                "Cerrar sesión",
+                Properties.Resources.Partidas_ConfirmarCerrarMensaje,
+                Properties.Resources.Partidas_CerrarSesion,
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
 
