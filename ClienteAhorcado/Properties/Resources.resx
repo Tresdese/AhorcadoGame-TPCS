@@ -132,10 +132,34 @@
   <data name="Bienvenida_Titulo" xml:space="preserve">
     <value>¡El Ahorcado!</value>
   </data>
+  <data name="Comun_Contrasena" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Comun_CorreoElectronico" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
   <data name="Comun_IniciarSesion" xml:space="preserve">
     <value>Iniciar sesión</value>
   </data>
   <data name="Comun_RegistrarCuenta" xml:space="preserve">
     <value>Registrar cuenta</value>
+  </data>
+  <data name="Comun_Registrate" xml:space="preserve">
+    <value>Regístrate</value>
+  </data>
+  <data name="Comun_Volver" xml:space="preserve">
+    <value>⇐ Volver</value>
+  </data>
+  <data name="IniciarSesion_ErrorContrasena" xml:space="preserve">
+    <value>La contraseña que ingresaste es incorrecta.</value>
+  </data>
+  <data name="IniciarSesion_ErrorCorreo" xml:space="preserve">
+    <value>El correo electrónico ingresado no está conectado a una cuenta.</value>
+  </data>
+  <data name="IniciarSesion_NoTienesCuenta" xml:space="preserve">
+    <value>¿No tienes cuenta?</value>
+  </data>
+  <data name="IniciarSesion_Subtitulo" xml:space="preserve">
+    <value>Bienvenido de vuelta</value>
   </data>
 </root>

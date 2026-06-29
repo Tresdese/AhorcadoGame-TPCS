@@ -106,6 +106,24 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña.
+        /// </summary>
+        public static string Comun_Contrasena {
+            get {
+                return ResourceManager.GetString("Comun_Contrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Correo electrónico.
+        /// </summary>
+        public static string Comun_CorreoElectronico {
+            get {
+                return ResourceManager.GetString("Comun_CorreoElectronico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar sesión.
         /// </summary>
         public static string Comun_IniciarSesion {
@@ -120,6 +138,60 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_RegistrarCuenta {
             get {
                 return ResourceManager.GetString("Comun_RegistrarCuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Regístrate.
+        /// </summary>
+        public static string Comun_Registrate {
+            get {
+                return ResourceManager.GetString("Comun_Registrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ⇐ Volver.
+        /// </summary>
+        public static string Comun_Volver {
+            get {
+                return ResourceManager.GetString("Comun_Volver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña que ingresaste es incorrecta..
+        /// </summary>
+        public static string IniciarSesion_ErrorContrasena {
+            get {
+                return ResourceManager.GetString("IniciarSesion_ErrorContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo electrónico ingresado no está conectado a una cuenta..
+        /// </summary>
+        public static string IniciarSesion_ErrorCorreo {
+            get {
+                return ResourceManager.GetString("IniciarSesion_ErrorCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿No tienes cuenta?.
+        /// </summary>
+        public static string IniciarSesion_NoTienesCuenta {
+            get {
+                return ResourceManager.GetString("IniciarSesion_NoTienesCuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bienvenido de vuelta.
+        /// </summary>
+        public static string IniciarSesion_Subtitulo {
+            get {
+                return ResourceManager.GetString("IniciarSesion_Subtitulo", resourceCulture);
             }
         }
     }
