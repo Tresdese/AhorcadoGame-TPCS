@@ -96,7 +96,7 @@ namespace AhorcadoWCF.DAOs
                     .AsEnumerable()
                     .Select(x => new PuntajeHistorialDTO
                     {
-                        Fecha = x.h.fechaPartida.ToString("dd MMM yyyy"),
+                        Fecha = x.h.fechaPartida.ToString("dd MMM yyyy, hh:mm"),
                         Palabra = x.w.palabra1.ToUpper(),
                         NombreRival = x.u.nombreCompleto,
                         Puntos = x.h.puntos,

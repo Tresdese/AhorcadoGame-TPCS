@@ -219,7 +219,6 @@ namespace ClienteAhorcado
         private void btnPenalizaciones_Click(object sender, RoutedEventArgs e)
             => CargarHistorial("Penalizaciones");
 
-        
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             Navegacion.Ir(new VentanaPartidas());
