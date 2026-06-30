@@ -45,7 +45,7 @@ namespace ClienteAhorcado
                 ? $"{partes[0][0]}{partes[1][0]}"
                 : partes.Length == 1 ? partes[0][0].ToString() : "?";
 
-            lblIntentos.Text = Properties.Resources.Juego_EsperandoPalabra;
+            lblIntentos.Text = string.Format(Properties.Resources.Juego_IntentosRestantes, _intentosRestantes);
 
             _canal = Conexiones.Juego(new InstanceContext(this));
             if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(_idPartida, SesionActual.IdUsuario)))

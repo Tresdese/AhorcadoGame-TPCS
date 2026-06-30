@@ -61,5 +61,12 @@ namespace ClienteAhorcado
             Navegacion.Ir(new VentanaPartidas());
             Close();
         }
+
+        private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            var ventanaEspera = new VentanaEsperandoRival();
+            Navegacion.Ir(ventanaEspera);
+            Close();
+        }
     }
 }
