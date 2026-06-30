@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AhorcadoWCF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,47 +13,211 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para VentanaPartidas.xaml
-    /// </summary>
-    public partial class VentanaPartidas : Window {
-        public VentanaPartidas() {
+namespace ClienteAhorcado
+{
+   
+    public partial class VentanaPartidas : Window
+    {
+        
+        public VentanaPartidas()
+        {
             InitializeComponent();
+            Loaded += VentanaPartidas_Loaded;
         }
 
-        private void btnUsuario_Click(object sender, RoutedEventArgs e) {
-            btnUsuario.ContextMenu.IsOpen = true;
+       
+        private void VentanaPartidas_Loaded(object sender, RoutedEventArgs e)
+        {
+            btnUsuario.Content = $"{SesionActual.Nombre} ▼";
+            CargarPartidasDisponibles();
         }
 
-        private void mnuVerPerfil_Click(object sender, RoutedEventArgs e) {
-            VentanaPerfil ventanaPerfil = new VentanaPerfil();
-            ventanaPerfil.Show();
-            this.Close();
+        private void CargarPartidasDisponibles()
+        {
+            try
+            {
+                var cliente = new PartidaServiceClient();
+                var partidas = cliente.ObtenerPartidasDisponibles();
+
+               
+                if (partidas == null)
+                {
+                    MostrarErrorConexion();
+                    return;
+                }
+
+                
+                if (partidas.Count == 0)
+                {
+                    MostrarSinPartidas();
+                    return;
+                }
+
+         
+                MostrarListaPartidas(partidas);
+            }
+            catch (Exception)
+            {
+                MostrarErrorConexion(); 
+            }
         }
 
-        private void mnuHistorial_Click(object sender, RoutedEventArgs e) {
-            VentanaHistorial ventanaHistorial = new VentanaHistorial();
+       
+        private void MostrarListaPartidas(List<PartidaDTO> partidas)
+        {
+          
+            lvPartidas.Items.Clear();
+
+            var items = partidas.Select(p => new PartidaItemViewModel
+            {
+                IdPartida = p.IdPartida,
+                Creador = p.NombreCreador,
+                Correo = p.CorreoCreador,
+                Creada = p.FechaCreacion
+            }).ToList();
+
+            lvPartidas.ItemsSource = items;
+        }
+
+        
+        private void MostrarSinPartidas()
+        {
+            lvPartidas.Items.Clear();
+            lvPartidas.ItemsSource = null;
+
+            
+            lvPartidas.Items.Add(new ListViewItem
+            {
+                Content = "No hay partidas disponibles en este momento.",
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontSize = 14,
+                Foreground = System.Windows.Media.Brushes.Gray,
+                IsEnabled = false
+            });
+        }
+
+        
+        private void MostrarErrorConexion()
+        {
+            MessageBox.Show(
+                "Error de conexión con base de datos, inténtelo más tarde.",
+                "Error",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
+
+            Close();
+        }
+
+       
+        private void btnCrearPartida_Click(object sender, RoutedEventArgs e)
+        {
+            var ventanaEspera = new VentanaEsperandoRival();
+            ventanaEspera.Show();
+            Close();
+        }
+
+       
+        private void btnUnirme_Click(object sender, RoutedEventArgs e)
+        {
+
+            var boton = sender as Button;
+            var item = boton?.DataContext as PartidaItemViewModel;
+
+            if (item == null) return;
+
+            try
+            {
+                
+                var clientePartida = new PartidaServiceClient();
+                bool sigueDisponible = clientePartida.VerificarDisponibilidadPartida(item.IdPartida);
+
+                
+                if (!sigueDisponible)
+                {
+                    MessageBox.Show(
+                        "Esta partida ya no está disponible. Por favor elige otra.",
+                        "Partida no disponible",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+
+                    CargarPartidasDisponibles(); 
+                    return;
+                }
+
+                
+                bool unido = clientePartida.UnirseAPartida(item.IdPartida, SesionActual.IdUsuario);
+
+               
+                if (!unido)
+                {
+                    MessageBox.Show(
+                        "Error de conexión con base de datos, inténtelo más tarde.",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    return;
+                }
+
+               
+                var clienteJuego = new JuegoCallbackServiceClient(
+                    new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
+
+                clienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario);
+
+               
+                var ventanaJuego = new VentanaJuegoAdivinador(item.IdPartida, item.Creador);
+                ventanaJuego.Show();
+                Close();
+            }
+            catch (Exception)
+            {
+               
+                MessageBox.Show(
+                    "Error de conexión con base de datos, inténtelo más tarde.",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+      
+        private void btnUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            menuUsuario.PlacementTarget = btnUsuario;
+            menuUsuario.IsOpen = true;
+        }
+
+        
+        private void mnuVerPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            
+            MessageBox.Show("Ver perfil — pendiente de implementar.");
+        }
+
+
+        private void mnuHistorial_Click(object sender, RoutedEventArgs e)
+        {
+            var ventanaHistorial = new VentanaHistorial();
             ventanaHistorial.Show();
-            this.Close();
+            Close();
         }
 
-        private void mnuCerrarSesion_Click(object sender, RoutedEventArgs e) {
-            VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
-            ventanaBienvenida.Show();
-            this.Close();
-        }
 
-        private void btnCrearPartida_Click(object sender, RoutedEventArgs e) {
-            VentanaEsperandoRival ventana = new VentanaEsperandoRival();
-            ventana.Show();
-            this.Close();
-        }
+        private void mnuCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            var respuesta = MessageBox.Show(
+                "¿Seguro que deseas cerrar sesión?",
+                "Cerrar sesión",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
 
-        private void btnUnirme_Click(object sender, RoutedEventArgs e) {
-            VentanaEsperandoPalabra ventana = new VentanaEsperandoPalabra();
-            ventana.Show();
-            this.Close();
+            if (respuesta == MessageBoxResult.Yes)
+            {
+                SesionActual.Cerrar();
+                var ventanaLogin = new VentanaIniciarSesion();
+                ventanaLogin.Show();
+                Close();
+            }
         }
     }
 }

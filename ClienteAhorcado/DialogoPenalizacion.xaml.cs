@@ -12,19 +12,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ClienteAhorcado {
-    /// <summary>
-    /// Lógica de interacción para DialogoPenalizacion.xaml
-    /// </summary>
-    public partial class DialogoPenalizacion : Window {
-        public DialogoPenalizacion() {
+namespace ClienteAhorcado
+{
+    
+    public partial class DialogoPenalizacion : Window
+    {
+        private readonly int _puntajeAnterior;
+        private readonly int _puntajeNuevo;
+        private readonly int _puntosPenalizacion;
+
+        public DialogoPenalizacion(int puntajeAnterior, int puntosPenalizacion)
+        {
             InitializeComponent();
+            _puntajeAnterior = puntajeAnterior;
+            _puntosPenalizacion = puntosPenalizacion;
+            _puntajeNuevo = puntajeAnterior - puntosPenalizacion;
+
+            Loaded += DialogoPenalizacion_Loaded;
         }
 
-        private void btnAceptar_Click(object sender, RoutedEventArgs e) {
-            VentanaPartidas ventana = new VentanaPartidas();
-            ventana.Show();
-            this.Close();
+        private void DialogoPenalizacion_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtPuntaje.Text = $"{_puntajeAnterior} pts → {_puntajeNuevo} pts";
+        }
+
+        
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            new VentanaPartidas().Show();
+            Close();
         }
     }
 }

@@ -19,7 +19,7 @@
             </Border>
             <TextBlock Text="Tu rival abandonó" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock FontSize="13" Foreground="#555555" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,8">
-                <Run Text="Carlos Mendoza" FontWeight="Bold"/>
+                <Run x:Name="txtNombreRival" Text="Carlos Mendoza" FontWeight="Bold"/>
                 <Run Text=" abandonó la partida. Se le aplicará una penalización por su cuenta."/>
             </TextBlock>
             <TextBlock Text="¿Qué te gustaría hacer ahora?" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,20"/>
