@@ -27,6 +27,7 @@ namespace AhorcadoWCF
         public int idJugadorUno { get; set; }
         public Nullable<int> idJugadorDos { get; set; }
         public Nullable<int> idPalabra { get; set; }
+        public string idioma { get; set; }
     
         public virtual palabra palabra { get; set; }
         public virtual usuario usuario { get; set; }

@@ -39,7 +39,7 @@ namespace ClienteAhorcado
             try
             {
                 var cliente = Conexiones.Partida();
-                var partida = cliente.CrearPartida(SesionActual.IdUsuario);
+                var partida = cliente.CrearPartida(SesionActual.IdUsuario, SesionActual.Idioma);
                 
                 if (partida == null)
                 {

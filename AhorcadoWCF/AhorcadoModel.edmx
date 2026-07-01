@@ -62,6 +62,7 @@
           <Property Name="idJugadorUno" Type="int" Nullable="false" />
           <Property Name="idJugadorDos" Type="int" />
           <Property Name="idPalabra" Type="int" />
+          <Property Name="idioma" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="usuario">
           <Key>
@@ -286,6 +287,7 @@
           <NavigationProperty Name="usuario1" Relationship="Self.FK_partida_jugador_uno" FromRole="partida" ToRole="usuario" />
           <NavigationProperty Name="historial_puntaje" Relationship="AhorcadoDBModel.FK_historial_puntaje_partida" FromRole="partida" ToRole="historial_puntaje" />
           <NavigationProperty Name="movimiento" Relationship="AhorcadoDBModel.FK_movimiento_partida" FromRole="partida" ToRole="movimiento" />
+          <Property Name="idioma" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="usuario">
           <Key>
@@ -538,6 +540,7 @@
           <EntitySetMapping Name="partida">
             <EntityTypeMapping TypeName="AhorcadoDBModel.partida">
               <MappingFragment StoreEntitySet="partida">
+                <ScalarProperty Name="idioma" ColumnName="idioma" />
                 <ScalarProperty Name="idPartida" ColumnName="idPartida" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="estado" ColumnName="estado" />

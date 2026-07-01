@@ -12,9 +12,9 @@ namespace AhorcadoWCF
     {
         private readonly PartidaDAO partidaDAO = new PartidaDAO();
 
-        public PartidaDTO CrearPartida(int idJugadorCreador)
+        public PartidaDTO CrearPartida(int idJugadorCreador, string idioma)
         {
-            return partidaDAO.Crear(idJugadorCreador);
+            return partidaDAO.Crear(idJugadorCreador, idioma);
         }
 
         public List<PartidaDTO> ObtenerPartidasDisponibles()

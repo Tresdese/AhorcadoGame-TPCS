@@ -8,7 +8,7 @@ namespace AhorcadoWCF
     public interface IPartidaService
     {
         [OperationContract]
-        PartidaDTO CrearPartida(int idJugadorCreador);
+        PartidaDTO CrearPartida(int idJugadorCreador, string idioma);
 
         [OperationContract]
         List<PartidaDTO> ObtenerPartidasDisponibles();
