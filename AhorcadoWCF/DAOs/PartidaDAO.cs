@@ -9,7 +9,7 @@ namespace AhorcadoWCF.DAOs
     public class PartidaDAO
     {
        
-        public PartidaDTO Crear(int idJugadorCreador)
+        public PartidaDTO Crear(int idJugadorCreador, string idioma)
         {
             using (var transaccion = new TransactionScope())
             {
@@ -23,7 +23,8 @@ namespace AhorcadoWCF.DAOs
                         idJugadorUno = idJugadorCreador,
                         idJugadorDos = null,
                         estado = "Disponible",
-                        fechaCreacion = DateTime.Now
+                        fechaCreacion = DateTime.Now,
+                        idioma = idioma
                     };
 
                     contexto.partida.Add(nuevaPartida);
@@ -65,7 +66,8 @@ namespace AhorcadoWCF.DAOs
                         CorreoCreador = x.u.correoElectronico,
                         FechaCreacion = x.p.fechaCreacion != null
                                                 ? ((DateTime)x.p.fechaCreacion).ToString("dd/MM/yyyy HH:mm")
-                                                : "—"
+                                                : "—",
+                        Idioma = x.p.idioma
                     })
                     .ToList();
             }

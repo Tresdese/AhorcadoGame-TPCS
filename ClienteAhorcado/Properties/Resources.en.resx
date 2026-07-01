@@ -666,4 +666,10 @@
   <data name="Partidas_ColIdioma" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="Partidas_IdiomaPartidaEspanol" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="Partidas_IdiomaPartidaIngles" xml:space="preserve">
+    <value>English</value>
+  </data>
 </root>
