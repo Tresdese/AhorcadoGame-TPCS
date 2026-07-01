@@ -28,6 +28,15 @@ namespace AhorcadoWCF
         public static readonly ConcurrentDictionary<int, EstadoRonda> Rondas =
             new ConcurrentDictionary<int, EstadoRonda>();
 
+        public static readonly ConcurrentDictionary<int, string> IdiomaJugador =
+            new ConcurrentDictionary<int, string>();
+
+        public static void RegistrarIdioma(int idUsuario, string idioma) =>
+            IdiomaJugador[idUsuario] = idioma;
+
+        public static string ObtenerIdioma(int idUsuario) =>
+            IdiomaJugador.TryGetValue(idUsuario, out var idioma) ? idioma : "es";
+
         public static void IniciarRonda(int idPartida, string palabra, string categoria, int idAdivinador, int idCreador, int idPalabra) =>
             Rondas[idPartida] = new EstadoRonda
             {
@@ -113,8 +122,10 @@ namespace AhorcadoWCF
         public void DesconectarDelLobby(int idUsuario) =>
             RegistroSesiones.QuitarDelLobby(idUsuario);
 
-        public void UnirseASalaDePartida(int idPartida, int idUsuario)
+        public void UnirseASalaDePartida(int idPartida, int idUsuario, string idioma)
         {
+            RegistroSesiones.RegistrarIdioma(idUsuario, idioma);
+
             var callback = CanalActual();
             RegistroSesiones.UnirASala(idPartida, idUsuario, callback);
 

@@ -34,7 +34,10 @@ namespace AhorcadoWCF.DAOs
                     {
                         IdPalabra = p.idPalabra,
                         Texto = p.palabra1,
-                        Descripcion = p.descripcion,
+                        Descripcion = p.palabra_descripcion
+                            .Where(d => d.idioma == p.categoria.idioma)
+                            .Select(d => d.descripcion)
+                            .FirstOrDefault(),
                         IdCategoria = p.idCategoria,
                         Categoria = p.categoria.nombre
                     })
@@ -52,11 +55,29 @@ namespace AhorcadoWCF.DAOs
                     {
                         IdPalabra = p.idPalabra,
                         Texto = p.palabra1,
-                        Descripcion = p.descripcion,
+                        Descripcion = p.palabra_descripcion
+                            .Where(d => d.idioma == p.categoria.idioma)
+                            .Select(d => d.descripcion)
+                            .FirstOrDefault(),
                         IdCategoria = p.idCategoria,
                         Categoria = p.categoria.nombre
                     })
                     .FirstOrDefault();
+            }
+        }
+
+        public string ObtenerDescripcion(int idPalabra, string idioma)
+        {
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                var descripciones = contexto.palabra_descripcion
+                    .Where(d => d.idPalabra == idPalabra)
+                    .ToList();
+
+                var elegida = descripciones.FirstOrDefault(d => d.idioma == idioma)
+                              ?? descripciones.FirstOrDefault();
+
+                return elegida?.descripcion ?? string.Empty;
             }
         }
 

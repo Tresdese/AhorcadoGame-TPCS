@@ -136,7 +136,7 @@ namespace ClienteAhorcado {
                 JuegoCallbackHandler.ClienteJuego = Conexiones.Juego(
                     new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
 
-                JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario);
+                JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario, SesionActual.Idioma);
 
                 var ventanaEspera = new VentanaEsperandoPalabra(item.IdPartida, item.Creador);
                 Navegacion.Ir(ventanaEspera);

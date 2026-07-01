@@ -32,10 +32,13 @@ namespace AhorcadoWCF
                 if (palabra != null)
                 {
                     var partida = partidaDAO.ObtenerEstado(idPartida);
+                    string idiomaAdivinador = RegistroSesiones.ObtenerIdioma(partida.IdJugadorAdivinador);
+                    string descripcion = palabraDAO.ObtenerDescripcion(idPalabra, idiomaAdivinador);
+
                     RegistroSesiones.IniciarRonda(idPartida, palabra.Texto, palabra.Categoria,
                         partida.IdJugadorAdivinador, partida.IdJugadorCreador, idPalabra);
                     RegistroSesiones.NotificarSala(idPartida,
-                        cb => cb.PalabraSeleccionada(palabra.Texto.Length, palabra.Descripcion, palabra.Categoria));
+                        cb => cb.PalabraSeleccionada(palabra.Texto.Length, descripcion, palabra.Categoria));
                 }
             }
             return asignada;

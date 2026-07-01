@@ -20,6 +20,8 @@
         <AssociationConnector Association="AhorcadoDBModel.FK_historial_puntaje_palabra" />
         <AssociationConnector Association="AhorcadoDBModel.FK_historial_puntaje_partida" />
         <AssociationConnector Association="AhorcadoDBModel.FK_movimiento_partida" />
+        <EntityTypeShape EntityType="AhorcadoDBModel.palabra_descripcion" Width="1.5" PointX="3" PointY="5.625" />
+        <AssociationConnector Association="AhorcadoDBModel.FK_palabra_descripcion_palabra" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

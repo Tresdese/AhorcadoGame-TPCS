@@ -53,7 +53,7 @@ namespace ClienteAhorcado
                 JuegoCallbackHandler.VentanaEspera = this;
                 JuegoCallbackHandler.ClienteJuego = Conexiones.Juego(
                     new System.ServiceModel.InstanceContext(new JuegoCallbackHandler()));
-                JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(idPartidaActual, SesionActual.IdUsuario);
+                JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(idPartidaActual, SesionActual.IdUsuario, SesionActual.Idioma);
 
                 IniciarCronometro();
             }

@@ -34,7 +34,7 @@ namespace ClienteAhorcado
             lblIntentos.Text = string.Format(Properties.Resources.Juego_IntentosRestantes, 6);
 
             _canal = Conexiones.Juego(new InstanceContext(this));
-            if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(SesionActual.IdPartida, SesionActual.IdUsuario)))
+            if (!ManejadorErrores.Ejecutar(() => _canal.UnirseASalaDePartida(SesionActual.IdPartida, SesionActual.IdUsuario, SesionActual.Idioma)))
             {
                 Navegacion.Ir(new VentanaPartidas());
             }

@@ -41,8 +41,16 @@
           </Key>
           <Property Name="idPalabra" Type="int" Nullable="false" />
           <Property Name="palabra" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="descripcion" Type="text" Nullable="false" />
           <Property Name="idCategoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="palabra_descripcion">
+          <Key>
+            <PropertyRef Name="idPalabra" />
+            <PropertyRef Name="idioma" />
+          </Key>
+          <Property Name="idPalabra" Type="int" Nullable="false" />
+          <Property Name="idioma" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="descripcion" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="partida">
           <Key>
@@ -139,6 +147,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_palabra_descripcion_palabra">
+          <End Role="palabra" Type="Self.palabra" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="palabra_descripcion" Type="Self.palabra_descripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="palabra">
+              <PropertyRef Name="idPalabra" />
+            </Principal>
+            <Dependent Role="palabra_descripcion">
+              <PropertyRef Name="idPalabra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_partida_jugador_dos">
           <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
           <End Role="partida" Type="Self.partida" Multiplicity="*" />
@@ -180,6 +202,7 @@
           <EntitySet Name="historial_puntaje" EntityType="Self.historial_puntaje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="movimiento" EntityType="Self.movimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="palabra" EntityType="Self.palabra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="palabra_descripcion" EntityType="Self.palabra_descripcion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="partida" EntityType="Self.partida" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_historial_puntaje_jugador" Association="Self.FK_historial_puntaje_jugador">
@@ -205,6 +228,10 @@
           <AssociationSet Name="FK_palabra_categoria" Association="Self.FK_palabra_categoria">
             <End Role="categoria" EntitySet="categoria" />
             <End Role="palabra" EntitySet="palabra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_palabra_descripcion_palabra" Association="Self.FK_palabra_descripcion_palabra">
+            <End Role="palabra" EntitySet="palabra" />
+            <End Role="palabra_descripcion" EntitySet="palabra_descripcion" />
           </AssociationSet>
           <AssociationSet Name="FK_partida_jugador_dos" Association="Self.FK_partida_jugador_dos">
             <End Role="usuario" EntitySet="usuario" />
@@ -238,11 +265,11 @@
           </Key>
           <Property Name="idPalabra" Type="Int32" Nullable="false" />
           <Property Name="palabra1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idCategoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="categoria" Relationship="Self.FK_palabra_categoria" FromRole="palabra" ToRole="categoria" />
           <NavigationProperty Name="partida" Relationship="Self.FK_partida_palabra" FromRole="palabra" ToRole="partida" />
           <NavigationProperty Name="historial_puntaje" Relationship="AhorcadoDBModel.FK_historial_puntaje_palabra" FromRole="palabra" ToRole="historial_puntaje" />
+          <NavigationProperty Name="palabra_descripcion" Relationship="AhorcadoDBModel.FK_palabra_descripcion_palabra" FromRole="palabra" ToRole="palabra_descripcion" />
         </EntityType>
         <EntityType Name="partida">
           <Key>
@@ -367,6 +394,11 @@
             <End Role="partida" EntitySet="partida" />
             <End Role="movimiento" EntitySet="movimiento" />
           </AssociationSet>
+          <EntitySet Name="palabra_descripcion" EntityType="AhorcadoDBModel.palabra_descripcion" />
+          <AssociationSet Name="FK_palabra_descripcion_palabra" Association="AhorcadoDBModel.FK_palabra_descripcion_palabra">
+            <End Role="palabra" EntitySet="palabra" />
+            <End Role="palabra_descripcion" EntitySet="palabra_descripcion" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="historial_puntaje">
           <Key>
@@ -455,6 +487,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="palabra_descripcion">
+          <Key>
+            <PropertyRef Name="idPalabra" />
+            <PropertyRef Name="idioma" />
+          </Key>
+          <Property Name="idPalabra" Type="Int32" Nullable="false" />
+          <Property Name="idioma" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="palabra" Relationship="AhorcadoDBModel.FK_palabra_descripcion_palabra" FromRole="palabra_descripcion" ToRole="palabra" />
+        </EntityType>
+        <Association Name="FK_palabra_descripcion_palabra">
+          <End Type="AhorcadoDBModel.palabra" Role="palabra" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AhorcadoDBModel.palabra_descripcion" Role="palabra_descripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="palabra">
+              <PropertyRef Name="idPalabra" />
+            </Principal>
+            <Dependent Role="palabra_descripcion">
+              <PropertyRef Name="idPalabra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -475,7 +531,6 @@
               <MappingFragment StoreEntitySet="palabra">
                 <ScalarProperty Name="idPalabra" ColumnName="idPalabra" />
                 <ScalarProperty Name="palabra1" ColumnName="palabra" />
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -529,6 +584,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="palabra_descripcion">
+            <EntityTypeMapping TypeName="AhorcadoDBModel.palabra_descripcion">
+              <MappingFragment StoreEntitySet="palabra_descripcion">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="idioma" ColumnName="idioma" />
+                <ScalarProperty Name="idPalabra" ColumnName="idPalabra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -543,7 +607,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

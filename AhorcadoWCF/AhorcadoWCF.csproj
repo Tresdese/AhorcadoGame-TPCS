@@ -145,6 +145,9 @@
     <Compile Include="PalabraService.svc.cs">
       <DependentUpon>PalabraService.svc</DependentUpon>
     </Compile>
+    <Compile Include="palabra_descripcion.cs">
+      <DependentUpon>AhorcadoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="partida.cs">
       <DependentUpon>AhorcadoModel.tt</DependentUpon>
     </Compile>

@@ -41,7 +41,7 @@ namespace AhorcadoWCF
         void DesconectarDelLobby(int idUsuario);
 
         [OperationContract(IsOneWay = true)]
-        void UnirseASalaDePartida(int idPartida, int idUsuario);
+        void UnirseASalaDePartida(int idPartida, int idUsuario, string idioma);
 
         [OperationContract(IsOneWay = true)]
         void SalirDeSalaDePartida(int idPartida, int idUsuario);
