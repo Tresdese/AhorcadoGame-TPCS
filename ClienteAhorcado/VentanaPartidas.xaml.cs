@@ -59,9 +59,11 @@ namespace ClienteAhorcado {
             var items = partidas.Select(p => new PartidaItemViewModel {
                 IdPartida = p.IdPartida,
                 Creador = p.NombreCreador,
+                Idioma = p.Idioma == "es"
+                    ? Properties.Resources.Partidas_IdiomaPartidaEspanol
+                    : Properties.Resources.Partidas_IdiomaPartidaIngles,
                 Correo = p.CorreoCreador,
-                Creada = p.FechaCreacion,
-                Idioma = p.Idioma
+                Creada = p.FechaCreacion
             }).ToList();
 
             lvPartidas.ItemsSource = items;
