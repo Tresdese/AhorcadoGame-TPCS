@@ -1249,6 +1249,24 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Español.
+        /// </summary>
+        public static string Partidas_IdiomaPartidaEspanol {
+            get {
+                return ResourceManager.GetString("Partidas_IdiomaPartidaEspanol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inglés.
+        /// </summary>
+        public static string Partidas_IdiomaPartidaIngles {
+            get {
+                return ResourceManager.GetString("Partidas_IdiomaPartidaIngles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Esta partida ya no está disponible. Por favor elige otra..
         /// </summary>
         public static string Partidas_NoDisponibleMensaje {
