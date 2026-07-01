@@ -14,7 +14,7 @@ namespace ClienteAhorcado
     {
         private readonly int _idPartida;
         private readonly string _nombreCreador;
-        private IJuegoCallbackService _canal;
+        private IJuegoService _canal;
 
         private int _intentosRestantes = 6;
         private string[] _letrasOcultas;

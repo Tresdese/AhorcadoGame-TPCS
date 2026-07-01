@@ -13,7 +13,7 @@ namespace ClienteAhorcado
     public partial class VentanaJuegoCreador : Page, IJuegoCallback
     {
         private readonly string _palabra;
-        private IJuegoCallbackService _canal;
+        private IJuegoService _canal;
         private readonly List<TextBlock> casillas = new List<TextBlock>();
 
         public VentanaJuegoCreador(string palabra, string descripcion, string categoria)

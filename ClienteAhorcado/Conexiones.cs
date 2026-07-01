@@ -26,9 +26,9 @@ namespace ClienteAhorcado
 
         public static IMovimientoService Movimiento() => Crear<IMovimientoService>("MovimientoService");
 
-        public static IJuegoCallbackService Juego(InstanceContext contexto)
+        public static IJuegoService Juego(InstanceContext contexto)
         {
-            var fabrica = new DuplexChannelFactory<IJuegoCallbackService>(
+            var fabrica = new DuplexChannelFactory<IJuegoService>(
                 contexto, Binding, Direccion("JuegoCallbackService"));
             return fabrica.CreateChannel();
         }

@@ -32,7 +32,7 @@ namespace AhorcadoWCF
 
     [ServiceContract(CallbackContract = typeof(IJuegoCallback))]
     
-    public interface IJuegoCallbackService
+    public interface IJuegoService
     {
         [OperationContract(IsOneWay = true)]
         void ConectarAlLobby(int idUsuario);

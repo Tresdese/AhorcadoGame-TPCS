@@ -103,7 +103,7 @@ namespace AhorcadoWCF
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
                      ConcurrencyMode = ConcurrencyMode.Multiple)]
-    public class JuegoCallbackService : IJuegoCallbackService
+    public class JuegoCallbackService : IJuegoService
     {
         private readonly UsuarioDAO usuarioDAO = new UsuarioDAO();
         private readonly MovimientoService movimientoService = new MovimientoService();

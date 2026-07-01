@@ -12,7 +12,7 @@ namespace ClienteAhorcado
        
         public static VentanaEsperandoRival VentanaEspera { get; set; }
         public static VentanaEsperandoPalabra VentanaEsperaPalabra { get; set; }
-        public static IJuegoCallbackService ClienteJuego { get; set; }
+        public static IJuegoService ClienteJuego { get; set; }
 
        
         public void PartidaCreada(PartidaDTO partida)
