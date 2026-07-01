@@ -663,4 +663,7 @@
   <data name="RivalAbandono_ErrorReabrir" xml:space="preserve">
     <value>The game could not be reopened. Returning to the lobby.</value>
   </data>
+  <data name="Partidas_ColIdioma" xml:space="preserve">
+    <value>Language</value>
+  </data>
 </root>

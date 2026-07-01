@@ -33,41 +33,6 @@ namespace ClienteAhorcado
         {
             txtNombreRival.Text = _nombreRival;
         }
-
-      
-        private void btnEsperar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var cliente = Conexiones.Partida();
-                bool reabierta = cliente.ReabrirPartida(_idPartida);
-
-                if (!reabierta)
-                {
-                    MessageBox.Show(
-                        Properties.Resources.RivalAbandono_ErrorReabrir,
-                        Properties.Resources.Comun_Error,
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-
-                    Navegacion.Ir(new VentanaPartidas());
-                    Close();
-                    return;
-                }
-
-                Navegacion.Ir(new VentanaEsperandoRival());
-                Close();
-            }
-            catch
-            {
-                MessageBox.Show(
-                    Properties.Resources.Partidas_ErrorConexion,
-                    Properties.Resources.Comun_Error,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-        }
-
         
         private void btnLobby_Click(object sender, RoutedEventArgs e)
         {

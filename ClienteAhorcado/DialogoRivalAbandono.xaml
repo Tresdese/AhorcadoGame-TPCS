@@ -24,13 +24,6 @@
                 <Run Text="{x:Static p:Resources.RivalAbandono_MensajeSufijo}"/>
             </TextBlock>
             <TextBlock Text="{x:Static p:Resources.RivalAbandono_Pregunta}" FontSize="13" Foreground="#555555" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <Button Content="{x:Static p:Resources.RivalAbandono_Esperar}" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Margin="0,0,0,10" Click="btnEsperar_Click">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
             <Button Content="{x:Static p:Resources.Comun_IrAlLobby}" Height="40" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="13" Click="btnLobby_Click">
                 <Button.Resources>
                     <Style TargetType="Border">

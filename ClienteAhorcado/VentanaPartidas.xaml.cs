@@ -34,6 +34,7 @@ namespace ClienteAhorcado {
         private void CargarPartidasDisponibles() {
             try {
                 var cliente = Conexiones.Partida();
+                string idioma = SesionActual.Idioma;
                 var partidas = cliente.ObtenerPartidasDisponibles();
                
                 if (partidas == null) {
@@ -46,13 +47,13 @@ namespace ClienteAhorcado {
                     return;
                 }
          
-                MostrarListaPartidas(partidas);
+                MostrarListaPartidas(partidas, idioma);
             } catch (Exception) {
                 MostrarErrorConexion(); 
             }
         }
 
-        private void MostrarListaPartidas(List<PartidaDTO> partidas) {
+        private void MostrarListaPartidas(List<PartidaDTO> partidas, string idioma) {
             lvPartidas.ItemsSource = null;
             lvPartidas.Items.Clear();
 
@@ -63,7 +64,7 @@ namespace ClienteAhorcado {
                 Creada = p.FechaCreacion
             }).ToList();
 
-            lvPartidas.ItemsSource = items;
+            lvPartidas.ItemsSource = items + idioma;
             lblContadorPartidas.Text = items.Count + " " + Properties.Resources.Partidas_DisponiblesSufijo;
         }
 
