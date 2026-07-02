@@ -36,6 +36,10 @@ namespace ClienteAhorcado
                 "Error",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
+
+            SesionActual.Cerrar();
+            var ventanaLogin = new VentanaIniciarSesion();
+            Navegacion.Ir(ventanaLogin);
         }
     }
 }
