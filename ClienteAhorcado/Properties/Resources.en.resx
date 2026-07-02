@@ -678,4 +678,37 @@
   <data name="RegistrarCuenta_ErrorEdadMaxima" xml:space="preserve">
     <value>Enter a valid date of birth.</value>
   </data>
+  <data name="CambiarContrasena_Paso1" xml:space="preserve">
+    <value>For security, enter your current password to continue.</value>
+  </data>
+  <data name="CambiarContrasena_ContrasenaActual" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="Comun_Continuar" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="CambiarContrasena_Paso2" xml:space="preserve">
+    <value>Enter your new password.</value>
+  </data>
+  <data name="CambiarContrasena_NuevaContrasena" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualVacia" xml:space="preserve">
+    <value>Enter your current password.</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualIncorrecta" xml:space="preserve">
+    <value>The current password is incorrect.</value>
+  </data>
+  <data name="CambiarContrasena_ExitoMensaje" xml:space="preserve">
+    <value>Your password was changed successfully.</value>
+  </data>
+  <data name="Comun_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CambiarContrasena_Titulo" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="CambiarContrasena_ExitoTitulo" xml:space="preserve">
+    <value>Password updated</value>
+  </data>
 </root>

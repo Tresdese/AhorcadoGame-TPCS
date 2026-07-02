@@ -79,16 +79,6 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                            <TextBox Text="" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#DDDDDD" BorderThickness="1" IsReadOnly="True" Background="#F0F0F0">
-                                <TextBox.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Grid.Column="2">
                             <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_FechaNacimiento}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
                             <DatePicker x:Name="dpFechaNacimiento" FontSize="14" Height="40" BorderBrush="#CCCCCC" BorderThickness="1">
                                 <DatePicker.Resources>
@@ -99,14 +89,7 @@
                             </DatePicker>
                             <TextBlock x:Name="lblErrorFecha" Text="{x:Static p:Resources.RegistrarCuenta_ErrorFechaVacia}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
                         </StackPanel>
-                    </Grid>
-                    <Grid Margin="0,15,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
+                        <StackPanel Grid.Column="2">
                             <TextBlock Text="{x:Static p:Resources.RegistrarCuenta_NumeroCelular}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
                             <TextBox x:Name="txtCelular" Text="" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
                                 <TextBox.Resources>
@@ -117,18 +100,14 @@
                             </TextBox>
                             <TextBlock x:Name="lblErrorCelular" Text="{x:Static p:Resources.RegistrarCuenta_ErrorCelularInvalido}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
                         </StackPanel>
-                        <StackPanel Grid.Column="2">
-                            <TextBlock Text="{x:Static p:Resources.EditarPerfil_NuevaContrasena}" FontSize="13" Foreground="#555555" Margin="0,0,0,5"/>
-                            <PasswordBox x:Name="txtContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
-                                <PasswordBox.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </PasswordBox.Resources>
-                            </PasswordBox>
-                            <TextBlock x:Name="lblErrorContrasena" Text="{x:Static p:Resources.EditarPerfil_ErrorContrasenaRequisitos}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
-                        </StackPanel>
                     </Grid>
+                    <Button x:Name="btnCambiarContrasena" Content="{x:Static p:Resources.EditarPerfil_CambiarContrasena}" HorizontalAlignment="Left" Padding="15,8" Margin="0,20,0,0" Background="White" Foreground="#0078D4" BorderBrush="#0078D4" BorderThickness="1" FontSize="13" FontWeight="Bold" Click="btnCambiarContrasena_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,25,0,0">
                         <Button Content="{x:Static p:Resources.Comun_Cancelar}" Padding="15,8" Background="White" Foreground="#333333" BorderBrush="#CCCCCC" BorderThickness="1" FontSize="14" Margin="0,0,10,0" Click="btnCancelar_Click">
                             <Button.Resources>

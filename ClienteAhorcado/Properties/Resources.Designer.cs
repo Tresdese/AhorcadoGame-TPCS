@@ -160,6 +160,87 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña actual.
+        /// </summary>
+        public static string CambiarContrasena_ContrasenaActual {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_ContrasenaActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña actual es incorrecta..
+        /// </summary>
+        public static string CambiarContrasena_ErrorActualIncorrecta {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_ErrorActualIncorrecta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa tu contraseña actual..
+        /// </summary>
+        public static string CambiarContrasena_ErrorActualVacia {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_ErrorActualVacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu contraseña se cambió correctamente..
+        /// </summary>
+        public static string CambiarContrasena_ExitoMensaje {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_ExitoMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña actualizada.
+        /// </summary>
+        public static string CambiarContrasena_ExitoTitulo {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_ExitoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nueva contraseña.
+        /// </summary>
+        public static string CambiarContrasena_NuevaContrasena {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_NuevaContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por seguridad, ingresa tu contraseña actual para continuar..
+        /// </summary>
+        public static string CambiarContrasena_Paso1 {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_Paso1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa tu nueva contraseña..
+        /// </summary>
+        public static string CambiarContrasena_Paso2 {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_Paso2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cambiar contraseña.
+        /// </summary>
+        public static string CambiarContrasena_Titulo {
+            get {
+                return ResourceManager.GetString("CambiarContrasena_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Aceptar.
         /// </summary>
         public static string Comun_Aceptar {
@@ -201,6 +282,15 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_Chat {
             get {
                 return ResourceManager.GetString("Comun_Chat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Continuar.
+        /// </summary>
+        public static string Comun_Continuar {
+            get {
+                return ResourceManager.GetString("Comun_Continuar", resourceCulture);
             }
         }
         
@@ -255,6 +345,15 @@ namespace ClienteAhorcado.Properties {
         public static string Comun_FormatoPuntosPositivos {
             get {
                 return ResourceManager.GetString("Comun_FormatoPuntosPositivos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardar.
+        /// </summary>
+        public static string Comun_Guardar {
+            get {
+                return ResourceManager.GetString("Comun_Guardar", resourceCulture);
             }
         }
         
