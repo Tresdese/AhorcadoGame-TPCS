@@ -652,10 +652,13 @@
     <value>Your opponent left</value>
   </data>
   <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
-    <value> left the game. A penalty will be applied to their account.</value>
+    <value> left the game.</value>
+  </data>
+  <data name="RivalAbandono_Penalizacion" xml:space="preserve">
+    <value> A penalty will be applied to their account.</value>
   </data>
   <data name="RivalAbandono_Pregunta" xml:space="preserve">
-    <value>What would you like to do now?</value>
+    <value>Go back to lobby?</value>
   </data>
   <data name="RivalAbandono_Esperar" xml:space="preserve">
     <value>Wait for another opponent</value>

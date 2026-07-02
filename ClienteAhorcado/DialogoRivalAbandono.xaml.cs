@@ -19,12 +19,14 @@ namespace ClienteAhorcado
     {
         private readonly int _idPartida;
         private readonly string _nombreRival;
+        private readonly bool _penalizado;
 
-        public DialogoRivalAbandono(int idPartida, string nombreRival)
+        public DialogoRivalAbandono(int idPartida, string nombreRival, bool penalizado = true)
         {
             InitializeComponent();
             _idPartida = idPartida;
             _nombreRival = nombreRival;
+            _penalizado = penalizado;
 
             Loaded += DialogoRivalAbandono_Loaded;
         }
@@ -32,6 +34,7 @@ namespace ClienteAhorcado
         private void DialogoRivalAbandono_Loaded(object sender, RoutedEventArgs e)
         {
             txtNombreRival.Text = _nombreRival;
+            if (!_penalizado) txtPenalizacion.Text = "";
         }
         
         private void btnLobby_Click(object sender, RoutedEventArgs e)

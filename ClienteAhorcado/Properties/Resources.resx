@@ -652,10 +652,13 @@
     <value>Tu rival abandonó</value>
   </data>
   <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
-    <value> abandonó la partida. Se le aplicará una penalización por su cuenta.</value>
+    <value> abandonó la partida.</value>
+  </data>
+  <data name="RivalAbandono_Penalizacion" xml:space="preserve">
+    <value> Se le aplicará una penalización por su cuenta.</value>
   </data>
   <data name="RivalAbandono_Pregunta" xml:space="preserve">
-    <value>¿Qué te gustaría hacer ahora?</value>
+    <value>¿Volver al lobby?</value>
   </data>
   <data name="RivalAbandono_Esperar" xml:space="preserve">
     <value>Esperar a otro oponente</value>

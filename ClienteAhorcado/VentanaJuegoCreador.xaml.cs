@@ -144,8 +144,6 @@ namespace ClienteAhorcado
             });
         }
 
-        public void PartidaCreada(PartidaDTO partida) { }
-        public void PartidaRemovidaDelLobby(int idPartida) { }
         public void AdivinadorSeUnio(UsuarioDTO adivinador) { }
         public void PalabraSeleccionada(int longitud, string descripcion, string categoria) { }
 
