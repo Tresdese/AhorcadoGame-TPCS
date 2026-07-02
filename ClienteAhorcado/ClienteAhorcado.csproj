@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CampoContrasena.xaml.cs">
+      <DependentUpon>CampoContrasena.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogoAbandonarPartida.xaml.cs">
       <DependentUpon>DialogoAbandonarPartida.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
     <Compile Include="VentanaRegistrarCuenta.xaml.cs">
       <DependentUpon>VentanaRegistrarCuenta.xaml</DependentUpon>
     </Compile>
+    <Page Include="CampoContrasena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DialogoAbandonarPartida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -265,6 +272,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\ahorcado_completo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ocultar_contrasena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\ver_contrasena.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
