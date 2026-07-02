@@ -103,25 +103,13 @@
                     <StackPanel Grid.Column="0">
                         <TextBlock x:Name="lblContrasena" Text="{x:Static p:Resources.Comun_Contrasena}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
 
-                        <PasswordBox x:Name="txtContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1" PasswordChanged="txtContrasena_PasswordChanged">
-                            <PasswordBox.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </PasswordBox.Resources>
-                        </PasswordBox>
+                        <local:CampoContrasena x:Name="txtContrasena" PasswordChanged="txtContrasena_PasswordChanged"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2">
                         <TextBlock x:Name="lblConfirmar" Text="{x:Static p:Resources.RegistrarCuenta_ConfirmarContrasena}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
 
-                        <PasswordBox x:Name="txtConfirmarContrasena" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
-                            <PasswordBox.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </PasswordBox.Resources>
-                        </PasswordBox>
+                        <local:CampoContrasena x:Name="txtConfirmarContrasena"/>
 
                         <TextBlock x:Name="lblErrorContrasena" Text="{x:Static p:Resources.RegistrarCuenta_ErrorContrasenasNoCoinciden}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
                     </StackPanel>
