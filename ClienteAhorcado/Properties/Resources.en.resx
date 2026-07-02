@@ -259,13 +259,13 @@
     <value>Sign out</value>
   </data>
   <data name="Partidas_ColCreada" xml:space="preserve">
-    <value>CREATED</value>
+    <value>Created</value>
   </data>
   <data name="Partidas_ColCreador" xml:space="preserve">
-    <value>CREATOR</value>
+    <value>Creator</value>
   </data>
   <data name="Partidas_ColJugadores" xml:space="preserve">
-    <value>PLAYERS</value>
+    <value>Players</value>
   </data>
   <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
     <value>Are you sure you want to sign out?</value>
@@ -280,7 +280,7 @@
     <value>· Each game is for 2 players</value>
   </data>
   <data name="Partidas_ErrorConexion" xml:space="preserve">
-    <value>Database connection error, please try again later.</value>
+    <value>Database connection error. The connection will be re-established as soon as it is available.</value>
   </data>
   <data name="Partidas_HistorialPuntajes" xml:space="preserve">
     <value>Score history</value>
@@ -652,10 +652,13 @@
     <value>Your opponent left</value>
   </data>
   <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
-    <value> left the game. A penalty will be applied to their account.</value>
+    <value> left the game.</value>
+  </data>
+  <data name="RivalAbandono_Penalizacion" xml:space="preserve">
+    <value> A penalty will be applied to their account.</value>
   </data>
   <data name="RivalAbandono_Pregunta" xml:space="preserve">
-    <value>What would you like to do now?</value>
+    <value>You will go back to lobby.</value>
   </data>
   <data name="RivalAbandono_Esperar" xml:space="preserve">
     <value>Wait for another opponent</value>
@@ -671,5 +674,47 @@
   </data>
   <data name="Partidas_IdiomaPartidaIngles" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="EditarPerfil_CambiarContrasena" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorEdadMaxima" xml:space="preserve">
+    <value>Enter a valid date of birth.</value>
+  </data>
+  <data name="CambiarContrasena_Paso1" xml:space="preserve">
+    <value>For security, enter your current password to continue.</value>
+  </data>
+  <data name="CambiarContrasena_ContrasenaActual" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="Comun_Continuar" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="CambiarContrasena_Paso2" xml:space="preserve">
+    <value>Enter your new password.</value>
+  </data>
+  <data name="CambiarContrasena_NuevaContrasena" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualVacia" xml:space="preserve">
+    <value>Enter your current password.</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualIncorrecta" xml:space="preserve">
+    <value>The current password is incorrect.</value>
+  </data>
+  <data name="CambiarContrasena_ExitoMensaje" xml:space="preserve">
+    <value>Your password was changed successfully.</value>
+  </data>
+  <data name="Comun_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CambiarContrasena_Titulo" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="CambiarContrasena_ExitoTitulo" xml:space="preserve">
+    <value>Password updated</value>
+  </data>
+  <data name="Historial_BtnAbandono" xml:space="preserve">
+    <value>Opponent left ({0})</value>
   </data>
 </root>

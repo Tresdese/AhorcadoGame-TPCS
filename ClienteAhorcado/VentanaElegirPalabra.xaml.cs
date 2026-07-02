@@ -43,8 +43,9 @@ namespace ClienteAhorcado {
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e) {
-            VentanaPartidas ventana = new VentanaPartidas();
-            Navegacion.Ir(ventana);
+            ManejadorErrores.Ejecutar(() => JuegoCallbackHandler.ClienteJuego?.NotificarAbandono(SesionActual.IdPartida, SesionActual.IdUsuario));
+
+            Navegacion.Ir(new VentanaPartidas());
         }
     }
 }

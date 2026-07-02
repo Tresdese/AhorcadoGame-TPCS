@@ -259,13 +259,13 @@
     <value>Cerrar sesión</value>
   </data>
   <data name="Partidas_ColCreada" xml:space="preserve">
-    <value>CREADA</value>
+    <value>Creada</value>
   </data>
   <data name="Partidas_ColCreador" xml:space="preserve">
-    <value>CREADOR</value>
+    <value>Creador</value>
   </data>
   <data name="Partidas_ColJugadores" xml:space="preserve">
-    <value>JUGADORES</value>
+    <value>Jugadores</value>
   </data>
   <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
     <value>¿Seguro que deseas cerrar sesión?</value>
@@ -280,7 +280,7 @@
     <value>· Cada partida es de 2 jugadores</value>
   </data>
   <data name="Partidas_ErrorConexion" xml:space="preserve">
-    <value>Error de conexión con base de datos, inténtelo más tarde.</value>
+    <value>Error de conexión con base de datos. La conexión se reestablecerá en cuanto esté disponible.</value>
   </data>
   <data name="Partidas_HistorialPuntajes" xml:space="preserve">
     <value>Historial de puntajes</value>
@@ -652,10 +652,13 @@
     <value>Tu rival abandonó</value>
   </data>
   <data name="RivalAbandono_MensajeSufijo" xml:space="preserve">
-    <value> abandonó la partida. Se le aplicará una penalización por su cuenta.</value>
+    <value> abandonó la partida.</value>
+  </data>
+  <data name="RivalAbandono_Penalizacion" xml:space="preserve">
+    <value> Se le aplicará una penalización por su cuenta.</value>
   </data>
   <data name="RivalAbandono_Pregunta" xml:space="preserve">
-    <value>¿Qué te gustaría hacer ahora?</value>
+    <value>Volverás al lobby.</value>
   </data>
   <data name="RivalAbandono_Esperar" xml:space="preserve">
     <value>Esperar a otro oponente</value>
@@ -671,5 +674,47 @@
   </data>
   <data name="Partidas_IdiomaPartidaIngles" xml:space="preserve">
     <value>Inglés</value>
+  </data>
+  <data name="EditarPerfil_CambiarContrasena" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="RegistrarCuenta_ErrorEdadMaxima" xml:space="preserve">
+    <value>Ingresa una fecha de nacimiento válida.</value>
+  </data>
+  <data name="CambiarContrasena_Paso1" xml:space="preserve">
+    <value>Por seguridad, ingresa tu contraseña actual para continuar.</value>
+  </data>
+  <data name="CambiarContrasena_ContrasenaActual" xml:space="preserve">
+    <value>Contraseña actual</value>
+  </data>
+  <data name="Comun_Continuar" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="CambiarContrasena_Paso2" xml:space="preserve">
+    <value>Ingresa tu nueva contraseña.</value>
+  </data>
+  <data name="CambiarContrasena_NuevaContrasena" xml:space="preserve">
+    <value>Nueva contraseña</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualVacia" xml:space="preserve">
+    <value>Ingresa tu contraseña actual.</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualIncorrecta" xml:space="preserve">
+    <value>La contraseña actual es incorrecta.</value>
+  </data>
+  <data name="CambiarContrasena_ExitoMensaje" xml:space="preserve">
+    <value>Tu contraseña se cambió correctamente.</value>
+  </data>
+  <data name="Comun_Guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="CambiarContrasena_Titulo" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="CambiarContrasena_ExitoTitulo" xml:space="preserve">
+    <value>Contraseña actualizada</value>
+  </data>
+  <data name="Historial_BtnAbandono" xml:space="preserve">
+    <value>Rival abandonó ({0})</value>
   </data>
 </root>

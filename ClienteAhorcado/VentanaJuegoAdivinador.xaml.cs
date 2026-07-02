@@ -14,7 +14,7 @@ namespace ClienteAhorcado
     {
         private readonly int _idPartida;
         private readonly string _nombreCreador;
-        private IJuegoCallbackService _canal;
+        private IJuegoService _canal;
 
         private int _intentosRestantes = 6;
         private string[] _letrasOcultas;
@@ -190,8 +190,6 @@ namespace ClienteAhorcado
             });
         }
 
-        public void PartidaCreada(PartidaDTO partida) { }
-        public void PartidaRemovidaDelLobby(int idPartida) { }
         public void AdivinadorSeUnio(UsuarioDTO adivinador) { }
         public void PalabraSeleccionada(int longitud, string descripcion, string categoria) { }
 

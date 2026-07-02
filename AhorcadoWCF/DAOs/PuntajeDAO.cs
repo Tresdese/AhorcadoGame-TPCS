@@ -10,6 +10,7 @@ namespace AhorcadoWCF.DAOs
         private const string TipoPartidaGanada = "Ganada";
         private const string TipoRivalNoPudo = "RivalNoPudo";
         private const string TipoPenalizacion = "Penalizacion";
+        private const string TipoPartidaAbandono = "PartidaAbandono";
 
         public bool Registrar(int idUsuario, int idPartida, int idPalabra, string tipoPuntaje, int puntos, int idJugadorRival)
         {
@@ -67,6 +68,15 @@ namespace AhorcadoWCF.DAOs
             {
                 return contexto.historial_puntaje
                     .Count(h => h.idJugador == idUsuario && h.tipoPuntaje == TipoPenalizacion);
+            }
+        }
+
+        public int ObtenerPartidasAbandono(int idUsuario)
+        {
+            using (var contexto = new AhorcadoDBEntities())
+            {
+                return contexto.historial_puntaje
+                    .Count(h => h.idJugador == idUsuario && h.tipoPuntaje == TipoPartidaAbandono);
             }
         }
 

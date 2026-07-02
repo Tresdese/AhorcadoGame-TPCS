@@ -39,7 +39,6 @@ namespace ClienteAhorcado {
             }
 
             txtNombre.Text = usuario.Nombre;
-            txtCorreo.Text = usuario.Correo;
             txtCelular.Text = usuario.Telefono;
             txtFechaNacimiento.Text = usuario.FechaNacimiento.ToString("dd/MM/yyyy",
                 System.Globalization.CultureInfo.InvariantCulture);
@@ -64,6 +63,25 @@ namespace ClienteAhorcado {
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaPartidas ventanaPartidas = new VentanaPartidas();
             Navegacion.Ir(ventanaPartidas);
+        }
+
+        private void btnUsuario_Click(object sender, RoutedEventArgs e) {
+            menuUsuario.PlacementTarget = btnUsuario;
+            menuUsuario.IsOpen = true;
+        }
+
+        private void mnuCerrarSesion_Click(object sender, RoutedEventArgs e) {
+            var respuesta = MessageBox.Show(
+                Properties.Resources.Partidas_ConfirmarCerrarMensaje,
+                Properties.Resources.Partidas_CerrarSesion,
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (respuesta == MessageBoxResult.Yes) {
+                SesionActual.Cerrar();
+                var ventanaLogin = new VentanaIniciarSesion();
+                Navegacion.Ir(ventanaLogin);
+            }
         }
 
         private void btnEditarPerfil_Click(object sender, RoutedEventArgs e) {

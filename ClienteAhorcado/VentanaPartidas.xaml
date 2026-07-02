@@ -57,7 +57,10 @@
                     </StackPanel>
                 </Border>
                 <Border Background="#F5F5F5" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="15" Padding="10,5" Margin="0,0,15,0">
-                    <TextBlock x:Name="lblPuntaje" Text="{x:Static p:Resources.Partidas_PuntajePrefijo}" FontSize="13" Foreground="#333333"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="lblPuntaje" Text="{x:Static p:Resources.Partidas_PuntajePrefijo}" FontSize="13" Foreground="#333333"/>
+                        <TextBlock x:Name="txtValorPuntaje" Text="" FontSize="13" FontWeight="Bold" Foreground="#333333" Margin="5,0,0,0"/>
+                    </StackPanel>
                 </Border>
                 <TextBlock Text="{x:Static p:Resources.Partidas_DosJugadores}" FontSize="13" Foreground="#888888" VerticalAlignment="Center"/>
             </StackPanel>

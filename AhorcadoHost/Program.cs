@@ -30,7 +30,7 @@ namespace AhorcadoHost
                 Abrir<PuntajeService, IPuntajeService>(binding, baseUri, "PuntajeService"),
                 Abrir<PalabraService, IPalabraService>(binding, baseUri, "PalabraService"),
                 Abrir<MovimientoService, IMovimientoService>(binding, baseUri, "MovimientoService"),
-                Abrir<JuegoCallbackService, IJuegoCallbackService>(binding, baseUri, "JuegoCallbackService"),
+                Abrir<JuegoCallbackService, IJuegoService>(binding, baseUri, "JuegoCallbackService"),
             };
 
             Console.WriteLine("Servidor del Ahorcado escuchando en:");

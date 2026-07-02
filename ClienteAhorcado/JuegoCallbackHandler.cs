@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ClienteAhorcado
 {
@@ -12,20 +13,7 @@ namespace ClienteAhorcado
        
         public static VentanaEsperandoRival VentanaEspera { get; set; }
         public static VentanaEsperandoPalabra VentanaEsperaPalabra { get; set; }
-        public static IJuegoCallbackService ClienteJuego { get; set; }
-
-       
-        public void PartidaCreada(PartidaDTO partida)
-        {
-           
-        }
-
-        
-        public void PartidaRemovidaDelLobby(int idPartida)
-        {
-            
-        }
-
+        public static IJuegoService ClienteJuego { get; set; }
         
         public void AdivinadorSeUnio(UsuarioDTO adivinador)
         {
@@ -43,7 +31,16 @@ namespace ClienteAhorcado
 
         public void MensajeChatRecibido(string remitente, string mensaje) { }
 
-        public void RivalAbandono(string nombreRival) { }
+        public void RivalAbandono(string nombreRival) { 
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                VentanaEspera = null;
+                VentanaEsperaPalabra = null;
+                var dialogo = new DialogoRivalAbandono(SesionActual.IdPartida, nombreRival, penalizado: false);
+                dialogo.Owner = Application.Current.MainWindow;
+                dialogo.ShowDialog();
+            });
+        }
 
         public void PartidaFinalizada(string resultado, string palabra, int puntosObtenidos, int puntajeGlobal) { }
     }
