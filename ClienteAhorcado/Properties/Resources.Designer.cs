@@ -385,6 +385,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cambiar contraseña.
+        /// </summary>
+        public static string EditarPerfil_CambiarContrasena {
+            get {
+                return ResourceManager.GetString("EditarPerfil_CambiarContrasena", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to EDITANDO.
         /// </summary>
         public static string EditarPerfil_Editando {

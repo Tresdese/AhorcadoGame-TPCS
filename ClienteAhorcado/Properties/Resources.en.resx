@@ -675,4 +675,7 @@
   <data name="Partidas_IdiomaPartidaIngles" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="EditarPerfil_CambiarContrasena" xml:space="preserve">
+    <value>Change password</value>
+  </data>
 </root>
