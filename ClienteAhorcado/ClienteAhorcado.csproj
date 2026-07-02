@@ -89,6 +89,11 @@
     <Compile Include="HistorialItemViewModel.cs" />
     <Compile Include="JuegoCallbackHandler.cs" />
     <Compile Include="PartidaItemViewModel.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="VentanaBienvenida.xaml.cs">
       <DependentUpon>VentanaBienvenida.xaml</DependentUpon>
     </Compile>

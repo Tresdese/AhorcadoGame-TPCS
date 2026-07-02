@@ -28,8 +28,9 @@ namespace ClienteAhorcado {
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
-            VentanaPartidas ventana = new VentanaPartidas();
-            Navegacion.Ir(ventana);
+            JuegoCallbackHandler.VentanaEsperaPalabra = null;
+            ManejadorErrores.Ejecutar(() => JuegoCallbackHandler.ClienteJuego.NotificarAbandono(SesionActual.IdPartida, SesionActual.IdUsuario));
+            Navegacion.Ir(new VentanaPartidas());
         }
     }
 }
