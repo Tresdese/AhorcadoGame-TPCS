@@ -862,6 +862,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Rival abandonó ({0}).
+        /// </summary>
+        public static string Historial_BtnAbandono {
+            get {
+                return ResourceManager.GetString("Historial_BtnAbandono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Partidas ganadas ({0}).
         /// </summary>
         public static string Historial_BtnGanadas {

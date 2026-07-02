@@ -211,6 +211,8 @@ namespace AhorcadoWCF
             {
                 int rival = idUsuario == ronda.IdAdivinador ? ronda.IdCreador : ronda.IdAdivinador;
                 puntajeDAO.Registrar(idUsuario, idPartida, ronda.IdPalabra, "Penalizacion", -PuntosPenalizacion, rival);
+
+                puntajeDAO.Registrar(rival, idPartida, ronda.IdPalabra, "PartidaAbandono", 0, idUsuario);
             }
 
             partidaDAO.Abandonar(idPartida, idUsuario);

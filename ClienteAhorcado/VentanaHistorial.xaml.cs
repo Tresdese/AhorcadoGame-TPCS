@@ -55,17 +55,20 @@ namespace ClienteAhorcado
                 int partidasGanadas = cliente.ObtenerPartidasGanadas(SesionActual.IdUsuario);
                 int rivalNoPudo = cliente.ObtenerPartidasRivalNoPudo(SesionActual.IdUsuario);
                 int penalizaciones = cliente.ObtenerPenalizaciones(SesionActual.IdUsuario);
+                int abandonos = cliente.ObtenerPartidasAbandono(SesionActual.IdUsuario);
 
-               
+
                 txtPuntajeGlobal.Text = puntajeGlobal.ToString();
                 txtGanadas.Text = partidasGanadas.ToString();
                 txtRivalNoPudo.Text = rivalNoPudo.ToString();
                 txtPenalizaciones.Text = penalizaciones.ToString();
+                txtAbandonos.Text = abandonos.ToString();
 
-                
+
                 btnGanadas.Content = string.Format(Properties.Resources.Historial_BtnGanadas, partidasGanadas);
                 btnRival.Content = string.Format(Properties.Resources.Historial_BtnRival, rivalNoPudo);
                 btnPenalizaciones.Content = string.Format(Properties.Resources.Historial_BtnPenalizaciones, penalizaciones);
+                btnAbandono.Content = string.Format(Properties.Resources.Historial_BtnAbandono, abandonos);
             }
             catch (Exception)
             {
@@ -97,6 +100,9 @@ namespace ClienteAhorcado
                         break;
                     default:
                         registros = new List<PuntajeHistorialDTO>();
+                        break;
+                    case "Abandono":
+                        registros = cliente.ObtenerHistorialPorTipo(SesionActual.IdUsuario, "PartidaAbandono");
                         break;
                 }
 
@@ -136,7 +142,7 @@ namespace ClienteAhorcado
                 Puntos = filtro == "Penalizaciones"
                             ? string.Format(Properties.Resources.Historial_PuntosPerdidos, r.Puntos)
                             : string.Format(Properties.Resources.Historial_PuntosGanados, r.Puntos),
-                Color = filtro == "Penalizaciones" ? "Red" : "Green"
+                Color = filtro == "Penalizaciones" ? "Red" : (filtro == "Abandono" ? "DarkOrange" : "Green")
             }).ToList();
 
             lvHistorial.ItemsSource = items;
@@ -206,6 +212,10 @@ namespace ClienteAhorcado
                     colPalabra.Text = Properties.Resources.Historial_ColPalabraPenal;
                     colRival.Text = Properties.Resources.Historial_ColRivalPenal;
                     break;
+                case "Abandono":                   
+                    colPalabra.Text = Properties.Resources.Historial_ColPalabraPenal;
+                    colRival.Text = Properties.Resources.Historial_ColRivalPenal;
+                    break;
             }
         }
 
@@ -218,6 +228,9 @@ namespace ClienteAhorcado
 
         private void btnPenalizaciones_Click(object sender, RoutedEventArgs e)
             => CargarHistorial("Penalizaciones");
+
+        private void btnAbandono_Click(object sender, RoutedEventArgs e)
+            => CargarHistorial("Abandono");
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
