@@ -678,4 +678,40 @@
   <data name="EditarPerfil_CambiarContrasena" xml:space="preserve">
     <value>Cambiar contraseña</value>
   </data>
+  <data name="RegistrarCuenta_ErrorEdadMaxima" xml:space="preserve">
+    <value>Ingresa una fecha de nacimiento válida.</value>
+  </data>
+  <data name="CambiarContrasena_Paso1" xml:space="preserve">
+    <value>Por seguridad, ingresa tu contraseña actual para continuar.</value>
+  </data>
+  <data name="CambiarContrasena_ContrasenaActual" xml:space="preserve">
+    <value>Contraseña actual</value>
+  </data>
+  <data name="Comun_Continuar" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="CambiarContrasena_Paso2" xml:space="preserve">
+    <value>Ingresa tu nueva contraseña.</value>
+  </data>
+  <data name="CambiarContrasena_NuevaContrasena" xml:space="preserve">
+    <value>Nueva contraseña</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualVacia" xml:space="preserve">
+    <value>Ingresa tu contraseña actual.</value>
+  </data>
+  <data name="CambiarContrasena_ErrorActualIncorrecta" xml:space="preserve">
+    <value>La contraseña actual es incorrecta.</value>
+  </data>
+  <data name="CambiarContrasena_ExitoMensaje" xml:space="preserve">
+    <value>Tu contraseña se cambió correctamente.</value>
+  </data>
+  <data name="Comun_Guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="CambiarContrasena_Titulo" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="CambiarContrasena_ExitoTitulo" xml:space="preserve">
+    <value>Contraseña actualizada</value>
+  </data>
 </root>

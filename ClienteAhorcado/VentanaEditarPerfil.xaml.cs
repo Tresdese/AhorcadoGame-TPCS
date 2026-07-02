@@ -1,29 +1,28 @@
 ﻿using AhorcadoWCF;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
     public partial class VentanaEditarPerfil : Page {
         public VentanaEditarPerfil() {
             InitializeComponent();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
+            ConfigurarRangoFechas();
             CargarDatosActuales();
         }
 
         private void btnIdioma_Click(object sender, RoutedEventArgs e) {
             string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
             GestorIdioma.Cambiar(nuevo);
+        }
+
+        private void ConfigurarRangoFechas() {
+            DateTime hoy = DateTime.Today;
+            dpFechaNacimiento.DisplayDateEnd = hoy.AddYears(-10);
+            dpFechaNacimiento.DisplayDateStart = hoy.AddYears(-120);
+            dpFechaNacimiento.DisplayDate = hoy.AddYears(-10);
         }
 
         private void CargarDatosActuales() {
@@ -52,6 +51,12 @@ namespace ClienteAhorcado {
             Navegacion.Ir(ventanaPerfil);
         }
 
+        private void btnCambiarContrasena_Click(object sender, RoutedEventArgs e) {
+            var dialogo = new DialogoCambiarContrasena();
+            dialogo.Owner = Window.GetWindow(this);
+            dialogo.ShowDialog();
+        }
+
         private void btnCancelar_Click(object sender, RoutedEventArgs e) {
             VentanaPerfil ventanaPerfil = new VentanaPerfil();
             Navegacion.Ir(ventanaPerfil);
@@ -61,12 +66,10 @@ namespace ClienteAhorcado {
             lblErrorNombre.Visibility = Visibility.Collapsed;
             lblErrorFecha.Visibility = Visibility.Collapsed;
             lblErrorCelular.Visibility = Visibility.Collapsed;
-            lblErrorContrasena.Visibility = Visibility.Collapsed;
 
             string nombre = txtNombre.Text.Trim();
             DateTime? fechaNacimiento = dpFechaNacimiento.SelectedDate;
             string celular = txtCelular.Text.Trim();
-            string nuevaContrasena = txtContrasena.Password;
 
             bool hayError = false;
 
@@ -79,8 +82,12 @@ namespace ClienteAhorcado {
                 lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorFechaVacia;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
-            } else if (!TieneAlMenos10Anios(fechaNacimiento.Value)) {
+            } else if (!EdadMinimaPermitida(fechaNacimiento.Value)) {
                 lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMinima;
+                lblErrorFecha.Visibility = Visibility.Visible;
+                hayError = true;
+            } else if (!EdadMaximaPermitida(fechaNacimiento.Value)) {
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMaxima;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             }
@@ -88,12 +95,6 @@ namespace ClienteAhorcado {
             if (string.IsNullOrWhiteSpace(celular) || !CelularEsValido(celular)) {
                 lblErrorCelular.Text = Properties.Resources.RegistrarCuenta_ErrorCelularInvalido;
                 lblErrorCelular.Visibility = Visibility.Visible;
-                hayError = true;
-            }
-
-            if (!string.IsNullOrWhiteSpace(nuevaContrasena) && !ContrasenaCumpleRequisitos(nuevaContrasena)) {
-                lblErrorContrasena.Text = Properties.Resources.EditarPerfil_ErrorContrasenaRequisitos;
-                lblErrorContrasena.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
@@ -113,13 +114,6 @@ namespace ClienteAhorcado {
                 return;
             }
 
-            if (!string.IsNullOrWhiteSpace(nuevaContrasena)) {
-                bool contrasenaCambiada = false;
-                if (!ManejadorErrores.Ejecutar(() => { contrasenaCambiada = Conexiones.Usuario().CambiarContrasena(SesionActual.IdUsuario, nuevaContrasena); })) {
-                    return;
-                }
-            }
-
             if (actualizado) {
                 SesionActual.Nombre = nombre;
                 MessageBox.Show(
@@ -131,7 +125,7 @@ namespace ClienteAhorcado {
             }
         }
 
-        private bool TieneAlMenos10Anios(DateTime fechaNacimiento) {
+        private bool EdadMinimaPermitida(DateTime fechaNacimiento) {
             DateTime hoy = DateTime.Today;
             int edad = hoy.Year - fechaNacimiento.Year;
             if (fechaNacimiento.Date > hoy.AddYears(-edad)) {
@@ -140,16 +134,18 @@ namespace ClienteAhorcado {
             return edad >= 10;
         }
 
+        private bool EdadMaximaPermitida(DateTime fechaNacimiento) {
+            DateTime hoy = DateTime.Today;
+            int edad = hoy.Year - fechaNacimiento.Year;
+            if (fechaNacimiento.Date > hoy.AddYears(-edad)) {
+                edad--;
+            }
+            return edad <= 120;
+        }
+
         private bool CelularEsValido(string celular) {
             string soloDigitos = celular.Replace("+", "").Replace(" ", "").Replace("-", "");
             return soloDigitos.All(c => char.IsDigit(c)) && soloDigitos.Length >= 10 && soloDigitos.Length <= 15;
-        }
-
-        private bool ContrasenaCumpleRequisitos(string contrasena) {
-            return contrasena.Length >= 8
-                && contrasena.Any(c => char.IsUpper(c))
-                && contrasena.Any(c => char.IsLower(c))
-                && contrasena.Any(c => char.IsDigit(c));
         }
     }
 }

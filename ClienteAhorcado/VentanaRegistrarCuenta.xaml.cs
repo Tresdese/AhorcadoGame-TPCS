@@ -18,8 +18,17 @@ namespace ClienteAhorcado {
     public partial class VentanaRegistrarCuenta : Page {
         public VentanaRegistrarCuenta() {
             InitializeComponent();
+            ConfigurarRangoFechas();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
         }
+
+        private void ConfigurarRangoFechas() {
+            DateTime hoy = DateTime.Today;
+            dpFechaNacimiento.DisplayDateEnd = hoy.AddYears(-10);
+            dpFechaNacimiento.DisplayDateStart = hoy.AddYears(-120);
+            dpFechaNacimiento.DisplayDate = hoy.AddYears(-10);
+        }
+
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {
             VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
@@ -81,8 +90,12 @@ namespace ClienteAhorcado {
                 lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorFechaVacia;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
-            } else if (!TieneAlMenos10Anios(fechaNacimiento.Value)) {
+            } else if (!EdadMinimaPermitida(fechaNacimiento.Value)) {
                 lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMinima;
+                lblErrorFecha.Visibility = Visibility.Visible;
+                hayError = true;
+            } else if (!EdadMaximaPermitida(fechaNacimiento.Value)) {
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMaxima;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             }
@@ -144,13 +157,22 @@ namespace ClienteAhorcado {
             return soloDigitos.All(c => char.IsDigit(c)) && soloDigitos.Length >= 10 && soloDigitos.Length <= 15;
         }
 
-        private bool TieneAlMenos10Anios(DateTime fechaNacimiento) {
+        private bool EdadMinimaPermitida(DateTime fechaNacimiento) {
             DateTime hoy = DateTime.Today;
             int edad = hoy.Year - fechaNacimiento.Year;
             if (fechaNacimiento.Date > hoy.AddYears(-edad)) {
                 edad--;
             }
             return edad >= 10;
+        }
+
+        private bool EdadMaximaPermitida(DateTime fechaNacimiento) {
+            DateTime hoy = DateTime.Today;
+            int edad = hoy.Year - fechaNacimiento.Year;
+            if (fechaNacimiento.Date > hoy.AddYears(-edad)) {
+                edad--;
+            }
+            return edad <= 120;
         }
 
         private bool ContrasenaCumpleRequisitos(string contrasena) {
