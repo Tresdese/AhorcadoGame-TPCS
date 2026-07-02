@@ -8,25 +8,30 @@ namespace ClienteAhorcado
     {
         public static bool Ejecutar(Action accion)
         {
+            bool resultado = false;
             try
             {
                 accion();
-                return true;
+                resultado = true;
             }
-            catch (EndpointNotFoundException) { MostrarEX01(); return false; }
-            catch (CommunicationException) { MostrarEX01(); return false; }
-            catch (TimeoutException) { MostrarEX01(); return false; }
+            catch (EndpointNotFoundException) { MostrarEX01(); resultado = false; }
+            catch (CommunicationException) { MostrarEX01(); resultado = false; }
+            catch (TimeoutException) { MostrarEX01(); resultado = false; }
+            return resultado;
         }
 
         public static T Ejecutar<T>(Func<T> funcion, T valorPorDefecto = default)
         {
+
+            T resultado = default;
             try
             {
                 return funcion();
             }
-            catch (EndpointNotFoundException) { MostrarEX01(); return valorPorDefecto; }
-            catch (CommunicationException) { MostrarEX01(); return valorPorDefecto; }
-            catch (TimeoutException) { MostrarEX01(); return valorPorDefecto; }
+            catch (EndpointNotFoundException) { MostrarEX01(); resultado = valorPorDefecto; }
+            catch (CommunicationException) { MostrarEX01(); resultado = valorPorDefecto; }
+            catch (TimeoutException) { MostrarEX01(); resultado = valorPorDefecto; }
+            return resultado;
         }
 
         private static void MostrarEX01()

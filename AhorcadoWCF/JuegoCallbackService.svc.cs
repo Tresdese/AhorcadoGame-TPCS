@@ -60,14 +60,17 @@ namespace AhorcadoWCF
             }
         }
 
-        public static void SalirDeSalaSi(int idPartida, int idUsuario, IJuegoCallback callback)
+        public static bool SalirDeSalaSi(int idPartida, int idUsuario, IJuegoCallback callback)
         {
+            bool result = false;
             if (Salas.TryGetValue(idPartida, out var sala) &&
                 sala.TryGetValue(idUsuario, out var actual) &&
                 ReferenceEquals(actual, callback))
             {
                 SalirDeSala(idPartida, idUsuario);
+                result = true;
             }
+            return result;
         }
 
         public static void NotificarSala(int idPartida, Action<IJuegoCallback> accion, int? excepto = null)
@@ -118,7 +121,19 @@ namespace AhorcadoWCF
             EventHandler limpiar = null;
             limpiar = (s, e) =>
             {
-                RegistroSesiones.SalirDeSalaSi(idPartida, idUsuario, callback);
+                bool eraCanalActivo = RegistroSesiones.SalirDeSalaSi(idPartida, idUsuario, callback);
+                if (eraCanalActivo)
+                {
+                    try
+                    {
+                        string estado = partidaDAO.ObtenerEstado(idPartida).Estado;
+                        if (estado == "Disponible")
+                            partidaDAO.Cancelar(idPartida);
+                        else if (estado == "EnCurso")
+                            NotificarAbandono(idPartida, idUsuario);
+                    }
+                    catch { }
+                }
                 canal.Closed -= limpiar;
                 canal.Faulted -= limpiar;
             };

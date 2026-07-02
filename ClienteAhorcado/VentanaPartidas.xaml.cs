@@ -125,7 +125,7 @@ namespace ClienteAhorcado {
 
             if (item == null) return;
 
-            try {
+            ManejadorErrores.Ejecutar(() => {
                 var clientePartida = Conexiones.Partida();
                 bool sigueDisponible = clientePartida.VerificarDisponibilidadPartida(item.IdPartida);
 
@@ -135,7 +135,7 @@ namespace ClienteAhorcado {
                         Properties.Resources.Partidas_NoDisponibleTitulo,
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
-                    
+
                     CargarPartidasDisponibles();
                     return;
                 }
@@ -157,15 +157,8 @@ namespace ClienteAhorcado {
 
                 JuegoCallbackHandler.ClienteJuego.UnirseASalaDePartida(item.IdPartida, SesionActual.IdUsuario, SesionActual.Idioma);
 
-                var ventanaEspera = new VentanaEsperandoPalabra(item.IdPartida, item.Creador);
-                Navegacion.Ir(ventanaEspera);
-            } catch (Exception) {
-                MessageBox.Show(
-                    "Error de conexión con base de datos, inténtelo más tarde.",
-                    "Error",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
+                Navegacion.Ir(new VentanaEsperandoPalabra(item.IdPartida, item.Creador));
+            });
         }
       
         private void btnUsuario_Click(object sender, RoutedEventArgs e) {
