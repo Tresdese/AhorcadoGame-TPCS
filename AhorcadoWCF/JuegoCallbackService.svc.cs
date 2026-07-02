@@ -19,9 +19,6 @@ namespace AhorcadoWCF
 
     public static class RegistroSesiones
     {
-        public static readonly ConcurrentDictionary<int, IJuegoCallback> Lobby =
-            new ConcurrentDictionary<int, IJuegoCallback>();
-
         public static readonly ConcurrentDictionary<int, ConcurrentDictionary<int, IJuegoCallback>> Salas =
             new ConcurrentDictionary<int, ConcurrentDictionary<int, IJuegoCallback>>();
 
@@ -46,12 +43,6 @@ namespace AhorcadoWCF
                 IdCreador = idCreador,
                 IdPalabra = idPalabra
             };
-
-        public static void AgregarAlLobby(int idUsuario, IJuegoCallback callback) =>
-            Lobby[idUsuario] = callback;
-
-        public static void QuitarDelLobby(int idUsuario) =>
-            Lobby.TryRemove(idUsuario, out _);
 
         public static void UnirASala(int idPartida, int idUsuario, IJuegoCallback callback) =>
             Salas.GetOrAdd(idPartida, _ => new ConcurrentDictionary<int, IJuegoCallback>())[idUsuario] = callback;
@@ -115,12 +106,6 @@ namespace AhorcadoWCF
 
         private static IJuegoCallback CanalActual() =>
             OperationContext.Current.GetCallbackChannel<IJuegoCallback>();
-
-        public void ConectarAlLobby(int idUsuario) =>
-            RegistroSesiones.AgregarAlLobby(idUsuario, CanalActual());
-
-        public void DesconectarDelLobby(int idUsuario) =>
-            RegistroSesiones.QuitarDelLobby(idUsuario);
 
         public void UnirseASalaDePartida(int idPartida, int idUsuario, string idioma)
         {
@@ -227,6 +212,7 @@ namespace AhorcadoWCF
                 int rival = idUsuario == ronda.IdAdivinador ? ronda.IdCreador : ronda.IdAdivinador;
                 puntajeDAO.Registrar(idUsuario, idPartida, ronda.IdPalabra, "Penalizacion", -PuntosPenalizacion, rival);
             }
+
             partidaDAO.Abandonar(idPartida, idUsuario);
 
             RegistroSesiones.NotificarSala(idPartida,

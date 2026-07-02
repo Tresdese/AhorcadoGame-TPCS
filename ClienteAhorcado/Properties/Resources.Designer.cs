@@ -1706,9 +1706,15 @@ namespace ClienteAhorcado.Properties {
                 return ResourceManager.GetString("RivalAbandono_MensajeSufijo", resourceCulture);
             }
         }
+
+        public static string RivalAbandono_Penalizacion {
+            get {
+                return ResourceManager.GetString("RivalAbandono_Penalizacion", resourceCulture);
+            }
+        }
         
         /// <summary>
-        ///   Looks up a localized string similar to ¿Qué te gustaría hacer ahora?.
+        ///   Looks up a localized string similar to ¿Volver al lobby?.
         /// </summary>
         public static string RivalAbandono_Pregunta {
             get {

@@ -6,12 +6,6 @@ namespace AhorcadoWCF
     public interface IJuegoCallback
     {
         [OperationContract(IsOneWay = true)]
-        void PartidaCreada(PartidaDTO partida);
-
-        [OperationContract(IsOneWay = true)]
-        void PartidaRemovidaDelLobby(int idPartida);
-
-        [OperationContract(IsOneWay = true)]
         void AdivinadorSeUnio(UsuarioDTO adivinador);
 
         [OperationContract(IsOneWay = true)]
@@ -34,12 +28,6 @@ namespace AhorcadoWCF
     
     public interface IJuegoService
     {
-        [OperationContract(IsOneWay = true)]
-        void ConectarAlLobby(int idUsuario);
-
-        [OperationContract(IsOneWay = true)]
-        void DesconectarDelLobby(int idUsuario);
-
         [OperationContract(IsOneWay = true)]
         void UnirseASalaDePartida(int idPartida, int idUsuario, string idioma);
 
