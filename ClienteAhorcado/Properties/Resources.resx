@@ -714,4 +714,7 @@
   <data name="CambiarContrasena_ExitoTitulo" xml:space="preserve">
     <value>Contraseña actualizada</value>
   </data>
+  <data name="Historial_BtnAbandono" xml:space="preserve">
+    <value>Rival abandonó ({0})</value>
+  </data>
 </root>

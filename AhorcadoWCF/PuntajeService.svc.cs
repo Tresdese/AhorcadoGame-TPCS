@@ -32,6 +32,11 @@ namespace AhorcadoWCF
             return puntajeDAO.ObtenerPenalizaciones(idUsuario);
         }
 
+        public int ObtenerPartidasAbandono(int idUsuario)
+        {
+            return puntajeDAO.ObtenerPartidasAbandono(idUsuario);
+        }
+
         public bool RegistrarPuntaje(int idUsuario, int idPartida, int idPalabra, string tipoPuntaje, int puntos, int idJugadorRival)
         {
             return puntajeDAO.Registrar(idUsuario, idPartida, idPalabra, tipoPuntaje, puntos, idJugadorRival);

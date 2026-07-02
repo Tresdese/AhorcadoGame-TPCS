@@ -49,7 +49,7 @@
                 </StackPanel>
             </Border>
             
-            <Button Content="{x:Static p:Resources.Comun_IrAlLobby}" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnLobby_Click">
+            <Button Content="Ir a la pantalla de inicio" Height="40" Background="#0078D4" Foreground="White" BorderThickness="0" FontSize="13" FontWeight="Bold" Click="btnLobby_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

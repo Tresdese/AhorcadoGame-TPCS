@@ -714,4 +714,7 @@
   <data name="CambiarContrasena_ExitoTitulo" xml:space="preserve">
     <value>Password updated</value>
   </data>
+  <data name="Historial_BtnAbandono" xml:space="preserve">
+    <value>Opponent left ({0})</value>
+  </data>
 </root>

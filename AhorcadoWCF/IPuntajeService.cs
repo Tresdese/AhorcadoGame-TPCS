@@ -20,6 +20,9 @@ namespace AhorcadoWCF
         int ObtenerPenalizaciones(int idUsuario);
 
         [OperationContract]
+        int ObtenerPartidasAbandono(int idUsuario);
+
+        [OperationContract]
         bool RegistrarPuntaje(int idUsuario, int idPartida, int idPalabra, string tipoPuntaje, int puntos, int idJugadorRival);
 
         [OperationContract]

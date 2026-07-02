@@ -28,7 +28,23 @@ namespace ClienteAhorcado {
 
         private void VentanaPartidas_Loaded(object sender, RoutedEventArgs e) {
             btnUsuario.Content = $"{SesionActual.Nombre} ▼";
+            CargarPuntajeUsuario();
             CargarPartidasDisponibles();
+        }
+
+        private void CargarPuntajeUsuario()
+        {
+            try
+            {
+                var cliente = Conexiones.Puntaje();
+                int puntaje = cliente.ObtenerPuntajeGlobal(SesionActual.IdUsuario);
+
+                txtValorPuntaje.Text = puntaje.ToString();
+            }
+            catch (Exception)
+            {
+                txtValorPuntaje.Text = "0";
+            }
         }
 
         private void CargarPartidasDisponibles() {
