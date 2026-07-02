@@ -26,10 +26,6 @@ namespace ClienteAhorcado {
             lblErrorCorreo.Visibility = Visibility.Collapsed;
             lblErrorContrasena.Visibility = Visibility.Collapsed;
 
-            var bordeNormal = new SolidColorBrush(Color.FromRgb(0xCC, 0xCC, 0xCC));
-            txtCorreo.BorderBrush = bordeNormal;
-            txtContrasena.BorderBrush = bordeNormal;
-
             string correo = txtCorreo.Text.Trim();
             string contrasena = txtContrasena.Password;
 
@@ -38,12 +34,10 @@ namespace ClienteAhorcado {
             if (string.IsNullOrWhiteSpace(correo)) {
                 lblErrorCorreo.Text = Properties.Resources.IniciarSesion_ErrorCorreoVacio;
                 lblErrorCorreo.Visibility = Visibility.Visible;
-                txtCorreo.BorderBrush = Brushes.Red;
                 hayError = true;
             } else if (!Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) {
                 lblErrorCorreo.Text = Properties.Resources.comun_ErrorCorreoInvalido;
                 lblErrorCorreo.Visibility = Visibility.Visible;
-                txtCorreo.BorderBrush = Brushes.Red;
                 hayError = true;
             }
 

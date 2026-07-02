@@ -675,4 +675,7 @@
   <data name="EditarPerfil_CambiarContrasena" xml:space="preserve">
     <value>Cambiar contraseña</value>
   </data>
+  <data name="RegistrarCuenta_ErrorEdadMaxima" xml:space="preserve">
+    <value>Ingresa una fecha de nacimiento válida.</value>
+  </data>
 </root>

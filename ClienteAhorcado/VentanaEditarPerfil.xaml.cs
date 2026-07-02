@@ -1,25 +1,25 @@
 ﻿using AhorcadoWCF;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClienteAhorcado {
     public partial class VentanaEditarPerfil : Page {
         public VentanaEditarPerfil() {
             InitializeComponent();
+            ConfigurarRangoFechas();
             btnIdioma.Content = SesionActual.Idioma == "es" ? "🌐 ES" : "🌐 EN";
             CargarDatosActuales();
         }
+
+        private void ConfigurarRangoFechas() {
+            DateTime hoy = DateTime.Today;
+            dpFechaNacimiento.DisplayDateEnd = hoy.AddYears(-10);
+            dpFechaNacimiento.DisplayDateStart = hoy.AddYears(-120);
+            dpFechaNacimiento.DisplayDate = hoy.AddYears(-10);
+        }
+
 
         private void btnIdioma_Click(object sender, RoutedEventArgs e) {
             string nuevo = SesionActual.Idioma == "es" ? "en" : "es";
@@ -79,13 +79,17 @@ namespace ClienteAhorcado {
                 lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorFechaVacia;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
-            } else if (!TieneAlMenos10Anios(fechaNacimiento.Value)) {
+            } else if (!EdadMinimaPermitida(fechaNacimiento.Value)) {
                 lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMinima;
+                lblErrorFecha.Visibility = Visibility.Visible;
+                hayError = true;
+            } else if (!EdadMaximaPermitida(fechaNacimiento.Value)) {
+                lblErrorFecha.Text = Properties.Resources.RegistrarCuenta_ErrorEdadMaxima;
                 lblErrorFecha.Visibility = Visibility.Visible;
                 hayError = true;
             }
 
-            if (string.IsNullOrWhiteSpace(celular) || !CelularEsValido(celular)) {
+                if (string.IsNullOrWhiteSpace(celular) || !CelularEsValido(celular)) {
                 lblErrorCelular.Text = Properties.Resources.RegistrarCuenta_ErrorCelularInvalido;
                 lblErrorCelular.Visibility = Visibility.Visible;
                 hayError = true;
@@ -131,13 +135,22 @@ namespace ClienteAhorcado {
             }
         }
 
-        private bool TieneAlMenos10Anios(DateTime fechaNacimiento) {
+        private bool EdadMinimaPermitida(DateTime fechaNacimiento) {
             DateTime hoy = DateTime.Today;
             int edad = hoy.Year - fechaNacimiento.Year;
             if (fechaNacimiento.Date > hoy.AddYears(-edad)) {
                 edad--;
             }
             return edad >= 10;
+        }
+
+        private bool EdadMaximaPermitida(DateTime fechaNacimiento) {
+            DateTime hoy = DateTime.Today;
+            int edad = hoy.Year - fechaNacimiento.Year;
+            if (fechaNacimiento.Date > hoy.AddYears(-edad)) {
+                edad--;
+            }
+            return edad <= 120;
         }
 
         private bool CelularEsValido(string celular) {

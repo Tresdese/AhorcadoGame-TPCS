@@ -1555,6 +1555,15 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa una fecha de nacimiento válida..
+        /// </summary>
+        public static string RegistrarCuenta_ErrorEdadMaxima {
+            get {
+                return ResourceManager.GetString("RegistrarCuenta_ErrorEdadMaxima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Debes tener al menos 10 años cumplidos para registrarte..
         /// </summary>
         public static string RegistrarCuenta_ErrorEdadMinima {
