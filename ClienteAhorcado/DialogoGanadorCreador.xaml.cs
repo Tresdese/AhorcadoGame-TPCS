@@ -59,10 +59,5 @@ namespace ClienteAhorcado
             Close();
         }
 
-        private void btnJugarDeNuevo_Click(object sender, RoutedEventArgs e)
-        {
-            Navegacion.Ir(new VentanaEsperandoRival());
-            Close();
-        }
     }
 }

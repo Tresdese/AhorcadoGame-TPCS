@@ -1834,7 +1834,7 @@ namespace ClienteAhorcado.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ¿Volver al lobby?.
+        ///   Looks up a localized string similar to Volverás al lobby..
         /// </summary>
         public static string RivalAbandono_Pregunta {
             get {

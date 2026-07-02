@@ -658,7 +658,7 @@
     <value> A penalty will be applied to their account.</value>
   </data>
   <data name="RivalAbandono_Pregunta" xml:space="preserve">
-    <value>Go back to lobby?</value>
+    <value>You will go back to lobby.</value>
   </data>
   <data name="RivalAbandono_Esperar" xml:space="preserve">
     <value>Wait for another opponent</value>
