@@ -39,7 +39,6 @@ namespace ClienteAhorcado {
             }
 
             txtNombre.Text = usuario.Nombre;
-            txtCorreo.Text = usuario.Correo;
             txtCelular.Text = usuario.Telefono;
             txtFechaNacimiento.Text = usuario.FechaNacimiento.ToString("dd/MM/yyyy",
                 System.Globalization.CultureInfo.InvariantCulture);

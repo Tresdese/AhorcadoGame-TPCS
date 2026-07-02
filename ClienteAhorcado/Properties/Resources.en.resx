@@ -259,13 +259,13 @@
     <value>Sign out</value>
   </data>
   <data name="Partidas_ColCreada" xml:space="preserve">
-    <value>CREATED</value>
+    <value>Created</value>
   </data>
   <data name="Partidas_ColCreador" xml:space="preserve">
-    <value>CREATOR</value>
+    <value>Creator</value>
   </data>
   <data name="Partidas_ColJugadores" xml:space="preserve">
-    <value>PLAYERS</value>
+    <value>Players</value>
   </data>
   <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
     <value>Are you sure you want to sign out?</value>

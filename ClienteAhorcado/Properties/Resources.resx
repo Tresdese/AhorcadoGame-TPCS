@@ -259,13 +259,13 @@
     <value>Cerrar sesión</value>
   </data>
   <data name="Partidas_ColCreada" xml:space="preserve">
-    <value>CREADA</value>
+    <value>Creada</value>
   </data>
   <data name="Partidas_ColCreador" xml:space="preserve">
-    <value>CREADOR</value>
+    <value>Creador</value>
   </data>
   <data name="Partidas_ColJugadores" xml:space="preserve">
-    <value>JUGADORES</value>
+    <value>Jugadores</value>
   </data>
   <data name="Partidas_ConfirmarCerrarMensaje" xml:space="preserve">
     <value>¿Seguro que deseas cerrar sesión?</value>
