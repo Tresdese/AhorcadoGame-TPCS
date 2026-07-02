@@ -39,27 +39,14 @@
 
                 <TextBlock x:Name="lblCorreo" Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
 
-                <TextBox x:Name="txtCorreo" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                <TextBox x:Name="txtCorreo" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1"/>
 
                 <TextBlock x:Name="lblErrorCorreo" Text="{x:Static p:Resources.IniciarSesion_ErrorCorreo}"
                            Foreground="Red" FontSize="12" Visibility="Collapsed" TextWrapping="Wrap" Margin="0,4,0,0"/>
 
                 <TextBlock x:Name="lblContrasena" Text="{x:Static p:Resources.Comun_Contrasena}" FontSize="13" Foreground="#333333" Margin="0,15,0,5"/>
 
-                <PasswordBox x:Name="txtContrasena" FontSize="14" Height="40" Padding="8,0"
-                             VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
-                    <PasswordBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </PasswordBox.Resources>
-                </PasswordBox>
+                <local:CampoContrasena x:Name="txtContrasena"/>
 
                 <TextBlock x:Name="lblErrorContrasena" Text="{x:Static p:Resources.IniciarSesion_ErrorContrasena}"
                            Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>

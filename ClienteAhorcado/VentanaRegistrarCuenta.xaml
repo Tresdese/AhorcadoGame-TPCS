@@ -35,13 +35,7 @@
 
                 <TextBlock x:Name="lblNombre" Text="{x:Static p:Resources.RegistrarCuenta_NombreCompleto}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
 
-                <TextBox x:Name="txtNombre" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                <TextBox x:Name="txtNombre" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1"/>
 
                 <TextBlock x:Name="lblErrorNombre" Text="{x:Static p:Resources.Comun_CampoObligatorio}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
 
@@ -55,13 +49,7 @@
                     <StackPanel Grid.Column="0">
                         <TextBlock x:Name="lblCorreo" Text="{x:Static p:Resources.Comun_CorreoElectronico}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
 
-                        <TextBox x:Name="txtCorreo" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1">
-                            <TextBox.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </TextBox.Resources>
-                        </TextBox>
+                        <TextBox x:Name="txtCorreo" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1"/>
 
                         <TextBlock x:Name="lblErrorCorreo" Text="{x:Static p:Resources.RegistrarCuenta_ErrorCorreoExiste}" Foreground="Red" FontSize="12" Visibility="Collapsed" TextWrapping="Wrap" Margin="0,4,0,0"/>
                     </StackPanel>
@@ -69,13 +57,7 @@
                     <StackPanel Grid.Column="2">
                         <TextBlock x:Name="lblFecha" Text="{x:Static p:Resources.RegistrarCuenta_FechaNacimiento}" FontSize="13" Foreground="#333333" Margin="0,0,0,5"/>
 
-                        <DatePicker x:Name="dpFechaNacimiento" FontSize="14" Height="40" BorderBrush="#CCCCCC" BorderThickness="1">
-                            <DatePicker.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </DatePicker.Resources>
-                        </DatePicker>
+                        <DatePicker x:Name="dpFechaNacimiento" FontSize="14" Height="40" BorderBrush="#CCCCCC" BorderThickness="1"/>
 
                         <TextBlock x:Name="lblErrorFecha" Text="{x:Static p:Resources.RegistrarCuenta_ErrorEdadMinima}" Foreground="Red" FontSize="12" Visibility="Collapsed" TextWrapping="Wrap" Margin="0,4,0,0"/>
                     </StackPanel>
@@ -83,13 +65,7 @@
 
                 <TextBlock x:Name="lblCelular" Text="{x:Static p:Resources.RegistrarCuenta_NumeroCelular}" FontSize="13" Foreground="#333333" Margin="0,15,0,5"/>
 
-                <TextBox x:Name="txtCelular" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1" Width="390" HorizontalAlignment="Left">
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                <TextBox x:Name="txtCelular" FontSize="14" Height="40" Padding="8,0" VerticalContentAlignment="Center" BorderBrush="#CCCCCC" BorderThickness="1" Width="390" HorizontalAlignment="Left"/>
 
                 <TextBlock x:Name="lblErrorCelular" Text="{x:Static p:Resources.RegistrarCuenta_ErrorCelularInvalido}" Foreground="Red" FontSize="12" Visibility="Collapsed" Margin="0,4,0,0"/>
 
