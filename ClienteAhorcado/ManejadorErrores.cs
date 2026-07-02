@@ -32,10 +32,9 @@ namespace ClienteAhorcado
         private static void MostrarEX01()
         {
             MessageBox.Show(
-                "Error de conexión con base de datos, inténtelo más tarde.",
-                "Error",
-                MessageBoxButton.OK,
-                MessageBoxImage.Error);
+                Properties.Resources.Partidas_ErrorConexion,
+                Properties.Resources.Comun_Error,
+                MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

@@ -43,7 +43,6 @@ namespace ClienteAhorcado {
 
             lblNombreEncabezado.Text = usuario.Nombre;
             lblCorreoEncabezado.Text = usuario.Correo;
-            btnUsuario.Content = usuario.Nombre + " ▼";
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e) {

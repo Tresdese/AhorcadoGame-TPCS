@@ -35,12 +35,18 @@
                                 </Style>
                             </Button.Resources>
                         </Button>
-                        <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
+                        <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White"
+                                 BorderThickness="0" FontSize="13" Click="btnUsuario_Click">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="20"/>
                                 </Style>
                             </Button.Resources>
+                            <Button.ContextMenu>
+                                <ContextMenu x:Name="menuUsuario">
+                                    <MenuItem x:Name="mnuCerrarSesion" Header="{x:Static p:Resources.Partidas_CerrarSesion}" Foreground="Red" Click="mnuCerrarSesion_Click"/>
+                                </ContextMenu>
+                            </Button.ContextMenu>
                         </Button>
                     </StackPanel>
                 </Grid>

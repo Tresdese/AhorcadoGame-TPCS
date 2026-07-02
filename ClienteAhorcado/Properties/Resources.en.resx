@@ -280,7 +280,7 @@
     <value>· Each game is for 2 players</value>
   </data>
   <data name="Partidas_ErrorConexion" xml:space="preserve">
-    <value>Database connection error, please try again later.</value>
+    <value>Database connection error. The connection will be re-established as soon as it is available.</value>
   </data>
   <data name="Partidas_HistorialPuntajes" xml:space="preserve">
     <value>Score history</value>

@@ -280,7 +280,7 @@
     <value>· Cada partida es de 2 jugadores</value>
   </data>
   <data name="Partidas_ErrorConexion" xml:space="preserve">
-    <value>Error de conexión con base de datos, inténtelo más tarde.</value>
+    <value>Error de conexión con base de datos. La conexión se reestablecerá en cuanto esté disponible.</value>
   </data>
   <data name="Partidas_HistorialPuntajes" xml:space="preserve">
     <value>Historial de puntajes</value>

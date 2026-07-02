@@ -35,13 +35,6 @@
                                 </Style>
                             </Button.Resources>
                         </Button>
-                        <Button x:Name="btnUsuario" Content="Usuario ▼" Padding="10,5" Background="#333333" Foreground="White" BorderThickness="0" FontSize="13">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="20"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
                     </StackPanel>
                 </Grid>
             </Border>
